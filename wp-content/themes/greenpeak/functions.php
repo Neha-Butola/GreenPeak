@@ -120,42 +120,39 @@ add_action( 'widgets_init', 'greenpeak_widgets_init' );
  * Enqueue scripts and styles.
  */
 function greenpeak_scripts() {
+	wp_enqueue_style( 'bootstrap-css','//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css','','4.0.0');
+
+	wp_enqueue_style( 'font-awesome','//use.fontawesome.com/releases/v5.2.0/css/all.css','','5.2.0');
+
 	wp_enqueue_style( 'greenpeak-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'greenpeak-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true );
 
-	wp_enqueue_script( 'greenpeak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'flexslider', '//cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.1/jquery.flexslider.min.js', array('jquery'), '2.6.1', true );
+
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true );
+
 }
 add_action( 'wp_enqueue_scripts', 'greenpeak_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+/*
+Add filter to add class in li tag of nav-menu
+*/
+add_filter ( 'nav_menu_css_class', function ( $classes, $item, $args, $depth ){
+    $classes[] = 'nav-item';
+    return $classes;
+}, 10, 4 );
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
+/*
+Add filter to add class in a tag of nav-menu
+*/
+add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
+    $class = 'nav-link';
+    $atts['class'] = $class;
+    return $atts;
+}, 10, 3 );
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
