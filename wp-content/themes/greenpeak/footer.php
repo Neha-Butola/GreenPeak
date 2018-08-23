@@ -1,33 +1,30 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package greenpeak
- */
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 footer-logo">
+                <a href="javascript:void(0)" class="footer-logo"><img src="../images/footer-logo.png" alt=""></a>
+            </div>
+            <div class="col-6 footer-text text-center">
+                <h5>©2018 GREEN PEAK PARTNERS</h5>
+                <h5>All Rights Reserved</h5>
+            </div>
+            <div class="col-3 footer-text">
+                <h5><a href="mailto:info@greenpeakpartners.com" target="_top" class="mail-link">info@greenpeakpartners.com</a></h5>
+            </div>
 
-?>
-
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'greenpeak' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'greenpeak' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'greenpeak' ), 'greenpeak', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+        </div>
+        <div class="row">
+            <div class="col-12 social-icons">
+                <ul class="text-center">
+                    <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="javascript:void(0)"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
