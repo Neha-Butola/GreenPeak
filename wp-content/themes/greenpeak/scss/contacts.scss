@@ -1,0 +1,52 @@
+/*================== contact page styling here ===========*/
+.contact-detail-wrapper{
+    background-color: $white;
+    padding: 57px 0 74px 0;
+    p{
+        color: $xdark-gray;
+        margin-bottom: 38px;
+    }
+    .phone-number,
+    .email-info{
+        a{
+            font-size: 22px;
+            line-height: 26px;
+            color: $xdark-gray;
+            font-weight: 400;
+            text-decoration: none;
+            
+            &:hover{
+                color: $dark-green;
+            }
+        }
+        i{
+            color: $dark-green;
+            margin-right: 12px;
+            &.fa-phone{
+                transform: rotate(89deg);
+            }
+        }
+
+    }
+    .email-info{
+        a{
+            font-family: $vanitasblack-font;
+        }
+        @media screen and (min-width: $xl-breakpoint){
+            text-align: right;
+            padding-right: 143px;
+        }
+        
+    }
+}
+
+.contact-form-wrapper{
+    padding: 60px 0 65px 0;
+    h4{
+        font-size: 25px;
+        line-height: 29px;
+        color: $white;
+        letter-spacing: 4px;
+        font-weight: 200;
+    }
+}

@@ -13,7 +13,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-@keyframes slideInFromRight {
+/* @keyframes slideInFromRight {
     0% {
         transform: translateX(100%)
     }
@@ -1061,4 +1061,4 @@ ul.cd-author-info li span {
 
 .team-section.grey-bg {
     background: #f0f0f0
-}
+} */

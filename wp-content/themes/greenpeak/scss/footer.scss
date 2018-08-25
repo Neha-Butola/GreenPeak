@@ -1,0 +1,74 @@
+/*========== footer styling here ===============*/
+footer {
+    background-color: $dark-gray;
+    padding: 45px 0 20px;
+  
+    .footer-logo {
+      img {
+        @media screen and (max-width: $xl-breakpoint) {
+          max-width: 70%;
+        }
+        @media screen and (max-width: $md-breakpoint) {
+          width: 100px;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  
+    .footer-text {
+      a.mail-link,
+      h5 {
+        color: $white;
+        font-weight: normal;
+        font-family: $vanitasblack-font;
+        font-size: 24px;
+        line-height: 28px;
+        display: inline-block;
+        @media screen and (max-width: $xl-breakpoint) {
+          font-size: 20px;
+          line-height: 24px;
+        }
+        @media screen and (max-width: $md-breakpoint) {
+          font-size: 12px;
+        }
+      }
+  
+      a.mail-link {
+        &:hover {
+          color: $medium-green;
+        }
+      }
+    }
+  
+    .social-icons {
+      margin: 30px 0 15px;
+  
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+  
+        li {
+          display: inline-block;
+          margin: 0 17px;
+  
+          a {
+            i {
+              color: $light-gold;
+              font-size: 34px;
+              line-height: 38px;
+              @include transition(0.3s);
+              @media screen and (max-width: $md-breakpoint) {
+                font-size: 20px;
+                line-height: 20px;
+              }
+  
+              &:hover {
+                color: $medium-green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,200 @@
+.home-Parallax {
+  .container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+
+    section {
+      width: 100%;
+      height: 100vh;
+      flex: 1;
+      display: flex;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background-color: $black;
+      @media screen and (max-width: $sm-breakpoint) {
+        height: 160vh;
+      }
+
+      .image {
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 500;
+        background-position: 100% 0;
+      }
+
+      .stuff {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        z-index: 1000;
+        margin: 0 auto;
+        position: relative;
+        max-width: 1380px;
+        padding-top: 150px;
+        padding-bottom: 200px;
+        @media screen and (max-width: $md-breakpoint) {
+          padding-top: 300px;
+        }
+
+        h3 {
+          margin-top: 30px;
+        }
+
+        h2 {
+          display: inline-block;
+
+          &:hover {
+            color: #77BD90;
+          }
+        }
+
+        .content-block {
+          @media screen and (max-width: $sm-breakpoint) {
+            order: 2;
+          }
+        }
+      }
+    }
+
+    .first-Parallax-row,
+    .third-Parallax-row {
+      .stuff {
+        p {
+          text-align: left;
+          @media screen and (max-width: $md-breakpoint) {
+            text-align: center;
+          }
+        }
+      }
+
+      .image {
+        @media screen and (max-width:$sm-breakpoint) {
+          background-position: 90% 0;
+        }
+      }
+    }
+
+    .sec-Parallax-row {
+      .stuff {
+        p {
+          text-align: right;
+          @media screen and (max-width: $md-breakpoint) {
+            text-align: center;
+            margin-top: 70px;
+          }
+        }
+
+        h2 {
+          position: relative;
+
+          &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #d4d4d4;
+            bottom: -30px;
+            left: -14%;
+          }
+        }
+
+        h3 {
+          padding-right: 19%;
+          @media screen and (max-width: $md-breakpoint) {
+            padding-right: 0;
+          }
+        }
+      }
+
+      .image {
+        @media screen and (max-width: $sm-breakpoint) {
+          background-position: 10% 100%;
+        }
+      }
+    }
+
+    .first-Parallax-row {
+      h2 {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 1px;
+          background: #d4d4d4;
+          bottom: -30px;
+          left: 7%;
+        }
+      }
+
+      h3 {
+        padding-left: 6%;
+        @media screen and (max-width: $md-breakpoint) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.inner-banner {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100%;
+
+  .heading-block {
+    display: flex;
+    align-items: flex-end;
+    height: 80vh;
+    justify-content: center;
+
+    h1 {
+      animation: fadein 2s;
+      -moz-animation: fadein 2s;
+      /* Firefox */
+      -webkit-animation: fadein 2s;
+      /* Safari and Chrome */
+      -o-animation: fadein 2s;
+      /* Opera */
+    }
+  }
+
+  .line-div-ani {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+    background: #333;
+    height: 5px;
+    width: 60%;
+    margin-left: auto;
+  }
+}
+
+.scroller-triangle {
+  height: 920px;
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  background-size: cover !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+}
+
+.scroller-triangle img {
+  display: none;
+}
