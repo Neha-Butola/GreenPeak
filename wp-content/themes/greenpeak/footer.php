@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3 footer-logo">
-                <a href="javascript:void(0)" class="footer-logo"><img src="../images/footer-logo.png" alt=""></a>
+                <a href="javascript:void(0)" class="footer-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-logo.png" alt=""></a>
             </div>
             <div class="col-6 footer-text text-center">
                 <h5>©2018 GREEN PEAK PARTNERS</h5>

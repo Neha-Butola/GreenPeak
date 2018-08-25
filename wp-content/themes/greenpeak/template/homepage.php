@@ -34,7 +34,7 @@ if (!empty($content)): ?>
                         </div>
                         <div class="col-md-6 col-12 align-self-end justify-content-end">
                             <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
-                            <h3><?php echo $section['sub-heading']; ?></h3>
+                            <h3><?php echo $section['sub_heading']; ?></h3>
                         </div>
                     </div>
                 </section>
