@@ -3,15 +3,15 @@
 
 get_header(); ?>
 
-<div class="inner-banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/ContactBridge.jpg');">
+<div class="inner-banner" style="background-image: url('<?php the_field('banner_image'); ?>');">
     <div class="heading-block" >
-        <h1 class="small">PURSUE EXCEPTIONAl</h1>
+        <h1 class="small"><?php the_field('banner_heading'); ?></h1>
     </div>
 </div>
 <div class="container">
     <div class="row plain-txt-row">
         <div class="col-sm-12">
-            <p class="black">Are you passionate about making a difference by influencing a CEO’s or company’s leadership? Do you care more about boosting an organization’s teamwork and culture than doing lengthy research and PowerPoint decks? Are you the person friends and colleagues routinely seek out for personal and professional advice? If so, we invite you to explore joining the premier leadership acceleration firm for private equity companies, Boards, and C-suite leaders. Come meet what several clients have called the “Navy Seal Team” in this hot and growing industry. Accelerate your career and elevate your life by learning from the top executive coaches and organizational health experts in the country.<a> Meet our team of exceptional consultants.</a></p>
+            <p class="black"><?php the_field('content'); ?></p>
         </div>
 
     </div>
