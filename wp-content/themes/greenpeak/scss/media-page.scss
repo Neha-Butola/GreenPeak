@@ -20,9 +20,7 @@
     h2{
         color: $green-variant;
         margin-bottom: 30px;
-        &::after{
-
-        }
+        
     }
     .video-block{
         margin-bottom: 60px;
@@ -40,5 +38,6 @@
         line-height: 37px;
         letter-spacing: 2px;
         font-family: $vanitasblack-font;
+        
     }
 }
