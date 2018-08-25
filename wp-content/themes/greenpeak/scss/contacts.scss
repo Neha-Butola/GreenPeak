@@ -1,6 +1,6 @@
 /*================== contact page styling here ===========*/
 .contact-detail-wrapper{
-    background-color: $white;
+   
     padding: 57px 0 74px 0;
     p{
         color: $xdark-gray;
@@ -20,7 +20,7 @@
             }
         }
         i{
-            color: $dark-green;
+            color: $green-variant;
             margin-right: 12px;
             &.fa-phone{
                 transform: rotate(89deg);
