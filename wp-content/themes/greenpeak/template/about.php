@@ -100,10 +100,10 @@ if (!empty($operations)):?>
                         <img src="<?php echo $operation['operations_image']; ?>" alt="Jane"
                              style="width:100%">
                         <div class="descrip-box">
-                            <p class="name"><?php echo $operation['operation_name']; ?>
+                            <p class="name"><?php echo $operation['operations_name']; ?>
                             <p>
-                            <p class="title"><?php echo $operation['operation_designation']; ?></p>
-                            <p class="location"><?php echo $operation['operation_location']; ?></p>
+                            <p class="title"><?php echo $operation['operations_designation']; ?></p>
+                            <p class="location"><?php echo $operation['operations_location']; ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
