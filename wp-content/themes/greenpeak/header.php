@@ -63,13 +63,13 @@
 
 
   <ul class="menu">
-    <li><a href="">home</a></li>
-    <li><a href="">About</a></li>
-      <li><a href="">services</a></li>
+    <li><a href="/">home</a></li>
+    <li><a href="/about">About</a></li>
+      <li><a href="/services">services</a></li>
       <li> <img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" /></li>
-    <li><a href="">Careers</a></li>
-      <li><a href="">media</a></li>
-    <li><a href="">Contact</a></li>
+    <li><a href="/careers">Careers</a></li>
+      <li><a href="/media">media</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
 
 </div>
