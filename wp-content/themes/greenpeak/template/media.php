@@ -81,15 +81,13 @@ if ($videos->have_posts()): ?>
 );
 $articles = new WP_Query($parameters);
 $total_pages = $articles->max_num_pages;
-if ($articles->have_posts()): ?>
-    <section class="article-wrapper"
-             style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
-        <div class="container">
-            <h2>Articles</h2>
-            <div class="row">
-                <?php while ($articles->have_posts()):
-                    $articles->the_post();
-                    ?>
+if ($articles->have_posts()):
+    while ($articles->have_posts()):
+        $articles->the_post(); ?>
+        <section class="article-wrapper"
+                 style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+            <div class="container">
+                <div class="row">
                     <div class="col-12 text-center">
                         <h3 class="green-text"><?php the_title(); ?></h3>
                         <?php $content = get_the_content();
@@ -99,11 +97,10 @@ if ($articles->have_posts()): ?>
 
                         <a href="<?php echo get_the_permalink(); ?>">read article</a>
                     </div>
-                <?php endwhile; ?>
+                </div>
             </div>
-        </div>
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endwhile; endif; ?>
     <!-- Article section ends here -->
 
 <?php get_footer();
