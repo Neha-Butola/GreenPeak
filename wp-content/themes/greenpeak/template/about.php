@@ -34,8 +34,25 @@ get_header(); ?>
     <!-- unit row -->
 
     <div class=""
-         style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_BlurredClientBG.jpg'); height: 70vh; background-size: cover;">
+         style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_BlurredClientBG.jpg'); background-size: cover;">
+         <div id='chart-container' class="row">
 
+           <div class="col-sm-4">
+              <div class="chart">
+              </div>
+              <p>of top 25 US private equity firms served</p>
+           </div>
+           <div class="col-sm-4">
+              <div class="chart">
+              </div>
+                <p>of top 25 US private equity firms served</p>
+           </div>
+           <div class="col-sm-4">
+              <div class="chart">
+              </div>
+                <p>of top 25 US private equity firms served</p>
+           </div>
+         </div>
     </div>
 
 
@@ -111,6 +128,5 @@ if (!empty($operations)):?>
         </div>
     </div>
 <?php endif; ?>
-
 
 <?php get_footer();

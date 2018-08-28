@@ -4,11 +4,15 @@
 
   p {
     color: $xdark-gray;
-    margin-bottom: 38px;
+    margin-bottom: 70px;
   }
 
   .email-info,
   .phone-number {
+    @media screen and (max-width: $md-breakpoint) {
+      text-align: center;
+    }
+
     a {
       font-size: 36px;
       line-height: 43px;

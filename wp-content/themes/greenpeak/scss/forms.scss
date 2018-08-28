@@ -1,7 +1,8 @@
 /*================= Forms styling here ================*/
 form {
   input[type="text"],
-  textarea {
+  textarea,
+  input[type="email"] {
     background-color: transparent;
   }
 
@@ -42,6 +43,9 @@ form {
     font-weight: 200;
     font-family: $vanitasregular-font;
     width: 100%;
+    @media screen and (max-width: $md-breakpoint) {
+      height: 100px;
+    }
 
     &:focus {
       @include box-shadow($box-shadow: none);
