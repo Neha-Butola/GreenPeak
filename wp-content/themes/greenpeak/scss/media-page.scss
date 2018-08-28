@@ -12,11 +12,11 @@
     padding-top: 95px;
     padding-bottom: 95px;
 
-    &:nth-child(2) {
+    &:nth-child(3) {
       text-align: center;
     }
 
-    &:nth-child(3) {
+    &:nth-child(4) {
       text-align: right;
     }
 
@@ -30,7 +30,7 @@
 .video-warpper {
   h2 {
     color: $green-variant;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
     position: relative;
     display: inline-block;
 
@@ -41,12 +41,12 @@
       bottom: -25px;
       right: 0;
       height: 1px;
-      left: -200%;
+      left: -300%;
     }
   }
 
   .video-block {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 }
 
@@ -59,8 +59,20 @@
   h3 {
     font-size: 32px;
     line-height: 37px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-family: $vanitasblack-font;
+    margin-bottom: 60px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      background: $white;
+      width: 80%;
+      left: 10%;
+      content: "";
+      bottom: -30px;
+      height: 1px;
+    }
   }
 
   &:nth-child(odd) {

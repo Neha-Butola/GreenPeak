@@ -49,12 +49,11 @@ jQuery(document).ready(function($) {
 
 				/*header scroll js*/
 
-				$(function() {
-				  var headervar = $("header");
+				  var headervar = jQuery("header");
 
-				  $(window).scroll(function() {
+				  jQuery(window).scroll(function() {
 
-				      var scroll = $(window).scrollTop();
+				      var scroll = jQuery(window).scrollTop();
 				      if (scroll >= 50) {
 				          headervar.addClass("scrolled");
 				      } else {
@@ -62,7 +61,7 @@ jQuery(document).ready(function($) {
 				      }
 				  });
 
-				});
+
 				/* header scroll js*/
 
         $('.column').each(function () {
@@ -81,7 +80,7 @@ jQuery(document).ready(function($) {
         $('html').click(function () {
             $(".descrip-box").hide();
         });
-	// $.stellar();
+	jQuery.stellar();
 /* triangle shapes charts js*/
 	// var _hmt = _hmt || [];
 	// (function() {
