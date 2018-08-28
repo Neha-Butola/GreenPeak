@@ -75,6 +75,11 @@ if ($videos->have_posts()): ?>
     </div> -->
 
     <!-- Article section starts here -->
+    <section class="video-warpper">
+    <div class="container">
+    <h2>Articles</h2>
+    </div>
+    </section>
 <?php $parameters = array(
     'post-type' => 'posts',
     'posts_per_page' => '6',
