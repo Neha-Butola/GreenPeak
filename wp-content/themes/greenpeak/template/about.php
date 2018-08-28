@@ -16,7 +16,7 @@ get_header(); ?>
     <div class="container">
         <div class="row plain-txt-row">
             <div class="col-sm-12">
-                <p class="black"><?php the_field('content_section_one'); ?></p>
+                <p class="black"><?php the_field('content_section_one',false,false); ?></p>
             </div>
 
         </div>
@@ -27,7 +27,7 @@ get_header(); ?>
     <div class="container-fluid">
         <div class="row bg-text-row" style="background-image: url('<?php the_field('background_image'); ?>');">
             <div class="col-sm-12 content">
-                <p><?php the_field('content_section_two'); ?></p>
+                <p><?php the_field('content_section_two',false,false); ?></p>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@ if (!empty($testimonials)):?>
                 <?php foreach ($testimonials as $testimonial): ?>
                     <li>
                         <div class="testi-content">
-                            <p>“<?php echo $testimonial['testimony']; ?>”</p>
+                            <?php echo $testimonial['testimony']; ?>
                             <ul class="testi-descrip">
                                 <li class="testi-name"><?php echo $testimonial['reviewer']; ?></li>
                                 <li class="testi-desig"><?php echo $testimonial['reviewer_designation']; ?></li>

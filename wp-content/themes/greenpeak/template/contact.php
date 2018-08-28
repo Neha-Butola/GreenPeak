@@ -45,23 +45,7 @@ if (!empty($content)): ?>
             <div class="row">
                 <div class="col-12">
                     <h4><?php the_field('contact_heading'); ?></h4>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInpuName" aria-describedby="namelHelp"
-                                   placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInpuEmail" aria-describedby="emailHelp"
-                                   placeholder="Email Address">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                      placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary submit-btn">SEND</button>
-                        </div>
-                    </form>
+                    <?php echo do_shortcode('[contact-form-7 id="138" title="Contact form 1"]'); ?>
                 </div>
             </div>
         </div>
