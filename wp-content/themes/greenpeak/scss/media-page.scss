@@ -63,6 +63,7 @@
     font-family: $vanitasblack-font;
     margin-bottom: 60px;
     position: relative;
+    display: inline-block;
 
     &:before {
       position: absolute;
@@ -89,8 +90,13 @@
 
   a {
     color: $white;
-    font-size: 16px;
+    font-size: 18px;
     font-family: $vanitasblack-font;
     letter-spacing: 2px;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 32px;
   }
 }
