@@ -21,6 +21,7 @@ get_header(); ?>
     </figure>
 
 <?php $content = get_field('content');
+$count = 0;
 if (!empty($content)): ?>
     <div class="home-Parallax">
         <div class="container">
@@ -28,17 +29,29 @@ if (!empty($content)): ?>
                 <section class="first-Parallax-row">
                     <div class="image" data-speed="2"
                          style="background-image: url('<?php echo $section['background_image']; ?>');"></div>
-                    <div class="stuff row" data-type="content">
-                        <div class="col-md-6 col-12  content-block">
-                            <p class="p-white"><?php echo $section['description']; ?></p>
+                    <?php if ($count % 2 == 0): ?>
+                        <div class="stuff row" data-type="content">
+                            <div class="col-md-6 col-12  content-block">
+                                <p class="p-white"><?php echo $section['description']; ?></p>
+                            </div>
+                            <div class="col-md-6 col-12 align-self-end justify-content-end">
+                                <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
+                                <h3><?php echo $section['sub_heading']; ?></h3>
+                            </div>
                         </div>
-                        <div class="col-md-6 col-12 align-self-end justify-content-end">
-                            <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
-                            <h3><?php echo $section['sub_heading']; ?></h3>
+                    <?php else: ?>
+                        <div class="stuff row" data-type="content">
+                            <div class="col-md-6 col-12 align-self-end justify-content-start">
+                                <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
+                                <h3 class="text-right"><?php echo $section['sub_heading']; ?></h3>
+                            </div>
+                            <div class="col-md-6 col-12 content-block">
+                                <p><?php echo $section['description']; ?></p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </section>
-            <?php endforeach; ?>
+            <?php $count++; endforeach; ?>
         </div>
     </div>
 <?php endif; ?>
