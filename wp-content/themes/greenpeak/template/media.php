@@ -31,6 +31,9 @@ if (!empty($logos)):?>
                         </figure>
                     </div>
                 <?php endforeach; ?>
+                <div class="col-12">
+                    <?php the_field('content_section_two'); ?>
+                </div>
             </div>
 
         </div>
