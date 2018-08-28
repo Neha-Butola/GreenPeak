@@ -26,7 +26,7 @@ if (!empty($logos)):?>
                 <?php foreach ($logos as $logo): ?>
                     <div class="col-12 col-sm-4 logo-block">
                         <figure>
-                            <img src="<?php echo $logo['image']; ?>" alt=""
+                            <img src="<?php echo $logo['image']; ?>" alt="logos"
                                  class="img-fluid">
                         </figure>
                     </div>
@@ -46,7 +46,7 @@ if (!empty($logos)):?>
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $parameters = array(
     'post_type' => 'videos',
-    'posts_per_page' => 1,
+    'posts_per_page' => 3,
     'paged' => $paged
 );
 $videos = new WP_Query($parameters);
@@ -81,26 +81,29 @@ if ($videos->have_posts()): ?>
 );
 $articles = new WP_Query($parameters);
 $total_pages = $articles->max_num_pages;
-if ($articles->have_posts()): while ($articles->have_posts()):
-    $articles->the_post();
-    ?>
+if ($articles->have_posts()): ?>
     <section class="article-wrapper"
              style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
         <div class="container">
+            <h2>Articles</h2>
             <div class="row">
-                <div class="col-12 text-center">
-                    <h3 class="green-text"><?php the_title(); ?></h3>
-                    <?php $content = get_the_content();
-                    $content = wp_trim_words($content, '50');
+                <?php while ($articles->have_posts()):
+                    $articles->the_post();
                     ?>
-                    <p><?php echo $content; ?></p>
+                    <div class="col-12 text-center">
+                        <h3 class="green-text"><?php the_title(); ?></h3>
+                        <?php $content = get_the_content();
+                        $content = wp_trim_words($content, '50');
+                        ?>
+                        <p><?php echo $content; ?></p>
 
-                    <a href="<?php echo get_the_permalink(); ?>">read article</a>
-                </div>
+                        <a href="<?php echo get_the_permalink(); ?>">read article</a>
+                    </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
-<?php endwhile; endif; ?>
+<?php endif; ?>
     <!-- Article section ends here -->
 
 <?php get_footer();

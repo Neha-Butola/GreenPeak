@@ -162,7 +162,7 @@ add_action('wp_ajax_ajax_pagination', 'my_ajax_pagination');
 
 function my_ajax_pagination()
 {
-    $parameters = array('post_type' => 'videos', 'posts_per_page' => 1);
+    $parameters = array('post_type' => 'videos', 'posts_per_page' => 3);
     $videos = new WP_Query($parameters);
     if ($videos->have_posts()) { ?>
         <div class="row">
