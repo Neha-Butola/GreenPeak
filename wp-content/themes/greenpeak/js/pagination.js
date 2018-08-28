@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         var page = $(this).attr('page');
         var total_pages = $(this).attr('total_pages');
-        $('.load-more').attr('page', parseInt(page) + 1);
+        $('.load-more').attr('page', parseInt(page) + 3);
         if(page <= total_pages){
             $.ajax({
                 url: ajaxpagination.ajaxurl,
@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
                 }
             })
         }
-        if(page === total_pages){
+        if(page >= total_pages){
             $('.nav-links').hide(0);
         }
     });
