@@ -38,26 +38,38 @@ if (!empty($logos)):?>
     <!-- Media logo section ends here -->
 <?php endif; ?>
 
-<?php $videos = get_field('videos');
-if (!empty($videos)):?>
+<?php
+
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$parameters = array(
+    'post_type' => 'videos',
+    'posts_per_page' => 1,
+    'paged' => $paged
+);
+$videos = new WP_Query($parameters);
+$total_pages = $videos->max_num_pages;
+if ($videos->have_posts()): ?>
     <!-- Video section starts here  -->
     <section class="video-warpper">
         <div class="container">
             <h2><?php the_field('video_section_heading'); ?></h2>
-            <div class="row">
-                <?php foreach ($videos as $video): ?>
+            <div class="row" id="videos">
+                <?php while ($videos->have_posts()): $videos->the_post(); ?>
                     <div class="col-12 video-block">
                         <video width="100%" height="500px" controls>
-                            <source src="<?php echo $video['file']; ?>"
+                            <source src="<?php the_field('video'); ?>"
                                     type="video/mp4">
                         </video>
                     </div>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
     <!-- Video section ends here  -->
 <?php endif; ?>
+    <div class="nav-links">
+        <a href="#" page="2" class="load-more" total_pages="<?php echo $total_pages; ?>">More Videos</a>
+    </div>
 
     <!-- Article section starts here -->
 <?php $parameters = array(
