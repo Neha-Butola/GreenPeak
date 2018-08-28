@@ -1,96 +1,119 @@
 /*================= Forms styling here ================*/
-form{
-    .form-group{
-        input.form-control,textarea{
-            background-color: transparent;
-        }
-        input[type="text"],
-        input[type="email"]{
-            height: 42px;
-            border: none;
-            @include border($direction: bottom, $width: 1px, $style: solid, $color: $white);
-            @include border-radius($radius: 0);
-            padding-left: 0;
-            padding-bottom: 0;
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            font-weight: 200;
-            font-family: $vanitasregular-font;
-            &:focus{
-                @include box-shadow($box-shadow: none);
-                @include border-radius($radius: 0);
-                background-color: transparent;
-            }
-        }
-        textarea{
-            border: none;
-            @include border($direction: bottom, $width: 1px, $style: solid, $color: $white);
-            @include border-radius($radius: 0);
-            padding-left: 0;
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            font-weight: 200;
-            font-family: $vanitasregular-font;
-            &:focus{
-                @include box-shadow($box-shadow: none);
-                @include border-radius($radius: 0);
-                background-color: transparent;
-            }
-        }
-        /*============= placeholder css here =================*/
-        input::-webkit-input-placeholder ,textarea::-webkit-input-placeholder{ /* Chrome/Opera/Safari */
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            font-weight: 200;
-            font-family: $vanitasregular-font;
-          }
-          input::-moz-placeholder , textarea::-moz-placeholder{ /* Firefox 19+ */
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            font-weight: 200;
-            font-family: $vanitasregular-font;
-          }
-          input:-ms-input-placeholder , textarea:-ms-input-placeholder{ /* IE 10+ */
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            font-weight: 200;
-            font-family: $vanitasregular-font;
-          }
-          input:-moz-placeholder , textarea:-moz-placeholder{ /* Firefox 18- */
-            font-size: 18px;
-            line-height: 22px;
-            color: $white;
-            font-weight: 200;
-            font-family: $vanitasregular-font;
-          }
-          input[type="submit"],
-          .submit-btn,
-          .btn-primary,
-          .btn{
-            background-color: transparent;
-            @include border-radius($radius: 0);
-            border: 1px solid $white;
-            font-size: 20px;
-            line-height: 24px;
-            padding: 11px 30px;
-            font-weight: 200;
-            letter-spacing: 2px;
-            font-family: $vanitasregular-font;
-            margin-top: 33px;
-            &:hover{
-                background-color: $white;
-                color: $xdark-gray;
-            }
-            &:focus{
-                @include box-shadow($box-shadow: none);
-            }
-          }
-    }   
+form {
+  input[type="text"],
+  textarea {
+    background-color: transparent;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    height: 42px;
+    border: none;
+    @include border($direction: bottom, $width: 1px, $style: solid, $color: $white);
+    @include border-radius($radius: 0);
+    padding-left: 0;
+    padding-bottom: 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    font-weight: 200;
+    font-family: $vanitasregular-font;
+    width: 100%;
+
+    &:focus {
+      @include box-shadow($box-shadow: none);
+      @include border-radius($radius: 0);
+      background-color: transparent;
+    }
+  }
+
+  label {
+    width: 100%;
+  }
+
+  textarea {
+    border: none;
+    @include border($direction: bottom, $width: 1px, $style: solid, $color: $white);
+    @include border-radius($radius: 0);
+    padding-left: 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    font-weight: 200;
+    font-family: $vanitasregular-font;
+    width: 100%;
+
+    &:focus {
+      @include box-shadow($box-shadow: none);
+      @include border-radius($radius: 0);
+      background-color: transparent;
+    }
+  }
+  /*============= placeholder css here =================*/
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    font-weight: 200;
+    font-family: $vanitasregular-font;
+  }
+
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    font-weight: 200;
+    font-family: $vanitasregular-font;
+  }
+
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    font-weight: 200;
+    font-family: $vanitasregular-font;
+  }
+
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    font-weight: 200;
+    font-family: $vanitasregular-font;
+  }
+
+  input[type="submit"] {
+    // .submit-btn,
+    // .btn-primary,
+    // .btn
+    background-color: transparent;
+    @include border-radius($radius: 0);
+    border: 1px solid $white;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 5px 10px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    font-family: $vanitasregular-font;
+    margin-top: 33px;
+    text-transform: uppercase;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $xdark-gray;
+    }
+
+    &:focus {
+      @include box-shadow($box-shadow: none);
+    }
+  }
 }
-
-
