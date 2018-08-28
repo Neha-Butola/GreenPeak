@@ -16,7 +16,7 @@ get_header(); ?>
 
     <figure class="scroller-triangle" data-bottom-top="width:50%;" data-90-top="width:100%;"
             style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/ExpandedClientSection.jpg') center center;">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ExpandedClientSection.jpg"
+        <img src="<?php the_field('background_image'); ?>"
              alt="logo section">
     </figure>
 
