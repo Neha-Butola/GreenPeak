@@ -142,9 +142,9 @@ function greenpeak_scripts()
 
     wp_enqueue_script('jquery-steller', '//cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js', array('jquery'), '0.6.2', true);
 
-    wp_enqueue_script( 'scroller-js', get_template_directory_uri() . '/js/skrollr.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('scroller-js', get_template_directory_uri() . '/js/skrollr.min.js', array('jquery'), '1.0', true);
 
-    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
 
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
 
@@ -162,7 +162,13 @@ add_action('wp_ajax_ajax_pagination', 'my_ajax_pagination');
 
 function my_ajax_pagination()
 {
-    $parameters = array('post_type' => 'videos', 'posts_per_page' => 3);
+    $page = $_POST['page'];
+    $offset = ($page - 1) * 3;
+    $parameters = array(
+        'post_type' => 'videos',
+        'posts_per_page' => 3,
+        'offset' => $offset
+    );
     $videos = new WP_Query($parameters);
     if ($videos->have_posts()) { ?>
         <div class="row">
