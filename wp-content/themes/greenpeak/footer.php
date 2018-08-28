@@ -20,7 +20,7 @@
                 <div class="col-12 social-icons">
                     <ul class="text-center">
                         <?php foreach ($social_icons as $icons): ?>
-                            <li><a href="<?php echo $icons['icons_link']; ?>"><i
+                            <li><a href="<?php echo $icons['icons_link']; ?>" target="_blank"><i
                                             class="<?php echo $icons['icons_class']; ?>"></i></a></li>
                         <?php endforeach; ?>
                     </ul>
