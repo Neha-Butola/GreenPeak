@@ -21,7 +21,7 @@ get_header(); ?>
     </figure>
 
 <?php $content = get_field('content');
-$count = 1;
+$count = 0;
 if (!empty($content)): ?>
     <div class="home-Parallax">
         <div class="container">
