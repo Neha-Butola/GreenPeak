@@ -49,12 +49,11 @@ jQuery(document).ready(function($) {
 
 				/*header scroll js*/
 
-				$(function() {
-				  var headervar = $("header");
+				  var headervar = jQuery("header");
 
-				  $(window).scroll(function() {
+				  jQuery(window).scroll(function() {
 
-				      var scroll = $(window).scrollTop();
+				      var scroll = jQuery(window).scrollTop();
 				      if (scroll >= 50) {
 				          headervar.addClass("scrolled");
 				      } else {
@@ -62,7 +61,7 @@ jQuery(document).ready(function($) {
 				      }
 				  });
 
-				});
+
 				/* header scroll js*/
 
         $('.column').each(function () {
@@ -81,15 +80,15 @@ jQuery(document).ready(function($) {
         $('html').click(function () {
             $(".descrip-box").hide();
         });
-	// $.stellar();
+	jQuery.stellar();
 /* triangle shapes charts js*/
-	var _hmt = _hmt || [];
-	(function() {
-		var hm = document.createElement('script');
-		hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(hm, s);
-	})();
+	// var _hmt = _hmt || [];
+	// (function() {
+	// 	var hm = document.createElement('script');
+	// 	hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
+	// 	var s = document.getElementsByTagName('script')[0];
+	// 	s.parentNode.insertBefore(hm, s);
+	// })();
 
 	var bgColor = '#5B8080';
 	var containers = document.getElementsByClassName('chart');
@@ -118,7 +117,7 @@ jQuery(document).ready(function($) {
 	}, {
 		series: [{
 			type: 'liquidFill',
-			data: [0.92],
+			data: [0.5],
 			radius: '70%',
 			amplitude: 0,
 			 color: ['#5B8080'],

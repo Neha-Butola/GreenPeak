@@ -24,7 +24,7 @@ if (!empty($logos)):?>
                     <?php the_field('content_section_one'); ?>
                 </div>
                 <?php foreach ($logos as $logo): ?>
-                    <div class="col-12 col-sm-4 logo-block">
+                    <div class="col-4 logo-block">
                         <figure>
                             <img src="<?php echo $logo['image']; ?>" alt="logos"
                                  class="img-fluid">
@@ -59,7 +59,7 @@ if ($videos->have_posts()): ?>
             <div class="row" id="videos">
                 <?php while ($videos->have_posts()): $videos->the_post(); ?>
                     <div class="col-12 video-block">
-                        <video width="100%" height="500px" controls>
+                        <video width="100%" height="auto" controls>
                             <source src="<?php the_field('video'); ?>"
                                     type="video/mp4">
                         </video>
@@ -70,9 +70,9 @@ if ($videos->have_posts()): ?>
     </section>
     <!-- Video section ends here  -->
 <?php endif; ?>
-    <div class="nav-links">
+    <!-- <div class="nav-links">
         <a href="#" page="2" class="load-more" total_pages="<?php echo $total_pages; ?>">More Videos</a>
-    </div>
+    </div> -->
 
     <!-- Article section starts here -->
 <?php $parameters = array(
@@ -89,7 +89,7 @@ if ($articles->have_posts()):
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h3 class="green-text"><?php the_title(); ?></h3>
+                        <h3 class=""><?php the_title(); ?></h3>
                         <?php $content = get_the_content();
                         $content = wp_trim_words($content, '50');
                         ?>
