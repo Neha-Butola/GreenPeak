@@ -47,7 +47,23 @@ jQuery(document).ready(function($) {
             }
         });
 
+				/*header scroll js*/
 
+				$(function() {
+				  var headervar = $("header");
+
+				  $(window).scroll(function() {
+
+				      var scroll = $(window).scrollTop();
+				      if (scroll >= 50) {
+				          headervar.addClass("scrolled");
+				      } else {
+				          headervar.removeClass("scrolled");
+				      }
+				  });
+
+				});
+				/* header scroll js*/
 
         $('.column').each(function () {
             var $dropdown = $(this);
@@ -65,32 +81,6 @@ jQuery(document).ready(function($) {
         $('html').click(function () {
             $(".descrip-box").hide();
         });
-	
+	// $.stellar();
 
 });
-/* career testimonial slider js*/
-
-/* show video gallery*/
-// var slideIndex = 1;
-// showSlides(slideIndex);
-//
-//
-// function showSlides(n) {
-//     var i;
-//     var slides = document.getElementsByClassName("mySlides");
-//     var dots = document.getElementsByClassName("demo");
-//     var captionText = document.getElementById("caption");
-//     if (n > slides.length) {slideIndex = 1}
-//     if (n < 1) {slideIndex = slides.length}
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//     }
-//     for (i = 0; i < dots.length; i++) {
-//         dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//     slides[slideIndex-1].style.display = "block";
-//     dots[slideIndex-1].className += " active";
-//     captionText.innerHTML = dots[slideIndex-1].alt;
-// }
-
-/* show video gallery */

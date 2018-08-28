@@ -270,11 +270,6 @@ get_header(); ?>
 </div>
 </section>
 
-
-
-<script>
-jQuery.stellar();
-</script>
 <!-- infinite scroll section ends here -->
 
 <?php get_footer();
