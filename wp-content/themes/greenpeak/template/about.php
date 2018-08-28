@@ -112,44 +112,5 @@ if (!empty($operations)):?>
     </div>
 <?php endif; ?>
 
-    <script>
-        jQuery(document).ready(function ($) {
-            $('.descrip-box').hide();
-//create the slider
-            $('.cd-testimonials-wrapper').flexslider({
-                selector: ".testimonials-about > li",
-                animation: "slide",
-                controlNav: true,
-                slideshow: false,
-                smoothHeight: true,
-                directionNav: false,
-                start: function () {
-                    $('.testimonials-about').children('li').css({
-                        'opacity': 1,
-                        'position': 'relative'
-                    });
-                }
-            });
-
-
-            $('.column').each(function () {
-                var $dropdown = $(this);
-
-                $("img", $dropdown).click(function (e) {
-                    e.preventDefault();
-                    $div = $(".descrip-box", $dropdown);
-                    $div.slideToggle(500);
-                    $(".descrip-box").not($div).hide();
-                    return false;
-                });
-
-            });
-
-            $('html').click(function () {
-                $(".descrip-box").hide();
-            });
-
-        });
-    </script>
 
 <?php get_footer();
