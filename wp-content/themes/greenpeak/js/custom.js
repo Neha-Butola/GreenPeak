@@ -83,13 +83,13 @@ jQuery(document).ready(function($) {
         });
 	// $.stellar();
 /* triangle shapes charts js*/
-	var _hmt = _hmt || [];
-	(function() {
-		var hm = document.createElement('script');
-		hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(hm, s);
-	})();
+	// var _hmt = _hmt || [];
+	// (function() {
+	// 	var hm = document.createElement('script');
+	// 	hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
+	// 	var s = document.getElementsByTagName('script')[0];
+	// 	s.parentNode.insertBefore(hm, s);
+	// })();
 
 	var bgColor = '#5B8080';
 	var containers = document.getElementsByClassName('chart');
@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
 	}, {
 		series: [{
 			type: 'liquidFill',
-			data: [0.92],
+			data: [0.5],
 			radius: '70%',
 			amplitude: 0,
 			 color: ['#5B8080'],

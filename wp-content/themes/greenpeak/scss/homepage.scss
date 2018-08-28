@@ -179,8 +179,8 @@
 
   .line-div-ani {
     animation: 1s ease-out 0s 1 slideInFromRight;
-    background: #333;
-    height: 5px;
+    background: $white;
+    height: 1px;
     width: 60%;
     margin-left: auto;
   }

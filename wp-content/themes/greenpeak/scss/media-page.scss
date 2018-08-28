@@ -1,44 +1,84 @@
 /*============= media page styling here =================*/
-.media-logo-wrapper{
-    padding: 60px 0 58px 0;
-    p{
-        font-size: 21px;
-        line-height: 27px;
-        color: $xdark-gray;
+.media-logo-wrapper {
+  padding: 60px 0 58px;
+
+  p {
+    font-size: 21px;
+    line-height: 27px;
+    color: $xdark-gray;
+  }
+
+  .logo-block {
+    padding-top: 95px;
+    padding-bottom: 95px;
+
+    &:nth-child(2) {
+      text-align: center;
     }
-    .logo-block{
-        padding-top: 95px;
-        padding-bottom: 95px;
-        img{
-            max-width: 65%;
-            @include object-fit($object-value: cover);
-        }
+
+    &:nth-child(3) {
+      text-align: right;
     }
+
+    img {
+      max-width: 65%;
+      @include object-fit($object-value: cover);
+    }
+  }
 }
 
-.video-warpper{
-    h2{
-        color: $green-variant;
-        margin-bottom: 30px;
-        &::after{
+.video-warpper {
+  h2 {
+    color: $green-variant;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
 
-        }
+    &::after {
+      position: absolute;
+      content: "";
+      background: $green-variant;
+      bottom: -25px;
+      right: 0;
+      height: 1px;
+      left: -200%;
     }
-    .video-block{
-        margin-bottom: 60px;
-        
-    }
+  }
+
+  .video-block {
+    margin-bottom: 60px;
+  }
 }
 
-.article-wrapper{
-    padding: 30px 0 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    h3{
-        font-size: 32px;
-        line-height: 37px;
-        letter-spacing: 2px;
-        font-family: $vanitasblack-font;
+.article-wrapper {
+  padding: 100px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h3 {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 2px;
+    font-family: $vanitasblack-font;
+  }
+
+  &:nth-child(odd) {
+    h3 {
+      color: #8CD1A5;
     }
+  }
+
+  &:nth-child(even) {
+    h3 {
+      color: #312C5C;
+    }
+  }
+
+  a {
+    color: $white;
+    font-size: 16px;
+    font-family: $vanitasblack-font;
+    letter-spacing: 2px;
+  }
 }
