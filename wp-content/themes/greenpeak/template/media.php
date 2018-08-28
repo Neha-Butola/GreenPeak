@@ -92,7 +92,7 @@ if ($articles->have_posts()):
         <section class="article-wrapper"
                  style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
             <div class="container">
-                <div class="row">
+                <div class="row" style="padding: 40px 70px;">
                     <div class="col-12 text-center">
                         <h3 class=""><?php the_title(); ?></h3>
                         <?php $content = get_the_content();
