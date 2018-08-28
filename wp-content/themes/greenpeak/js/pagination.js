@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         var page = $(this).attr('page');
         var total_pages = $(this).attr('total_pages');
-        $('.load-more').attr('page', parseInt(page) + 3);
+        $('.load-more').attr('page', parseInt(page) + 1);
         if(page <= total_pages){
             $.ajax({
                 url: ajaxpagination.ajaxurl,
