@@ -67,18 +67,18 @@ jQuery(document).ready(function($) {
         $('.column').each(function () {
             var $dropdown = $(this);
 
-            $("img", $dropdown).click(function (e) {
+            $(".main-box", $dropdown).click(function (e) {
                 e.preventDefault();
-                $div = $(".descrip-box", $dropdown);
+                $div = $(".hide-box", $dropdown);
                 $div.slideToggle(500);
-                $(".descrip-box").not($div).hide();
+                $(".hide-box").not($div).hide();
                 return false;
             });
 
         });
 
         $('html').click(function () {
-            $(".descrip-box").hide();
+            $(".hide-box").hide();
         });
 	jQuery.stellar();
 /* triangle shapes charts js*/

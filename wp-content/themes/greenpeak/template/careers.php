@@ -23,115 +23,72 @@ get_header(); ?>
             </div>
         </div>
     </div>
+        <div class="video-section">
 
-    <div class="testimonial-container">
-        <div class="dk-container">
-            <div class="cd-testimonials-wrapper cd-container"
-                 style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_How.jpg'    );">
-                <h2>Testimonials</h2>
-                <ul class="cd-testimonials">
-                    <li>
-                        <div class="testimonial-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus
-                                varius blandit sit amet non magna.</p>
-                            <div class="cd-author">
-                                <img src="http://placehold.it/350x350/222222/222222" alt="Author image">
-                                <ul class="cd-author-info">
-                                    <li>Lorem<strong>Ipsum</strong><br><span>@twitterhandle</span></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus
-                                varius blandit sit amet non magna. Cras mattis consectetur purus sit amet
-                                fermentum.</p>
-                            <div class="cd-author">
-                                <img src="http://placehold.it/350x350/222222/222222" alt="Author image">
-                                <ul class="cd-author-info">
-                                    <li>Lorem<strong>Ipsum</strong><br><span>@twitterhandle</span></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus
-                                varius blandit sit amet non magna. Cras mattis consectetur purus sit amet
-                                fermentum.</p>
-                            <div class="cd-author">
-                                <img src="http://placehold.it/350x350/222222/222222" alt="Author image">
-                                <ul class="cd-author-info">
-                                    <li>Lorem<strong>Ipsum</strong><br><span>@twitterhandle</span></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                            =======
-                        </div>
-                        <div class="testimonial-container">
-                            <div class="dk-container">
-                                <div class="cd-testimonials-wrapper cd-container"
-                                     style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_How.jpg'    );">
+        </div>
 
-                                    <ul class="cd-testimonials">
-                                        <li>
-                                            <div class="testimonial-content">
-                                                <p>“In my previous operational roles I realized that often the right
-                                                    management team is the difference between success and failure.
-                                                    Learning how to identify who these people are, helping them be
-                                                    successful, and supporting an organization to thrive is what
-                                                    Green Peak does best. I get to learn from the best in the field,
-                                                    and work with extremely talented clients to solve their most
-                                                    emergent talent and leadership issues.”</p>
-                                                <div class="cd-author">
-                                                    <div class="cd-author-info">ALPHA MENGITSU</div>
-                                                    <img src="http://placehold.it/350x350/222222/222222"
-                                                         alt="Author image">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="testimonial-content">
-                                                <p>“In my previous operational roles I realized that often the right
-                                                    management team is the difference between success and failure.
-                                                    Learning how to identify who these people are, helping them be
-                                                    successful, and supporting an organization to thrive is what
-                                                    Green Peak does best. I get to learn from the best in the field,
-                                                    and work with extremely talented clients to solve their most
-                                                    emergent talent and leadership issues.”</p>
-                                                <div class="cd-author">
+              <div class="testimonial-container">
+                  <div class="dk-container">
+                      <div class="cd-testimonials-wrapper cd-container"
+                           style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_How.jpg'    );">
 
-                                                    <div class="cd-author-info">ALPHA MENGITSU</div>
-                                                    <img src="http://placehold.it/350x350/222222/222222"
-                                                         alt="Author image">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="testimonial-content">
-                                                <p>“In my previous operational roles I realized that often the right
-                                                    management team is the difference between success and failure.
-                                                    Learning how to identify who these people are, helping them be
-                                                    successful, and supporting an organization to thrive is what
-                                                    Green Peak does best. I get to learn from the best in the field,
-                                                    and work with extremely talented clients to solve their most
-                                                    emergent talent and leadership issues.”</p>
-                                                <div class="cd-author">
+                          <ul class="cd-testimonials">
+                              <li>
+                                  <div class="testimonial-content">
+                                      <p>“In my previous operational roles I realized that often the right
+                                          management team is the difference between success and failure.
+                                          Learning how to identify who these people are, helping them be
+                                          successful, and supporting an organization to thrive is what
+                                          Green Peak does best. I get to learn from the best in the field,
+                                          and work with extremely talented clients to solve their most
+                                          emergent talent and leadership issues.”</p>
+                                      <div class="cd-author">
+                                          <div class="cd-author-info">ALPHA MENGITSU</div>
+                                          <img src="http://placehold.it/350x350/222222/222222"
+                                               alt="Author image">
+                                      </div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="testimonial-content">
+                                      <p>“In my previous operational roles I realized that often the right
+                                          management team is the difference between success and failure.
+                                          Learning how to identify who these people are, helping them be
+                                          successful, and supporting an organization to thrive is what
+                                          Green Peak does best. I get to learn from the best in the field,
+                                          and work with extremely talented clients to solve their most
+                                          emergent talent and leadership issues.”</p>
+                                      <div class="cd-author">
 
-                                                    <div class="cd-author-info">ALPHA MENGITSU</div>
-                                                    <img src="http://placehold.it/350x350/222222/222222"
-                                                         alt="Author image">
-                                                    >>>>>>> aca2c15272bc89b762c209b6b49f26bfdb8eb734
-                                                </div>
-                                        </li>
-                                    </ul>
+                                          <div class="cd-author-info">ALPHA MENGITSU</div>
+                                          <img src="http://placehold.it/350x350/222222/222222"
+                                               alt="Author image">
+                                      </div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="testimonial-content">
+                                      <p>“In my previous operational roles I realized that often the right
+                                          management team is the difference between success and failure.
+                                          Learning how to identify who these people are, helping them be
+                                          successful, and supporting an organization to thrive is what
+                                          Green Peak does best. I get to learn from the best in the field,
+                                          and work with extremely talented clients to solve their most
+                                          emergent talent and leadership issues.”</p>
+                                      <div class="cd-author">
+
+                                          <div class="cd-author-info">ALPHA MENGITSU</div>
+                                          <img src="http://placehold.it/350x350/222222/222222"
+                                               alt="Author image">
+
+                                      </div>
                                 </div>
-                                <!-- cd-testimonials -->
-                            </div>
-                        </div>
+                              </li>
+                          </ul>
+                      </div>
+                      <!-- cd-testimonials -->
+                  </div>
+              </div>
             </div>
 
             <!--  -->
