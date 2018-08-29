@@ -347,16 +347,28 @@
   .whats-on__block--news {
     max-width: 710px;
 
+    &:nth-child(2) {
+      margin-left: 0;
+    }
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+
     .teaser--image {
       -webkit-background-size: contain;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       position: relative;
       color: white;
       overflow: hidden;
       height: 0;
-      padding-bottom: 60%;
+      padding-bottom: 80%;
       background-repeat: no-repeat;
+
+      &:first-child {
+        background-position: right;
+      }
     }
   }
 }
