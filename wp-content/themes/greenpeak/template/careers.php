@@ -92,7 +92,7 @@ if (!empty($values)):
                                             </div>
                                         </div>
                                     <?php $count++; else: ?>
-                                        <div class="col-md-7">
+                                        <div class="col-md-8">
                                             <div class="whats-on__block whats-on__block--news">
                                                 <div class="teaser teaser--image"
                                                      style="background-image: url('<?php echo $value['main_image']; ?>');">
@@ -100,7 +100,7 @@ if (!empty($values)):
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="whats-on__block whats-on__block--intro">
                                                 <h2 class="from-ryt"><?php echo $value['heading']; ?></h2>
                                                 <p class="black"><?php echo $value['sub_heading']; ?></p>

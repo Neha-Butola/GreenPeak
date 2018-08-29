@@ -366,9 +366,10 @@
     position: absolute;
     height: 150px;
     width: 270px;
-    background-color: #a6d6c9;
+    // background-color: #a6d6c9;
     -webkit-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
 
     &:nth-child(1) {
       right: 40vw;
@@ -385,13 +386,17 @@
     }
 
     &:nth-child(3) {
-      right: 10vw;
-      top: 1000px;
+      right: 15vw;
+      top: 1100px;
+      width: 270px;
+      height: 180px;
     }
 
     &:nth-child(4) {
-      right: 20vw;
-      top: 1100px;
+      right: 40vw;
+      top: 1200px;
+      width: 270px;
+      height: 270px;
     }
 
     &:nth-child(5) {
@@ -400,8 +405,24 @@
     }
 
     &:nth-child(6) {
-      right: 90vw;
-      top: 1000px;
+      right: 77vw;
+      top: 2200px;
+      width: 230px;
+      height: 230px;
+    }
+
+    &:nth-child(7) {
+      right: 75vw;
+      top: 2500px;
+      width: 190px;
+      height: 210px;
+    }
+
+    &:nth-child(8) {
+      right: 70vw;
+      top: 2800px;
+      width: 270px;
+      height: 210px;
     }
     //
     // &::after {
