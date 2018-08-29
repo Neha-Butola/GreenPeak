@@ -16,10 +16,12 @@ get_header(); ?>
             <div class="col-sm-12">
                 <p class="black"> <?php the_field('content'); ?></p>
             </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row plain-txt-row">
+            <div class="col-sm-12">
+                <?php echo do_shortcode('[wonderplugin_slider id=2]'); ?>
             </div>
         </div>
     </div>
@@ -235,6 +237,6 @@ get_header(); ?>
                             </div>
                         </div>
 
-<!-- infinite scroll section ends here -->
+                        <!-- infinite scroll section ends here -->
 
 <?php get_footer();
