@@ -14,7 +14,7 @@ var s = skrollr.init({
 
 /*  testimonial slider js*/
 jQuery(document).ready(function($) {
-    $('.descrip-box').hide();
+    // $('.hide-box').hide();
 //create the career slider
     $('.cd-testimonials-wrapper').flexslider({
         selector: ".cd-testimonials > li",
@@ -63,23 +63,23 @@ jQuery(document).ready(function($) {
 
 
 				/* header scroll js*/
-
-        $('.column').each(function () {
-            var $dropdown = $(this);
-
-            $(".main-box", $dropdown).click(function (e) {
-                e.preventDefault();
-                $div = $(".hide-box", $dropdown);
-                $div.slideToggle(500);
-                $(".hide-box").not($div).hide();
-                return false;
-            });
-
-        });
-
-        $('html').click(function () {
-            $(".hide-box").hide();
-        });
+				//
+        // $('.column').each(function () {
+        //     var $dropdown = $(this);
+				//
+        //     $(".main-box", $dropdown).click(function (e) {
+        //         e.preventDefault();
+        //         $div = $(".hide-box", $dropdown);
+        //         $div.slideToggle(500);
+        //         $(".hide-box").not($div).hide();
+        //         return false;
+        //     });
+				//
+        // });
+				//
+        // $('html').click(function () {
+        //     $(".hide-box").hide();
+        // });
 	jQuery.stellar();
 /* triangle shapes charts js*/
 	// var _hmt = _hmt || [];
@@ -92,12 +92,13 @@ jQuery(document).ready(function($) {
 
 	var bgColor = '#5B8080';
 	var containers = document.getElementsByClassName('chart');
+
 	var options = [{
 
 		series: [{
 			type: 'liquidFill',
 			data: [0.5],
-			radius: '70%',
+			radius: '60%',
 			amplitude: 0,
 			 color: ['#5B8080'],
 			waveAnimation: false,
@@ -117,8 +118,8 @@ jQuery(document).ready(function($) {
 	}, {
 		series: [{
 			type: 'liquidFill',
-			data: [0.5],
-			radius: '70%',
+			data: [0.92],
+			radius: '60%',
 			amplitude: 0,
 			 color: ['#5B8080'],
 			waveAnimation: false,
@@ -139,7 +140,7 @@ jQuery(document).ready(function($) {
 		series: [{
 			type: 'liquidFill',
 			data: [0.94],
-			radius: '70%',
+			radius: '60%',
 			amplitude: 0,
 			 color: ['#5B8080'],
 			waveAnimation: false,
@@ -158,9 +159,11 @@ jQuery(document).ready(function($) {
 		}]
 	}];
 
-	var charts = [];
+
 	for (var i = 0; i < options.length; ++i) {
-		var chart = echarts.init(containers[i]);
+		var charts = [];
+		var chart=null;
+		chart = echarts.init(containers[i]);
 
 		if (i > 0) {
 			options[i].series[0].silent = true;
@@ -168,6 +171,7 @@ jQuery(document).ready(function($) {
 		chart.setOption(options[i]);
 		chart.setOption({
 			baseOption: options[i],
+
 			media: [{
 				query: {
 					maxWidth: 300
@@ -191,6 +195,7 @@ jQuery(document).ready(function($) {
 		}
 	};
 
+
 	setInterval(update, 3000);
 
 	function update() {
@@ -208,4 +213,21 @@ jQuery(document).ready(function($) {
 		});
 	}
 /* triangle shapes charts js*/
+if ($(window).width() > 767) {
+	var blockClicked = false;
+	var blockNavLiItems = $('.team-section .column');
+	blockNavLiItems.height("auto");
+	blockNavLiItems.find(".main-box").click(function (e) {
+		event.preventDefault();
+		blockNavLiItems.height("auto");
+		blockNavLiItems.find('.hide-box').css("display", "none");
+	var ele = $(this);
+	 var parent = ele.parent();
+	 var tabEle = $(parent.find('.hide-box').first());
+	  tabEle.css("display", "block");
+		 window.setTimeout(function () {
+			 parent.height(parent.height() + $(parent.find('.hide-box').first()).height());
+		 }, 50);
+	 }); }
+
 });

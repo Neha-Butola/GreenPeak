@@ -102,4 +102,30 @@
     line-height: 32px;
     margin-bottom: 60px;
   }
+
+  .row {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto 50px;
+    padding: 25px;
+    border: 1px solid #eee;
+
+    .inner-row {
+      position: relative;
+      display: block;
+
+      &:before {
+        width: calc(100% + 50px + 2px - 120px);
+        height: calc(100% + 2px);
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        content: '';
+        position: absolute;
+        background: transparent;
+      }
+    }
+  }
 }

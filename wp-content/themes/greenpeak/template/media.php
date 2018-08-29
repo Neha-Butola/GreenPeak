@@ -93,7 +93,7 @@ if ($articles->have_posts()):
                  style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
             <div class="container">
                 <div class="row" style="padding: 40px 70px;">
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center inner-row">
                         <h3 class=""><?php the_title(); ?></h3>
                         <?php $content = get_the_content();
                         $content = wp_trim_words($content, '50');

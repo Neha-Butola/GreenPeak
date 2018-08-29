@@ -102,16 +102,13 @@ if (!empty($consultants)):?>
                         </div>
                       </div>
 
-                      <!-- <div class="hide-box" style="display: none;">
-                          <p>bdhafhsdf bdhsaf bnfjk ndbesbf bnkjdsbfjbks bnjsbd bjsdbfjs jbdskjbfjsd cjbsdjb</p>
-                      </div> -->
-                      <div class="team-member__description hide-box" style="display: none;">
-                        <!-- <div class="grid team-member__description-wrap"> -->
-                          <!-- <div class="grid-cell"> -->
-                            <p>Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.<br></p>
 
-                          <!-- </div>
-                      </div> -->
+                      <div class="hide-box" style="display: none;">
+                          <div class="hide-child">
+                            <p>Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.</p>
+
+                          </div>
+
                     </div>
 
                     </div>

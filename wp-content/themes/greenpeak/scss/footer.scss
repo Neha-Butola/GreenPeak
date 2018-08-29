@@ -1,21 +1,25 @@
 /*========== footer styling here ===============*/
 footer {
-    background-color: $dark-gray;
-    padding: 45px 0 20px;
-  
+  background-color: $dark-gray;
+  padding: 45px 0 20px;
+
+  .container-fluid {
+    max-width: 1550px;
+
     .footer-logo {
       img {
-        @media screen and (max-width: $xl-breakpoint) {
+        max-width: 250px;
+        @media screen and (max-width: ($xl-breakpoint + 100)) {
           max-width: 70%;
         }
-        @media screen and (max-width: $md-breakpoint) {
+        @media screen and (max-width: $lg-breakpoint) {
           width: 100px;
           height: auto;
           object-fit: cover;
         }
       }
     }
-  
+
     .footer-text {
       a.mail-link,
       h5 {
@@ -25,44 +29,48 @@ footer {
         font-size: 24px;
         line-height: 28px;
         display: inline-block;
-        @media screen and (max-width: $xl-breakpoint) {
-          font-size: 20px;
-          line-height: 24px;
+        @media screen and (max-width: ($xl-breakpoint + 100)) {
+          font-size: 18px;
+          line-height: 20px;
         }
-        @media screen and (max-width: $md-breakpoint) {
-          font-size: 12px;
+        @media screen and (max-width: $lg-breakpoint) {
+          font-size: 14px;
         }
       }
-  
+
       a.mail-link {
         &:hover {
           color: $medium-green;
         }
       }
     }
-  
+
     .social-icons {
       margin: 30px 0 15px;
-  
+
       ul {
         list-style-type: none;
         padding-left: 0;
-  
+
         li {
           display: inline-block;
           margin: 0 17px;
-  
+
           a {
             i {
               color: $light-gold;
               font-size: 34px;
               line-height: 38px;
               @include transition(0.3s);
-              @media screen and (max-width: $md-breakpoint) {
-                font-size: 20px;
+              @media screen and (max-width: ($xl-breakpoint + 100)) {
+                font-size: 24px;
+                line-height: 24px;
+              }
+              @media screen and (max-width: $lg-breakpoint) {
+                font-size: 18px;
                 line-height: 20px;
               }
-  
+
               &:hover {
                 color: $medium-green;
               }
@@ -72,3 +80,4 @@ footer {
       }
     }
   }
+}
