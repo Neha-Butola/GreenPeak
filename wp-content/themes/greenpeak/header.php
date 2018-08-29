@@ -52,11 +52,12 @@
     <div id="sidebarMenu">
       <ul class="sidebarMenuInner">
 
-        <li><a href="">Company</a></li>
-        <li><a href="">Instagram</a></li>
-        <li><a href="">Twitter</a></li>
-        <li><a href="">YouTube</a></li>
-        <li><a href="">Linkedin</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/media">Media</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
   </div>
