@@ -3443,8 +3443,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            var defaultSpeed = function (maxSpeed) {
 	                var cnt = data.count();
-	                return cnt === 0 ? maxSpeed : maxSpeed *
-	                    (0.2 + (cnt - idx) / cnt * 0.8);
+	                // return cnt === 0 ? maxSpeed : maxSpeed *
+	                //     (0.2 + (cnt - idx) / cnt * 0.8);
 	            };
 	            var speed = 0;
 	            if (maxSpeed === 'auto') {

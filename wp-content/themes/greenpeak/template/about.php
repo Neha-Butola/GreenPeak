@@ -91,14 +91,29 @@ if (!empty($consultants)):?>
                 <?php $count = 1;
                 foreach ($consultants as $consultant): ?>
                     <div class="column" id="column-<?php echo $count; ?>">
+                      <div class="main-box">
                         <img src="<?php echo $consultant['consultant_image']; ?>" alt="Jane"
-                             style="width:100%">
-                        <div class="descrip-box" style="display: none;">
+                           style="width:100%">
+                        <div class="descrip-box" style="display: block;">
                             <p class="name"><?php echo $consultant['consultant_name']; ?>
                             <p>
                             <p class="title"><?php echo $consultant['consultant_designation']; ?></p>
                             <p class="location"><?php echo $consultant['consultant_location']; ?></p>
                         </div>
+                      </div>
+
+                      <!-- <div class="hide-box" style="display: none;">
+                          <p>bdhafhsdf bdhsaf bnfjk ndbesbf bnkjdsbfjbks bnjsbd bjsdbfjs jbdskjbfjsd cjbsdjb</p>
+                      </div> -->
+                      <div class="team-member__description hide-box" style="display: none;">
+                        <!-- <div class="grid team-member__description-wrap"> -->
+                          <!-- <div class="grid-cell"> -->
+                            <p>Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.<br></p>
+
+                          <!-- </div>
+                      </div> -->
+                    </div>
+
                     </div>
                 <?php endforeach; ?>
             </div>
