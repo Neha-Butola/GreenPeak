@@ -25,9 +25,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
-        <div class="video-section">
 
-        </div>
 
               <div class="testimonial-container">
                   <div class="dk-container">
