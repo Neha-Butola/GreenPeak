@@ -2,8 +2,6 @@
 /* Template Name: Career */
 
 get_header(); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js">
-    </script>
 
     <div class="inner-banner" style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="heading-block">
@@ -14,184 +12,127 @@ get_header(); ?>
     <div class="container">
         <div class="row plain-txt-row">
             <div class="col-sm-12">
-                <p class="black"> <?php the_field('content'); ?></p>
+                <p class="black"> <?php the_field('content', false, false); ?></p>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row plain-txt-row">
             <div class="col-sm-12">
-                <?php echo do_shortcode('[wonderplugin_slider id=2]'); ?>
+                <?php echo do_shortcode('[wonderplugin_gallery id="1"]'); ?>
             </div>
         </div>
     </div>
 
 
-              <div class="testimonial-container">
-                  <div class="dk-container">
-                      <div class="cd-testimonials-wrapper cd-container"
-                           style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_How.jpg'    );">
+<?php $testimonials = get_field('testimonials');
+if (!empty($testimonials)): ?>
+    <div class="testimonial-container">
+        <div class="dk-container">
+            <div class="cd-testimonials-wrapper cd-container"
+                 style="background-image: url('<?php the_field('background_image'); ?>'    );">
 
-                          <ul class="cd-testimonials">
-                              <li>
-                                  <div class="testimonial-content">
-                                      <p>“In my previous operational roles I realized that often the right
-                                          management team is the difference between success and failure.
-                                          Learning how to identify who these people are, helping them be
-                                          successful, and supporting an organization to thrive is what
-                                          Green Peak does best. I get to learn from the best in the field,
-                                          and work with extremely talented clients to solve their most
-                                          emergent talent and leadership issues.”</p>
-                                      <div class="cd-author">
-                                          <div class="cd-author-info">ALPHA MENGITSU</div>
-                                          <img src="http://placehold.it/350x350/222222/222222"
-                                               alt="Author image">
-                                      </div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="testimonial-content">
-                                      <p>“In my previous operational roles I realized that often the right
-                                          management team is the difference between success and failure.
-                                          Learning how to identify who these people are, helping them be
-                                          successful, and supporting an organization to thrive is what
-                                          Green Peak does best. I get to learn from the best in the field,
-                                          and work with extremely talented clients to solve their most
-                                          emergent talent and leadership issues.”</p>
-                                      <div class="cd-author">
-
-                                          <div class="cd-author-info">ALPHA MENGITSU</div>
-                                          <img src="http://placehold.it/350x350/222222/222222"
-                                               alt="Author image">
-                                      </div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="testimonial-content">
-                                      <p>“In my previous operational roles I realized that often the right
-                                          management team is the difference between success and failure.
-                                          Learning how to identify who these people are, helping them be
-                                          successful, and supporting an organization to thrive is what
-                                          Green Peak does best. I get to learn from the best in the field,
-                                          and work with extremely talented clients to solve their most
-                                          emergent talent and leadership issues.”</p>
-                                      <div class="cd-author">
-
-                                          <div class="cd-author-info">ALPHA MENGITSU</div>
-                                          <img src="http://placehold.it/350x350/222222/222222"
-                                               alt="Author image">
-
-                                      </div>
+                <ul class="cd-testimonials">
+                    <?php foreach ($testimonials as $testimonial): ?>
+                        <li>
+                            <div class="testimonial-content">
+                                “<?php echo $testimonial['testimony']; ?>”
+                                <div class="cd-author">
+                                    <div class="cd-author-info"><?php echo $testimonial['reviewer_name']; ?></div>
+                                    <img src="<?php echo $testimonial['reviewer_image']; ?>"
+                                         alt="Author image">
                                 </div>
-                              </li>
-                          </ul>
-                      </div>
-                      <!-- cd-testimonials -->
-                  </div>
-              </div>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
+            <!-- cd-testimonials -->
+        </div>
+    </div>
+<?php endif; ?>
 
-            <!--  -->
-            <section style="position: relative;overflow: hidden;">
-                <div class="whats-on__bg-images">
-                    <div class="bg-images__image" data-stellar-ratio="0.5"
-                         style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');"></div>
-                    <div class="bg-images__image" data-stellar-ratio="0.5"
-                         style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');"></div>
-                    <div class="bg-images__image" data-stellar-ratio="0.5"
-                         style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');"></div>
-                    <div class="bg-images__image" data-stellar-ratio="0.5"
-                         style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');"></div>
-                    <div class="bg-images__image" data-stellar-ratio="0.5"
-                         style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');"></div>
-                    <div class="bg-images__image" data-stellar-ratio="0.5"
-                         style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');"></div>
 
+<?php $values = get_field('green_peak_values');
+if (!empty($values)):
+    ?>
+    <section style="position: relative;overflow: hidden;">
+        <div class="whats-on__bg-images">
+            <?php foreach ($values as $value): ?>
+                <div class="bg-images__image" data-stellar-ratio="0.5"
+                     style="background-image: url('<?php echo $value['background_image_one']; ?>');"></div>
+                <div class="bg-images__image" data-stellar-ratio="0.5"
+                     style="background-image: url('<?php echo $value['background_image_two']; ?>');"></div>
+            <?php endforeach; ?>
+
+            <!-- infinite scroll section starts here -->
+            <div class="infinite-sec">
+                <div class="container">
+                    <div class="single-head">
+                        <h2><?php the_field('main_heading'); ?></h2>
+                    </div>
+                    <?php $count = 0;
+                    foreach ($values as $value): ?>
+                        <div class="whats-on__sec whats-on__sec--small-left container-fluid">
+                            <div class="row">
+                                <?php if ($value['option'] == 'Image'):
+                                    if ($count % 2 == 0): ?>
+                                        <div class="col-md-5">
+                                            <div class="whats-on__block whats-on__block--intro">
+                                                <h2 class="from-left"><?php echo $value['heading']; ?></h2>
+                                                <p class="black"><?php echo $value['sub_heading']; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="whats-on__block whats-on__block--news">
+                                                <div class="teaser teaser--image"
+                                                     style="background-image: url('<?php echo $value['main_image']; ?>');">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php $count++; else: ?>
+                                        <div class="col-md-7">
+                                            <div class="whats-on__block whats-on__block--news">
+                                                <div class="teaser teaser--image"
+                                                     style="background-image: url('<?php echo $value['main_image']; ?>');">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="whats-on__block whats-on__block--intro">
+                                                <h2 class="from-ryt"><?php echo $value['heading']; ?></h2>
+                                                <p class="black"><?php echo $value['sub_heading']; ?></p>
+                                            </div>
+                                        </div>
+                                    <?php $count++; endif;
+                                elseif ($value['option'] == 'Video'): ?>
+                                    <div class="single-head">
+                                        <h2><?php echo $value['heading']; ?></h2>
+                                        <p><?php echo $value['sub_heading']; ?></p>
+                                    </div>
+
+                                    <div class="whats-on__sec container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12 video-tag">
+                                                <video src="<?php echo $value['video']; ?>"
+                                                       width="100%" height="auto">
+                                                </video>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
                 </div>
-                <!--  -->
-                <!-- infinite scroll section starts here -->
-                <div class="infinite-sec">
-                    <div class="container">
-                        <div class="single-head">
-                            <h2>Green Peak Values</h2>
-                        </div>
-                        <div class="whats-on__sec whats-on__sec--small-left container-fluid">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="whats-on__block whats-on__block--intro">
-                                        <h2 class="from-left">Engage Courageously</h2>
-                                        <p class="black">A chronology of <span> all that’s happening</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="whats-on__block whats-on__block--news">
-                                        <div class="teaser teaser--image"
-                                             style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="whats-on__sec whats-on__sec--small-left container-fluid">
-                            <div class="row">
-
-                                <div class="col-md-7">
-                                    <div class="whats-on__block whats-on__block--news">
-                                        <div class="teaser teaser--image"
-                                             style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="whats-on__block whats-on__block--intro">
-                                        <h2 class="from-ryt">Engage Courageously</h2>
-                                        <p class="black">A chronology of <span> all that’s happening</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-head">
-                            <h2>Green Peak Values</h2>
-                            <p>Reach out often. Meet each other more than half way.</p>
-                        </div>
-
-                        <div class="whats-on__sec container-fluid">
-                            <div class="row">
-                                <div class="col-sm-12 video-tag">
-                                    <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
-                                           width="100%" height="auto">
-                                    </video>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="whats-on__sec whats-on__sec--small-left container-fluid">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="whats-on__block whats-on__block--intro">
-                                        <h2 class="from-left">Engage Courageously</h2>
-                                        <p class="black">A chronology of <span> all that’s happening</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="whats-on__block whats-on__block--news">
-                                        <div class="teaser teaser--image"
-                                             style="background-image: url('https://www.wellingtoncollege.org.uk/wp-content/uploads/2018/08/Students-on-Turf-650x433.jpg');">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- infinite scroll section ends here -->
+            </div>
+    </section>
+<?php endif; ?>
+    <!-- infinite scroll section ends here -->
 
 <?php get_footer();
