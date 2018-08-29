@@ -91,7 +91,7 @@ if (!empty($values)):
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php else: ?>
+                                    <?php $count++; else: ?>
                                         <div class="col-md-7">
                                             <div class="whats-on__block whats-on__block--news">
                                                 <div class="teaser teaser--image"
@@ -106,7 +106,7 @@ if (!empty($values)):
                                                 <p class="black"><?php echo $value['sub_heading']; ?></p>
                                             </div>
                                         </div>
-                                    <?php endif;
+                                    <?php $count++; endif;
                                 elseif ($value['option'] == 'Video'): ?>
                                     <div class="single-head">
                                         <h2><?php echo $value['heading']; ?></h2>
@@ -128,7 +128,7 @@ if (!empty($values)):
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php $count++; endforeach; ?>
+                        <?php endforeach; ?>
                 </div>
             </div>
     </section>
