@@ -146,6 +146,8 @@ function greenpeak_scripts()
 
     wp_enqueue_script( 'echarts-js', get_template_directory_uri() . '/js/echarts.js', array('jquery'), '1.0', true );
 
+    wp_enqueue_script( 'horizontal-scroll-js', get_template_directory_uri() . '/js/jquery.scrollslider.js', array('jquery'), '1.0', true );
+
     wp_enqueue_script( 'echarts-liquidfill-js', get_template_directory_uri() . '/js/echarts-liquidfill.js', array('jquery'), '1.0', true );
 
     wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );

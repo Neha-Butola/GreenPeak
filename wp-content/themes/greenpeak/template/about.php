@@ -107,7 +107,7 @@ if (!empty($consultants)):?>
                           <div class="hide-child">
                             <p>Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.</p>
 
-                          </div>
+                    </div>
 
                     </div>
 

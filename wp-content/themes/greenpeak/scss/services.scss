@@ -1,0 +1,47 @@
+// .service-container {
+//   height: 75vh;
+//   padding-left: 30vh;
+//
+//   .service-row {
+//     padding-top: 15vh;
+//
+//     .col-main {
+//       // max-width: 100vw;
+//       max-width: 50vw;
+//       flex: 0 0 75vw;
+//       display: block;
+//       float: left;
+//
+//       h5 {
+//         font-size: 28px;
+//         text-transform: uppercase;
+//         color: $service-green;
+//         line-height: 26px;
+//         font-family: $vanitasregular-font;
+//       }
+//
+//       ul {
+//         color: $white;
+//         font-size: 21px;
+//         line-height: 26px;
+//         font-family: $vanitasblack-font;
+//       }
+//
+//       p {
+//         font-family: $vanitasregular-font;
+//       }
+//     }
+//   }
+// }
+
+.scrollSlider div.viewport div.overview img {
+  display: block;
+  float: left;
+  height: 100%;
+  margin-right: 5px;
+}
+
+.scrollSlider div.viewport div.overview {
+  width: 10000px;
+  height: 100%;
+}
