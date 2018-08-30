@@ -3609,7 +3609,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  buildPath: function (path, shape) {
 	    var cx = shape.cx;
 	    var cy = shape.cy;
-	    var width = shape.width / 2;
+	    var width = shape.width / 1;
 	    var height = shape.height / 2;
 	    path.moveTo(cx, cy - height);
 	    path.lineTo(cx + width, cy + height);

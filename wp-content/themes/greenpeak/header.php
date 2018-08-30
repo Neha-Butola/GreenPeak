@@ -22,22 +22,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<!-- <div> -->
-<!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <a class="navbar-brand" href="/">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <?php $menu_args = array(
-    // 'menu' => 'main-menu',
-    // 'container_class' => 'collapse main-menu',
-    // 'container_id' => 'navbarNav',
-    // 'menu_class' => 'navbar-nav text-uppercase w-100 justify-content-center', -->
-);
-// wp_nav_menu($menu_args); ?>
-    </nav> -->
-
 <header class="main-header">
     <div class="container">
 
@@ -73,7 +57,6 @@
             <li><a href="/media">media</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
-
     </div>
 </header>
 <!-- </div> -->

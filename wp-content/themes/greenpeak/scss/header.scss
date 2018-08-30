@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+.main-header #logo {
+  vertical-align: top;
+}
+
 .main-header li a {
   text-decoration: none;
 }
@@ -22,28 +26,28 @@
   transition: max-height 0.2s ease-out;
 }
 /* 48em = 768px */
-@media (min-width: 48em) {
+@media (min-width: 768px) {
   .main-header li {
     display: inline;
     vertical-align: middle;
-    margin: 0 5.6%;
+    margin: 8%;
 
     &:first-child {
-      margin-left: 0;
+      margin-left: 0 !important;
     }
 
     &:last-child {
-      margin-right: 0;
+      margin-right: 0 !important;
     }
   }
 
   .sidebarMenuInner li {
     &:first-child {
-      margin-left: 5.6% !important;
+      margin-left: 5% !important;
     }
 
     &:last-child {
-      margin-right: 5.6% !important;
+      margin-right: 5% !important;
     }
   }
 
@@ -57,9 +61,10 @@
 
   .main-header .menu {
     clear: none;
-    display: block;
+    display: inline-block;
     max-height: none;
     text-align: center;
+    width: 40%;
   }
 
   .hamburger-menu,
@@ -67,6 +72,34 @@
   .main-header .menu-icon {
     display: none !important;
   }
+}
+@media (max-width: 768px) {
+  .main-header #logo {
+    display: none;
+  }
+}
+@media (min-width: 1380px) {
+  .main-header li {
+    margin: 0 15.6% !important;
+  }
+
+  .main-header #logo {
+    margin: 0 6.6%;
+  }
+
+  .sidebarMenuInner li {
+    &:first-child {
+      margin-left: 15.6% !important;
+    }
+
+    &:last-child {
+      margin-right: 15.6% !important;
+    }
+  }
+}
+
+.main-header .logo {
+  float: left;
 }
 
 .hamburger-menu,
@@ -112,6 +145,7 @@
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.10);
   display: block;
+  margin: 0 5%;
 }
 
 .sidebarMenuInner li span {
@@ -143,12 +177,9 @@ input[type=checkbox] {
   transition: all 0.3s;
   box-sizing: border-box;
   cursor: pointer;
-  // position: absolute;
   z-index: 99;
   height: 100%;
   width: 100%;
-  // top: 7px;
-  // right: 15px;
   height: 22px;
   width: 35px;
   float: right;
@@ -220,6 +251,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   display: inline-block !important;
 }
 
+.scrolled #logo,
 .scrolled .menu {
   display: none !important;
 }

@@ -106,6 +106,7 @@
 
   .team-row-content {
     margin-top: 80px;
+    position: relative;
     /* Three columns side by side */
     .column {
       float: left;
@@ -113,6 +114,7 @@
       margin-bottom: 40px;
       margin-right: 1.66%;
       margin-left: 1.66%;
+      position: static;
       @media screen and (max-width: $md-breakpoint) {
         width: 46%;
         display: block;
@@ -156,6 +158,18 @@
             font-size: 12px;
             line-height: 14px;
           }
+        }
+      }
+
+      .hide-box {
+        position: absolute;
+        width: 96%;
+        right: 2%;
+        left: 2%;
+
+        p {
+          color: $xdark-gray;
+          font-size: 20px;
         }
       }
     }
