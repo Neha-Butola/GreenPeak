@@ -2,6 +2,9 @@
 footer {
   background-color: $dark-gray;
   padding: 45px 0 20px;
+  @media screen and (max-width: $md-breakpoint) {
+    text-align: center;
+  }
 
   .container-fluid {
     max-width: 1550px;

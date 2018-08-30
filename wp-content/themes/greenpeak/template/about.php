@@ -125,16 +125,28 @@ if (!empty($operations)):?>
             <h2><?php the_field('operations_heading'); ?></h2>
             <div class="row team-row-content">
                 <?php foreach ($operations as $operation): ?>
-                    <div class="column">
-                        <img src="<?php echo $operation['operations_image']; ?>" alt="Jane"
-                             style="width:100%">
-                        <div class="descrip-box">
-                            <p class="name"><?php echo $operation['operations_name']; ?>
-                            <p>
-                            <p class="title"><?php echo $operation['operations_designation']; ?></p>
-                            <p class="location"><?php echo $operation['operations_location']; ?></p>
-                        </div>
+                  <div class="column" id="column-<?php echo $count; ?>">
+                    <div class="main-box">
+                      <img src="<?php echo $operation['operations_image']; ?>" alt="Jane"
+                         style="width:100%">
+                      <div class="descrip-box" style="display: block;">
+                          <p class="name"><?php echo $operation['operations_name']; ?>
+                          <p>
+                          <p class="title"><?php echo $operation['operations_designation']; ?></p>
+                          <p class="location"><?php echo $operation['operations_location']; ?></p>
+                      </div>
                     </div>
+
+
+                    <div class="hide-box" style="display: none;">
+                        <div class="hide-child">
+                          <p>Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.</p>
+
+                  </div>
+
+                  </div>
+
+                  </div>
                 <?php endforeach; ?>
             </div>
         </div>

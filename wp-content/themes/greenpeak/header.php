@@ -25,7 +25,7 @@
 <header class="main-header">
     <div class="container">
 
-        <img id="logo" class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo"/>
+        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo"/>
         <div class="hamburger-menu">
             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
             <label for="openSidebarMenu" class="sidebarIconToggle">

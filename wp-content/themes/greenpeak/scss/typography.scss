@@ -76,8 +76,8 @@ p {
   color: $white;
   line-height: 34px;
   @media screen and (max-width: $md-breakpoint) {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   &.black {

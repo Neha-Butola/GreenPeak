@@ -1,14 +1,14 @@
 <footer>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3 footer-logo">
+            <div class="col-md-3 col-sm-12 footer-logo">
                 <a href="/" class="footer-logo"><img src="<?php the_field('footer_logo','options'); ?>"
                                                                       alt=""></a>
             </div>
-            <div class="col-6 footer-text text-center">
+            <div class="col-md-6 col-sm-12 footer-text text-center">
                 <?php the_field('copyright','options'); ?>
             </div>
-            <div class="col-3 footer-text">
+            <div class="col-md-3 col-sm-12 footer-text">
                 <h5><a href="mailto:<?php the_field('email','options'); ?>" target="_top"
                        class="mail-link"><?php the_field('email','options'); ?></a></h5>
             </div>

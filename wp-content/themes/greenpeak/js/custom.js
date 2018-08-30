@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
         //     $(".hide-box").hide();
         // });
 	jQuery.stellar();
-	$("#scrollslider").scrollSlider();
+	// jQuery("#scrollslider").scrollSlider();
 /* triangle shapes charts js*/
 	var _hmt = _hmt || [];
 	(function() {
@@ -227,41 +227,77 @@ $(".team-section .column").each(function(i, t) {
 	// for (i = 0; i < blockNavLiItems.length; i++) {
     blockNavLiItems.height("auto");
 
-		  $(".team-section .column .main-box").click(function (e) {
-				// $(this).find('.hide-box').slideToggle(500);
-				// $(this).siblings('.hide-box').css('background','red');
-				event.preventDefault();
-			  $(this).height("auto");
-				if ($(this).parent().hasClass('active_column')) {
-					$('.team-section .column').removeClass('active_column');
-				} else {
-					$(this).parent().addClass("active_column");
-				}
-
-				// var height = $('.active_column .hide-box').outerHeight();
-
-				 var ele = $(this);
-				 var parent = ele.parent();
-				 var tabEle = $(parent.find('.hide-box').first());
-				 tabEle.css("display", "block");
-				 var id = parent.attr('id');
-				 var height = parent.height();
-				 if (typeof id != 'undefined') {
-					 height = parseInt(id.split('-')[1]);
-				 }
-				 if ($(this).parent().hasClass('active_column')) {
-
-					 parent.height( height + $(parent.find('.hide-box').first()).height());
-
-				 } else {
-					 $('.hide-box').css("display", "none");
-					 parent.height( parent.height() - $(parent.find('.hide-box').first()).height());
-
-				 }
-
-		 });
+		 //  $(".team-section .column .main-box").click(function (e) {
+			// 	// $(this).find('.hide-box').slideToggle(500);
+			// 	// $(this).siblings('.hide-box').css('background','red');
+			// 	event.preventDefault();
+			//   $(this).height("auto");
+			// 	if ($(this).parent().hasClass('active_column')) {
+			// 		$('.team-section .column').removeClass('active_column');
+			// 	} else {
+			// 		$(this).parent().addClass("active_column");
+			// 	}
+		 //
+			// 	// var height = $('.active_column .hide-box').outerHeight();
+		 //
+			// 	 var ele = $(this);
+			// 	 var parent = ele.parent();
+			// 	 var tabEle = $(parent.find('.hide-box').first());
+			// 	 tabEle.css("display", "block");
+			// 	 var id = parent.attr('id');
+			// 	 var height = parent.height();
+			// 	 if (typeof id != 'undefined') {
+			// 		 height = parseInt(id.split('-')[1]);
+			// 	 }
+			// 	 if ($(this).parent().hasClass('active_column')) {
+		 //
+			// 		 parent.height( height + $(parent.find('.hide-box').first()).height());
+		 //
+			// 	 } else {
+			// 		 $('.hide-box').css("display", "none");
+			// 		 parent.height( parent.height() - $(parent.find('.hide-box').first()).height());
+		 //
+			// 	 }
+		 //
+		 // });
   // }
 	//blockNavLiItems.height("auto");
+
+	$(".team-section .column .main-box").click(function (e) {
+                // $(this).find('.hide-box').slideToggle(500);
+                // $(this).siblings('.hide-box').css('background','red');
+                event.preventDefault();
+                var revert_to_initial = ($(this).parent().hasClass('active_column')) ? true : false;
+                if ($('.active_column').length) {
+                    $('.active_column').each(function(i, t) {
+                         var hide_box = $(this).children('.hide-box');
+                         hide_box.css('display', 'none');
+
+                         var id = $(this).attr('id');
+                         var height = $(this).height();
+                         if (typeof id != 'undefined') {
+                             height = parseInt(id.split('-')[1]);
+                         }
+                        $(this).height(height);
+                        $(this).removeClass('active_column');
+
+                    });
+                }
+                if (!revert_to_initial) {
+                    $(this).parent().addClass("active_column");
+                    var this_hide_box = $(this).parent().find('.hide-box')
+                    this_hide_box.css('display', 'block');
+                    var id = $(this).parent().attr('id');
+                    var this_height = parseInt($(this).parent().height());
+                    if (typeof id != 'undefined') {
+                         this_height = parseInt(id.split('-')[1]);
+                    }
+                    $(this).parent().height(this_hide_box.height() + this_height);
+                }
+
+
+
+         });
 
  }
 });
