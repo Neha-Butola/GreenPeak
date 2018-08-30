@@ -158,6 +158,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100%;
+  background-attachment: fixed;
 
   .heading-block {
     display: flex;
@@ -178,10 +179,11 @@
 
   .line-div-ani {
     animation: 1s ease-out 0s 1 slideInFromRight;
-    background: #333;
-    height: 5px;
+    background: $white;
+    height: 1px;
     width: 60%;
     margin-left: auto;
+    animation-delay: 2s;
   }
 }
 
@@ -193,6 +195,13 @@
   background-size: cover !important;
   background-attachment: fixed;
   background-repeat: no-repeat !important;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    background: red;
+  }
 }
 
 .scroller-triangle img {

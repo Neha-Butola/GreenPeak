@@ -2,27 +2,31 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3 footer-logo">
-                <a href="javascript:void(0)" class="footer-logo"><img src="../images/footer-logo.png" alt=""></a>
+                <a href="/" class="footer-logo"><img src="<?php the_field('footer_logo','options'); ?>"
+                                                                      alt=""></a>
             </div>
             <div class="col-6 footer-text text-center">
-                <h5>©2018 GREEN PEAK PARTNERS</h5>
-                <h5>All Rights Reserved</h5>
+                <?php the_field('copyright','options'); ?>
             </div>
             <div class="col-3 footer-text">
-                <h5><a href="mailto:info@greenpeakpartners.com" target="_top" class="mail-link">info@greenpeakpartners.com</a></h5>
+                <h5><a href="mailto:<?php the_field('email','options'); ?>" target="_top"
+                       class="mail-link"><?php the_field('email','options'); ?></a></h5>
             </div>
 
         </div>
-        <div class="row">
-            <div class="col-12 social-icons">
-                <ul class="text-center">
-                    <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-youtube"></i></a></li>
-                </ul>
+        <?php $social_icons = get_field('social_icons','options');
+        if (!empty($social_icons)):?>
+            <div class="row">
+                <div class="col-12 social-icons">
+                    <ul class="text-center">
+                        <?php foreach ($social_icons as $icons): ?>
+                            <li><a href="<?php echo $icons['icons_link']; ?>" target="_blank"><i
+                                            class="<?php echo $icons['icons_class']; ?>"></i></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 </footer>
 </div><!-- #page -->

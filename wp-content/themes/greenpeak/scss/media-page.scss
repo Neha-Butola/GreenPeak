@@ -1,33 +1,66 @@
 /*============= media page styling here =================*/
-.media-logo-wrapper{
-    padding: 60px 0 58px 0;
-    p{
-        font-size: 21px;
-        line-height: 27px;
-        color: $xdark-gray;
-    }
-    .logo-block{
-        padding-top: 95px;
-        padding-bottom: 95px;
-        img{
-            max-width: 65%;
-            @include object-fit($object-value: cover);
-        }
-    }
-}
+.media-logo-wrapper {
+  padding: 60px 0 58px;
 
+  p {
+    font-size: 21px;
+    line-height: 27px;
+    color: $xdark-gray;
+  }
+
+  .logo-block {
+    padding-top: 95px;
+    padding-bottom: 95px;
+
+    &:nth-child(3) {
+      text-align: center;
+    }
+
+<<<<<<< HEAD
 .video-warpper{
     h2{
         color: $green-variant;
         margin-bottom: 30px;
         
+=======
+    &:nth-child(4) {
+      text-align: right;
     }
-    .video-block{
-        margin-bottom: 60px;
-        
+
+    img {
+      max-width: 65%;
+      @include object-fit($object-value: cover);
+>>>>>>> 6c855633c31b2e873310f947a482abdab67c619c
     }
+  }
 }
 
+.video-warpper {
+  margin-bottom: 50px;
+
+  h2 {
+    color: $green-variant;
+    margin-bottom: 80px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: $green-variant;
+      bottom: -25px;
+      right: 0;
+      height: 1px;
+      left: -300%;
+    }
+  }
+
+  .video-block {
+    margin-bottom: 80px;
+  }
+}
+
+<<<<<<< HEAD
 .article-wrapper{
     padding: 30px 0 30px;
     background-position: center;
@@ -39,5 +72,82 @@
         letter-spacing: 2px;
         font-family: $vanitasblack-font;
         
+=======
+.article-wrapper {
+  padding: 100px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h3 {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 1px;
+    font-family: $vanitasblack-font;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      position: absolute;
+      background: $white;
+      width: 80%;
+      left: 10%;
+      content: "";
+      bottom: -30px;
+      height: 1px;
     }
+  }
+
+  &:nth-child(odd) {
+    h3 {
+      color: #8CD1A5;
+    }
+  }
+
+  &:nth-child(even) {
+    h3 {
+      color: #312C5C;
+    }
+  }
+
+  a {
+    color: $white;
+    font-size: 18px;
+    font-family: $vanitasblack-font;
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 60px;
+  }
+
+  .row {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto 50px;
+    padding: 25px;
+    border: 1px solid #eee;
+
+    .inner-row {
+      position: relative;
+      display: block;
+
+      &:before {
+        width: calc(100% + 50px + 2px - 120px);
+        height: calc(100% + 2px);
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        content: '';
+        position: absolute;
+        background: transparent;
+      }
+>>>>>>> 6c855633c31b2e873310f947a482abdab67c619c
+    }
+  }
 }

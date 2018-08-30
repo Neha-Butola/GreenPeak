@@ -34,6 +34,7 @@ h1 {
 
   &.small {
     font-size: 40px;
+    color: $white;
     @media screen and (max-width: $md-breakpoint) {
       font-size: 36px;
       line-height: 31px;
@@ -99,17 +100,19 @@ p {
     align-self: flex-start !important;
   }
 }
-
 /*============ text color css here =============*/
-.green-text{
+.green-text {
   color: $dark-green;
 }
-.white-text{
+
+.white-text {
   color: $white;
 }
-.black-text{
+
+.black-text {
   color: $black;
 }
-.blue-text{
+
+.blue-text {
   color: $medium-blue;
 }

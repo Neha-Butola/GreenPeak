@@ -1,0 +1,1 @@
+var s=skrollr.init({easing:{wtf:Math.random,inverted:function(n){return 1-n}}});
