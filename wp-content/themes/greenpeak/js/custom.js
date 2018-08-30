@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
         //     $(".hide-box").hide();
         // });
 	jQuery.stellar();
-	jQuery("#scrollslider").scrollSlider();
+	$("#scrollslider").scrollSlider();
 /* triangle shapes charts js*/
 	var _hmt = _hmt || [];
 	(function() {
