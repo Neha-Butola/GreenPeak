@@ -83,13 +83,18 @@ jQuery(document).ready(function($) {
 	jQuery.stellar();
 	// jQuery("#scrollslider").scrollSlider();
 /* triangle shapes charts js*/
-	var _hmt = _hmt || [];
-	(function() {
-		var hm = document.createElement('script');
-		hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(hm, s);
-	})();
+if($('.page-template-about').length) {
+	$('#chart-row').hover(function() {
+
+
+
+	// var _hmt = _hmt || [];
+	// (function() {
+	// 	var hm = document.createElement('script');
+	// 	hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
+	// 	var s = document.getElementsByTagName('script')[0];
+	// 	s.parentNode.insertBefore(hm, s);
+	// })();
 
 	var bgColor = '#5B8080';
 	var containers = document.getElementsByClassName('chart');
@@ -208,14 +213,24 @@ jQuery(document).ready(function($) {
 				100) / 100;
 			data.push(last);
 		}
-		charts[1].setOption({
-			series: [{
-				data: data
-			}]
-		});
-	}
+		// charts[1].setOption({
+		// 	series: [{
+		// 		data: data
+		// 	}]
+		// });
+
+if (charts.length && (typeof charts[1] != 'undefined')) {
+charts[1].setOption({
+series: [{
+data: data
+}]
+});
+}
+}
+});
+}
 /* triangle shapes charts js*/
-if ($(window).width() > 767) {
+// if ($(window).width() > 767) {
 	var blockClicked = false;
 	var blockNavLiItems = $('.team-section .column');
 	var i;
@@ -227,41 +242,6 @@ $(".team-section .column").each(function(i, t) {
 	// for (i = 0; i < blockNavLiItems.length; i++) {
     blockNavLiItems.height("auto");
 
-		 //  $(".team-section .column .main-box").click(function (e) {
-			// 	// $(this).find('.hide-box').slideToggle(500);
-			// 	// $(this).siblings('.hide-box').css('background','red');
-			// 	event.preventDefault();
-			//   $(this).height("auto");
-			// 	if ($(this).parent().hasClass('active_column')) {
-			// 		$('.team-section .column').removeClass('active_column');
-			// 	} else {
-			// 		$(this).parent().addClass("active_column");
-			// 	}
-		 //
-			// 	// var height = $('.active_column .hide-box').outerHeight();
-		 //
-			// 	 var ele = $(this);
-			// 	 var parent = ele.parent();
-			// 	 var tabEle = $(parent.find('.hide-box').first());
-			// 	 tabEle.css("display", "block");
-			// 	 var id = parent.attr('id');
-			// 	 var height = parent.height();
-			// 	 if (typeof id != 'undefined') {
-			// 		 height = parseInt(id.split('-')[1]);
-			// 	 }
-			// 	 if ($(this).parent().hasClass('active_column')) {
-		 //
-			// 		 parent.height( height + $(parent.find('.hide-box').first()).height());
-		 //
-			// 	 } else {
-			// 		 $('.hide-box').css("display", "none");
-			// 		 parent.height( parent.height() - $(parent.find('.hide-box').first()).height());
-		 //
-			// 	 }
-		 //
-		 // });
-  // }
-	//blockNavLiItems.height("auto");
 
 	$(".team-section .column .main-box").click(function (e) {
                 // $(this).find('.hide-box').slideToggle(500);
@@ -299,5 +279,5 @@ $(".team-section .column").each(function(i, t) {
 
          });
 
- }
+ // }
 });
