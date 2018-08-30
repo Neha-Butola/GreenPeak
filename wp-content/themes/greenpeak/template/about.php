@@ -34,7 +34,7 @@ get_header(); ?>
     <!-- unit row -->
 
     <div class=""
-         style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_BlurredClientBG.jpg'); background-size: cover;">
+         style="background-image: url('<?php the_field('background_image'); ?>'); background-size: cover;">
         <div id='chart-container' class="row">
 
             <div class="col-sm-4">
