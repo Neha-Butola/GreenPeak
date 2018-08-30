@@ -16,7 +16,7 @@ get_header(); ?>
     <div class="container">
         <div class="row plain-txt-row">
             <div class="col-sm-12">
-                <p class="black"><?php the_field('content_section_one',false,false); ?></p>
+                <p class="black"><?php the_field('content_section_one', false, false); ?></p>
             </div>
 
         </div>
@@ -27,7 +27,7 @@ get_header(); ?>
     <div class="container-fluid">
         <div class="row bg-text-row" style="background-image: url('<?php the_field('background_image'); ?>');">
             <div class="col-sm-12 content">
-                <p><?php the_field('content_section_two',false,false); ?></p>
+                <p><?php the_field('content_section_two', false, false); ?></p>
             </div>
         </div>
     </div>
@@ -35,24 +35,24 @@ get_header(); ?>
 
     <div class=""
          style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/GPHome_BlurredClientBG.jpg'); background-size: cover;">
-         <div id='chart-container' class="row">
+        <div id='chart-container' class="row">
 
-           <div class="col-sm-4">
-              <div class="chart">
-              </div>
-              <p>of top 25 US private equity firms served</p>
-           </div>
-           <div class="col-sm-4">
-              <div class="chart">
-              </div>
-                <p>of top 25 US private equity firms served</p>
-           </div>
-           <div class="col-sm-4">
-              <div class="chart">
-              </div>
-                <p>of top 25 US private equity firms served</p>
-           </div>
-         </div>
+            <div class="col-sm-4">
+                <div class="chart">
+                </div>
+                <p><?php the_field('chart_one_text'); ?></p>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart">
+                </div>
+                <p><?php the_field('chart_two_text'); ?></p>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart">
+                </div>
+                <p><?php the_field('chart_three_text'); ?></p>
+            </div>
+        </div>
     </div>
 
 
@@ -91,26 +91,21 @@ if (!empty($consultants)):?>
                 <?php $count = 1;
                 foreach ($consultants as $consultant): ?>
                     <div class="column" id="column-<?php echo $count; ?>">
-                      <div class="main-box">
-                        <img src="<?php echo $consultant['consultant_image']; ?>" alt="Jane"
-                           style="width:100%">
-                        <div class="descrip-box" style="display: block;">
-                            <p class="name"><?php echo $consultant['consultant_name']; ?>
-                            <p>
-                            <p class="title"><?php echo $consultant['consultant_designation']; ?></p>
-                            <p class="location"><?php echo $consultant['consultant_location']; ?></p>
+                        <div class="main-box">
+                            <img src="<?php echo $consultant['consultant_image']; ?>" alt="Jane"
+                                 style="width:100%">
+                            <div class="descrip-box" style="display: block;">
+                                <p class="name"><?php echo $consultant['consultant_name']; ?>
+                                <p>
+                                <p class="title"><?php echo $consultant['consultant_designation']; ?></p>
+                                <p class="location"><?php echo $consultant['consultant_location']; ?></p>
+                            </div>
                         </div>
-                      </div>
-
-
-                      <div class="hide-box" style="display: none;">
-                          <div class="hide-child">
-                            <p>Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.Camille is a Partner charged with both firm leadership and client services responsibilities. With more than a decade of experience as a strategic advisor to executives and teams, she understands what makes organizations and leaders successful.</p>
-
-                    </div>
-
-                    </div>
-
+                        <div class="hide-box" style="display: none;">
+                            <div class="hide-child">
+                                <?php echo $consultant['consultant_description']; ?>
+                            </div>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -133,6 +128,11 @@ if (!empty($operations)):?>
                             <p>
                             <p class="title"><?php echo $operation['operations_designation']; ?></p>
                             <p class="location"><?php echo $operation['operations_location']; ?></p>
+                        </div>
+                        <div class="hide-box" style="display: none;">
+                            <div class="hide-child">
+                                <?php echo $operation['operations_description']; ?>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
