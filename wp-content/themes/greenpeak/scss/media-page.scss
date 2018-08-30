@@ -16,6 +16,13 @@
       text-align: center;
     }
 
+<<<<<<< HEAD
+.video-warpper{
+    h2{
+        color: $green-variant;
+        margin-bottom: 30px;
+        
+=======
     &:nth-child(4) {
       text-align: right;
     }
@@ -23,6 +30,7 @@
     img {
       max-width: 65%;
       @include object-fit($object-value: cover);
+>>>>>>> 6c855633c31b2e873310f947a482abdab67c619c
     }
   }
 }
@@ -52,6 +60,19 @@
   }
 }
 
+<<<<<<< HEAD
+.article-wrapper{
+    padding: 30px 0 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h3{
+        font-size: 32px;
+        line-height: 37px;
+        letter-spacing: 2px;
+        font-family: $vanitasblack-font;
+        
+=======
 .article-wrapper {
   padding: 100px 0;
   background-position: center;
@@ -126,6 +147,7 @@
         position: absolute;
         background: transparent;
       }
+>>>>>>> 6c855633c31b2e873310f947a482abdab67c619c
     }
   }
 }
