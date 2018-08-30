@@ -70,9 +70,7 @@ if ($videos->have_posts()): ?>
     </section>
     <!-- Video section ends here  -->
 <?php endif; ?>
-    <!-- <div class="nav-links">
-        <a href="#" page="2" class="load-more" total_pages="<?php echo $total_pages; ?>">More Videos</a>
-    </div> -->
+
 
     <!-- Article section starts here -->
     <section class="video-warpper">
