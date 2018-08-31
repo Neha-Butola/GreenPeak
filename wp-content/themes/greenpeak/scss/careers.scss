@@ -20,7 +20,7 @@
   padding: 100px 0 40px;
   z-index: 1;
   background-size: cover;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: $md-breakpoint) {
     padding: 120px 0 150px;
   }
 }
@@ -55,6 +55,10 @@
   font-family: $vanitasregular-font;
   margin-bottom: 0;
   position: relative;
+  @media screen and (max-width: $md-breakpoint) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 
   &::after {
     position: absolute;
@@ -64,6 +68,9 @@
     height: 1px;
     width: 60%;
     left: 20%;
+    @media screen and (max-width: $md-breakpoint) {
+      bottom: -40px;
+    }
   }
 }
 
@@ -75,6 +82,9 @@
 
 .cd-author {
   margin-top: 130px;
+  @media screen and (max-width: $md-breakpoint) {
+    margin-top: 40px;
+  }
 }
 
 .cd-author img {
@@ -83,6 +93,10 @@
   border-radius: 50%;
   margin-right: 5px;
   object-fit: cover;
+  @media screen and (max-width: $md-breakpoint) {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .cd-author .cd-author-info {
@@ -91,6 +105,9 @@
   color: #6BCB9D;
   font-family: $vanitasregular-font;
   padding: 0 30px;
+  @media screen and (max-width: $md-breakpoint) {
+    font-size: 30px;
+  }
 }
 
 .cd-author .cd-author-info li:first-child {
@@ -102,7 +119,7 @@
   font-size: 12px;
   color: #6b6b70;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $md-breakpoint) {
   .cd-author img {
     width: 165px;
     height: 165px;
@@ -132,54 +149,6 @@
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-// .flex-direction-nav a:before {
-//   font-size: 40px;
-//   content: url("https://dl.dropboxusercontent.com/u/97609687/codepen/chevronleft.svg");
-//   position: absolute;
-//   display: block;
-//   top: 50%;
-//   padding: 14px 10px;
-//   -webkit-transform: translateY(-50%);
-//   -moz-transform: translateY(-50%);
-//   -ms-transform: translateY(-50%);
-//   transform: translateY(-50%);
-// }
-//
-// .flex-direction-nav a.flex-next:before {
-//   content: url("https://dl.dropboxusercontent.com/u/97609687/codepen/chevronright.svg");
-//   padding: 14px 20px 14px 10px;
-// }
-// .flex-direction-nav .flex-prev {
-//   left: 0;
-// }
-//
-// .flex-direction-nav .flex-next {
-//   right: 0;
-//   text-align: right;
-// }
-//
-// .flexslider:hover .flex-direction-nav .flex-prev {
-//   opacity: 1;
-//   left: 0;
-// }
-//
-// .flexslider:hover .flex-direction-nav .flex-prev:hover {
-//   opacity: 1;
-// }
-//
-// .flexslider:hover .flex-direction-nav .flex-next {
-//   opacity: 1;
-//   right: 0;
-// }
-//
-// .flexslider:hover .flex-direction-nav .flex-next:hover {
-//   opacity: 1;
-// }
-// .flex-direction-nav .flex-disabled {
-//   opacity: 0!important;
-//   filter: alpha(opacity=0);
-//   cursor: default;
-// }
 
 .flex-control-paging li a {
   width: 8px;
@@ -213,13 +182,16 @@
   padding: 0;
   text-align: center;
   width: 100%;
+  @media only screen and (max-width: $md-breakpoint) {
+    bottom: 0;
+  }
 }
 
 .flex-control-nav li {
   display: inline-block;
   padding: 0 25px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: ($md-breakpoint - 1)) {
   .flex-direction-nav a {
     width: 30px;
   }
@@ -231,30 +203,28 @@
   .flex-direction-nav a:before {
     padding: 14px 0 10px;
   }
-
-  .flex-direction-nav .flex-prev {
-    left: 0;
-  }
-
-  .flex-direction-nav .flex-next {
-    right: 0;
-    text-align: right;
-  }
-
-  .flexslider:hover .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 0;
-  }
-
-  .flexslider:hover .flex-direction-nav .flex-prev:hover {
-    opacity: 1;
-  }
-
-  .flexslider:hover .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 0;
-  }
-
+  //
+  // .flex-direction-nav .flex-prev {
+  //   left: 0;
+  // }
+  //
+  // .flex-direction-nav .flex-next {
+  //   right: 0;
+  //   text-align: right;
+  // }
+  // .flexslider:hover .flex-direction-nav .flex-prev {
+  //   opacity: 1;
+  //   left: 0;
+  // }
+  //
+  // .flexslider:hover .flex-direction-nav .flex-prev:hover {
+  //   opacity: 1;
+  // }
+  //
+  // .flexslider:hover .flex-direction-nav .flex-next {
+  //   opacity: 1;
+  //   right: 0;
+  // }
   .flex-direction-nav {
     visibility: hidden;
   }
@@ -332,6 +302,8 @@
   }
 
   .single-head {
+    margin: 0 auto;
+
     h2 {
       color: $green-variant;
       position: relative;
@@ -374,11 +346,13 @@
 }
 /* infine scroller ends*/
 .whats-on__bg-images {
+  position: relative;
+  top: 300px;
+
   .bg-images__image {
     position: absolute;
     height: 150px;
     width: 270px;
-    // background-color: #a6d6c9;
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
@@ -436,14 +410,6 @@
       width: 270px;
       height: 210px;
     }
-    //
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   width: 100%;
-    //   height: 100%;
-    //   background: rgba(255,255,255,0.5);
-    // }
   }
 }
 
