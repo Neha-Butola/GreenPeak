@@ -26,7 +26,7 @@ if (!empty($content)): ?>
     <div class="home-Parallax">
         <div class="container">
             <?php foreach ($content as $section): ?>
-                <section class="<?php echo $count ?>-Parallax-row">
+                <section class="Parallax-row">
                     <div class="image" data-speed="2"
                          style="background-image: url('<?php echo $section['background_image']; ?>');"></div>
                     <?php if ($count % 2 != 0): ?>
@@ -34,14 +34,14 @@ if (!empty($content)): ?>
                             <div class="col-md-6 col-12  content-block">
                                 <p class="p-white"><?php echo $section['description']; ?></p>
                             </div>
-                            <div class="col-md-6 col-12 align-self-end justify-content-end">
+                            <div class="col-md-6 col-12 align-self-end head-block">
                                 <h2 class="large"><a href="">“<?php echo $section['main_heading']; ?>”</a></h2>
                                 <h3><?php echo $section['sub_heading']; ?></h3>
                             </div>
                         </div>
                     <?php else: ?>
                         <div class="stuff row" data-type="content">
-                            <div class="col-md-6 col-12 align-self-end justify-content-start">
+                            <div class="col-md-6 col-12 align-self-end head-block">
                                 <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
                                 <h3><?php echo $section['sub_heading']; ?></h3>
                             </div>
