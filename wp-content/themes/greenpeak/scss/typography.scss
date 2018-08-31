@@ -9,14 +9,12 @@ a {
     color: #77bd90;
   }
 }
-// .show {
-//   transition: 0.5s;
-//   opacity: 1 !important;
-// }
 
 body {
   margin: 0;
   background: #eaeaea;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cursor {
@@ -47,7 +45,7 @@ h1 {
 h2 {
   font-size: 40px;
   color: $white;
-  line-height: 30px;
+  line-height: 40px;
   font-family: $vanitasblack-font;
 
   &.large {
@@ -86,6 +84,10 @@ p {
     color: $black;
     font-size: 28px;
     line-height: 39px;
+    @media screen and (max-width: $md-breakpoint) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 }
 
