@@ -3397,6 +3397,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 
 	            var x = radiusX * 2;
+							x=90;
 	            var wave = new LiquidLayout({
 	                shape: {
 	                    waveLength: waveLength,

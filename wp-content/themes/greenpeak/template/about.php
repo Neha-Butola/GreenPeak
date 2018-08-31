@@ -8,7 +8,7 @@ get_header(); ?>
             <h1 class="small"><?php the_field('banner_heading'); ?></h1>
         </div>
 
-        <div class="line-div-ani">
+        <div class="line-ani-right">
         </div>
 
     </div>
@@ -37,17 +37,17 @@ get_header(); ?>
          style="background-image: url('<?php the_field('background_image'); ?>'); background-size: cover;">
         <div id='chart-container' class="row">
 
-            <div class="col-sm-4">
+            <div class="col-md-4 col-12">
                 <div class="chart">
                 </div>
                 <p><?php the_field('chart_one_text'); ?></p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4 col-12">
                 <div class="chart">
                 </div>
                 <p><?php the_field('chart_two_text'); ?></p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4 col-12">
                 <div class="chart">
                 </div>
                 <p><?php the_field('chart_three_text'); ?></p>

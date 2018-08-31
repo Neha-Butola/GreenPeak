@@ -161,6 +161,9 @@
   background-attachment: fixed;
   text-align: center;
   text-transform: uppercase;
+  @media screen and (max-width: ($xl-breakpoint - 176)) {
+    background-position: center;
+  }
 
   .heading-block {
     display: flex;

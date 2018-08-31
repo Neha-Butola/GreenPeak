@@ -60,9 +60,11 @@ jQuery(document).ready(function($) {
 				          headervar.removeClass("scrolled");
 				      }
 				  });
-
-	jQuery.stellar();
-
+if($('.page-template-careers').length) {
+	$('#infinite-section').hover(function() {
+			jQuery.stellar();
+});
+}
 /* triangle shapes charts js*/
 if($('.page-template-about').length) {
 	$('#chart-row').hover(function() {
@@ -77,11 +79,11 @@ if($('.page-template-about').length) {
 			data: [0.5],
 			radius: '60%',
 			amplitude: 0,
-			 color: ['#5B8080'],
+			 color: ['#FFFFFF'],
 			waveAnimation: false,
 			backgroundStyle: {
 				borderWidth: 2,
-				borderColor: '#5B8080',
+				borderColor: '#FFFFFF',
 				color: 'transparent'
 			},
 			outline: {
@@ -89,7 +91,9 @@ if($('.page-template-about').length) {
 			},
 			shape: 'triangle',
 			label: {
-				position: ['50%', '80%']
+				position: ['50%', '80%'],
+				  color: '#5B8080',
+
 			}
 		}]
 	}, {
@@ -98,11 +102,11 @@ if($('.page-template-about').length) {
 			data: [0.92],
 			radius: '60%',
 			amplitude: 0,
-			 color: ['#5B8080'],
+			 color: ['#FFFFFF'],
 			waveAnimation: false,
 			backgroundStyle: {
 				borderWidth: 2,
-				borderColor: '#5B8080',
+				borderColor: '#FFFFFF',
 				color: 'transparent'
 			},
 			outline: {
@@ -110,7 +114,8 @@ if($('.page-template-about').length) {
 			},
 			shape: 'triangle',
 			label: {
-				position: ['50%', '80%']
+				position: ['50%', '80%'],
+				color: '#5B8080',
 			}
 		}]
 	},  {
@@ -119,11 +124,11 @@ if($('.page-template-about').length) {
 			data: [0.94],
 			radius: '60%',
 			amplitude: 0,
-			 color: ['#5B8080'],
+			 color: ['#FFFFFF'],
 			waveAnimation: false,
 			backgroundStyle: {
 				borderWidth: 2,
-				borderColor: '#5B8080',
+				borderColor: '#FFFFFF',
 				color: 'transparent'
 			},
 			outline: {
@@ -131,7 +136,8 @@ if($('.page-template-about').length) {
 			},
 			shape: 'triangle',
 			label: {
-				position: ['50%', '80%']
+				position: ['50%', '80%'],
+				color: '#5B8080',
 			}
 		}]
 	}];
@@ -152,7 +158,8 @@ if($('.page-template-about').length) {
 
 			media: [{
 				query: {
-					maxWidth: 300
+					maxWidth: 300,
+					radius: '40%',
 				},
 				option: {
 					series: [{
