@@ -61,40 +61,11 @@ jQuery(document).ready(function($) {
 				      }
 				  });
 
-
-				/* header scroll js*/
-				//
-        // $('.column').each(function () {
-        //     var $dropdown = $(this);
-				//
-        //     $(".main-box", $dropdown).click(function (e) {
-        //         e.preventDefault();
-        //         $div = $(".hide-box", $dropdown);
-        //         $div.slideToggle(500);
-        //         $(".hide-box").not($div).hide();
-        //         return false;
-        //     });
-				//
-        // });
-				//
-        // $('html').click(function () {
-        //     $(".hide-box").hide();
-        // });
 	jQuery.stellar();
-	// jQuery("#scrollslider").scrollSlider();
+
 /* triangle shapes charts js*/
 if($('.page-template-about').length) {
 	$('#chart-row').hover(function() {
-
-
-
-	// var _hmt = _hmt || [];
-	// (function() {
-	// 	var hm = document.createElement('script');
-	// 	hm.src = '//hm.baidu.com/hm.js?4bad1df23f079e0d12bdbef5e65b072f';
-	// 	var s = document.getElementsByTagName('script')[0];
-	// 	s.parentNode.insertBefore(hm, s);
-	// })();
 
 	var bgColor = '#5B8080';
 	var containers = document.getElementsByClassName('chart');
@@ -213,11 +184,7 @@ if($('.page-template-about').length) {
 				100) / 100;
 			data.push(last);
 		}
-		// charts[1].setOption({
-		// 	series: [{
-		// 		data: data
-		// 	}]
-		// });
+
 
 if (charts.length && (typeof charts[1] != 'undefined')) {
 charts[1].setOption({
@@ -230,7 +197,7 @@ data: data
 });
 }
 /* triangle shapes charts js*/
-// if ($(window).width() > 767) {
+
 	var blockClicked = false;
 	var blockNavLiItems = $('.team-section .column');
 	var i;
@@ -239,13 +206,9 @@ $(".team-section .column").each(function(i, t) {
 	$(this).attr('id', 'height' + '-' + $(this).height());
 });
 
-	// for (i = 0; i < blockNavLiItems.length; i++) {
     blockNavLiItems.height("auto");
 
-
 	$(".team-section .column .main-box").click(function (e) {
-                // $(this).find('.hide-box').slideToggle(500);
-                // $(this).siblings('.hide-box').css('background','red');
                 event.preventDefault();
                 var revert_to_initial = ($(this).parent().hasClass('active_column')) ? true : false;
                 if ($('.active_column').length) {
@@ -274,10 +237,6 @@ $(".team-section .column").each(function(i, t) {
                     }
                     $(this).parent().height(this_hide_box.height() + this_height);
                 }
-
-
-
          });
 
- // }
 });

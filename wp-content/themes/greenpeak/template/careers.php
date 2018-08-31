@@ -2,12 +2,14 @@
 /* Template Name: Career */
 
 get_header(); ?>
-
-    <div class="inner-banner" style="background-image: url('<?php the_field('banner_image'); ?>');">
-        <div class="heading-block">
-            <h1 class="small"><?php the_field('banner_heading'); ?></h1>
-        </div>
+<div class="inner-banner" style="background-image: url('<?php the_field('banner_image'); ?>');">
+    <div class="heading-block">
+        <h1 class="small"><?php the_field('banner_heading'); ?></h1>
     </div>
+
+      <div class="line-ani-right"></div>
+
+</div>
 
     <div class="container">
         <div class="row plain-txt-row">

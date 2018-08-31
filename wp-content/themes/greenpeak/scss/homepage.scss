@@ -159,6 +159,8 @@
   background-size: cover;
   background-position: 100%;
   background-attachment: fixed;
+  text-align: center;
+  text-transform: uppercase;
 
   .heading-block {
     display: flex;
@@ -167,23 +169,37 @@
     justify-content: center;
 
     h1 {
-      animation: fadein 2s;
-      -moz-animation: fadein 2s;
+      animation: fadein 2s ease-in 5s;
+      -moz-animation: fadein 2s ease-in 5s;
       /* Firefox */
-      -webkit-animation: fadein 2s;
+      -webkit-animation: fadein 2s ease-in 5s;
       /* Safari and Chrome */
-      -o-animation: fadein 2s;
+      -o-animation: fadein 2s ease-in 5s;
       /* Opera */
+      margin-bottom: 0;
     }
   }
 
-  .line-div-ani {
+  .line-ani-right {
     animation: 1s ease-out 0s 1 slideInFromRight;
     background: $white;
     height: 1px;
     width: 60%;
     margin-left: auto;
     animation-delay: 2s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .line-ani-left {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    background: $white;
+    height: 1px;
+    width: 60%;
+    margin-right: auto;
+    animation-delay: 2s;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 

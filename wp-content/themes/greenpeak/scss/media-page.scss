@@ -84,17 +84,32 @@
       bottom: -30px;
       height: 1px;
     }
-  }
-
-  &:nth-child(odd) {
-    h3 {
-      color: #8CD1A5;
+    @media screen and (max-width: $md-breakpoint) {
+      font-size: 28px;
+      line-height: 34px;
     }
   }
 
   &:nth-child(even) {
     h3 {
+      color: #8CD1A5;
+    }
+
+    .fab,
+    .share {
+      color: $white;
+    }
+  }
+
+  &:nth-child(odd) {
+    h3 {
       color: #312C5C;
+    }
+
+    .fab,
+    .share,
+    p {
+      color: #525259;
     }
   }
 
@@ -106,12 +121,23 @@
     position: absolute;
     bottom: -10px;
     left: 46%;
+    @media screen and (max-width: $md-breakpoint) {
+      left: 40%;
+    }
+
+    &:hover {
+      color: #8cd1a5;
+    }
   }
 
   p {
     font-size: 22px;
     line-height: 32px;
     margin-bottom: 80px;
+    @media screen and (max-width: $md-breakpoint) {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 
   .row {
@@ -122,6 +148,9 @@
       position: relative;
       display: block;
       padding: 40px 70px 0;
+      @media screen and (max-width: $md-breakpoint) {
+        padding: 20px;
+      }
     }
 
     .borders {
@@ -145,6 +174,9 @@
         border-left: 1px solid $white;
         width: 45%;
         height: 25%;
+        @media screen and (max-width: $md-breakpoint) {
+          width: 25%;
+        }
       }
 
       &.right {
@@ -172,9 +204,10 @@
     .share {
       font-size: 14px;
       transform: rotate(270deg);
-      margin-left: -25px;
+      margin-left: -28px;
       position: absolute;
       top: 55%;
+      letter-spacing: 1px;
     }
   }
 }

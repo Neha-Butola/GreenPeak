@@ -166,6 +166,15 @@ border mixins here
     transform: translateX(0%);
   }
 }
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 @keyframes slidein {
   from {
     transform: scaleX(0);
