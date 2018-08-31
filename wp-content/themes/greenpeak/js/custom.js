@@ -216,7 +216,7 @@ $(".team-section .column").each(function(i, t) {
     blockNavLiItems.height("auto");
 
 	$(".team-section .column .main-box").click(function (e) {
-                event.preventDefault();
+                // event.preventDefault();
                 var revert_to_initial = ($(this).parent().hasClass('active_column')) ? true : false;
                 if ($('.active_column').length) {
                     $('.active_column').each(function(i, t) {

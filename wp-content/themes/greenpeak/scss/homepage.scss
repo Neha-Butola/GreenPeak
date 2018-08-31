@@ -22,7 +22,7 @@
       overflow: hidden;
       background-color: $black;
       @media screen and (max-width: $sm-breakpoint) {
-        height: 160vh;
+        height: 50vh;
       }
 
       .image {
@@ -215,6 +215,9 @@
   background-attachment: fixed;
   background-repeat: no-repeat !important;
   position: relative;
+  @media screen and (max-width: $md-breakpoint) {
+    height: 400px;
+  }
 
   &:before {
     position: absolute;
