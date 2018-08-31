@@ -45,7 +45,8 @@ if (!function_exists('greenpeak_setup')) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
-            'menu-1' => esc_html__('Primary', 'greenpeak'),
+            'menu-1' => esc_html__('Main Menu-1', 'greenpeak'),
+            'menu-2' => esc_html__('Main Menu-2', 'greenpeak'),
         ));
 
         /*
@@ -250,3 +251,20 @@ function create_posttype()
 
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
+
+/*
+ * Add filter to remove the classes on li and a tag of nav menu
+ */
+
+add_filter('nav_menu_css_class','add_classes_on_li',1,3);
+function add_classes_on_li($classes) {
+    $classes[] = '';
+    return $classes;
+}
+
+add_filter( 'nav_menu_link_attributes', 'wpse156165_menu_add_class', 10, 3 );
+function wpse156165_menu_add_class( $atts) {
+    $class = '';
+    $atts['class'] = $class;
+    return $atts;
+}
