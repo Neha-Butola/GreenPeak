@@ -90,7 +90,7 @@ if ($articles->have_posts()):
         <section class="article-wrapper"
                  style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
             <div class="container">
-                <div class="row" style="padding: 40px 70px;">
+                <div class="row">
                     <div class="col-12 text-center inner-row">
                         <h3 class=""><?php the_title(); ?></h3>
                         <?php $content = get_the_content();
@@ -99,8 +99,17 @@ if ($articles->have_posts()):
                         <p><?php echo $content; ?></p>
 
                         <a href="<?php echo get_the_permalink(); ?>">read article</a>
+
                     </div>
+
+                    <div class="borders top"></div>
+                    <div class="borders right"></div>
+                    <div class="borders left"></div>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-twitter"></i>
+                    <p class="share">share on</p>
                 </div>
+
             </div>
         </section>
     <?php endwhile; endif; ?>
