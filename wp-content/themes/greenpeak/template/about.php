@@ -33,7 +33,7 @@ get_header(); ?>
     </div>
     <!-- unit row -->
 
-    <div class=""
+    <div class="" id="chart-row"
          style="background-image: url('<?php the_field('background_image'); ?>'); background-size: cover;">
         <div id='chart-container' class="row">
 
