@@ -43,7 +43,8 @@ if (!empty($content)): ?>
             <div class="row">
                 <div class="col-12">
                     <h4><?php the_field('contact_heading'); ?></h4>
-                    <?php echo do_shortcode('[contact-form-7 id="138" title="Contact form 1"]'); ?>
+                    <?php $form_code = get_field('form_shortcode');
+                    echo do_shortcode($form_code); ?>
                 </div>
             </div>
         </div>

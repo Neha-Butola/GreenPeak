@@ -147,7 +147,6 @@ function greenpeak_scripts()
 
     wp_enqueue_script( 'echarts-js', get_template_directory_uri() . '/js/echarts.js', array('jquery'), '1.0', true );
 
-
     wp_enqueue_script( 'echarts-liquidfill-js', get_template_directory_uri() . '/js/echarts-liquidfill.js', array('jquery'), '1.0', true );
 
     wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );
@@ -190,25 +189,6 @@ function my_ajax_pagination()
     <?php }
     die();
 }
-
-/*
-Add filter to add class in li tag of nav-menu
-*/
-add_filter('nav_menu_css_class', function ($classes, $item, $args, $depth) {
-    $classes[] = 'nav-item';
-    return $classes;
-}, 10, 4);
-
-
-/*
-Add filter to add class in a tag of nav-menu
-*/
-add_filter('nav_menu_link_attributes', function ($atts, $item, $args) {
-    $class = 'nav-link';
-    $atts['class'] = $class;
-    return $atts;
-}, 10, 3);
-
 
 /*
  * Option Page
@@ -264,7 +244,6 @@ add_action('init', 'create_posttype');
 
 add_filter( 'nav_menu_link_attributes', function( $attr) {
     $class = '';
-
     $attr['class'] = $class;
     return $attr;
 }, 10, 3 );
