@@ -6,11 +6,11 @@ get_header(); ?>
     <div class="inner-banner"
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="heading-block">
-            <h1 class="small"><?php the_field('banner_heading'); ?></h1>
+            <h1 class="small green-text"><?php the_field('banner_heading'); ?></h1>
         </div>
 
-        <div class="line-div-ani">
-        </div>
+        <div class="line-ani-left"></div>
+            <h1 class="small"><?php the_field('banner_heading'); ?></h1>
 
     </div>
 
@@ -35,7 +35,7 @@ if (!empty($content)): ?>
                                 <p class="p-white"><?php echo $section['description']; ?></p>
                             </div>
                             <div class="col-md-6 col-12 align-self-end justify-content-end">
-                                <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
+                                <h2 class="large"><a href="">“<?php echo $section['main_heading']; ?>”</a></h2>
                                 <h3><?php echo $section['sub_heading']; ?></h3>
                             </div>
                         </div>

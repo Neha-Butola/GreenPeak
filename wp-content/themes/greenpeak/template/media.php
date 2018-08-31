@@ -8,10 +8,7 @@ get_header(); ?>
         <div class="heading-block">
             <h1 class="small"><?php the_field('banner_heading'); ?></h1>
         </div>
-
-        <div class="line-div-ani">
-        </div>
-
+        <div class="line-ani-left"></div>
     </div>
 
 <?php $logos = get_field('logos');
