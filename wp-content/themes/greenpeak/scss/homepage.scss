@@ -21,8 +21,11 @@
       position: relative;
       overflow: hidden;
       background-color: $black;
-      @media screen and (max-width: $sm-breakpoint) {
-        height: 50vh;
+      @media screen and (max-width: ($xl-breakpoint - 176)) {
+        max-height: 768px;
+      }
+      @media screen and (max-width: $md-breakpoint) {
+        max-height: 500px;
       }
 
       .image {
@@ -170,6 +173,12 @@
     align-items: flex-end;
     height: 80vh;
     justify-content: center;
+    @media screen and (max-width: ($xl-breakpoint - 176)) {
+      max-height: 680px;
+    }
+    @media screen and (max-width: $md-breakpoint) {
+      max-height: 410px;
+    }
 
     h1 {
       animation: fadein 2s ease-in 5s;
