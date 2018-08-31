@@ -259,18 +259,11 @@ function create_posttype()
 add_action('init', 'create_posttype');
 
 /*
- * Add filter to remove the classes on li and a tag of nav menu
+ * Add filter to remove the classes on anchor tag of nav menu
  */
 
-add_filter('nav_menu_css_class','add_classes_on_li',1,3);
-function add_classes_on_li($classes) {
-    $classes[] = '';
-    return $classes;
-}
-
-add_filter( 'nav_menu_link_attributes', 'wpse156165_menu_add_class', 10, 3 );
-function wpse156165_menu_add_class( $atts) {
+add_filter( 'nav_menu_link_attributes', function( $attr) {
     $class = '';
-    $atts['class'] = $class;
-    return $atts;
-}
+    $attr['class'] = $class;
+    return $attr;
+}, 10, 3 );
