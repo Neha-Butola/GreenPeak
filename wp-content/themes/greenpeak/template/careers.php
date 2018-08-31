@@ -61,9 +61,9 @@ if (!empty($values)):
     <section id="infinite-section" style="position: relative;overflow: hidden;">
         <div class="whats-on__bg-images">
             <?php foreach ($values as $value): ?>
-                <div class="bg-images__image" data-stellar-ratio="1.1"
+                <div class="bg-images__image" data-stellar-ratio="0.5"
                      style="background-image: url('<?php echo $value['background_image_one']; ?>');"></div>
-                <div class="bg-images__image" data-stellar-ratio="1.1"
+                <div class="bg-images__image" data-stellar-ratio="0.5"
                      style="background-image: url('<?php echo $value['background_image_two']; ?>');"></div>
             <?php endforeach; ?>
           </div>
