@@ -25,7 +25,7 @@
 <header class="main-header">
     <div class="container">
 
-        <img class="logo" src="<?php the_field('header_logo','options'); ?>" alt="logo"/>
+        <a href="/"><img class="logo" src="<?php the_field('header_logo','options'); ?>" alt="logo"/></a>
         <div class="hamburger-menu">
             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
             <label for="openSidebarMenu" class="sidebarIconToggle">
@@ -40,7 +40,7 @@
         </div>
 
         <?php wp_nav_menu(['menu' => 'main-menu-1', 'container' => '', 'menu_class' => 'menu']); ?>
-        <img id="logo" src="<?php the_field('header_logo','options'); ?>" alt="logo"/>
+        <a href="/"><img id="logo" src="<?php the_field('header_logo','options'); ?>" alt="logo"/></a>
         <?php wp_nav_menu(['menu' => 'main-menu-2', 'container' => '', 'menu_class' => 'menu']); ?>
     </div>
 </header>
