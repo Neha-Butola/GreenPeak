@@ -25,7 +25,7 @@
 <header class="main-header">
     <div class="container">
 
-        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo"/>
+        <img class="logo" src="<?php the_field('header_logo','options'); ?>" alt="logo"/>
         <div class="hamburger-menu">
             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
             <label for="openSidebarMenu" class="sidebarIconToggle">
@@ -34,29 +34,14 @@
                 <div class="spinner diagonal part-2"></div>
             </label>
             <div id="sidebarMenu">
-                <ul class="sidebarMenuInner">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/media">Media</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
+                <?php wp_nav_menu(['menu' => 'main-menu-1', 'container' => '', 'menu_class' => 'sidebarMenuInner']); ?>
+                <?php wp_nav_menu(['menu' => 'main-menu-2', 'container' => '', 'menu_class' => 'sidebarMenuInner']); ?>
             </div>
         </div>
 
-
-        <ul class="menu">
-            <li><a href="/">home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">services</a></li>
-        </ul>
-        <img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo"/>
-        <ul class="menu">
-            <li><a href="/careers">Careers</a></li>
-            <li><a href="/media">media</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
+        <?php wp_nav_menu(['menu' => 'main-menu-1', 'container' => '', 'menu_class' => 'menu']); ?>
+        <img id="logo" src="<?php the_field('header_logo','options'); ?>" alt="logo"/>
+        <?php wp_nav_menu(['menu' => 'main-menu-2', 'container' => '', 'menu_class' => 'menu']); ?>
     </div>
 </header>
 <!-- </div> -->
