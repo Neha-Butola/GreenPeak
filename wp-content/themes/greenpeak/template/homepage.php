@@ -21,15 +21,15 @@ get_header(); ?>
     </figure>
 
 <?php $content = get_field('content');
-$count = 0;
+$count = 1;
 if (!empty($content)): ?>
     <div class="home-Parallax">
         <div class="container">
             <?php foreach ($content as $section): ?>
-                <section class="first-Parallax-row">
+                <section class="<?php echo $count ?>-Parallax-row">
                     <div class="image" data-speed="2"
                          style="background-image: url('<?php echo $section['background_image']; ?>');"></div>
-                    <?php if ($count % 2 == 0): ?>
+                    <?php if ($count % 2 != 0): ?>
                         <div class="stuff row" data-type="content">
                             <div class="col-md-6 col-12  content-block">
                                 <p class="p-white"><?php echo $section['description']; ?></p>
