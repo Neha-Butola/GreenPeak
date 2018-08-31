@@ -22,10 +22,7 @@
       overflow: hidden;
       background-color: $black;
       @media screen and (max-width: ($xl-breakpoint - 176)) {
-        max-height: 768px;
-      }
-      @media screen and (max-width: $md-breakpoint) {
-        max-height: 500px;
+        height: 100%;
       }
 
       .image {
@@ -50,15 +47,20 @@
         max-width: 1380px;
         padding-top: 150px;
         padding-bottom: 200px;
-        // @media screen and (max-width: $md-breakpoint) {
-        //   padding-top: 300px;
-        // }
+        @media screen and (max-width: $md-breakpoint) {
+          padding-top: 150px;
+          padding-bottom: 150px;
+        }
+
         h3 {
           margin-top: 30px;
         }
 
         h2 {
           display: inline-block;
+          @media screen and (max-width: $md-breakpoint) {
+            margin: 0 auto;
+          }
 
           &:hover {
             color: #77BD90;
@@ -99,7 +101,7 @@
       .stuff {
         p {
           text-align: right;
-          @media screen and (max-width: $md-breakpoint) {
+          @media screen and (max-width: ($md-breakpoint - 1)) {
             text-align: center;
             margin-top: 70px;
           }
@@ -116,6 +118,9 @@
             background: #d4d4d4;
             bottom: -30px;
             left: -14%;
+            @media screen and (max-width: $md-breakpoint) {
+              bottom: -15px;
+            }
           }
         }
 
@@ -152,6 +157,9 @@
             background: #d4d4d4;
             bottom: -30px;
             left: 7%;
+            @media screen and (max-width: $md-breakpoint) {
+              bottom: -15px;
+            }
           }
         }
 
@@ -178,6 +186,10 @@
   text-transform: uppercase;
   @media screen and (max-width: ($xl-breakpoint - 176)) {
     background-position: center;
+    max-height: 768px;
+  }
+  @media screen and (max-width: $md-breakpoint) {
+    max-height: 500px;
   }
 
   .heading-block {

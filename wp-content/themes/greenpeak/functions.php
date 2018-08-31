@@ -143,7 +143,7 @@ function greenpeak_scripts()
 
     wp_enqueue_script('jquery-steller', '//cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js', array('jquery'), '0.6.2', true);
 
-    wp_enqueue_script('scroller-js', get_template_directory_uri() . '/js/skrollr.min.js', array('jquery'), '1.0', true);
+    // wp_enqueue_script('scroller-js', get_template_directory_uri() . '/js/skrollr.min.js', array('jquery'), '1.0', true);
 
     wp_enqueue_script( 'echarts-js', get_template_directory_uri() . '/js/echarts.js', array('jquery'), '1.0', true );
 

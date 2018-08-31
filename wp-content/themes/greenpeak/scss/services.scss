@@ -23,6 +23,9 @@
       .col-main {
         display: inline-block;
         height: 100%;
+        @media screen and (max-width: $sm-breakpoint) {
+          vertical-align: top;
+        }
 
         .row {
           width: 80vw;
@@ -33,8 +36,16 @@
           @media screen and (max-width: $md-breakpoint) {
             width: 200vw;
           }
+          @media screen and (max-width: $sm-breakpoint) {
+            width: 100%;
+          }
 
           .content {
+            @media screen and (max-width: $sm-breakpoint) {
+              display: inline-block;
+              width: 49%;
+            }
+
             h5 {
               font-size: 28px;
               text-transform: uppercase;
@@ -71,14 +82,20 @@
           img {
             max-width: 300px;
             margin-left: 10%;
-            // @media screen and (max-width: ($xl-breakpoint - 76)) {
-            //   max-width: 200px;
-            // }
+            @media screen and (max-width: $sm-breakpoint) {
+              display: inline-block;
+              margin-top: 0 !important;
+              vertical-align: top;
+              width: 40%;
+            }
           }
 
           .img-up {
             .content {
               margin-top: 100px;
+              @media screen and (max-width: $sm-breakpoint) {
+                margin-top: 0;
+              }
             }
           }
 

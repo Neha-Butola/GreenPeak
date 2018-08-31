@@ -50,10 +50,10 @@ h2 {
 
   &.large {
     font-size: 100px;
-    line-height: 62px;
+    line-height: 90px;
     @media screen and (max-width: $md-breakpoint) {
-      font-size: 64px;
-      line-height: 25px;
+      font-size: 48px;
+      line-height: 40px;
     }
   }
 }
@@ -65,7 +65,7 @@ h3 {
   color: $white;
   letter-spacing: 15px;
   @media screen and (max-width: $md-breakpoint) {
-    font-size: 44px;
+    font-size: 32px;
     line-height: 25px;
   }
 }
@@ -95,13 +95,6 @@ p {
 .text-right {
   @media screen and (max-width: $md-breakpoint) {
     text-align: center !important;
-  }
-}
-
-.align-self-end {
-  @media screen and (max-width: $md-breakpoint) {
-    -ms-flex-item-align: flex-start !important;
-    align-self: flex-start !important;
   }
 }
 /*============ text color css here =============*/

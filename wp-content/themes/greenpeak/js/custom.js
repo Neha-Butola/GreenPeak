@@ -1,14 +1,14 @@
 /* scroller js*/
-
-var s = skrollr.init({
-		easing: {
-		//This easing will sure drive you crazy
-		wtf: Math.random,
-		inverted: function(p) {
-		return 1 - p;
-		}
-	}
-});
+//
+// var s = skrollr.init({
+// 		easing: {
+// 		//This easing will sure drive you crazy
+// 		wtf: Math.random,
+// 		inverted: function(p) {
+// 		return 1 - p;
+// 		}
+// 	}
+// });
 
 /* scroller js*/
 
