@@ -60,11 +60,11 @@ jQuery(document).ready(function($) {
 				          headervar.removeClass("scrolled");
 				      }
 				  });
-if($('.page-template-careers').length) {
-	$('#infinite-section').hover(function() {
+// if($('.page-template-careers').length) {
+// 	$('#infinite-section').hover(function() {
 			jQuery.stellar();
-});
-}
+// });
+// }
 /* triangle shapes charts js*/
 if($('.page-template-about').length) {
 	$('#chart-row').hover(function() {
