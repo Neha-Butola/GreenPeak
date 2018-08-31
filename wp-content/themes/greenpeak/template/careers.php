@@ -138,4 +138,18 @@ if (!empty($values)):
 <?php endif; ?>
     <!-- infinite scroll section ends here -->
 
+    <!-- contact form section starts here -->
+    <section class="contact-form-wrapper"
+             style="background-image: url('<?php the_field('background_image'); ?>');  background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4><?php the_field('contact_heading'); ?></h4>
+                    <?php echo do_shortcode('[contact-form-7 id="138" title="Contact form 1"]'); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact form section ends here -->
+
 <?php get_footer();

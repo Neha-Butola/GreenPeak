@@ -9,6 +9,10 @@
     p {
       font-size: 28px;
       line-height: 38px;
+      @media screen and (max-width: $md-breakpoint) {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
   }
 }
