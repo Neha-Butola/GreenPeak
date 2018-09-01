@@ -104,12 +104,43 @@
   &:nth-child(odd) {
     h3 {
       color: #312C5C;
+
+      &:before {
+        background: #312c5c;
+      }
     }
 
     .fab,
     .share,
     p {
       color: #525259;
+    }
+
+    .borders {
+      &.top {
+        border-top: 1px solid #525259 !important;
+        border-left: 1px solid #525259 !important;
+      }
+
+      &.left {
+        border-bottom: 1px solid #525259 !important;
+        border-left: 1px solid #525259 !important;
+      }
+
+      &.right {
+        border-top: 1px solid #525259 !important;
+        border-right: 1px solid #525259 !important;
+      }
+    }
+
+    .button {
+      &:before {
+        background: #525259;
+      }
+
+      &:after {
+        border-color: transparent transparent transparent #525259;
+      }
     }
   }
 
@@ -122,11 +153,10 @@
     bottom: -10px;
     left: 46%;
     @media screen and (max-width: $md-breakpoint) {
-      left: 40%;
+      left: 44%;
     }
-
-    &:hover {
-      color: #8cd1a5;
+    @media screen and (max-width: $sm-breakpoint) {
+      left: 38%;
     }
   }
 
@@ -137,6 +167,7 @@
     @media screen and (max-width: $md-breakpoint) {
       font-size: 18px;
       line-height: 25px;
+      margin-bottom: 30px;
     }
   }
 
@@ -150,6 +181,12 @@
       padding: 40px 70px 0;
       @media screen and (max-width: $md-breakpoint) {
         padding: 20px;
+      }
+
+      &:hover {
+        a {
+          color: #8cd1a5;
+        }
       }
     }
 
@@ -175,7 +212,10 @@
         width: 45%;
         height: 25%;
         @media screen and (max-width: $md-breakpoint) {
-          width: 25%;
+          width: 40%;
+        }
+        @media screen and (max-width: $sm-breakpoint) {
+          width: 33%;
         }
       }
 
@@ -210,4 +250,47 @@
       letter-spacing: 1px;
     }
   }
+}
+
+.button {
+  position: absolute;
+  right: -74px;
+  top: 16px;
+
+  &:before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: $white;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    right: 24px;
+    transition: all 0.3s ease;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ffffff;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 20px;
+    transition: all 0.3s ease;
+  }
+}
+
+.inner-row:focus .button:before,
+.inner-row:hover .button:before {
+  right: -10px;
+  width: 80px;
+}
+
+.inner-row:focus .button:after,
+.inner-row:hover .button:after {
+  right: -20px;
 }

@@ -17,6 +17,10 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+:focus {
+  outline: none;
+}
+
 .cursor {
   cursor: pointer;
 }

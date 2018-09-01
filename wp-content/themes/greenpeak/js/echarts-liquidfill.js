@@ -159,10 +159,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        label: {
 	            show: true,
 	            color: '#294D99',
-	            insideColor: '#fff',
+	            insideColor: '#5B8080',
 	            fontSize: 50,
-	            fontWeight: 'bold',
-
+	            fontWeight: 'normal',
+							fontFamily: 'vanitasblack',
 	            align: 'center',
 	            baseline: 'middle',
 	            position: 'inside'
@@ -170,7 +170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        emphasis: {
 	            itemStyle: {
-	                opacity: 0.8
+	                // opacity: 0.8
 	            }
 	        }
 	    }
