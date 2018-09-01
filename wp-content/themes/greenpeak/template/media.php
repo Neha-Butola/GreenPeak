@@ -95,7 +95,8 @@ if ($articles->have_posts()):
                         ?>
                         <p><?php echo $content; ?></p>
 
-                        <a href="<?php echo get_the_permalink(); ?>">read article</a>
+
+                        <a href="<?php echo get_the_permalink(); ?>">read article  <div class="button"></div></a>
 
                     </div>
 

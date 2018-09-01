@@ -4,6 +4,10 @@
 get_header(); ?>
 
 <div id="service-container">
+  <svg id="mySVG">
+  <path fill="none" stroke="red" stroke-width="3" id="triangle" d="M0,0.5h4035" />
+  Sorry, your browser does not support inline SVG.
+  </svg>
   <div id="service-container2">
     <div class="box"  style="background-image: url('/wp-content/themes/greenpeak/images/ServicesMainBG_GP.jpg')">
       <div>

@@ -26,7 +26,7 @@
 
     .testi-descrip {
       display: inline-block;
-      border-bottom: 1px solid #ffffff;
+      border-bottom: 1px solid $white;
       padding: 0 10px 10px;
       margin-bottom: 30px;
 
@@ -40,8 +40,8 @@
         line-height: 53px;
         text-transform: uppercase;
         @media screen and (max-width: $md-breakpoint) {
-          font-size: 32px;
-          line-height: 43px;
+          font-size: 28px;
+          line-height: 32px;
         }
       }
 
@@ -50,7 +50,7 @@
         line-height: 53px;
         color: $white;
         @media screen and (max-width: $md-breakpoint) {
-          font-size: 21px;
+          font-size: 18px;
           line-height: 43px;
         }
       }
@@ -72,8 +72,8 @@
       position: relative;
       margin-bottom: 45px;
       @media screen and (max-width: $md-breakpoint) {
-        font-size: 28px;
-        line-height: 39px;
+        font-size: 20px;
+        line-height: 30px;
       }
 
       &::after {
