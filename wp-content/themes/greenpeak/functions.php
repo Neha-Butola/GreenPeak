@@ -247,3 +247,8 @@ add_filter( 'nav_menu_link_attributes', function( $attr) {
     $attr['class'] = $class;
     return $attr;
 }, 10, 3 );
+
+/*
+ * Add filter to remove p tag from editor
+ */
+remove_filter( 'the_content', 'wpautop' );
