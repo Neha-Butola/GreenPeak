@@ -284,11 +284,13 @@
   }
 }
 
+.inner-row:focus .button:before,
 .inner-row:hover .button:before {
   right: -10px;
   width: 80px;
 }
 
+.inner-row:focus .button:after,
 .inner-row:hover .button:after {
   right: -20px;
 }
