@@ -61,19 +61,19 @@ if ($videos->have_posts()): ?>
                                     type="video/mp4">
                         </video>
                     </div>
-                <?php endwhile; ?>
+                <?php endwhile;  ?>
             </div>
         </div>
     </section>
     <!-- Video section ends here  -->
-<?php endif; ?>
+<?php endif; wp_reset_query(); ?>
 
 
     <!-- Article section starts here -->
     <section class="video-warpper">
-    <div class="container">
-    <h2>Articles</h2>
-    </div>
+        <div class="container">
+            <h2><?php the_field('articles_section_heading'); ?></h2>
+        </div>
     </section>
 <?php $parameters = array(
     'post-type' => 'posts',
