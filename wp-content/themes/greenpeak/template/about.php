@@ -25,7 +25,7 @@ get_header(); ?>
     <!--  background-content row  -->
 
     <div class="container-fluid">
-        <div class="row bg-text-row" style="background-image: url('<?php the_field('background_image'); ?>');">
+        <div class="row bg-text-row" style="background-image: url('<?php the_field('chart_background_image'); ?>');">
             <div class="col-sm-12 content">
                 <p><?php the_field('content_section_two', false, false); ?></p>
             </div>
