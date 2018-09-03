@@ -1,9 +1,9 @@
 jQuery(document).ready(function ($) {
-    $('.nav-links .load-more').on('click', function (event) {
+    $('.nav-links .video-load-more').on('click', function (event) {
         event.preventDefault();
         var page = $(this).attr('page');
-        var total_pages = $(this).attr('total_pages');
-        $('.load-more').attr('page', parseInt(page) + 1);
+        var total_pages = $(this).attr('total-pages');
+        $('.video-load-more').attr('page', parseInt(page) + 1);
         if(page <= total_pages){
             $.ajax({
                 url: ajaxpagination.ajaxurl,
@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
                 }
             })
         }
-        if(page >= total_pages){
+        if(total_pages === page){
             $('.nav-links').hide(0);
         }
     });

@@ -56,23 +56,26 @@ if ($videos->have_posts()): ?>
             <div class="row" id="videos">
                 <?php while ($videos->have_posts()): $videos->the_post(); ?>
                     <div class="col-12 video-block">
-                        <video width="100%" height="auto" controls>
-                            <source src="<?php the_field('video'); ?>"
-                                    type="video/mp4">
-                        </video>
+                        <?php the_field('video'); ?>
                     </div>
                 <?php endwhile; ?>
             </div>
         </div>
     </section>
+    <div class="nav-links">
+        <a href="#" class="video-load-more" page="2"
+           total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>More
+            Videos</a>
+    </div>
     <!-- Video section ends here  -->
-<?php endif; ?>
+<?php endif;
+wp_reset_query(); ?>
 
 
     <!-- Article section starts here -->
     <section class="video-warpper">
     <div class="container">
-    <h2 class="aos-init" data-aos="fade-in">Articles</h2>
+    <h2 class="aos-init" data-aos="fade-in"><?php the_field('articles_section_heading'); ?></h2>
     </div>
     </section>
 <?php $parameters = array(
@@ -94,12 +97,10 @@ if ($articles->have_posts()):
                         $content = wp_trim_words($content, '50');
                         ?>
                         <p><?php echo $content; ?></p>
-
-
-                        <a href="<?php echo get_the_permalink(); ?>">read article  <div class="button"></div></a>
-
+                        <a href="<?php echo get_the_permalink(); ?>">read article
+                            <div class="button"></div>
+                        </a>
                     </div>
-
                     <div class="borders top"></div>
                     <div class="borders right"></div>
                     <div class="borders left"></div>
