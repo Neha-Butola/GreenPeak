@@ -52,7 +52,7 @@ if ($videos->have_posts()): ?>
     <!-- Video section starts here  -->
     <section class="video-warpper">
         <div class="container">
-            <h2><?php the_field('video_section_heading'); ?></h2>
+            <h2 class="aos-init" data-aos="fade-in"><?php the_field('video_section_heading'); ?></h2>
             <div class="row" id="videos">
                 <?php while ($videos->have_posts()): $videos->the_post(); ?>
                     <div class="col-12 video-block">
@@ -74,9 +74,9 @@ wp_reset_query(); ?>
 
     <!-- Article section starts here -->
     <section class="video-warpper">
-        <div class="container">
-            <h2><?php the_field('articles_section_heading'); ?></h2>
-        </div>
+    <div class="container">
+    <h2 class="aos-init" data-aos="fade-in"><?php the_field('articles_section_heading'); ?></h2>
+    </div>
     </section>
 <?php $parameters = array(
     'post-type' => 'posts',
@@ -92,7 +92,7 @@ if ($articles->have_posts()):
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center inner-row">
-                        <h3 class=""><?php the_title(); ?></h3>
+                        <h3><?php the_title(); ?></h3>
                         <?php $content = get_the_content();
                         $content = wp_trim_words($content, '50');
                         ?>

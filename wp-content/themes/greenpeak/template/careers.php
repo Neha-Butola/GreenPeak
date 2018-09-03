@@ -72,7 +72,7 @@ if (!empty($values)):
             <div class="infinite-sec">
                 <div class="container">
                     <div class="single-head">
-                        <h2><?php the_field('main_heading'); ?></h2>
+                        <h2 class="aos-init" data-aos="fade-left"><?php the_field('main_heading'); ?></h2>
                     </div>
                     <?php $count = 0;
                     foreach ($values as $value): ?>
@@ -82,7 +82,7 @@ if (!empty($values)):
                                     if ($count % 2 == 0): ?>
                                         <div class="col-md-5">
                                             <div class="whats-on__block whats-on__block--intro">
-                                                <h2 class="from-left"><?php echo $value['heading']; ?></h2>
+                                                <h2 class="from-left aos-init" data-aos="fade-right"><?php echo $value['heading']; ?></h2>
                                                 <p class="black"><?php echo $value['sub_heading']; ?></p>
                                             </div>
                                         </div>
@@ -105,14 +105,14 @@ if (!empty($values)):
                                         </div>
                                         <div class="col-md-4">
                                             <div class="whats-on__block whats-on__block--intro">
-                                                <h2 class="from-ryt"><?php echo $value['heading']; ?></h2>
+                                                <h2 class="from-ryt aos-init" data-aos="fade-left"><?php echo $value['heading']; ?></h2>
                                                 <p class="black"><?php echo $value['sub_heading']; ?></p>
                                             </div>
                                         </div>
                                     <?php $count++; endif;
                                 elseif ($value['option'] == 'Video'): ?>
                                     <div class="single-head">
-                                        <h2><?php echo $value['heading']; ?></h2>
+                                        <h2 class="aos-init" data-aos="fade-left"><?php echo $value['heading']; ?></h2>
                                         <p><?php echo $value['sub_heading']; ?></p>
                                     </div>
 
