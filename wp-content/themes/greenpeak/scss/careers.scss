@@ -237,6 +237,20 @@
 
     .video-tag {
       text-align: center;
+
+      iframe {
+        width: 100%;
+        height: 730px;
+        @media screen and (max-width: $xl-breakpoint) {
+          height: 500px;
+        }
+        @media screen and (max-width: $md-breakpoint) {
+          height: 350px;
+        }
+        @media screen and (max-width: $sm-breakpoint) {
+          height: 200px;
+        }
+      }
     }
 
     &:nth-child(3) {
@@ -362,21 +376,21 @@
 
     &:nth-child(3) {
       right: 15vw;
-      top: 1100px;
+      top: 900px;
       width: 270px;
       height: 180px;
     }
 
     &:nth-child(4) {
       right: 40vw;
-      top: 1200px;
+      top: 1000px;
       width: 270px;
       height: 270px;
     }
 
     &:nth-child(5) {
       right: 8vw;
-      top: 1500px;
+      top: 1300px;
     }
 
     &:nth-child(6) {
@@ -387,14 +401,14 @@
     }
 
     &:nth-child(7) {
-      right: 75vw;
+      right: 48vw;
       top: 2500px;
       width: 190px;
       height: 210px;
     }
 
     &:nth-child(8) {
-      right: 70vw;
+      right: 10vw;
       top: 2800px;
       width: 270px;
       height: 210px;
@@ -408,4 +422,38 @@
 
 .bg-images__image {
   display: block !important;
+}
+
+.wonderplugingallery-container {
+  .html5gallery-container-1 {
+    .html5gallery-car-1 {
+      .html5gallery-tn-selected-1 {
+        display: none;
+      }
+
+      .html5gallery-tn-1 {
+        width: 33.33%;
+        height: 300px;
+
+        .html5gallery-tn-img-1 {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .html5gallery-tn-img-1 > div {
+          width: 100%;
+          height: 100%;
+        }
+
+        .html5gallery-tn-title-1 {
+          display: none;
+        }
+      }
+    }
+  }
 }
