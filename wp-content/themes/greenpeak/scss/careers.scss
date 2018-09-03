@@ -382,7 +382,7 @@
     }
 
     &:nth-child(4) {
-      right: 40vw;
+      right: 80vw;
       top: 1000px;
       width: 270px;
       height: 270px;
@@ -425,33 +425,45 @@
 }
 
 .wonderplugingallery-container {
+  margin-bottom: 200px;
+
   .html5gallery-container-1 {
     .html5gallery-car-1 {
-      .html5gallery-tn-selected-1 {
-        display: none;
-      }
+      .html5gallery-thumbs-1 {
+        margin: 0 !important;
 
-      .html5gallery-tn-1 {
-        width: 33.33%;
-        height: 300px;
+        .html5gallery-tn-selected-1 {
+          display: none;
+        }
 
-        .html5gallery-tn-img-1 {
-          width: 100%;
-          height: 100%;
+        .html5gallery-tn-1 {
+          width: 32.5% !important;
+          height: 250px !important;
+          margin-right: 15px;
 
-          img {
+          .html5gallery-tn-img-1 {
+            width: 100% !important;
+            height: 100% !important;
+
+            img {
+              width: 100% !important;
+              height: 100% !important;
+              object-fit: cover;
+            }
+          }
+
+          .html5gallery-tn-img-1 > div {
             width: 100%;
             height: 100%;
           }
-        }
 
-        .html5gallery-tn-img-1 > div {
-          width: 100%;
-          height: 100%;
-        }
+          .html5gallery-tn-title-1 {
+            display: none;
+          }
 
-        .html5gallery-tn-title-1 {
-          display: none;
+          &:last-child {
+            margin-right: 0;
+          }
         }
       }
     }
