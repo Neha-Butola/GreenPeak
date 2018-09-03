@@ -15,28 +15,6 @@
 /*  testimonial slider js*/
 jQuery(document).ready(function($) {
 
-	//service page Animation
-	// Get the id of the <path> element and the length of <path>
-	// var triangle = document.getElementById("triangle");
-	// var length = triangle.getTotalLength();
-	//
-	// // The start position of the drawing
-	// triangle.style.strokeDasharray = length;
-	//
-	// // Hide the triangle by offsetting dash. Remove this line to show the triangle before scroll draw
-	// triangle.style.strokeDashoffset = length;
-	//
-	// // Find scroll percentage on scroll (using cross-browser properties), and offset dash same amount as percentage scrolled
-	// window.addEventListener("scroll", myFunction);
-	//
-	// function myFunction() {
-	// var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-	//
-	//   var draw = length * scrollpercent;
-	//
-	//   // Reverse the drawing (when scrolling upwards)
-	//   triangle.style.strokeDashoffset = length - draw;
-	// }
 
 //create the career slider
     $('.cd-testimonials-wrapper').flexslider({
@@ -86,11 +64,57 @@ jQuery(document).ready(function($) {
 // if($('.page-template-careers').length) {
 // 	$('#infinite-section').hover(function() {
 			jQuery.stellar();
+
+
 // });
 // }
+
+
+	var blockClicked = false;
+	var blockNavLiItems = $('.team-section .column');
+	var i;
+
+$(".team-section .column").each(function(i, t) {
+	$(this).attr('id', 'height' + '-' + $(this).height());
+});
+
+    blockNavLiItems.height("auto");
+
+	$(".team-section .column .main-box").click(function (e) {
+                // event.preventDefault();
+                var revert_to_initial = ($(this).parent().hasClass('active_column')) ? true : false;
+                if ($('.active_column').length) {
+                    $('.active_column').each(function(i, t) {
+                         var hide_box = $(this).children('.hide-box');
+                         hide_box.css('display', 'none');
+
+                         var id = $(this).attr('id');
+                         var height = $(this).height();
+                         if (typeof id != 'undefined') {
+                             height = parseInt(id.split('-')[1]);
+                         }
+                        $(this).height(height);
+                        $(this).removeClass('active_column');
+
+                    });
+                }
+                if (!revert_to_initial) {
+                    $(this).parent().addClass("active_column");
+                    var this_hide_box = $(this).parent().find('.hide-box')
+                    this_hide_box.css('display', 'block');
+                    var id = $(this).parent().attr('id');
+                    var this_height = parseInt($(this).parent().height());
+                    if (typeof id != 'undefined') {
+                         this_height = parseInt(id.split('-')[1]);
+                    }
+                    $(this).parent().height(this_hide_box.height() + this_height);
+                }
+         });
+
+});
 /* triangle shapes charts js*/
-if($('.page-template-about').length) {
-	$('#chart-row').hover(function() {
+if(jQuery('.page-template-about').length) {
+	jQuery('#chart-row').ready(function() {
 
 	var bgColor = '#5B8080';
 	var containers = document.getElementsByClassName('chart');
@@ -228,45 +252,4 @@ data: data
 }
 /* triangle shapes charts js*/
 
-	var blockClicked = false;
-	var blockNavLiItems = $('.team-section .column');
-	var i;
-
-$(".team-section .column").each(function(i, t) {
-	$(this).attr('id', 'height' + '-' + $(this).height());
-});
-
-    blockNavLiItems.height("auto");
-
-	$(".team-section .column .main-box").click(function (e) {
-                // event.preventDefault();
-                var revert_to_initial = ($(this).parent().hasClass('active_column')) ? true : false;
-                if ($('.active_column').length) {
-                    $('.active_column').each(function(i, t) {
-                         var hide_box = $(this).children('.hide-box');
-                         hide_box.css('display', 'none');
-
-                         var id = $(this).attr('id');
-                         var height = $(this).height();
-                         if (typeof id != 'undefined') {
-                             height = parseInt(id.split('-')[1]);
-                         }
-                        $(this).height(height);
-                        $(this).removeClass('active_column');
-
-                    });
-                }
-                if (!revert_to_initial) {
-                    $(this).parent().addClass("active_column");
-                    var this_hide_box = $(this).parent().find('.hide-box')
-                    this_hide_box.css('display', 'block');
-                    var id = $(this).parent().attr('id');
-                    var this_height = parseInt($(this).parent().height());
-                    if (typeof id != 'undefined') {
-                         this_height = parseInt(id.split('-')[1]);
-                    }
-                    $(this).parent().height(this_hide_box.height() + this_height);
-                }
-         });
-
-});
+AOS.init();
