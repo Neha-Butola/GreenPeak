@@ -119,10 +119,7 @@ if (!empty($values)):
                                     <div class="whats-on__sec container-fluid">
                                         <div class="row">
                                             <div class="col-sm-12 video-tag">
-                                                <video src="<?php echo $value['video']; ?>"
-                                                       width="100%" height="auto">
-                                                </video>
-
+                                                <?php echo $value['video']; ?>
                                             </div>
 
                                         </div>

@@ -166,10 +166,10 @@ function greenpeak_scripts()
 
 add_action('wp_enqueue_scripts', 'greenpeak_scripts');
 
-add_action('wp_ajax_nopriv_ajax_pagination', 'my_ajax_pagination');
-add_action('wp_ajax_ajax_pagination', 'my_ajax_pagination');
+add_action('wp_ajax_nopriv_ajax_pagination', 'video_pagination');
+add_action('wp_ajax_ajax_pagination', 'video_pagination');
 
-function my_ajax_pagination()
+function video_pagination()
 {
     $page = $_POST['page'];
     $offset = ($page - 1) * 3;
