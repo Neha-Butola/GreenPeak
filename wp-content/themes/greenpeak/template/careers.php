@@ -19,7 +19,7 @@ get_header(); ?>
         </div>
     </div>
     <div class="container">
-        <div class="row plain-txt-row">
+        <div class="row">
             <div class="col-sm-12">
                 <?php echo do_shortcode('[wonderplugin_gallery id="1"]'); ?>
             </div>

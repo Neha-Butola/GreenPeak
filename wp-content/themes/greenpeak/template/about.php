@@ -23,6 +23,7 @@ get_header(); ?>
     </div>
 
     <!--  background-content row  -->
+<section class="right-filter">
 
     <div class="container-fluid">
         <div class="row bg-text-row" style="background-image: url('<?php the_field('background_image'); ?>');">
@@ -31,6 +32,8 @@ get_header(); ?>
             </div>
         </div>
     </div>
+
+    </section>
     <!-- unit row -->
 
     <div class="" id="chart-row"

@@ -189,9 +189,9 @@ if(jQuery('.page-template-about').length) {
 		}]
 	}];
 
-
+	var charts = [];
 	for (var i = 0; i < options.length; ++i) {
-		var charts = [];
+
 		var chart=null;
 		chart = echarts.init(containers[i]);
 
@@ -202,30 +202,29 @@ if(jQuery('.page-template-about').length) {
 		chart.setOption(options[i]);
 		chart.setOption({
 			baseOption: options[i],
-
 			media: [{
 				query: {
-					maxWidth: 300,
-					radius: '40%',
+					maxWidth: 200,
+					radius: '20%',
 				},
-				option: {
-					series: [{
-						label: {
-							fontSize: 26
-						}
-					}]
-				}
+				// option: {
+				// 	series: [{
+				// 		label: {
+				// 			fontSize: 26
+				// 		}
+				// 	}]
+				// }
 			}]
 		});
 
-		charts.push(chart);
+		// charts.push(chart);
 	}
 
-	window.onresize = function() {
-		for (var i = 0; i < charts.length; ++i) {
-			charts[i].resize();
-		}
-	};
+	// window.onresize = function() {
+	// 	for (var i = 0; i < charts.length; ++i) {
+	// 		charts[i].resize();
+	// 	}
+	// };
 
 
 	setInterval(update, 3000);
