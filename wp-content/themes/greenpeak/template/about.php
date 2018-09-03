@@ -62,9 +62,8 @@ get_header(); ?>
     <!-- about testimonial -->
 <?php $testimonials = get_field('testimonials');
 if (!empty($testimonials)):?>
-    <div class="testimonial-container">
-        <div class="cd-testimonials-wrapper "
-             style="background-image: url('<?php the_field('testimonials_background_image'); ?>');">
+    <div class="testimonial-container" style="background-image: url('<?php the_field('testimonials_background_image'); ?>');">
+        <div class="cd-testimonials-wrapper ">
             <ul class="testimonials-about">
                 <?php foreach ($testimonials as $testimonial): ?>
                     <li>

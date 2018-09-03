@@ -8,6 +8,8 @@
 /* testimonial styling*/
 .testimonial-container {
   width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .cd-testimonials-wrapper {
@@ -18,8 +20,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 100px 0 40px;
-  z-index: 1;
-  background-size: cover;
+  z-index: 3;
   @media only screen and (min-width: $md-breakpoint) {
     padding: 120px 0 150px;
   }
