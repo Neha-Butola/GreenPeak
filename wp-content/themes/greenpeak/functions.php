@@ -171,21 +171,17 @@ function my_ajax_pagination()
     $offset = ($page - 1) * 3;
     $parameters = array(
         'post_type' => 'videos',
+        'offset' => $offset,
         'posts_per_page' => 3,
-        'offset' => $offset
+
     );
     $videos = new WP_Query($parameters);
     if ($videos->have_posts()) { ?>
-        <div class="row">
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div class="col-12 video-block">
-                    <video width="100%" height="500px" controls>
-                        <source src="<?php the_field('video'); ?>"
-                                type="video/mp4">
-                    </video>
+                    <?php the_field('video'); ?>
                 </div>
             <?php endwhile; ?>
-        </div>
     <?php }
     die();
 }
