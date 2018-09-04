@@ -246,7 +246,7 @@ data: data
 
 AOS.init();
 var imgContainer = jQuery('#drawing');
-var img = jQuery('img');
+var img = jQuery('#drawing img');
 img.css('clip-path', "polygon(50% 0%, 0% 100%, 100% 100%)");
 // debugger;
 var $window = jQuery(window);
