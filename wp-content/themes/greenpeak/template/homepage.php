@@ -18,7 +18,7 @@ get_header(); ?>
   </figure> -->
 
 <div id="drawing">
-  <img src="https://lanbelle.com/wp-content/themes/lanbelle/images/sub/origin/origin-full-image-02.jpg" alt="" style="width: 100%">
+  <img src="<?php the_field('background_image'); ?>" alt="" style="width: 100%">
 </div>
 
 
