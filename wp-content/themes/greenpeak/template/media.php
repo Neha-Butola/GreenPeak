@@ -76,6 +76,8 @@ wp_reset_query(); ?>
     <section class="video-warpper">
     <div class="container">
     <h2 class="aos-init" data-aos="fade-in"><?php the_field('articles_section_heading'); ?></h2>
+    <!-- <div class="ani aos-init" data-aos="fade-right">
+    </div> -->
     </div>
     </section>
 <?php $parameters = array(
