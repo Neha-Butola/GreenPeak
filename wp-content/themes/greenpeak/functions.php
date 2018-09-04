@@ -135,7 +135,7 @@ function greenpeak_scripts()
 
     wp_enqueue_style('greenpeak-style', get_stylesheet_uri());
 
-      wp_enqueue_style('aos-css', get_template_directory_uri() . '/css/aos.css');
+    wp_enqueue_style('aos-css', get_template_directory_uri() . '/css/aos.css');
 
     wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
 
@@ -145,15 +145,15 @@ function greenpeak_scripts()
 
     wp_enqueue_script('jquery-steller', '//cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js', array('jquery'), '0.6.2', true);
 
-      wp_enqueue_script('jquery-aos', get_template_directory_uri() . '/js/aos.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('jquery-aos', get_template_directory_uri() . '/js/aos.js', array('jquery'), '1.0', true);
 
     // wp_enqueue_script('scroller-js', get_template_directory_uri() . '/js/skrollr.min.js', array('jquery'), '1.0', true);
 
-    wp_enqueue_script( 'echarts-js', get_template_directory_uri() . '/js/echarts.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('echarts-js', get_template_directory_uri() . '/js/echarts.js', array('jquery'), '1.0', true);
 
-    wp_enqueue_script( 'echarts-liquidfill-js', get_template_directory_uri() . '/js/echarts-liquidfill.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('echarts-liquidfill-js', get_template_directory_uri() . '/js/echarts-liquidfill.js', array('jquery'), '1.0', true);
 
-    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
 
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
 
@@ -166,33 +166,94 @@ function greenpeak_scripts()
 
 add_action('wp_enqueue_scripts', 'greenpeak_scripts');
 
-add_action('wp_ajax_nopriv_ajax_pagination', 'video_pagination');
-add_action('wp_ajax_ajax_pagination', 'video_pagination');
+add_action('wp_ajax_nopriv_ajax_pagination', 'ajax_pagination');
+add_action('wp_ajax_ajax_pagination', 'ajax_pagination');
 
-function video_pagination()
+function ajax_pagination()
 {
+    $data_type = $_POST['data_type'];
     $page = $_POST['page'];
-    $offset = ($page - 1) * 3;
-    $parameters = array(
-        'post_type' => 'videos',
-        'offset' => $offset,
-        'posts_per_page' => 3,
+    if ($data_type == 'video') {
+        $offset = ($page - 1) * 3;
+        $parameters = array(
+            'post_type' => 'videos',
+            'offset' => $offset,
+            'posts_per_page' => 3,
 
-    );
-    $videos = new WP_Query($parameters);
-    if ($videos->have_posts()) { ?>
+        );
+        $videos = new WP_Query($parameters);
+        if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div class="col-12 video-block">
                     <?php the_field('video'); ?>
                 </div>
             <?php endwhile; ?>
-    <?php }
+        <?php }
+    } elseif ($data_type == 'articles') {
+        $offset = ($page - 1) * 3;
+        $parameters = array(
+            'post_type' => 'post',
+            'offset' => $offset,
+            'posts_per_page' => 3,
+
+        );
+        $articles = new WP_Query($parameters);
+        if ($articles->have_posts()):
+            while ($articles->have_posts()):
+                $articles->the_post(); ?>
+                <section class="article-wrapper"
+                         style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center inner-row">
+                                <h3><?php the_title(); ?></h3>
+                                <?php $content = get_the_content();
+                                $content = wp_trim_words($content, '50');
+                                ?>
+                                <p><?php echo $content; ?></p>
+                                <a href="<?php echo get_the_permalink(); ?>">read article
+                                    <div class="button"></div>
+                                </a>
+                            </div>
+                            <div class="borders top"></div>
+                            <div class="borders right"></div>
+                            <div class="borders left"></div>
+                            <!-- Sharingbutton Twitter -->
+                            <a class="resp-sharing-button__link"
+                               href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>" target="_blank"
+                               aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                    <div aria-hidden="true"
+                                         class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Sharingbutton LinkedIn -->
+                            <a class="resp-sharing-button__link"
+                               href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                               target="_blank" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                    <div aria-hidden="true"
+                                         class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            <p class="share">share on</p>
+                        </div>
+
+                    </div>
+                </section>
+            <?php endwhile; endif;
+    }
     die();
 }
 
 /*
- * Option Page
- */
+* Option Page
+*/
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
@@ -222,7 +283,7 @@ function create_posttype()
 {
 
     register_post_type('videos',
-        // CPT Options
+// CPT Options
         array(
             'labels' => array(
                 'name' => __('Videos'),
@@ -239,16 +300,16 @@ function create_posttype()
 add_action('init', 'create_posttype');
 
 /*
- * Add filter to remove the classes on anchor tag of nav menu
- */
+* Add filter to remove the classes on anchor tag of nav menu
+*/
 
-add_filter( 'nav_menu_link_attributes', function( $attr) {
+add_filter('nav_menu_link_attributes', function ($attr) {
     $class = '';
     $attr['class'] = $class;
     return $attr;
-}, 10, 3 );
+}, 10, 3);
 
 /*
- * Add filter to remove p tag from editor
- */
-remove_filter( 'the_content', 'wpautop' );
+* Add filter to remove p tag from editor
+*/
+remove_filter('the_content', 'wpautop');
