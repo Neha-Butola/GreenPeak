@@ -50,17 +50,17 @@ jQuery(document).ready(function($) {
 
 				/*header scroll js*/
 
-				  var headervar = jQuery("header");
+var headervar = jQuery("header");
 
-				  jQuery(window).scroll(function() {
+jQuery(window).scroll(function() {
 
-				      var scroll = jQuery(window).scrollTop();
-				      if (scroll >= 50) {
-				          headervar.addClass("scrolled");
-				      } else {
-				          headervar.removeClass("scrolled");
-				      }
-				  });
+    var scroll = jQuery(window).scrollTop();
+    if (scroll >= 50) {
+        headervar.addClass("scrolled");
+    } else {
+        headervar.removeClass("scrolled");
+    }
+});
 			jQuery.stellar();
 
 	var blockClicked = false;
@@ -245,3 +245,21 @@ data: data
 /* triangle shapes charts js*/
 
 AOS.init();
+var imgContainer = jQuery('#drawing');
+var img = jQuery('img');
+img.css('clip-path', "polygon(50% 0%, 0% 100%, 100% 100%)");
+// debugger;
+var $window = jQuery(window);
+window.addEventListener('scroll', function() {
+  if ($window.scrollTop() >= imgContainer.offset().top) {
+    img.css('clip-path', 'none');
+    img.css('-webkit-clip-path', 'none');
+  } else if ($window.scrollTop() >= 0.75 * imgContainer.offset().top && $window.scrollTop() < imgContainer.offset().top) {
+    var diff = ($window.scrollTop() - (0.75 * imgContainer.offset().top)) / (imgContainer.offset().top - (0.75 * imgContainer.offset().top)) * 50;
+    img.css('clip-path', 'polygon(' + (50 - diff) + '% 0%, 0% 100%, 100% 100%, ' + (50 + diff) + '% 0%)');
+    img.css('-webkit-clip-path', 'polygon(' + (50 - diff) + '% 0%, 0% 100%, 100% 100%, ' + (50 + diff) + '% 0%)');
+  } else {
+    img.css('clip-path', "polygon(50% 0%, 0% 100%, 100% 100%)");
+    img.css('-webkit-clip-path', "polygon(50% 0%, 0% 100%, 100% 100%)");
+  }
+})
