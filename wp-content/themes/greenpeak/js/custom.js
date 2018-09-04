@@ -61,14 +61,7 @@ jQuery(document).ready(function($) {
 				          headervar.removeClass("scrolled");
 				      }
 				  });
-// if($('.page-template-careers').length) {
-// 	$('#infinite-section').hover(function() {
 			jQuery.stellar();
-
-
-// });
-// }
-
 
 	var blockClicked = false;
 	var blockNavLiItems = $('.team-section .column');
