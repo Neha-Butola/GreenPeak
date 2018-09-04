@@ -74,12 +74,11 @@ wp_reset_query(); ?>
 
     <!-- Article section starts here -->
     <section class="video-warpper">
-    <div class="container">
-    <h2 class="aos-init" data-aos="fade-in"><?php the_field('articles_section_heading'); ?></h2>
-    <!-- <div class="ani aos-init" data-aos="fade-right">
-    </div> -->
-    </div>
+        <div class="container">
+            <h2 class="aos-init" data-aos="fade-in"><?php the_field('articles_section_heading'); ?></h2>
+        </div>
     </section>
+
 <?php $parameters = array(
     'post-type' => 'posts',
     'posts_per_page' => '6',
@@ -99,15 +98,30 @@ if ($articles->have_posts()):
                         $content = wp_trim_words($content, '50');
                         ?>
                         <p><?php echo $content; ?></p>
-                        <a href="<?php echo get_the_permalink(); ?>">read article
+                        <a class="read-title" href="<?php echo get_the_permalink(); ?>">read article
                             <div class="button"></div>
                         </a>
                     </div>
                     <div class="borders top"></div>
                     <div class="borders right"></div>
                     <div class="borders left"></div>
-                    <i class="fab fa-linkedin-in"></i>
-                    <i class="fab fa-twitter"></i>
+                    <!-- Sharingbutton Twitter -->
+                    <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>" target="_blank" aria-label="">
+                        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Sharingbutton LinkedIn -->
+                    <a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>" target="_blank" aria-label="">
+                        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </a>
                     <p class="share">share on</p>
                 </div>
 

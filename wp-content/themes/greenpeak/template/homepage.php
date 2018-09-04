@@ -43,7 +43,7 @@ if (!empty($content)): ?>
                         <div class="stuff row" data-type="content">
                             <div class="col-md-6 col-12 align-self-end head-block aos-init" data-aos="fade-in" data-aos-duration="3000">
                                 <h2 class="large">“<?php echo $section['main_heading']; ?>”</h2>
-                                <h3><?php echo $section['sub_heading']; ?></h3>
+                                <h3 class="text-right"><?php echo $section['sub_heading']; ?></h3>
                             </div>
                             <div class="col-md-6 col-12 content-block aos-init" data-aos="fade-in" data-aos-duration="7000">
                                 <p><?php echo $section['description']; ?></p>
