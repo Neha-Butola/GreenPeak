@@ -64,8 +64,7 @@ if ($videos->have_posts()): ?>
     </section>
     <div class="nav-links">
         <a href="#" class="video-load-more" page="2" data-type="video"
-           total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>More
-            Videos</a>
+           total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>Load Videos</a>
     </div>
     <!-- Video section ends here  -->
 <?php endif;
@@ -99,7 +98,7 @@ wp_reset_query(); ?>
                                 $content = wp_trim_words($content, '50');
                                 ?>
                                 <p><?php echo $content; ?></p>
-                                <a href="<?php echo get_the_permalink(); ?>">read article
+                                <a class="read-title" href="<?php echo get_the_permalink(); ?>">read article
                                     <div class="button"></div>
                                 </a>
                             </div>
@@ -138,8 +137,7 @@ wp_reset_query(); ?>
     </div>
     <div class="nav-links">
         <a href="#" class="articles-load-more" page="2" data-type="articles"
-           total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>More
-            Videos</a>
+           total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>Load Articles</a>
     </div>
     <!-- Article section ends here -->
 
