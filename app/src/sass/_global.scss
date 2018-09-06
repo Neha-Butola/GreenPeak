@@ -1,50 +1,62 @@
-.bg-parallax {
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  padding: 6.25rem 15px 11.5rem;
-  position: relative;
-  &:before{
-    position: absolute;
-    content:'';
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right:0;
-     background-color: rgba(0, 0, 0, .1);
-  }
-.row{
-  > .col-md-6:first-child{
-    min-height: 22rem;
-  }
-}
-  p {
-    color: $white;
-    font-size: 1.5rem;
-  }
+.parallax-secs {
+  section {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 6.25rem 15px 11.5rem;
+    position: relative;
 
-  h2 {
-    font-size: 6.25rem;
-    font-style: normal;
-    a {
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, .1);
+    }
+
+    .row {
+      >.col-md-6:first-child {
+        min-height: 22rem;
+      }
+    }
+
+    p {
       color: $white;
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 6.25rem;
+      font-style: normal;
+
+      a {
+        color: $white;
         border-bottom: 1px solid $white;
-&:hover{
-  color: $green;
-}
+
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 3rem;
+      letter-spacing: 20px;
+    }
+
+    h2,
+    h3 {
+      text-transform: uppercase;
+      color: $white;
     }
   }
+}
 
-  h3 {
-    font-size: 3rem;
-        letter-spacing: 20px;
-  }
-
-  h2,
-  h3 {
-    text-transform: uppercase;
-    color: $white;
-  }
+.parallax-secs section:nth-child(2) h2 a {
+padding-left: 45px;
 }
 
 .container {
@@ -71,10 +83,10 @@
 }
 
 .right-line {
- right:0;
- animation: slideInFromRight 1s ease .7s;
+  right: 0;
+  animation: slideInFromRight 1s ease .7s;
 }
 
 .section-divider {
-      padding: 5.5rem 15px;
+  padding: 5.5rem 15px;
 }
