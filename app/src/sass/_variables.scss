@@ -1,0 +1,56 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+//
+// Color system
+//
+// stylelint-disable
+$white: #fff !default;
+$gray-100: #f6f6f6;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-700: #3D3D44;
+$gray-800: #c0b9b1;
+$gray-900: #216289;
+$black: #000 !default;
+$blue: $gray-900;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$teal: #20c997 !default;
+$cyan: #e8eff3;
+/*===Override variables ====*/
+$green: #77bd90;
+$gray-600: #5d5d5d;
+/*==== custom variables ====*/
+$pale-white:#eaeaea;
+$green1: #6bcb9d;
+$green2: #77bc8f;
+$green3: #63a57a;
+
+$link-hover-decoration: none;
+$link-color: $green;
+
+/*====font =====*/
+$vantisa_black: "vanitasblack",
+sans-serif;
+$vantisa_regular: 'vanitasregular',
+sans-serif;
+/*** Global text color on `<body>`.*/
+$body-bg: $pale-white;
+/*-----text variables -------*/
+$text-gray: $gray-600;
+$text-green: $green1;
+/*===== headings ======*/
+$h1-font-size: 2.5rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.75rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;

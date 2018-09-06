@@ -1,0 +1,78 @@
+/* banner css */
+
+.banner {
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+
+  >img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+    background: rgba(22, 22, 56, .45);
+  }
+}
+
+.site-brand {
+  font-size: 2.5rem;
+  color: $green;
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 145px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+
+  * {
+    text-transform: uppercase;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.animating-line {
+  position: relative;
+  text-align: center;
+  width: 50%;
+  height: 1px;
+  background-color: $white;
+  animation: slideInFromLeft 1s ease .7s;
+}
+
+/* The HOW section css */
+
+.the-how h2 a {
+    padding-left: 45px;
+}
+
+.the-why h2 a{
+   padding-right: 45px;
+}
+
