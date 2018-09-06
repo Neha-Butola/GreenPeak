@@ -37,6 +37,7 @@ if (!empty($content)):
                 </div>
             </div>
         </section>
+        
         <!-- * =============== /why section =============== * -->
     <?php endforeach; ?>
 <?php endif; ?>
