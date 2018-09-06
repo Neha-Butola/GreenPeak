@@ -47,24 +47,7 @@
   }
 }
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%)
-  }
 
-  100% {
-    transform: translateX(0)
-  }
-}
-
-.animating-line {
-  position: relative;
-  text-align: center;
-  width: 50%;
-  height: 1px;
-  background-color: $white;
-  animation: slideInFromLeft 1s ease .7s;
-}
 
 /* The HOW section css */
 

@@ -2,3 +2,4 @@
 
 require('./vendor');
 require('./home');
+require('./carrer');

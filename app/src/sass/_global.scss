@@ -50,3 +50,31 @@
 .container {
   max-width: 1600px;
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.animating-line {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  height: 1px;
+  background-color: $white;
+  animation: slideInFromLeft 1s ease .7s;
+}
+
+.right-line {
+ right:0;
+ animation: slideInFromRight 1s ease .7s;
+}
+
+.section-divider {
+      padding: 5.5rem 15px;
+}

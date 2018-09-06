@@ -14,13 +14,14 @@ import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/tab';
 import 'bootstrap/js/dist/modal';
-
+import 'bootstrap/js/dist/modal';
+import 'owl.carousel/dist/owl.carousel.min.js';
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel';
 //AOS Library animate on scroll
 import AOS from 'aos';
 
-AOS.init({});
+AOS.init();
 
 
 
