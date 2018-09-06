@@ -11,26 +11,42 @@
 
 ?>
 
-	</div><!-- #content -->
+</main>
+<!-- * =============== Footer =============== * -->
+<footer class="main-footer">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="/" class="footer-logo">
+                <img src="<?php the_field('footer_logo', 'options'); ?>" alt="">
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <?php the_field('copyright_text', 'options'); ?>
+        </div>
+        <div class="col-md-3">
+            <h5>
+                <a href="mailto:<?php the_field('email_address', 'options'); ?>" target="_top"
+                   class="mail-link"><?php the_field('email_address', 'options'); ?></a>
+            </h5>
+        </div>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'greenpeak' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'greenpeak' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'greenpeak' ), 'greenpeak', '<a href="http://underscores.me/">socaps</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+    </div>
+    <?php $icons = get_field('social_icons', 'options');
+    if (!empty($icons)):?>
+        <ul class="list-unstyled social-icons text-center">
+            <?php foreach ($icons as $icon): ?>
+                <li>
+                    <a href="<?php echo $icon['icons_links']; ?>">
+                        <i class="<?php echo $icon['icons_class']; ?>"></i>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</footer>
+<!-- * =============== /Footer=============== * -->
+</div>
 
 <?php wp_footer(); ?>
-
 </body>
 </html>
