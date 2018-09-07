@@ -36,7 +36,7 @@
         <ul class="list-unstyled social-icons text-center">
             <?php foreach ($icons as $icon): ?>
                 <li>
-                    <a href="<?php echo $icon['icons_links']; ?>">
+                    <a href="<?php echo $icon['icons_links']; ?>" target="_blank">
                         <i class="<?php echo $icon['icons_class']; ?>"></i>
                     </a>
                 </li>
