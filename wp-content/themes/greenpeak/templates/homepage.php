@@ -13,33 +13,35 @@ get_header(); ?>
             <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
     </div>
+    <!-- * =============== /Banner section =============== * -->
 
 <?php $content = get_field('content');
-if (!empty($content)):
-    $count = 0;
-    foreach ($content as $section): ?>
-        <!-- * =============== why section =============== * -->
-        <section class="the-why lozad bg-parallax"
-                 data-background-image="<?php echo $section['background_image']; ?>">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 <?php echo ($count % 2 != 0) ? 'offset-md-6 text-md-right' : ''; ?>"
-                         data-aos="fade-in" data-aos-delay="700">
-                        <?php echo $section['description']; ?>
-                    </div>
-                    <div class="col-md-6 <?php echo ($count % 2 != 0) ? 'text-md-right' : 'offset-md-6'; ?>"
-                         data-aos="fade-in" data-aos-delay="100">
-                        <h2>
-                            <a href="#">"<?php echo $section['main_heading']; ?>"</a>
-                        </h2>
-                        <h3><?php echo $section['sub_heading']; ?></h3>
+if (!empty($content)): ?>
+    <!-- * =============== parallax section =============== * -->
+    <div class="parallax-secs">
+        <?php $count = 0;
+        foreach ($content as $section): ?>
+            <section class="lozad"
+                     data-background-image="<?php echo $section['background_image']; ?>">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 <?php echo ($count % 2 != 0) ? 'offset-md-6 text-md-right' : ''; ?>"
+                             data-aos="fade-in" data-aos-delay="700">
+                            <?php echo $section['description']; ?>
+                        </div>
+                        <div class="col-md-6 <?php echo ($count % 2 != 0) ? 'text-md-right' : 'offset-md-6'; ?>"
+                             data-aos="fade-in" data-aos-delay="100">
+                            <h2>
+                                <a href="#">"<?php echo $section['main_heading']; ?>"</a>
+                            </h2>
+                            <h3><?php echo $section['sub_heading']; ?></h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- * =============== /why section =============== * -->
-    <?php endforeach; ?>
+            </section>
+            <?php $count++; endforeach; ?>
+    </div>
+    <!-- * =============== /parallax section =============== * -->
 <?php endif; ?>
 
 <?php get_footer();
