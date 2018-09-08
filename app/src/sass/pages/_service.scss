@@ -69,9 +69,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    width: 500px;
     justify-content: space-between;
-    margin-right: 40px; 
+    margin-right: 40px;
     &.content-below {
         .col-above {
             padding-top: 4rem;
@@ -92,7 +92,7 @@
         padding: 10px 0;
         width: auto!important;
     }
- 
+
 }
 
 .timeline {
@@ -109,21 +109,24 @@
 .timeline-inner {
     @include position-absolute;
     height: 3px;
-    width: calc(100% + 40px);
+    //width: calc(100% + 40px);
     left: 90px;
     top: 58%;
+    width: 0;
     transform: translateY(-50%);
+    transition: all ease 2s;
     .dot {
         @include position-absolute;
-        background: #fff;
+        background: rgba(0,0,0,0);
         left: 0;
         top: -3px;
         width: 10px;
         height: 10px;
         border-radius: 50%;
         >div {
+            transition: all ease 1s;
             position: absolute;
-            height: 80px;
+            height: 0;
             width: 2px;
             left: 4px;
             top: 0;
@@ -139,12 +142,8 @@
             bottom: 0;
         }
         .dot > div {
-            position: absolute;
-            height: 80px;
-            width: 2px;
-            left: 4px;
-            top: -80px;
-            background: white;
+            //top: -80px;
+            transform: rotate(180deg);
         }
     }
 }
