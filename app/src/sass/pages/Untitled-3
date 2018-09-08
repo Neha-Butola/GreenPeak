@@ -2,54 +2,22 @@
 /* hide horizontal scrollbars, since we use the vertical ones to scroll to the right */
 @mixin position-absolute {
     position: absolute;
-    content: '';
     background: #fff;
 }
 
-.page {
-    .main-head  {
-        padding-top: 20px;
-    }
-    
-    .main-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        padding: 0.8rem 4rem 0;
-        h5 {
-            font-size: 1rem;
-        }
-    } 
-    .social-icons {
-        padding-top: 0;
-        font-size: 1rem;
-        margin: 2px;
-    }
-    .mail-link {
-        font-size: 1.2rem;
-    }
-    .footer-logo img {
-        width: 75%;
-    }
+.main-head  {
+    padding-top: 40px;
 }
-
-
 .service-container {
     overflow-y: scroll;
     overflow-x: hidden;
     transform: rotate(270deg) translateX(-100%);
     transform-origin: top left;
     width: 100vh;
-    height: 100vw;  
-    position: absolute; 
+    height: 100vw;   
     &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
-    &::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
-    } 
+        display: none!important
+    }
 }
 
 .service-container .service-container2 {
@@ -59,6 +27,7 @@
 }
 
 .service-page{
+    background: url('./../images/ServicesMainBG_GP.jpg');
     font-size: 18px;
     width: 4000px;
     height: 100vh;
@@ -73,8 +42,6 @@
     width: 100%;
     left: 0;
     z-index: -1;
-    height: 100%;
-    object-fit: cover;
 }
 
 .service-wrap {
@@ -93,8 +60,7 @@
         margin-bottom: 0.5em;
     }
     li {
-        padding: 5px 0;
-        line-height: 1.4;
+        padding: 8px 0;
     }
 }
 
@@ -102,9 +68,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    max-width: 500px;
     justify-content: space-between;
-    margin-right: 40px;
+    margin-right: 40px; 
     &.content-below {
         .col-above {
             padding-top: 4rem;
@@ -112,9 +78,10 @@
     }
     .col-above{
         margin-bottom: auto;
+        min-height: 51%;
     }
     .col-below {
-        padding-top: 2rem;
+        padding-top: 5rem;
         margin-bottom: auto;
     }
 
@@ -124,7 +91,7 @@
         padding: 10px 0;
         width: auto!important;
     }
-
+ 
 }
 
 .timeline {
@@ -141,15 +108,13 @@
 .timeline-inner {
     @include position-absolute;
     height: 3px;
-    //width: calc(100% + 40px);
+    width: calc(100% + 40px);
     left: 90px;
     top: 58%;
-    width: 0;
     transform: translateY(-50%);
-    transition: all ease 2s;
     .dot {
         @include position-absolute;
-        background: rgba(0,0,0,0);
+        background: #fff;
         left: 0;
         top: -3px;
         width: 10px;
@@ -164,21 +129,13 @@
             width: 200%;
             top: -5px;
             left: -5px;
-            transition: 10s ease;
-        }
-        &.show {
-            background: #fff;
-            &:after {
-                border: 2px solid #fff
-            }
+            border: 2px solid #fff;
         }
         >div {
-            transition: all ease 1s;
             position: absolute;
-            height: 0;
+            height: 80px;
             width: 2px;
             left: 4px;
-            top: 0;
             background: white;
         }
         .dot-in {
@@ -189,7 +146,6 @@
             height: 10px;
             bottom: 0;
             border-radius: 50%;
-            display: none;
         }
     }
 }
@@ -201,8 +157,12 @@
             bottom: 0;
         }
         .dot > div {
-            //top: -80px;
-            transform: rotate(180deg);
+            position: absolute;
+            height: 80px;
+            width: 2px;
+            left: 4px;
+            top: -80px;
+            background: white;
         }
     }
 }

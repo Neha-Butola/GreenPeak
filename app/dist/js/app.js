@@ -293,32 +293,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {var owl = $('.service-carousel');
-owl.owlCarousel({
-    margin: 40,
-    center: true,
-    responsive: {
-        0: {
-            items: 1
-        },
-        960: {
-            items: 2
-        },
-        1200: {
-            items: 2
-        }
-    }
-});
-
-owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY > 0) {
-        owl.trigger('next.owl');
-    } else {
-        owl.trigger('prev.owl');
-    }
-    e.preventDefault();
-});
-
+/* WEBPACK VAR INJECTION */(function($) {
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
     let offset = $('.service-container').scrollTop();
@@ -332,14 +307,38 @@ $('.service-container').on('scroll', () => {
         let ele = $(item);
         // debugger;
         if (ele.offset().left + (500 + indentLeft) <= offset) {
+            if (index === 1) {
+                $('header').addClass('nav-style');
+            }
             indentLeft = indentLeft + 90;
-            console.log(offset, ele.offset().left);
-            // percentage = offset / (ele.offset().left + 500);
-            // percentage = percentage >= 100 ? 100 : percentage;
-            // console.log(percentage);
-            ele.find('.timeline-inner').css('width', '108%');
+
+            if (index <= elements.length - 2) {
+                ele.find('.timeline-inner').css('width', '108%');
+            } else {
+                ele.find('.timeline-inner').css('width', '5%');
+            }
+
+            let dotEle = ele.find('.dot>div');
+            ele.find('.dot').addClass('show');
+            dotEle.css('height', '80px');
+            dotEle.find('.dot-in').css("display", 'block');
+            if (index % 2 === 0) {
+                dotEle.css('top', '-80px');
+            }
         } else {
+            if (index === 1) {
+                $('header').removeClass('nav-style');
+            }
+
             ele.find('.timeline-inner').css('width', '0');
+            ele.find('.dot').removeClass('show');
+
+            let dotEle = ele.find('.dot>div');
+            dotEle.css('height', '0');
+            dotEle.find('.dot-in').css("display", 'none');
+            if (index % 2 === 0) {
+                dotEle.css('top', '0');
+            }
         }
     });
 });
