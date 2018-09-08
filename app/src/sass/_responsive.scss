@@ -1,4 +1,9 @@
 /** =============== Responsive CSS =============== **/
+@media (max-width: 1600px) {
+.nav-style .logo {
+	left: 26px;
+}
+}
 //Extra Large devices
 @media (max-width: 1420px) {
 	// Home Page css
@@ -64,7 +69,7 @@
 	}
 
 	/* Homepage */
-	.bg-parallax {
+	.parallax-secs section {
 		background-attachment: initial;
 		h2{
 			a{
@@ -107,7 +112,8 @@
 	padding-bottom: 20px;
 	}
 }
-}}
+}
+}
 
 
 // Extra small devices

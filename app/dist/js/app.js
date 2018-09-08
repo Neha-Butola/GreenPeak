@@ -93,21 +93,39 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$('.owl-carousel').owlCarousel({
+/* WEBPACK VAR INJECTION */(function($) {$('.testimonial .owl-carousel').owlCarousel({
   loop: true,
   margin: 10,
-  nav: true,
+  dots: true,
+  smartSpeed: 600,
   responsive: {
     0: {
       items: 1
     },
     600: {
-      items: 3
+      items: 1
     },
     1000: {
       items: 1
     }
   }
+});
+
+$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+  disableOn: 700,
+  type: 'iframe',
+  mainClass: 'mfp-fade',
+  removalDelay: 160,
+  preloader: false
+
+});
+
+$('.thevideo').mouseover(function () {
+  $(this).get(0).play();
+  $('video').addClass('play-video');
+}).mouseout(function () {
+  $(this).get(0).pause();
+  $('video').removeClass('play-video');
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
@@ -125,9 +143,14 @@
 $(window).on("resize", function () {
   var titlewidth;
   titlewidth = $('.banner-content h1 span').width();
+  valuetitle = $('.values-title h2 span').width();
   titlewidth = titlewidth / 2;
-  $('.animating-line').css({
+  valuetitle = valuetitle / 2;
+  $('.banner-content .animating-line').css({
     'width': 'calc(50% + ' + titlewidth + 'px)'
+  });
+  $('.value-sec .animating-line').css({
+    'width': 'calc(50% + ' + valuetitle + 'px)'
   });
 }).resize();
 
@@ -222,7 +245,6 @@ window.Popper = expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___defa
 // import 'owl.carousel';
 //AOS Library animate on scroll
 
-
 aos__WEBPACK_IMPORTED_MODULE_9___default.a.init();
 
 
@@ -236,6 +258,15 @@ observer.observe();
 // other scripts can trigger this event to force observe newly added images
 $(window).on('tp.lozad.observe', function () {
   observer.observe();
+});
+
+// https://github.com/markdalgleish/stellar.js
+// Load this library from CDN
+
+$.stellar({
+
+  hideDistantElements: false
+
 });
 
 // We will extract all css to a separate file

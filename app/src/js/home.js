@@ -3,9 +3,14 @@
 $(window).on("resize", function () {
   var titlewidth;
   titlewidth = $('.banner-content h1 span').width();
+  valuetitle = $('.values-title h2 span').width();
   titlewidth = titlewidth / 2;
-  $('.animating-line').css({
+  valuetitle = valuetitle / 2;
+  $('.banner-content .animating-line').css({
     'width': 'calc(50% + ' + titlewidth + 'px)'
+  });
+  $('.value-sec .animating-line').css({
+    'width': 'calc(50% + ' + valuetitle + 'px)'
   });
 }).resize();
 

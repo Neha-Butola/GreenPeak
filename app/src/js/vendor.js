@@ -20,10 +20,7 @@ import 'owl.carousel/dist/owl.carousel.min.js';
 // import 'owl.carousel';
 //AOS Library animate on scroll
 import AOS from 'aos';
-
 AOS.init();
-
-
 
 import lozad from 'lozad';
 
@@ -36,6 +33,15 @@ observer.observe();
 // other scripts can trigger this event to force observe newly added images
 $(window).on('tp.lozad.observe', function () {
   observer.observe();
+});
+
+// https://github.com/markdalgleish/stellar.js
+// Load this library from CDN
+
+$.stellar({
+
+  hideDistantElements: false,
+
 });
 
 // We will extract all css to a separate file

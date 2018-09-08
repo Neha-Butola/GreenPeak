@@ -26,6 +26,7 @@
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "jquery": "^3.3.1",
+    "jquery.stellar": "^0.6.2",
     "lozad": "^1.6.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
