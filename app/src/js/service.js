@@ -1,28 +1,3 @@
-var owl = $('.service-carousel');
-owl.owlCarousel({
-    margin:40,
-    center: true,
-    responsive:{
-        0:{
-            items:1
-        },           
-        960:{
-            items:2
-        },
-        1200:{
-            items:2
-        }
-    }
-});
-
-owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY>0) {
-        owl.trigger('next.owl');
-    } else {
-        owl.trigger('prev.owl');
-    }
-    e.preventDefault();
-});
 
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
@@ -49,17 +24,17 @@ $('.service-container').on('scroll', () => {
             }
 
 
-            let dotEle = ele.find('.dot div');
-            ele.find('.dot').css('background', '#fff');
+            let dotEle = ele.find('.dot>div');
+            ele.find('.dot').addClass('show');
             dotEle.css('height', '80px');
             if (index % 2 === 0) {
                 dotEle.css('top', '-80px');
             }
         } else {
             ele.find('.timeline-inner').css('width', '0');
-            ele.find('.dot').css('background', 'rgba(0,0,0,0)');
+            ele.find('.dot').removeClass('show');
 
-            let dotEle = ele.find('.dot div');
+            let dotEle = ele.find('.dot>div');
             dotEle.css('height', '0');
             if (index % 2 === 0) {
                 dotEle.css('top', '0');
