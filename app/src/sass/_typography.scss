@@ -27,6 +27,7 @@ body {
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	color: #5d5d5d;
+	overflow-x: hidden;
 }
 
 h1,
@@ -45,7 +46,7 @@ h1 {
 
 h2 {
 	font-size: $h2-font-size;
-	color: $green1;
+	color: $green3;
 	font-weight: 400;
 }
 

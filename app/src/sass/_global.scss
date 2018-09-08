@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    padding: 6.25rem 15px 11.5rem;
+    padding: 6.25rem 0 11.5rem;
     position: relative;
 
     &:before {
@@ -89,4 +89,20 @@ padding-left: 45px;
 
 .section-divider {
   padding: 5.5rem 15px;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.fixed-bg{
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
 }
