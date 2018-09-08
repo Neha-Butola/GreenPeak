@@ -12,6 +12,9 @@ $('.service-container').on('scroll', () => {
         let ele = $(item);
         // debugger;
         if (ele.offset().left + (500 + indentLeft) <= offset) {
+            if (index === 1) {
+                $('header').addClass('nav-style');
+            }
             indentLeft = indentLeft + 90;
 
             if (index <= (elements.length - 2)) {
@@ -28,6 +31,10 @@ $('.service-container').on('scroll', () => {
                 dotEle.css('top', '-80px');
             }
         } else {
+            if (index === 1) {
+                $('header').removeClass('nav-style');
+            }
+
             ele.find('.timeline-inner').css('width', '0');
             ele.find('.dot').removeClass('show');
 
