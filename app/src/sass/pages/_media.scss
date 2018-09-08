@@ -22,18 +22,19 @@
 
   .position-relative {
     min-height: 335px;
-    > p:nth-of-type(1){
-       position: relative;
 
-       &:before {
-         position: absolute;
-         content: '';
-         height: 1px;
-         background-color: $white;
-         width: 50%;
-         top: -23px;
-         left: 25%;
-       }
+    >p:nth-of-type(1) {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        height: 1px;
+        background-color: $white;
+        width: 50%;
+        top: -23px;
+        left: 25%;
+      }
     }
   }
 
@@ -85,7 +86,6 @@
     max-width: 72rem;
     margin: 0 auto;
     padding: 0 15px;
-
   }
 
   h3 {
@@ -187,18 +187,42 @@
 
 .articles-sec {
   div {
-    &:nth-child(even) {
-       .position-relative {
-    min-height: 335px;
-    > p:nth-of-type(1){
-       position: relative;
+    &:hover {
+      .read {
+        color: $green;
 
-       &:before {
-         background-color: $black;
-       }}}
-.read{
-color: $green3;
-}
+        .line {
+          &:before {
+            right: -10px;
+            width: 68px;
+          }
+
+          &:after {
+            right: -20px;
+          }
+        }
+      }
+    }
+  }
+
+  >div.fixed-bg {
+    &:nth-of-type(even) {
+      .position-relative {
+        min-height: 335px;
+
+        >p:nth-of-type(1) {
+          position: relative;
+
+          &:before {
+            background-color: $black;
+          }
+        }
+      }
+
+      .read {
+        color: $green3;
+      }
+
       .article-block:after,
       .article-block:before,
       .article-block h3:after,
@@ -222,23 +246,6 @@ color: $green3;
 
       h3 {
         color: #312c5c;
-      }
-    }
-  }
-
-  &:hover {
-    .read {
-      color: $green;
-
-      .line {
-        &:before {
-          right: -10px;
-          width: 68px;
-        }
-
-        &:after {
-          right: -20px;
-        }
       }
     }
   }
