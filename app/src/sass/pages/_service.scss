@@ -52,8 +52,6 @@
     padding-top: 4em;
     position: relative;
     display: flex;
-    position: absolute;
-    left: 5vw;
     margin: auto;
 
     .title {
@@ -97,31 +95,6 @@
  
 }
 
-// .timeline_active {
-   
-//     &:nth-of-type(even) {
-//         .col-below:before {
-//             content: none;
-//         }
-//         .col-below:after {
-//             top: calc(70px - 82px);
-//         }
-
-//         .col-above:before {
-//             content: '';
-//             bottom: -3px;
-//         }
-//         .col-above:after {
-//             bottom: calc(-17px + 82px);
-//         }
-//     }
-//     .owl-item:last-child {
-//         .service-col:before {
-//             width: 0;
-//         }
-//     }
-// }
-
 .timeline {
     position: absolute;
     content: '';
@@ -148,30 +121,30 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
+        >div {
+            position: absolute;
+            height: 80px;
+            width: 2px;
+            left: 4px;
+            top: 0;
+            background: white;
+        }
     }
 }
 
-.service2-page {
-    background: url('./../images/ServicesMainBG_GP.jpg');
-    font-size: 20px;
-    .service-carousel {
-        color: #fff;
-        font-family: $vantisa_black;
-        font-size: 1em;
-        padding-top: 4em;
-        position: relative;
-        .title {
-            color: #77c093;
-            font-family: $vantisa_regular;
-            -webkit-font-smoothing: initial;
-            margin-bottom: 0.5em;
-        }
-        li {
-            padding: 8px 0;
-        }
-    }
-
+.service-col:nth-of-type(odd) {
     .timeline-inner {
-        top: 65%;
+        &:after {
+            top: -80px;
+            bottom: 0;
+        }
+        .dot > div {
+            position: absolute;
+            height: 80px;
+            width: 2px;
+            left: 4px;
+            top: -80px;
+            background: white;
+        }
     }
 }
