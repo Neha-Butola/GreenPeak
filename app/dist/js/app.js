@@ -263,10 +263,9 @@ $(window).on('tp.lozad.observe', function () {
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
 
-$.stellar({
 
+jquery__WEBPACK_IMPORTED_MODULE_0___default.a.stellar({
   hideDistantElements: false
-
 });
 
 // We will extract all css to a separate file
