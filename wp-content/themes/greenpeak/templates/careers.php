@@ -34,7 +34,10 @@ if (!empty($testimonials)): ?>
                     <div class="item text-white">
                         <?php echo $testimonial['testimony']; ?>
                         <div class="intro">
-                            <h2><?php echo $testimonial['reviewer_name']; ?></h2>
+                            <div>
+                                <h2><?php echo $testimonial['reviewer_name']; ?></h2>
+                                <h5><?php echo $testimonial['reviewer_designation']; ?></h5>
+                            </div>
                             <img src="<?php echo $testimonial['reviewer_image']; ?>" alt="profile-img">
                         </div>
                     </div>
