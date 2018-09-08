@@ -1,7 +1,7 @@
 /* ===========================
 Your Application Specific CSS.
 Only Import Here ===========*/
-
+@import 'fonts';
 @import "variables";
 @import "typography";
 @import "forms";
@@ -11,5 +11,6 @@ Only Import Here ===========*/
 @import 'footer';
 @import "pages/carrer";
 @import "pages/media";
+@import "pages/service";
 @import "responsive";
 

@@ -1,0 +1,168 @@
+
+/* hide horizontal scrollbars, since we use the vertical ones to scroll to the right */
+@mixin position-absolute {
+    position: absolute;
+    background: #fff;
+}
+
+.main-head  {
+    padding-top: 40px;
+}
+.service-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: rotate(270deg) translateX(-100%);
+    transform-origin: top left;
+    width: 100vh;
+    height: 100vw;   
+    &::-webkit-scrollbar {
+        display: none!important
+    }
+}
+
+.service-container .service-container2 {
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+    width: 100%;
+}
+
+.service-page{
+    background: url('./../images/ServicesMainBG_GP.jpg');
+    font-size: 18px;
+    width: 4000px;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 5em;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+}
+
+.service-wrap {
+    color: #fff;
+    font-family: $vantisa_black;
+    font-size: 1em;
+    padding-top: 4em;
+    position: relative;
+    display: flex;
+    margin: auto;
+
+    .title {
+        color: #77c093;
+        font-family: $vantisa_regular;
+        -webkit-font-smoothing: initial;
+        margin-bottom: 0.5em;
+    }
+    li {
+        padding: 8px 0;
+    }
+}
+
+.service-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    justify-content: space-between;
+    margin-right: 40px; 
+    &.content-below {
+        .col-above {
+            padding-top: 4rem;
+        }
+    }
+    .col-above{
+        margin-bottom: auto;
+        min-height: 51%;
+    }
+    .col-below {
+        padding-top: 5rem;
+        margin-bottom: auto;
+    }
+
+    img {
+        max-height: 200px;
+        object-fit: contain;
+        padding: 10px 0;
+        width: auto!important;
+    }
+ 
+}
+
+.timeline {
+    position: absolute;
+    content: '';
+    width: 500px;
+    left: 590px;
+    top: 57%;
+    height: 5px;
+    background: #000;
+    transition: 0.1s ease-in;
+}
+
+.timeline-inner {
+    @include position-absolute;
+    height: 3px;
+    width: calc(100% + 40px);
+    left: 90px;
+    top: 58%;
+    transform: translateY(-50%);
+    .dot {
+        @include position-absolute;
+        background: #fff;
+        left: 0;
+        top: -3px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        &:after {
+            @include position-absolute;
+            background: transparent;
+            content: '';
+            border-radius: 50%;
+            height: 200%;
+            width: 200%;
+            top: -5px;
+            left: -5px;
+            border: 2px solid #fff;
+        }
+        >div {
+            position: absolute;
+            height: 80px;
+            width: 2px;
+            left: 4px;
+            background: white;
+        }
+        .dot-in {
+            @include position-absolute;
+            left: -4px;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            bottom: 0;
+            border-radius: 50%;
+        }
+    }
+}
+
+.service-col:nth-of-type(odd) {
+    .timeline-inner {
+        &:after {
+            top: -80px;
+            bottom: 0;
+        }
+        .dot > div {
+            position: absolute;
+            height: 80px;
+            width: 2px;
+            left: 4px;
+            top: -80px;
+            background: white;
+        }
+    }
+}
