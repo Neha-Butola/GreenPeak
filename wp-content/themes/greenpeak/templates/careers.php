@@ -19,7 +19,7 @@ get_header(); ?>
 
 <!-- * =============== Video Section =============== * -->
 <section class="container">
-
+    <?php echo do_shortcode('[wonderplugin_gallery id="1"]'); ?>
 </section>
 <!-- * =============== /Video Section =============== * -->
 
@@ -55,7 +55,7 @@ if (!empty($values)):
     <section class="value-sec">
         <div class="text-center position-relative values-title">
             <h2 data-aos="fade-left"><span><?php the_field('main_heading'); ?></span></h2>
-            <div class="animating-line right-line"></div>
+            <div class="animating-line right-line" data-aos="slide-left" data-aos-delay="250"></div>
         </div>
         <div class="container">
             <div class="row">
