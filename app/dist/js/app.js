@@ -93,7 +93,25 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$('.testimonial .owl-carousel').owlCarousel({
+/* WEBPACK VAR INJECTION */(function($) {$('#career-testimonial .owl-carousel').owlCarousel({
+  loop: true,
+  margin: 10,
+  dots: true,
+  smartSpeed: 600,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 1
+    }
+  }
+});
+
+$('#about-testimonial .owl-carousel').owlCarousel({
   loop: true,
   margin: 10,
   dots: true,
@@ -191,6 +209,8 @@ __webpack_require__(/*! ./mouse-wheel */ "./app/src/js/mouse-wheel.js");
 __webpack_require__(/*! ./home */ "./app/src/js/home.js");
 __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
+__webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
+__webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
 
 /***/ }),
 
@@ -346,6 +366,408 @@ $('.service-container').on('scroll', () => {
 
 /***/ }),
 
+/***/ "./app/src/js/team-sec.js":
+/*!********************************!*\
+  !*** ./app/src/js/team-sec.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {contentheight = $('.collapse').height();
+$(".col-sm-4 .btn").click(function () {
+  $(".col-sm-4").parent().toggleClass("test");
+  $(".test + .row").css('margin-top', contentheight);
+  //  if (!$('.row').hasClass("test")) {
+  //    $(".row").css('margin-top', 0);
+  //  }
+  if ($(".show").parents(".row").length == 0) {
+    $(".row").removeClass('test');
+  }
+});
+//  if ($("#accordion:has(.test)")) {
+//    $(".test + .row").css('margin-top', contentheight);
+//  } else {
+//    $(".test + .row").css('margin-top', 0);
+//  }
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./app/src/js/triangle.js":
+/*!********************************!*\
+  !*** ./app/src/js/triangle.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {var GraphMaker = function (window) {
+
+  /**
+   * Abstract class for canvas helper
+   * @param elementId
+   */
+  function BaseCanvas(elementId) {
+    var self = this;
+    self.element = window.document.getElementById(elementId);
+    self.canvas = self.element.getContext('2d');
+
+    function initSettings() {
+      self.setSize();
+    }
+
+    self.setSize = function () {
+      self.y = self.element.height;
+      self.x = self.element.width;
+    };
+
+    initSettings();
+  }
+
+  /**
+   * Helper class to create canvas actions
+   * @param {canvas} [canvas object with 2d context]
+   */
+  function CanvasHelper(canvas) {
+    var self = this;
+
+    self.canvas = canvas;
+
+    /**
+     * Creates a line
+     * @param  {object} [begin line position x,y]
+     * @param  {object} [end line position x,y]
+     * @param options
+     */
+    self.createLine = function (begin, end, options) {
+      options = options || {};
+
+      self.canvas.beginPath();
+      self.canvas.moveTo(begin.x, begin.y);
+      self.canvas.lineTo(end.x, end.y);
+
+      if (options.colour) {
+        self.canvas.strokeStyle = options.colour;
+      }
+
+      if (options.lineWidth) {
+        self.canvas.lineWidth = options.lineWidth;
+      }
+
+      self.canvas.stroke();
+      self.canvas.closePath();
+    };
+
+    /**
+     * Creates a static rectangle or a filled rectangle
+     * @param  {object} [begin line position x,y]
+     * @param  {object} [end line position x,y]
+     * @param options
+     * @param isRect
+     */
+    self.createRectangle = function (begin, end, options, isRect) {
+      options = options || {};
+      isRect = isRect === undefined ? true : isRect;
+
+      self.canvas.beginPath();
+
+      if (options.fillColour) {
+        self.canvas.fillStyle = options.fillColour;
+      }
+
+      if (options.colour) {
+        self.canvas.strokeStyle = options.colour;
+      }
+
+      if (isRect) {
+        //creates a static empty rectangle with borders
+        self.canvas.rect(begin.x, begin.y, end.x, end.y);
+      } else {
+        //creates a filled coloured rectangle
+        self.canvas.fillRect(begin.x, begin.y, end.x, end.y);
+      }
+      self.canvas.stroke();
+      self.canvas.closePath();
+    };
+
+    /**
+     * Creates a text at given position
+     * @param txt
+     * @param position
+     * @param options
+     */
+    self.createText = function (txt, position, options) {
+
+      options = options || {};
+
+      self.canvas.beginPath();
+      if (options.font) {
+        self.canvas.font = options.font;
+      }
+
+      self.canvas.fillStyle = "black";
+      if (options.colour) {
+        self.canvas.fillStyle = options.colour;
+      }
+
+      self.canvas.fillText(txt, position.x, position.y);
+      self.canvas.stroke();
+      self.canvas.closePath();
+    };
+
+    /**
+     * Creates a circle bubbles
+     * @param circumference
+     * @param options
+     * @param position
+     * @param radius
+     */
+    self.createCircle = function (position, radius, circumference, options) {
+      options = options || {};
+
+      //var radius = 10;
+      self.canvas.beginPath();
+
+      self.canvas.strokeStyle = "black";
+      self.canvas.lineWidth = 1;
+
+      if (options.width) {
+        self.canvas.lineWidth = options.width;
+      }
+
+      self.canvas.fillStyle = "white";
+      if (options.colour) {
+        self.canvas.fillStyle = options.colour;
+      }
+      self.canvas.arc(position.x, position.y, radius, 0, 2 * Math.PI);
+
+      self.canvas.fill();
+      self.canvas.stroke();
+      self.canvas.closePath();
+    };
+
+    self.createTriangle = function (pointA, pointB, pointC, options, toFill) {
+      toFill = toFill === undefined ? false : toFill;
+
+      self.canvas.beginPath();
+      self.canvas.moveTo(pointA.x, pointA.y);
+      self.canvas.lineTo(pointB.x, pointB.y);
+      self.canvas.lineTo(pointC.x, pointC.y);
+      self.canvas.lineTo(pointA.x, pointA.y);
+
+      self.canvas.fillStyle = "white";
+      if (options.fillColour) {
+        self.canvas.fillStyle = options.fillColour;
+      }
+
+      if (options.colour) {
+        self.canvas.strokeStyle = options.colour;
+      }
+
+      if (options.width) {
+        self.canvas.strokeStyle = options.width;
+      }
+
+      if (toFill) {
+        self.canvas.fill();
+      }
+
+      self.canvas.stroke();
+      self.canvas.closePath();
+    };
+  }
+
+  /**
+   * Class : Handing the creation of basic matrix actions
+   * @param elementId
+   */
+  function MatrixGraph(elementId) {
+    //extends base canvas
+    BaseCanvas.apply(this, [elementId]);
+
+    //extends canvas helper
+    CanvasHelper.apply(this, [this.canvas]);
+
+    var self = this;
+
+    //initializing constructor
+    self.constructor.prototype.initSettings = function () {
+
+      self.range = {};
+      self.range.x = 300;
+      self.range.y = 150;
+
+      self.pixels = {};
+      self.pixels.y = self.y / self.range.y;
+      self.pixels.x = self.x / self.range.x;
+
+      // self.draw.create();
+    };
+
+    //all draw objects
+    self.draw = {};
+
+    self.initSettings();
+  }
+
+  /**
+   * @param elementId
+   */
+  function GraphMaker(elementId) {
+    MatrixGraph.apply(this, [elementId]);
+    var self = this;
+    self.isTriangleAnimationComplete = false;
+    self.isTriangleAnimationStarted = false;
+
+    self.triangle = function (percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily) {
+
+      if (self.isTriangleAnimationComplete) {
+        return;
+      }
+
+      if (self.isTriangleAnimationStarted) {
+        return;
+      }
+
+      self.isTriangleAnimationStarted = true;
+
+      canvas.createTriangle({
+        x: self.x / 2 * self.pixels.x,
+        y: 0
+      }, {
+        x: 0,
+        y: self.y * self.pixels.y
+      }, {
+        x: self.x * self.pixels.x,
+        y: self.y * self.pixels.y
+      }, {
+        fillColour: triangleFillColour,
+        color: triangleStrokeColour,
+        width: triangleStrokeWidth
+
+      }, false);
+
+      height = self.y;
+      canvas.createText(percentage + '%', {
+        x: 140 * self.pixels.x,
+        y: 82.5 * self.pixels.y
+      }, {
+        colour: fontColour,
+        font: fontFamily
+      });
+
+      var id = window.setInterval(function () {
+
+        canvas.createRectangle({
+          x: 0,
+          y: 0
+        }, {
+          x: self.x * self.pixels.x,
+          y: self.y * self.pixels.y
+        }, {
+          fillColour: rectangleFillColour
+        }, false);
+
+        canvas.createTriangle({
+          x: self.x / 2 * self.pixels.x,
+          y: 0
+        }, {
+          x: 0,
+          y: self.y * self.pixels.y
+        }, {
+          x: self.x * self.pixels.x,
+          y: self.y * self.pixels.y
+        }, {
+          fillColour: triangleFillColour,
+          color: triangleStrokeColour,
+          width: triangleStrokeWidth
+
+        }, true);
+
+        canvas.createText(percentage + '%', {
+          x: 140 * self.pixels.x,
+          y: 82.5 * self.pixels.y
+        }, {
+          colour: fontColour,
+          font: fontFamily
+        });
+
+        canvas.createRectangle({
+          x: 0,
+          y: 0
+        }, {
+          x: self.x * self.pixels.x,
+          y: height
+        }, {
+          fillColour: rectangleFillColour
+        }, false);
+
+        canvas.createTriangle({
+          x: self.x / 2 * self.pixels.x,
+          y: 0
+        }, {
+          x: 0,
+          y: self.y * self.pixels.y
+        }, {
+          x: self.x * self.pixels.x,
+          y: self.y * self.pixels.y
+        }, {
+          fillColour: triangleFillColour,
+          color: triangleStrokeColour,
+          width: triangleStrokeWidth
+
+        }, false);
+        canvas.createText(percentage + '%', {
+          x: 140 * self.pixels.x,
+          y: 82.5 * self.pixels.y
+        }, {
+          colour: fontColour,
+          font: fontFamily
+        });
+
+        height = height * 0.98;
+
+        if (height <= (100 - percentage) / 100 * 150) {
+          window.clearInterval(id);
+          self.isTriangleAnimationComplete = true;
+        }
+      }, 10);
+    };
+
+    // self.draw.redraw = function () {
+    //     self.draw.create();
+    // }
+  }
+
+  return GraphMaker;
+}(window);
+
+var canvas = new GraphMaker('sample');
+var $window = $(window);
+window.addEventListener('scroll', function () {
+  if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
+    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+  }
+});
+
+var canvas = new GraphMaker('sample1');
+var $window = $(window);
+window.addEventListener('scroll', function () {
+  if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
+    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+  }
+});
+
+var canvas = new GraphMaker('sample2');
+var $window = $(window);
+window.addEventListener('scroll', function () {
+  if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
+    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
 /***/ "./app/src/js/vendor.js":
 /*!******************************!*\
   !*** ./app/src/js/vendor.js ***!
@@ -357,9 +779,9 @@ $('.service-container').on('scroll', () => {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed");
+/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js");
 /* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed");
+/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js");
 /* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/alert */ "./node_modules/bootstrap/js/dist/alert.js");
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__);
@@ -417,11 +839,8 @@ $(window).on('tp.lozad.observe', function () {
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
 
-$.stellar({
 
-  hideDistantElements: false
-
-});
+// jQuery.stellar();
 
 // We will extract all css to a separate file
 __webpack_require__(/*! ../sass/vendor.scss */ "./app/src/sass/vendor.scss");
@@ -2541,10 +2960,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed ***!
-  \***********************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2553,10 +2972,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed":
-/*!*****************************************************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js-exposed ***!
-  \*****************************************************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
