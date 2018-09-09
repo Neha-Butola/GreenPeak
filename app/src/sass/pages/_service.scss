@@ -3,19 +3,18 @@
 @mixin position-absolute {
     position: absolute;
     content: '';
-    background: #fff;
 }
 
-.page {
+.service-page {
     .main-head  {
-        padding-top: 20px;
+        padding: 20px 100px 0;
     }
     
     .main-footer {
         position: fixed;
         bottom: 0;
         width: 100%;
-        padding: 0.8rem 4rem 0;
+        padding: 5px 4rem 0;
         h5 {
             font-size: 1rem;
         }
@@ -23,7 +22,8 @@
     .social-icons {
         padding-top: 0;
         font-size: 1rem;
-        margin: 2px;
+        margin: 0;
+        line-height: 1.9;
     }
     .mail-link {
         font-size: 1.2rem;
@@ -31,6 +31,12 @@
     .footer-logo img {
         width: 75%;
     }
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -39,7 +45,7 @@
     overflow-x: hidden;
     transform: rotate(270deg) translateX(-100%);
     transform-origin: top left;
-    width: 100vh;
+    width: calc(100vh - 75px);
     height: 100vw;  
     position: absolute; 
     &::-webkit-scrollbar {
@@ -58,13 +64,18 @@
     width: 100%;
 }
 
-.service-page{
-    font-size: 18px;
-    width: 4000px;
+.service-section {
+    font-size: 20px;
+    min-width: 4780px;
     height: 100vh;
     position: relative;
-    background-repeat: no-repeat;
-    padding-top: 5em;
+    &:before {
+        @include position-absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.15);
+    }
 }
 
 .bg-image {
@@ -81,19 +92,23 @@
     color: #fff;
     font-family: $vantisa_black;
     font-size: 1em;
-    padding-top: 4em;
+    padding: 18vh 0 0 100px;
     position: relative;
     display: flex;
     margin: auto;
-
+    h4 {
+        font-family: $vantisa_regular;  
+        margin: 9vh 0  0.5em;
+        font-weight: 600;
+    }
     .title {
         color: #77c093;
-        font-family: $vantisa_regular;
-        -webkit-font-smoothing: initial;
-        margin-bottom: 0.5em;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 10px;
+        display: inline-block;
     }
     li {
-        padding: 5px 0;
+        padding: 4px 0;
         line-height: 1.4;
     }
 }
@@ -102,51 +117,36 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 670px;
     justify-content: space-between;
-    margin-right: 40px;
-    &.content-below {
-        .col-above {
-            padding-top: 4rem;
-        }
-    }
+    margin-right: 65px;
     .col-above{
-        margin-bottom: auto;
     }
     .col-below {
-        padding-top: 2rem;
+        padding-top: 15vh;
         margin-bottom: auto;
+        position: relative;
+      
     }
-
     img {
-        max-height: 200px;
+        max-height: 250px;
         object-fit: contain;
-        padding: 10px 0;
-        width: auto!important;
+        padding: 10px 0;    
+        max-width: 100%;
     }
 
 }
 
-.timeline {
-    position: absolute;
-    content: '';
-    width: 500px;
-    left: 590px;
-    top: 57%;
-    height: 5px;
-    background: #000;
-    transition: 0.1s ease-in;
-}
-
-.timeline-inner {
+.timeline{
     @include position-absolute;
     height: 3px;
     //width: calc(100% + 40px);
-    left: 90px;
-    top: 58%;
+    left: 113px;
+    top: 46%;
     width: 0;
     transform: translateY(-50%);
     transition: all ease 2s;
+    background: #fff;
     .dot {
         @include position-absolute;
         background: rgba(0,0,0,0);
@@ -183,6 +183,7 @@
         }
         .dot-in {
             @include position-absolute;
+            background: #fff;
             left: -4px;
             bottom: 0;
             width: 10px;
@@ -195,7 +196,8 @@
 }
 
 .service-col:nth-of-type(odd) {
-    .timeline-inner {
+
+    .timeline {
         &:after {
             top: -80px;
             bottom: 0;
@@ -205,4 +207,21 @@
             transform: rotate(180deg);
         }
     }
+}
+
+
+@media (max-height: 768px) {
+    .service-section {
+        font-size: 18px;
+    }
+    .service-wrap {
+        padding-top: 5em;
+    }
+    .service-wrap li {
+        padding: 2px 0;
+    }
+    .service-col .col-below {
+        padding-top: 4em;
+    }
+
 }
