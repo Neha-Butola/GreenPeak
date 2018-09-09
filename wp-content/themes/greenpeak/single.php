@@ -8,30 +8,23 @@
  */
 
 get_header();
-?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+if (have_posts()):
+    while (have_posts()): the_post()
+        ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+        <div class="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+            <div class="banner-content">
+                <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_title(); ?></span></h1>
+                <div class="animating-line"></div>
+            </div>
+        </div>
+        <section>
+            <div class="container">
+                <?php the_content(); ?>
+            </div>
+        </section>
+    <?php
+    endwhile; endif;
 
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
 get_footer();
