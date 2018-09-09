@@ -78,22 +78,7 @@
     padding-top: 8.5rem;
   }
 
-  .col-md-5 {
-    h2 span {
-      position: relative;
 
-      &:after {
-        position: absolute;
-        content: "";
-        background: #63a37a;
-        bottom: -16px;
-        right: 0;
-        height: 1px;
-        left: -100%;
-            animation: slideInFromLeft 1s ease .7s;
-      }
-    }
-  }
 
   .row {
     >[class*="col-"] {

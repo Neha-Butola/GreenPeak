@@ -106,3 +106,22 @@ padding-left: 45px;
       background-size: cover;
       background-position: center center;
 }
+
+ .left-animating
+ {
+
+    span {
+     position: relative;
+
+     &:after {
+       position: absolute;
+       content: "";
+       background: #63a37a;
+       bottom: -16px;
+       right: 0;
+       height: 1px;
+       left: -100%;
+       animation: slideInFromLeft 1s ease .7s;
+     }
+   }
+ }

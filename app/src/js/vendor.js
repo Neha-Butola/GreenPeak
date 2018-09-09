@@ -39,9 +39,7 @@ $(window).on('tp.lozad.observe', function () {
 // Load this library from CDN
 
 
-jQuery.stellar({
-  hideDistantElements: false,
-});
+// jQuery.stellar();
 
 // We will extract all css to a separate file
 require('../sass/vendor.scss');

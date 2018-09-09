@@ -18,14 +18,13 @@ html {
 }
 
 body {
-	background: $body-bg;
+	background: $white;
 	font-family: $vantisa_regular;
 	font-size: 1.75rem;
 	margin: 0;
 	padding: 0;
 	line-height: 2.375rem;
 	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
 	color: #5d5d5d;
 	overflow-x: hidden;
 }
