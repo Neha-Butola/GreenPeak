@@ -147,12 +147,102 @@ function greenpeak_scripts()
 
     wp_enqueue_script('greenpeak-js', get_template_directory_uri() . '/dist/js/app.js', ['jquery'], '1.0', true);
 
-    if (is_singular() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
+    wp_enqueue_script('pagination', get_template_directory_uri() . '/js/pagination.js', array('jquery'), '1.0', true);
+
+    wp_localize_script('pagination', 'ajaxpagination', array(
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'greenpeak_scripts');
+
+/*
+ * Load More pagination for videos and articles section
+ */
+
+add_action('wp_ajax_nopriv_ajax_pagination', 'ajax_pagination');
+add_action('wp_ajax_ajax_pagination', 'ajax_pagination');
+
+function ajax_pagination()
+{
+    $data_type = $_POST['data_type'];
+    $page = $_POST['page'];
+    if ($data_type == 'video') {
+        $offset = ($page - 1) * 3;
+        $parameters = array(
+            'post_type' => 'videos',
+            'offset' => $offset,
+            'posts_per_page' => 3,
+
+        );
+        $videos = new WP_Query($parameters);
+        if ($videos->have_posts()) { ?>
+            <?php while ($videos->have_posts()): $videos->the_post(); ?>
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="<?php the_field('video_url'); ?>" width="640"
+                            height="360"
+                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                </div>
+            <?php endwhile; ?>
+        <?php }
+    } elseif ($data_type == 'articles') {
+        $offset = ($page - 1) * 3;
+        $parameters = array(
+            'post_type' => 'post',
+            'offset' => $offset,
+            'posts_per_page' => 3,
+
+        );
+        $articles = new WP_Query($parameters);
+        if ($articles->have_posts()):
+            while ($articles->have_posts()):
+                $articles->the_post(); ?>
+                <div data-background-image="<?php echo get_the_post_thumbnail_url(); ?>" class="lozad fixed-bg">
+                    <div class="container">
+                        <div class="text-center article-block">
+                            <div class="position-relative">
+                                <h3><?php the_title(); ?></h3>
+                                <?php $content = get_the_content();
+                                $content = wp_trim_words($content, '50');
+                                ?>
+                                <p><?php echo $content; ?></p>
+                                <div class="share">
+                                    <!-- Sharingbutton LinkedIn -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                                       target="_blank" aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Sharingbutton Twitter -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
+                                       target="_blank"
+                                       aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-twitter"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <small>share on</small>
+                                </div>
+
+                                <a href="<?php the_permalink(); ?>" class="read">read article <span
+                                        class="line"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; endif;
+    }
+    die();
+}
 
 /*
 * Option Page
