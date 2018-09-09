@@ -12,6 +12,7 @@
 ?>
 
 </main>
+
 <!-- * =============== Footer =============== * -->
 <footer class="main-footer">
     <div class="row">
@@ -46,7 +47,7 @@
 </footer>
 <!-- * =============== /Footer=============== * -->
 </div>
-
-<?php wp_footer(); ?>
+<?php echo (is_page('services')) ? '</div>' : '';
+wp_footer(); ?>
 </body>
 </html>
