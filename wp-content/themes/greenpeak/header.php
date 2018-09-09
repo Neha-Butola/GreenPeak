@@ -22,12 +22,12 @@
 
 <body <?php body_class(); ?>>
 <div class="app">
-
+    <?php echo (is_page('services')) ? '<div class="service-page">' : ''; ?>
     <main>
         <!-- * =============== Header =============== * -->
         <header class="main-head fixed-top">
             <nav class="container">
-                <a href="/" class="logo"><img src="<?php the_field('header_logo','options'); ?>"
+                <a href="/" class="logo"><img src="<?php the_field('header_logo', 'options'); ?>"
                                               alt="greenpeak-logo"></a>
 
                 <?php wp_nav_menu([
