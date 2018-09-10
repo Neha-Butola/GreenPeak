@@ -124,9 +124,9 @@ if (!empty($values)):
 if (get_field('form_code')): ?>
     <!-- * =============== Form Section =============== * -->
     <section class="contact-bg lozad fixed-bg" data-background-image="<?php the_field('form_background_image'); ?>">
-        <div class="container text-white">
+        <div class="container section-divider text-white">
             <?php the_field('form_content'); ?>
-            <h3 class="text-uppercase"><?php the_field('form_heading'); ?></h3>
+            <h2><?php the_field('form_heading'); ?></h2>
             <?php $form_code = get_field('form_code');
             echo do_shortcode($form_code); ?>
         </div>
