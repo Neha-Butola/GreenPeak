@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/src/js/animating-triangle.js":
-/*!******************************************!*\
-  !*** ./app/src/js/animating-triangle.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/nancyshalini/Documents/projects/greenpeak/app/src/js/animating-triangle.js'");
-
-/***/ }),
-
 /***/ "./app/src/js/carrer.js":
 /*!******************************!*\
   !*** ./app/src/js/carrer.js ***!
@@ -225,7 +214,6 @@ __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
 __webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
 __webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
-__webpack_require__(/*! ./animating-triangle */ "./app/src/js/animating-triangle.js");
 
 /***/ }),
 
