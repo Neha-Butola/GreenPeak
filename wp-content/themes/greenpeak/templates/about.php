@@ -12,12 +12,15 @@ get_header() ?>
         </div>
     </div>
 
+<?php if (get_field('content_section_one')): ?>
     <!-- * =============== Content Section =============== * -->
     <section class="container section-divider">
         <?php the_field('content_section_one'); ?>
     </section>
     <!-- * =============== /Content Section =============== * -->
+<?php endif;
 
+if (get_field('content_section_two')): ?>
     <!-- * =============== Content Section 2=============== * -->
     <section class="fixed-bg lozad triangle-bg" data-background-image="<?php the_field('background_image'); ?>">
         <div class="container section-divider text-white">
@@ -25,9 +28,10 @@ get_header() ?>
         </div>
     </section>
     <!-- * =============== /Content Section 2=============== * -->
+<?php endif; ?>
 
     <!-- * =============== Filling-triangle Section =============== * -->
-    <section  class="green-bg">
+    <section class="green-bg">
         <div class="row">
             <div class="col-sm-4">
                 <canvas id="sample"></canvas>

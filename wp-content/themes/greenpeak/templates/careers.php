@@ -11,11 +11,14 @@ get_header(); ?>
         <div class="animating-line right-line"></div>
     </div>
 </div>
-<!-- * =============== Content Section =============== * -->
-<section class="container section-divider">
-    <?php the_field('content'); ?>
-</section>
-<!-- * =============== /Content Section =============== * -->
+
+<?php if (get_field('content')): ?>
+    <!-- * =============== Content Section =============== * -->
+    <section class="container section-divider">
+        <?php the_field('content'); ?>
+    </section>
+    <!-- * =============== /Content Section =============== * -->
+<?php endif; ?>
 
 <!-- * =============== Video Section =============== * -->
 <section class="container">
