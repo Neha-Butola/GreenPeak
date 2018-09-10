@@ -30,7 +30,7 @@ get_header(); ?>
 if (!empty($testimonials)): ?>
     <!-- * =============== Testimonial Section =============== * -->
     <section class="lozad section-divider text-center testimonial fixed-bg"
-             data-background-image="<?php the_field('background_image'); ?>">
+             data-background-image="<?php the_field('background_image'); ?>" id="career-testimonial">
         <div class="container">
             <div class="owl-carousel owl-theme">
                 <?php foreach ($testimonials as $testimonial): ?>
