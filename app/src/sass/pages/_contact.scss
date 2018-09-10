@@ -1,37 +1,73 @@
-.contact-bg{
-  p,h3{
-    font-size: 2.375rem;
+.contact-bg {
+  h2 {
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+
+  h3 {
     line-height: 3.375rem;
+  }
+
+  p,
+  h3 {
+    font-size: 2.375rem;
     color: $white;
   }
-  h3{
+
+  h3 {
     letter-spacing: 10px;
   }
 }
 
-form{
-  span{
+form {
+  input[type="submit"] {
+ background-color: transparent;
+ color: $white;
+ padding: .5rem 2rem;
+ text-transform: uppercase;
+ letter-spacing: 8px;
+  }
+
+  textarea {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  textarea,
+  input {
+    border: 0;
+    border-bottom: 1px solid $white;
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: $white;
+    line-height: 3.3125rem;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  span {
     display: block;
     width: 100%;
-    input{
-          width: 100%;
-          background-color: transparent;
-          border: 0;
-          border-bottom: 1px solid #fff;
-           font-size: 1.5rem;
-    }
   }
 }
 
-.contact{
+.contact {
   padding-top: 3rem;
-  a{
+
+  a {
     color: #5d5d5d;
     font-size: 2.25rem;
-    &:hover{
-       color: $green3;
+
+    &:hover {
+      color: $green3;
     }
-    i{
+
+    i {
       margin-right: 20px;
       color: $green3;
     }
@@ -39,25 +75,29 @@ form{
 }
 
 /* -- Placeholder Global Color -- */
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
 }
 
-input::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
 }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
 }
 
-input:-moz-placeholder {
+input:-moz-placeholder,
+textarea:-moz-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;

@@ -66,3 +66,7 @@
  .green-bg{
    background-color: #63a37a;
  }
+
+ p:empty{
+   display: none;
+ }
