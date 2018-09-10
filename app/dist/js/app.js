@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/src/js/animating-triangle.js":
-/*!******************************************!*\
-  !*** ./app/src/js/animating-triangle.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/nancyshalini/Documents/projects/greenpeak/app/src/js/animating-triangle.js'");
-
-/***/ }),
-
 /***/ "./app/src/js/carrer.js":
 /*!******************************!*\
   !*** ./app/src/js/carrer.js ***!
@@ -225,7 +214,7 @@ __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
 __webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
 __webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
-__webpack_require__(/*! ./animating-triangle */ "./app/src/js/animating-triangle.js");
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './animating-triangle'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 /***/ }),
 
@@ -1151,9 +1140,9 @@ window.addEventListener('scroll', function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js");
+/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed");
 /* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js");
+/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed");
 /* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/alert */ "./node_modules/bootstrap/js/dist/alert.js");
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__);
@@ -3331,10 +3320,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3343,10 +3332,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js-exposed ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
