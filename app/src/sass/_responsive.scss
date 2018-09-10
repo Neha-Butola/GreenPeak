@@ -61,7 +61,13 @@
 			text-align: center;
 		}
 	}
-
+/* contact page */
+.contact {
+	.col-md-6 {
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+}
 	/* Header */
 	.nav-style.main-head {
 		padding: .5rem 0;
@@ -151,7 +157,11 @@
 	.the-why {
 		background-position: 90% 0;
 	}
-}
+
+
+
+
+
 
 /* media Page */
 .logos-section {
@@ -186,7 +196,7 @@
 			padding-bottom: 20px;
 		}
 	}
-}
+}}
 
 // Extra small devices
 @media (max-width: 576px) {

@@ -38,7 +38,11 @@ $(window).on('tp.lozad.observe', function () {
 // Load this library from CDN
 
 
-// jQuery.stellar();
+jQuery.stellar();
+
+// magnific pop up
+
+require('magnific-popup');
 
 // We will extract all css to a separate file
 require('../sass/vendor.scss');
