@@ -644,10 +644,15 @@ $('a.resp-sharing-button__link').on('click', function (e) {
    * Abstract class for canvas helper
    * @param elementId
    */
-  function BaseCanvas(elementId) {
+  function BaseCanvas(elementId, maintainAspectRatio) {
     var self = this;
     self.element = window.document.getElementById(elementId);
     self.canvas = self.element.getContext('2d');
+
+    if (maintainAspectRatio) {
+      self.element.width = window.innerWidth;
+      self.element.height = window.innerHeight;
+    }
 
     function initSettings() {
       self.setSize();
@@ -818,9 +823,9 @@ $('a.resp-sharing-button__link').on('click', function (e) {
    * Class : Handing the creation of basic matrix actions
    * @param elementId
    */
-  function MatrixGraph(elementId) {
+  function MatrixGraph(elementId, maintainAspectRatio) {
     //extends base canvas
-    BaseCanvas.apply(this, [elementId]);
+    BaseCanvas.apply(this, [elementId, maintainAspectRatio]);
 
     //extends canvas helper
     CanvasHelper.apply(this, [this.canvas]);
@@ -850,8 +855,9 @@ $('a.resp-sharing-button__link').on('click', function (e) {
   /**
    * @param elementId
    */
-  function GraphMaker(elementId) {
-    MatrixGraph.apply(this, [elementId]);
+  function GraphMaker(elementId, maintainAspectRatio) {
+    MatrixGraph.apply(this, [elementId, maintainAspectRatio]);
+
     var self = this;
     self.isTriangleAnimationComplete = false;
     self.isTriangleAnimationStarted = false;
@@ -971,17 +977,17 @@ $('a.resp-sharing-button__link').on('click', function (e) {
       }, 50);
     };
 
-    var startingHeight = 10;
-    var triangleWidthCenter = 150;
-    var triangleHeightCenter = 75;
+    var startingHeight = 10 * self.pixels.y;
+    var triangleWidthCenter = 150 * self.pixels.x;
+    var triangleHeightCenter = 75 * self.pixels.y;
 
     self.setupTriangleAnimation = function () {
       self.createRectangle({
         x: 0,
         y: 0
       }, {
-        x: 300,
-        y: 150
+        x: 300 * self.pixels.x,
+        y: 150 * self.pixels.y
       }, {
         fillColour: 'rgba(255,255,255,1)'
       }, false);
@@ -995,7 +1001,7 @@ $('a.resp-sharing-button__link').on('click', function (e) {
 
       self.canvas.globalCompositeOperation = 'destination-out';
       self.createTriangle({
-        x: 150,
+        x: 150 * self.pixels.x,
         y: startingYPosition
       }, {
         x: startingXPosition,
@@ -1016,8 +1022,8 @@ $('a.resp-sharing-button__link').on('click', function (e) {
         x: 0,
         y: 0
       }, {
-        x: 300,
-        y: 150
+        x: 300 * self.pixels.x,
+        y: 150 * self.pixels.y
       }, {
         fillColour: 'rgba(255,255,255,1)'
       }, false);
@@ -1025,13 +1031,13 @@ $('a.resp-sharing-button__link').on('click', function (e) {
 
       if (toAdd) {
         startingHeight = startingHeight * 1.5;
-        if (startingHeight >= 600) {
-          startingHeight = 600;
+        if (startingHeight >= 600 * self.pixels.y) {
+          startingHeight = 600 * self.pixels.y;
         }
       } else {
         startingHeight = startingHeight * 0.75;
-        if (startingHeight <= 25) {
-          startingHeight = 25;
+        if (startingHeight <= 25 * self.pixels.y) {
+          startingHeight = 25 * self.pixels.y;
         }
       }
 
@@ -1043,7 +1049,7 @@ $('a.resp-sharing-button__link').on('click', function (e) {
 
       self.canvas.globalCompositeOperation = 'destination-out';
       self.createTriangle({
-        x: 150,
+        x: 150 * self.pixels.x,
         y: startingYPosition
       }, {
         x: startingXPosition,
@@ -1075,7 +1081,6 @@ $('a.resp-sharing-button__link').on('click', function (e) {
     // self.draw.redraw = function () {
     //     self.draw.create();
     // }
-
   }
 
   return GraphMaker;
@@ -1104,7 +1109,7 @@ $('a.resp-sharing-button__link').on('click', function (e) {
 //   }
 // });
 
-var triangle = new GraphMaker('animating-triangle');
+var triangle = new GraphMaker('animating-triangle', true);
 var $window = $(window);
 
 triangle.setupTriangleAnimation();
