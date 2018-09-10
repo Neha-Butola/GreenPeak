@@ -116,9 +116,18 @@ if (!empty($values)):
         </div>
     </section>
     <!-- * =============== /Values Section =============== * -->
-    <div class="container">
-        <?php echo do_shortcode('[contact-form-7 id="113" title="Contact Form"]'); ?>
-    </div>
-<?php endif; ?>
+<?php endif;
 
-<?php get_footer(); ?>
+if (get_field('form_code')): ?>
+    <!-- * =============== Form Section =============== * -->
+    <section class="contact-bg lozad fixed-bg" data-background-image="<?php the_field('form_background_image'); ?>">
+        <div class="container text-white">
+            <?php the_field('form_content'); ?>
+            <h3 class="text-uppercase"><?php the_field('form_heading'); ?></h3>
+            <?php $form_code = get_field('form_code');
+            echo do_shortcode($form_code); ?>
+        </div>
+    </section>
+    <!-- * =============== /Form Section =============== * -->
+<?php endif;
+get_footer(); ?>
