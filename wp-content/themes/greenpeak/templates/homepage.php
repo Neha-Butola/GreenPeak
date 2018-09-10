@@ -15,6 +15,11 @@ get_header(); ?>
     </div>
     <!-- * =============== /Banner section =============== * -->
 
+
+    <!-- * =============== triangle section =============== * -->
+    <canvas id="animating-triangle" style="background-image:url('<?php the_field('background_image'); ?>');"></canvas>
+    <!-- * =============== /triangle section =============== * -->
+
 <?php $content = get_field('content');
 if (!empty($content)): ?>
     <!-- * =============== parallax section =============== * -->
