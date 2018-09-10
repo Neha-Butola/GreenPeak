@@ -17,9 +17,9 @@ get_header(); ?>
     <section class="container section-divider">
         <?php the_field('content'); ?>
         <div class="row contact">
-            <div class="col-sm-6"><a href="tel:<?php the_field('phone_number'); ?>"><i
+            <div class="col-md-6"><a href="tel:<?php the_field('phone_number'); ?>"><i
                             class="fas fa-phone"></i><?php the_field('phone_number'); ?></a></div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <a href="mailto:<?php the_field('email_address'); ?>"><i
                             class="fas fa-envelope"></i><?php the_field('email_address'); ?></a>
             </div>
