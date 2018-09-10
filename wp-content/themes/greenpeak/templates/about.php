@@ -89,7 +89,8 @@ if (!empty($consultants)):?>
                 <span><?php the_field('consultants_heading'); ?></span></h2>
             <?php $chunked_consultant = array_chunk($consultants, 3);
             $count = 1;
-            foreach ($chunked_consultant as $consultant_array): ?>
+            foreach ($chunked_consultant as $consultant_array):
+                $flag = 0; ?>
                 <div class="team-wrap">
                     <ul class="nav nav-tabs responsive row" role="tablist">
                         <?php foreach ($consultant_array as $consultant): ?>
@@ -109,10 +110,12 @@ if (!empty($consultants)):?>
                                     </figure>
                                 </a>
                             </li>
-                            <?php $count++; endforeach; ?>
+                            <?php $count++;
+                            $flag++; endforeach; ?>
                     </ul><!-- Tab panes -->
                     <div class="tab-content responsive">
-                        <?php foreach ($consultant_array as $consultant): ?>
+                        <?php $count = $count - $flag;
+                        foreach ($consultant_array as $consultant): ?>
                             <div class="tab-pane" id="consultant<?php echo $count; ?>">
                                 <div class="intro-desc" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body p-0">
@@ -120,10 +123,10 @@ if (!empty($consultants)):?>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                            <?php $count++; endforeach; ?>
                     </div>
                 </div> <!--/team-wrap-->
-                <?php $count++; endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </section>
     <!-- * =============== /Consultants Section =============== * -->
@@ -139,7 +142,8 @@ if (!empty($operations)):?>
                 <span><?php the_field('operations_heading'); ?></span></h2>
             <?php $chunked_operation = array_chunk($operations, 3);
             $count = 1;
-            foreach ($chunked_operation as $operation_array): ?>
+            foreach ($chunked_operation as $operation_array):
+                $flag = 0; ?>
                 <div class="team-wrap">
                     <ul class="nav nav-tabs responsive row" role="tablist">
                         <?php foreach ($operation_array as $operation): ?>
@@ -159,10 +163,12 @@ if (!empty($operations)):?>
                                     </figure>
                                 </a>
                             </li>
-                            <?php $count++; endforeach; ?>
+                            <?php $count++;
+                            $flag++; endforeach; ?>
                     </ul><!-- Tab panes -->
                     <div class="tab-content responsive">
-                        <?php foreach ($operation_array as $operation): ?>
+                        <?php $count = $count - $flag;
+                        foreach ($operation_array as $operation): ?>
                             <div class="tab-pane" id="operation<?php echo $count; ?>">
                                 <div class="intro-desc" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body p-0">
@@ -170,10 +176,10 @@ if (!empty($operations)):?>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                            <?php $count++; endforeach; ?>
                     </div>
                 </div> <!--/team-wrap-->
-                <?php $count++; endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </section>
     <!-- * =============== /Opertations Section =============== * -->
