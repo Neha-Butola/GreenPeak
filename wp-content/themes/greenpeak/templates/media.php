@@ -114,7 +114,7 @@ if ($articles->have_posts()): ?>
                                     <small>share on</small>
                                 </div>
 
-                                <a href="<?php the_permalink(); ?>" class="read">read article <span
+                                <a href="<?php the_permalink(); ?>" target="_blank" class="read">read article <span
                                             class="line"></span></a>
                             </div>
                         </div>
