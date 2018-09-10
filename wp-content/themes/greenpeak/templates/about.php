@@ -99,7 +99,7 @@ if (!empty($consultants)):?>
                                     <figure class="figure">
                                         <img src="<?php echo $consultant['consultant_image']; ?>"
                                              class="figure-img img-fluid"
-                                             alt="A generic square placeholder image with rounded corners in a figure.">
+                                             alt="consultant-profile">
                                         <figcaption class="figure-caption">
                                             <h3><span><?php echo $consultant['consultant_name']; ?></span></h3>
                                             <h6 class="desigantion">
@@ -152,7 +152,7 @@ if (!empty($operations)):?>
                                     <figure class="figure">
                                         <img src="<?php echo $operation['operations_image']; ?>"
                                              class="figure-img img-fluid"
-                                             alt="A generic square placeholder image with rounded corners in a figure.">
+                                             alt="operations-profile">
                                         <figcaption class="figure-caption">
                                             <h3><span><?php echo $operation['operations_name']; ?></span></h3>
                                             <h6 class="desigantion">
