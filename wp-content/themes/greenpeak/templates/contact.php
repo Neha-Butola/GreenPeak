@@ -7,25 +7,37 @@ get_header(); ?>
 
     <div class="banner" style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
-            <h1 data-aos="fade-in" data-aos-delay="400"><span>PURSUE EXCEPTIONAL</span></h1>
-            <div class="animating-line right-line"></div>
+            <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
+            <div class="animating-line"></div>
         </div>
     </div>
+
+<?php if (get_field('content')): ?>
+    <!-- * =============== Content Section =============== * -->
+    <section class="container section-divider">
+        <?php the_field('content'); ?>
+        <div class="row contact">
+            <div class="col-sm-6"><a href="tel:<?php the_field('phone_number'); ?>"><i
+                            class="fas fa-phone"></i><?php the_field('phone_number'); ?></a></div>
+            <div class="col-sm-6">
+                <a href="mailto:<?php the_field('email_address'); ?>"><i
+                            class="fas fa-envelope"></i><?php the_field('email_address'); ?></a>
+            </div>
+        </div>
+    </section>
+    <!-- * =============== /Content Section =============== * -->
+<?php endif;
+
+if (get_field('form_shortcode')):
+    ?>
     <!-- * =============== Form Section =============== * -->
-    <section class="contact-bg lozad" data-background-image="<?php the_field('background_image'); ?>">
+    <section class="contact-bg lozad fixed-bg" data-background-image="<?php the_field('background_image'); ?>">
         <div class="container text-white">
-            <p>Green Peak is seeking professionals with an unusually high blend of EQ and IQ, a deep curiosity about
-                people, and a
-                passion for leadership and organizational develop- ment. You must be prepared to fasten your seat belt,
-                take your own
-                game to the next level and have a blast doing it. If you are interested in learning more about our
-                unique
-                team,
-                contact us below.</p>
-            <h3 class="text-uppercase">explore EXCEPTIONAL</h3>
-            <?php echo do_shortcode('[contact-form-7 id="113" title="Contact Form"]'); ?>
+            <h3 class="text-uppercase"><?php the_field('contact_heading'); ?></h3>
+            <?php $form_code = get_field('form_shortcode');
+            echo do_shortcode($form_code); ?>
         </div>
     </section>
     <!-- * =============== /Form Section =============== * -->
-
-<?php get_footer();
+<?php endif;
+get_footer();
