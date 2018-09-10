@@ -18,7 +18,7 @@ get_header(); ?>
         if (!empty($logos)): ?>
             <div class="row align-items-center">
                 <?php foreach ($logos as $logo): ?>
-                    <div class="col-sm-4">
+                    <div class="col-md-4 text-center">
                         <img src="<?php echo $logo['image']; ?>" alt="will-street" class="img-fluid">
                     </div>
                 <?php endforeach; ?>
@@ -41,10 +41,11 @@ if ($videos->have_posts()): ?>
     <!-- * =============== Media Video Section =============== * -->
     <section class="media-video">
         <div class="container" id="videos">
-            <h2><?php the_field('video_section_heading'); ?></h2>
+            <h2 class="text-center text-md-left left-animating">
+                <span><?php the_field('video_section_heading'); ?></span></h2>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="<?php the_field('video_url'); ?>" width="640"
+                    <iframe class="embed-responsive-item lozad" src="<?php the_field('video_url'); ?>" width="640"
                             height="360"
                             frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                 </div>
@@ -63,6 +64,8 @@ if ($videos->have_posts()): ?>
     <section>
         <div class="container">
             <h2><?php the_field('articles_section_heading') ?></h2>
+            <h2 class="text-center text-md-left left-animating">
+                <span><?php the_field('articles_section_heading') ?></span></h2>
         </div>
         <div class="articles-sec" id="articles">
             <?php $parameters = array(
