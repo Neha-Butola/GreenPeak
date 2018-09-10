@@ -81,7 +81,7 @@ if (!empty($consultants)):?>
                              class="col-sm-4 position-static toggle-div">
                             <figure class="figure" data-toggle="collapse" href="#collapseExample">
                                 <img src="<?php echo $consultant['consultant_image']; ?>" class="figure-img img-fluid"
-                                     alt="A generic square placeholder image with rounded corners in a figure.">
+                                     alt="consultant-profile">
                                 <figcaption class="figure-caption">
                                     <h3><span><?php echo $consultant['consultant_name']; ?></span></h3>
                                     <p><?php echo $consultant['consultant_designation']; ?></p>
@@ -121,7 +121,7 @@ if (!empty($operations)):?>
                              class="col-sm-4 position-static toggle-div">
                             <figure class="figure" data-toggle="collapse" href="#collapseExample">
                                 <img src="<?php echo $operation['operations_image']; ?>" class="figure-img img-fluid"
-                                     alt="A generic square placeholder image with rounded corners in a figure.">
+                                     alt="operation-profile">
                                 <figcaption class="figure-caption">
                                     <h3><span><?php echo $operation['operations_name']; ?></span></h3>
                                     <p><?php echo $operation['operations_designation']; ?></p>

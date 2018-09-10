@@ -19,7 +19,7 @@ get_header(); ?>
             <div class="row align-items-center">
                 <?php foreach ($logos as $logo): ?>
                     <div class="col-md-4 text-center">
-                        <img src="<?php echo $logo['image']; ?>" alt="will-street" class="img-fluid">
+                        <img src="<?php echo $logo['image']; ?>" alt="logos" class="img-fluid">
                     </div>
                 <?php endforeach; ?>
             </div>
