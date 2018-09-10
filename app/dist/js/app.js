@@ -379,7 +379,7 @@ $('.service-container').on('scroll', () => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {// $(".toggle-div").click(function () {
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {// $(".toggle-div").click(function () {
 //   contentheight = $('.collapse').height();
 //   $(this).toggleClass('has-content');
 //   if ($(this).hasClass('has-content')) {
@@ -614,7 +614,20 @@ function detectIE() {
 	// other browser
 	return false;
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/**
+ * fires when social sharing icons are clicked
+ * this function opens a popup to share content to social media
+ */
+$('a.resp-sharing-button__link').on('click', function (e) {
+	e.preventDefault();
+	var width = $(window).width() / 2;
+	var height = $(window).height() / 2;
+	var left = screen.width / 2 - width / 2;
+	var top = screen.height / 2 - height / 2;
+	window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery"), __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
 
@@ -665,7 +678,7 @@ function detectIE() {
      */
     self.createLine = function (begin, end, options) {
       options = options || {};
-
+      self.canvas.strokeStyle = "white";
       self.canvas.beginPath();
       self.canvas.moveTo(begin.x, begin.y);
       self.canvas.lineTo(end.x, end.y);
@@ -855,7 +868,7 @@ function detectIE() {
 
       self.isTriangleAnimationStarted = true;
 
-      canvas.createTriangle({
+      self.createTriangle({
         x: self.x / 2 * self.pixels.x,
         y: 0
       }, {
@@ -872,7 +885,7 @@ function detectIE() {
       }, false);
 
       height = self.y;
-      canvas.createText(percentage + '%', {
+      self.createText(percentage + '%', {
         x: 140 * self.pixels.x,
         y: 82.5 * self.pixels.y
       }, {
@@ -882,7 +895,7 @@ function detectIE() {
 
       var id = window.setInterval(function () {
 
-        canvas.createRectangle({
+        self.createRectangle({
           x: 0,
           y: 0
         }, {
@@ -892,7 +905,7 @@ function detectIE() {
           fillColour: rectangleFillColour
         }, false);
 
-        canvas.createTriangle({
+        self.createTriangle({
           x: self.x / 2 * self.pixels.x,
           y: 0
         }, {
@@ -908,7 +921,7 @@ function detectIE() {
 
         }, true);
 
-        canvas.createText(percentage + '%', {
+        self.createText(percentage + '%', {
           x: 140 * self.pixels.x,
           y: 82.5 * self.pixels.y
         }, {
@@ -916,7 +929,7 @@ function detectIE() {
           font: fontFamily
         });
 
-        canvas.createRectangle({
+        self.createRectangle({
           x: 0,
           y: 0
         }, {
@@ -926,7 +939,7 @@ function detectIE() {
           fillColour: rectangleFillColour
         }, false);
 
-        canvas.createTriangle({
+        self.createTriangle({
           x: self.x / 2 * self.pixels.x,
           y: 0
         }, {
@@ -941,7 +954,7 @@ function detectIE() {
           width: triangleStrokeWidth
 
         }, false);
-        canvas.createText(percentage + '%', {
+        self.createText(percentage + '%', {
           x: 140 * self.pixels.x,
           y: 82.5 * self.pixels.y
         }, {
@@ -955,12 +968,13 @@ function detectIE() {
           window.clearInterval(id);
           self.isTriangleAnimationComplete = true;
         }
-      }, 10);
+      }, 50);
     };
 
     // self.draw.redraw = function () {
     //     self.draw.create();
     // }
+
   }
 
   return GraphMaker;
@@ -970,23 +984,22 @@ var canvas = new GraphMaker('sample');
 var $window = $(window);
 window.addEventListener('scroll', function () {
   if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+    canvas.triangle(50, 'white', '#fff', 1, '#63a37a', '#5b8080', 'vanitasblack');
   }
 });
 
-var canvas = new GraphMaker('sample1');
-var $window = $(window);
+// percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
+var canvas2 = new GraphMaker('sample1');
 window.addEventListener('scroll', function () {
   if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+    canvas2.triangle(92, 'white', '#fff', 1, '#63a37a', '#5b8080', 'vanitasblack');
   }
 });
 
-var canvas = new GraphMaker('sample2');
-var $window = $(window);
+var canvas3 = new GraphMaker('sample2');
 window.addEventListener('scroll', function () {
   if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+    canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', 'vanitasblack');
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
@@ -1004,9 +1017,9 @@ window.addEventListener('scroll', function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js");
+/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed");
 /* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js");
+/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed");
 /* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/alert */ "./node_modules/bootstrap/js/dist/alert.js");
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__);
@@ -1034,7 +1047,6 @@ window.Popper = expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___defa
 
 // Selective bootstrap.js build
 // https://github.com/twbs/bootstrap/issues/20709
-
 
 
 
@@ -3185,10 +3197,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3197,10 +3209,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js-exposed ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

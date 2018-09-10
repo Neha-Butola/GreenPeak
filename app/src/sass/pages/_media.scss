@@ -10,6 +10,9 @@
 
 /* Video section */
 .media-video {
+  h2{
+        margin-bottom: 3rem;
+  }
   .embed-responsive {
     margin-bottom: 5rem;
   }
@@ -21,7 +24,9 @@
   position: relative;
 
   .position-relative {
-    min-height: 335px;
+       min-height: 330px;
+       padding-bottom: 2rem;
+
 
     >p:nth-of-type(1) {
       position: relative;

@@ -36,6 +36,15 @@
 	html {
 		font-size: 15px;
 	}
+	/* Media Page */
+	.media-video .embed-responsive {
+		margin-bottom: 2rem;
+	}
+
+	.article-block>div:after {
+		height: 1px;
+		width: 40%;
+	}
 }
 
 // Small devices
@@ -54,12 +63,13 @@
 	}
 
 	/* Header */
-.nav-style.main-head {
-	padding: .5rem 0;
-}
+	.nav-style.main-head {
+		padding: .5rem 0;
+	}
 
 	.main-head {
-padding: 1.5rem 0;
+		padding: 1.5rem 0;
+
 		.main-head .navbar-toggler {
 			display: flex;
 			flex-wrap: wrap;
@@ -94,15 +104,18 @@ padding: 1.5rem 0;
 			}
 		}
 	}
-		/* Homepage */
-		.parallax-secs {
-			section{
-				    padding: 2.25rem 0 7.5rem;
-				text-align: center;
+
+	/* Homepage */
+	.parallax-secs {
+		section {
+			padding: 2.25rem 0 7.5rem;
+			text-align: center;
 			background-attachment: initial;
-&:nth-of-type(1){
-	background-position: 87% 0;
-}
+
+			&:nth-of-type(1) {
+				background-position: 87% 0;
+			}
+
 			h2 {
 				a {
 					font-size: 5rem;
@@ -122,41 +135,58 @@ padding: 1.5rem 0;
 			}
 		}
 	}
-.parallax-secs section:nth-child(2) h2 a{
-	padding-left:0;
+
+	.parallax-secs section:nth-child(2) h2 a {
+		padding-left: 0;
+	}
+
+	.parallax-secs section .row>.col-md-6:first-child {
+		min-height: initial;
+	}
+
+	.bg-parallax .row>.col-md-6 {
+		min-height: initial;
+	}
+
+	.the-why {
+		background-position: 90% 0;
+	}
 }
 
-.parallax-secs section .row>.col-md-6:first-child{
-	min-height: initial;
+/* media Page */
+.logos-section {
+	padding-bottom: 1rem;
+
+	.row {
+		padding: 4rem 0;
+	}
+
+	.img-fluid {
+		max-width: 70%;
+	}
+
+	.col-md-4 {
+		margin-bottom: 2.5rem;
+	}
 }
 
-		.bg-parallax .row>.col-md-6 {
-			min-height: initial;
-		}
+/* footer */
+.social-icons {
+	padding-top: 0;
+}
 
-		.the-why {
-			background-position: 90% 0;
-		}
+.main-footer {
+	h5 {
+		margin: 0;
+		display: block;
 	}
 
-	/* footer */
-	.social-icons {
-		padding-top: 0;
-	}
-
-	.main-footer {
-		h5 {
-			margin: 0;
-			display: block;
-		}
-
-		.row {
-			>[class*="col-"] {
-				padding-bottom: 20px;
-			}
+	.row {
+		>[class*="col-"] {
+			padding-bottom: 20px;
 		}
 	}
-
+}
 
 // Extra small devices
 @media (max-width: 576px) {

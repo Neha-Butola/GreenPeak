@@ -121,16 +121,35 @@
        }
      }
 
-     .team-wrap {
-      position: relative;
+     .traingle-sction {
+      // background: url(./../images/GPHome_BlurredClientBG.jpg);
+      padding: 3rem 0;
+      text-align: center;
+      .container-fluid {
+        padding: 0 10%;
+      }
+        .title {
+          color: #fff;
+          max-width: 300px;
+          margin: 0 auto;
+          font-family:$vantisa_regular;
+        }
+        canvas {
+          width: 100% !important;
+          max-width: 300px;
+        }
      }
 
+    
      .intro-desc {
        width: 100%;
        left:0;
      }
 
 .team-section {
+  .team-wrap {
+    padding: 2rem 0;
+  }
   .nav-tabs {
     border: 0;
   }
