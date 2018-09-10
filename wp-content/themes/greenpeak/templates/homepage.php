@@ -15,9 +15,10 @@ get_header(); ?>
     </div>
     <!-- * =============== /Banner section =============== * -->
 
-
     <!-- * =============== triangle section =============== * -->
-    <canvas id="animating-triangle" style="background-image:url('<?php the_field('background_image'); ?>');"></canvas>
+    <canvas id="animating-triangle" style="background-image:url('<?php the_field('background_image'); ?>');"
+            class="d-none d-md-block"></canvas>
+    <img src="images/ExpandedClientSection.jpg" alt="" class="img-fluid d-block d-md-none">
     <!-- * =============== /triangle section =============== * -->
 
 <?php $content = get_field('content');
