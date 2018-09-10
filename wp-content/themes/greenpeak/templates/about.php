@@ -109,7 +109,7 @@ if (!empty($consultants)):?>
                                     </figure>
                                 </a>
                             </li>
-                        <?php endforeach; ?>
+                            <?php $count++; endforeach; ?>
                     </ul><!-- Tab panes -->
                     <div class="tab-content responsive">
                         <?php foreach ($consultant_array as $consultant): ?>
@@ -159,7 +159,7 @@ if (!empty($operations)):?>
                                     </figure>
                                 </a>
                             </li>
-                        <?php endforeach; ?>
+                            <?php $count++; endforeach; ?>
                     </ul><!-- Tab panes -->
                     <div class="tab-content responsive">
                         <?php foreach ($operation_array as $operation): ?>
