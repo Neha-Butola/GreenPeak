@@ -39,27 +39,27 @@
 //     }
 //   }
 
-// var clicked = false, clickY;
+var clicked = false, clickY;
 
-// $('.service-container').on({
-//     'mousemove': function(e) {
-//         clicked && updateScrollPos(e);
-//     },
-//     'mousedown': function(e) {
-//         clicked = true;
-//         clickY = e.pageY;
-//         console.log($('.service-container').scrollTop());
-//     },
-//     'mouseup': function() {
-//         clicked = false;
-//         // $('.service-page').css('cursor', 'auto');
-//     }
-// });
+$('.service-container').on({
+    'mousemove': function(e) {
+        clicked && updateScrollPos(e);
+    },
+    'mousedown': function(e) {
+        clicked = true;
+        clickY = e.pageY;
+        console.log($('.service-container').scrollTop());
+    },
+    'mouseup': function() {
+        clicked = false;
+        $('.service-page').css('cursor', 'auto');
+    }
+});
 
-// var updateScrollPos = function(e) {
-//     // $('.service-page').css('cursor', 'row-resize');
-//     $('.service-container').scrollTop($('.service-container').scrollTop() + (clickY - e.pageY));
-// }
+var updateScrollPos = function(e) {
+    // $('.service-page').css('cursor', 'row-resize');
+    $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 2 ));
+}
 
 
 // $(function(){
@@ -90,7 +90,7 @@ $('.service-col img').each(function(){
 
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
-    let offset = $('.service-container').scrollTop() + 600;
+    let offset = $('.service-container').scrollTop() + 100;
 
     let indentLeft= -90;
     elements.each((index, item) => {

@@ -4,6 +4,18 @@
      }
 
      #about-testimonial {
+       .owl-item {
+         p {
+           max-width: 58rem;
+           margin: 0 auto;
+           line-height: 3.375rem;
+         }
+       }
+
+       &:before {
+         background-image: url('/images/CredentialsSectionFilter2_GP.png');
+       }
+
        .intro {
          border: 0;
          padding: 2rem 0;
@@ -15,22 +27,58 @@
        }
      }
 
+     .testimonial-img {
+       position: relative;
+       margin-top: 4rem;
+
+       &:before {
+         background-color: #fff;
+         content: "";
+         height: 1px;
+         position: absolute;
+         width: 50%;
+         left: 25%;
+       }
+
+       h2 {
+         color: #6bcb9d;
+
+         span {
+           border-bottom: 1px solid $white;
+           display: inline-block;
+           margin-top: 1.25rem;
+           padding-bottom: 0.9375rem;
+         }
+       }
+
+       img {
+         object-fit: cover;
+         width: 13rem !important;
+       }
+     }
+
      .triangle-bg {
        position: relative;
 
+       .section-divider {
+         z-index: 1;
+         position: relative;
+       }
+
        &:before {
          background: url('/images/testimonial_gradient_bg.png');
-         background-position: 50%;
-         background-size: cover;
+         background-size: 54% 100%;
          content: "";
          height: 100%;
          position: absolute;
-         right: 0;
          top: 0;
          width: 100%;
-         z-index: 1;
+         z-index: 0;
+         object-position: unset;
+         background-repeat: no-repeat;
        }
      }
+
      .consultants {
        padding: 3.5rem 0;
 
@@ -42,6 +90,7 @@
          h3 {
            font-weight: 400;
          }
+
          p {
            font-size: 1.125rem;
            margin-bottom: 0;
@@ -71,3 +120,66 @@
          }
        }
      }
+
+     .team-wrap {
+      position: relative;
+     }
+
+     .intro-desc {
+       width: 100%;
+       left:0;
+     }
+
+.team-section {
+  .nav-tabs {
+    border: 0;
+  }
+  .nav-tabs .nav-item.show .nav-link, 
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-link:focus, 
+  .nav-tabs .nav-link:hover {
+    background-color: initial;
+    border: none;
+    color: initial;
+  }
+  .figure-caption {
+    padding: 0 8%;
+    h3 {
+      text-transform: capitalize;
+      font-family: $vantisa_black;
+      margin-bottom: 5px;
+    }
+  }
+
+  .team-col {
+    .active .figure-caption{
+      color: $green3;
+    }
+  }
+ 
+  .desigantion {
+    line-height: 1.2;
+  }
+
+  .card,
+  .card-header {
+    border: 0;
+    background: transparent;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  .team-section .figure-caption h3 {
+    font-size: 1.5rem;
+  }
+  .team-section .desigantion {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-section .figure-caption h3 {
+    font-size: 2rem;
+  }
+}

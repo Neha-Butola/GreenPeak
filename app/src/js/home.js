@@ -32,3 +32,7 @@ $(window).scroll(function () {
 $(".main-head .navbar-toggler").click(function () {
   $(".main-head").toggleClass("side-menu");
 });
+
+$('.intro-desc.show').each(function () {
+  $(this).parent().addClass('one');
+});
