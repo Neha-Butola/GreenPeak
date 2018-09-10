@@ -1,7 +1,15 @@
 .contact-bg{
+  h2{
+    color: $white;
+    text-transform: uppercase;
+        letter-spacing: 10px;
+  }
+  h3{
+    line-height: 3.375rem;
+  }
   p,h3{
     font-size: 2.375rem;
-    line-height: 3.375rem;
+
     color: $white;
   }
   h3{
@@ -10,6 +18,21 @@
 }
 
 form{
+  input[type="submit"]{
+    background-color: transparent;
+    color: $white;
+    }
+  }
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+      border-bottom: 1px solid $white;
+}
+
+  label{
+    width: 100%;
+  }
   span{
     display: block;
     width: 100%;
@@ -17,7 +40,7 @@ form{
           width: 100%;
           background-color: transparent;
           border: 0;
-          border-bottom: 1px solid #fff;
+          border-bottom: 1px solid $white;
            font-size: 1.5rem;
     }
   }
@@ -39,25 +62,29 @@ form{
 }
 
 /* -- Placeholder Global Color -- */
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
 }
 
-input::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
 }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
 }
 
-input:-moz-placeholder {
+input:-moz-placeholder,
+textarea:-moz-placeholder {
   font-weight: 400 !important;
   color: $white;
   font-size: 1.5rem;
