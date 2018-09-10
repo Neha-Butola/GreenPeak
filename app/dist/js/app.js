@@ -865,9 +865,9 @@ __webpack_require__(/*! ../sass/app.scss */ "./app/src/sass/app.scss");
   !*** ./app/src/sass/app.scss ***!
   \*******************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\n\n  }\n  ^\n      Invalid CSS after \"  }\": expected selector or at-rule, was \"}\"\n      in /Users/nancyshalini/Documents/projects/greenpeak/app/src/sass/pages/_contact.scss (line 46, column 4)\n    at runLoaders (/Users/nancyshalini/Documents/projects/greenpeak/node_modules/webpack/lib/NormalModule.js:284:20)\n    at /Users/nancyshalini/Documents/projects/greenpeak/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/nancyshalini/Documents/projects/greenpeak/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/nancyshalini/Documents/projects/greenpeak/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/nancyshalini/Documents/projects/greenpeak/node_modules/sass-loader/lib/loader.js:67:13)\n    at Object.done [as callback] (/Users/nancyshalini/Documents/projects/greenpeak/node_modules/neo-async/async.js:7974:18)\n    at options.error (/Users/nancyshalini/Documents/projects/greenpeak/node_modules/node-sass/lib/index.js:294:32)");
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
