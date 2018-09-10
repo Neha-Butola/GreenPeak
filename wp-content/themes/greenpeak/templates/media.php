@@ -51,77 +51,77 @@ if ($videos->have_posts()): ?>
                 </div>
             <?php endwhile; ?>
         </div>
-        <div class="nav-links">
+        <div class="nav-links text-center">
             <a href="#" class="video-load-more" page="2" data-type="video"
                total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>Load
                 Videos</a>
         </div>
     </section>
     <!-- * =============== /Media Video Section =============== * -->
-<?php endif; ?>
+<?php endif;
+wp_reset_query();
 
+$parameters = array(
+    'post-type' => 'posts',
+    'posts_per_page' => '3',
+    'paged' => $paged
+);
+$articles = new WP_Query($parameters);
+$total_pages = $articles->max_num_pages;
+if ($articles->have_posts()): ?>
     <!-- * =============== Articles Section =============== * -->
     <section>
         <div class="container">
-            <h2><?php the_field('articles_section_heading') ?></h2>
             <h2 class="text-center text-md-left left-animating">
                 <span><?php the_field('articles_section_heading') ?></span></h2>
         </div>
         <div class="articles-sec" id="articles">
-            <?php $parameters = array(
-                'post-type' => 'posts',
-                'posts_per_page' => '3',
-                'paged' => $paged
-            );
-            $articles = new WP_Query($parameters);
-            $total_pages = $articles->max_num_pages;
-            if ($articles->have_posts()):
-                while ($articles->have_posts()):
-                    $articles->the_post(); ?>
-                    <div data-background-image="<?php echo get_the_post_thumbnail_url(); ?>" class="lozad fixed-bg">
-                        <div class="container">
-                            <div class="text-center article-block">
-                                <div class="position-relative">
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php $content = get_the_content();
-                                    $content = wp_trim_words($content, '50');
-                                    ?>
-                                    <p><?php echo $content; ?></p>
-                                    <div class="share">
-                                        <!-- Sharingbutton LinkedIn -->
-                                        <a class="resp-sharing-button__link"
-                                           href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
-                                           target="_blank" aria-label="">
-                                            <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
-                                                <div aria-hidden="true"
-                                                     class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-                                                    <i class="fab fa-linkedin-in"></i>
-                                                </div>
+            <?php while ($articles->have_posts()):
+                $articles->the_post(); ?>
+                <div data-background-image="<?php echo get_the_post_thumbnail_url(); ?>" class="lozad fixed-bg">
+                    <div class="container">
+                        <div class="text-center article-block">
+                            <div class="position-relative">
+                                <h3><?php the_title(); ?></h3>
+                                <?php $content = get_the_content();
+                                $content = wp_trim_words($content, '50');
+                                ?>
+                                <p><?php echo $content; ?></p>
+                                <div class="share">
+                                    <!-- Sharingbutton LinkedIn -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                                       target="_blank" aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-linkedin-in"></i>
                                             </div>
-                                        </a>
-                                        <!-- Sharingbutton Twitter -->
-                                        <a class="resp-sharing-button__link"
-                                           href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
-                                           target="_blank"
-                                           aria-label="">
-                                            <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
-                                                <div aria-hidden="true"
-                                                     class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-                                                    <i class="fab fa-twitter"></i>
-                                                </div>
+                                        </div>
+                                    </a>
+                                    <!-- Sharingbutton Twitter -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
+                                       target="_blank"
+                                       aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-twitter"></i>
                                             </div>
-                                        </a>
-                                        <small>share on</small>
-                                    </div>
-
-                                    <a href="<?php the_permalink(); ?>" class="read">read article <span
-                                                class="line"></span></a>
+                                        </div>
+                                    </a>
+                                    <small>share on</small>
                                 </div>
+
+                                <a href="<?php the_permalink(); ?>" class="read">read article <span
+                                            class="line"></span></a>
                             </div>
                         </div>
                     </div>
-                <?php endwhile; endif; ?>
-            <div class="nav-links">
+                </div>
+            <?php endwhile; ?>
+            <div class="nav-links text-center">
                 <a href="#" class="articles-load-more" page="2" data-type="articles"
                    total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>Load
                     Articles</a>
@@ -129,5 +129,5 @@ if ($videos->have_posts()): ?>
         </div>
     </section>
     <!-- * =============== /Articles Section =============== * -->
-
-<?php get_footer();
+<?php endif;
+get_footer();
