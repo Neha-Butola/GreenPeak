@@ -32,8 +32,8 @@ if (get_field('form_shortcode')):
     ?>
     <!-- * =============== Form Section =============== * -->
     <section class="contact-bg lozad fixed-bg" data-background-image="<?php the_field('background_image'); ?>">
-        <div class="container text-white">
-            <h3 class="text-uppercase"><?php the_field('contact_heading'); ?></h3>
+        <div class="container section-divider text-white">
+            <h2><?php the_field('contact_heading'); ?></h2>
             <?php $form_code = get_field('form_shortcode');
             echo do_shortcode($form_code); ?>
         </div>
