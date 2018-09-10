@@ -52,7 +52,7 @@ if ($videos->have_posts()): ?>
         </div>
         <div class="nav-links">
             <a href="#" class="video-load-more" page="2" data-type="video"
-               total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>Load
+               total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>Load
                 Videos</a>
         </div>
     </section>
@@ -68,6 +68,7 @@ if ($videos->have_posts()): ?>
             <?php $parameters = array(
                 'post-type' => 'posts',
                 'posts_per_page' => '3',
+                'paged' => $paged
             );
             $articles = new WP_Query($parameters);
             $total_pages = $articles->max_num_pages;
@@ -119,7 +120,7 @@ if ($videos->have_posts()): ?>
                 <?php endwhile; endif; ?>
             <div class="nav-links">
                 <a href="#" class="articles-load-more" page="2" data-type="articles"
-                   total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages < 1) { ?> style="display: none" <?php } ?>>Load
+                   total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>Load
                     Articles</a>
             </div>
         </div>
