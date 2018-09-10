@@ -98,11 +98,13 @@
           options = options || {};
 
           self.canvas.beginPath();
+          console.log(self.canvas)
+          
           if (options.font) {
             self.canvas.font = options.font;
           }
 
-          self.canvas.fillStyle = "black";
+          self.canvas.fillStyle = "white";
           if (options.colour) {
             self.canvas.fillStyle = options.colour;
           }
@@ -125,8 +127,8 @@
           //var radius = 10;
           self.canvas.beginPath();
 
-          self.canvas.strokeStyle = "black";
-          self.canvas.lineWidth = 1;
+          self.canvas.strokeStyle = "white";
+          self.canvas.lineWidth = 2;
 
           if (options.width) {
             self.canvas.lineWidth = options.width;
@@ -247,9 +249,9 @@
           }, false);
 
           height = self.y;
-          self.createText(percentage + '%', {
-            x: 140 * self.pixels.x,
-            y: 82.5 * self.pixels.y,
+          self.createText('>' + percentage + '%', {
+            x: 120 * self.pixels.x,
+            y: 120 * self.pixels.y,
           }, {
             colour: fontColour,
             font: fontFamily
@@ -284,8 +286,8 @@
             }, true);
 
             self.createText(percentage + '%', {
-              x: 140 * self.pixels.x,
-              y: 82.5 * self.pixels.y,
+              x: 135 * self.pixels.x,
+              y: 120 * self.pixels.y,
             }, {
               colour: fontColour,
               font: fontFamily
@@ -317,8 +319,8 @@
 
             }, false);
             self.createText(percentage + '%', {
-              x: 140 * self.pixels.x,
-              y: 82.5 * self.pixels.y,
+              x: 135 * self.pixels.x,
+              y: 120 * self.pixels.y,
             }, {
               colour: fontColour,
               font: fontFamily
@@ -348,7 +350,7 @@
     var $window = $(window);
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-        canvas.triangle(50, 'white', '#fff', 1, '#63a37a', '#5b8080', 'vanitasblack');
+        canvas.triangle(50, 'white', 'white', 2, '#63a37a', '#5b8080', '30px vanitasblack');
       }
     });
 
@@ -356,13 +358,13 @@
     var canvas2 = new GraphMaker('sample1');
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-        canvas2.triangle(92, 'white', '#fff', 1, '#63a37a', '#5b8080', 'vanitasblack');
+        canvas2.triangle(92, 'white', 'white', 2, '#63a37a', '#5b8080', '30px vanitasblack');
       }
     });
 
     var canvas3 = new GraphMaker('sample2');
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-        canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', 'vanitasblack');
+        canvas3.triangle(94, 'white', 'white', 2, '#63a37a', '#5b8080', '30px vanitasblack');
       }
     });
