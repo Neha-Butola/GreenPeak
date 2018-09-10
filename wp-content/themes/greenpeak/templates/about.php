@@ -52,10 +52,11 @@ if (!empty($testimonials)):?>
                 <?php foreach ($testimonials as $testimonial): ?>
                     <div class="item text-white">
                         <?php echo $testimonial['testimony']; ?>
-                        <div class="intro">
-                            <img src="<?php echo $testimonial['reviewer_image']; ?>" alt="profile-img">
+                        <div class="testimonial-img">
+                            <h2><span><?php echo $testimonial['reviewer']; ?></span></h2>
+                            <img src="<?php echo $testimonial['reviewer_image']; ?>" class="mx-auto mt-5"
+                                 alt="profile-img">
                         </div>
-
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -71,13 +72,13 @@ if (!empty($consultants)):?>
         <div class="container pt-5">
             <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
                 <span><?php the_field('consultants_heading'); ?></span></h2>
-            <div id="accordion-1" class="consultants">
+            <div id="accordion" class="consultants">
                 <div class="row">
                     <?php $count = 1;
                     foreach ($consultants as $consultant): ?>
                         <div data-toggle="collapse" data-target="#consultant<?php echo $count; ?>" aria-expanded="true"
                              aria-controls="consultant<?php echo $count; ?>"
-                             class="col-sm-4" close-div="<?php echo $count ?>">
+                             class="col-sm-4 position-static toggle-div">
                             <figure class="figure" data-toggle="collapse" href="#collapseExample">
                                 <img src="<?php echo $consultant['consultant_image']; ?>" class="figure-img img-fluid"
                                      alt="A generic square placeholder image with rounded corners in a figure.">
@@ -87,35 +88,15 @@ if (!empty($consultants)):?>
                                     <p><?php echo $consultant['consultant_location']; ?></p>
                                 </figcaption>
                             </figure>
-                        </div>
-                        <?php
-                        if($count!=0 && $count%3==0){ ?>
-                </div>
-                <div class="row">
-                    <?php
-                    }
-                        $count++; endforeach;
-                        ?>
-                    <div class="col-12">
-                        <?php
-                        $count = 1;
-                        foreach ($consultants as $consultant): ?>
-                            <div id="consultant<?php echo $count; ?>" class="collapse intro-desc"
-                                 aria-labelledby="heading<?php echo $count; ?>" data-parent="#accordion">
+                            <div id="consultant<?php echo $count; ?>" class="collapse intro-desc position-absolute"
+                                 aria-labelledby="heading<?php echo $count; ?>"
+                                 data-parent="#accordion">
                                 <div class="card-body p-0">
                                     <?php echo $consultant['consultant_description']; ?>
                                 </div>
                             </div>
-                            <?php
-                            if($count!=0 && $count%3==0){ ?>
-                    </div>
-                    <div class="col-12">
-                        <?php
-                        }
-                            $count++;
-                        endforeach;
-                        ?>
-                    </div>
+                        </div><!--col-sm-4-->
+                        <?php $count++; endforeach; ?>
                 </div>
             </div>
         </div>
@@ -127,40 +108,35 @@ endif;
 $operations = get_field('operations');
 if (!empty($operations)):?>
     <!-- * =============== Opertaions Section =============== * -->
-    <section class="container pt-5">
-        <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
-            <span><?php the_field('operations_heading'); ?></span></h2>
-        <div id="accordion" class="consultants">
-            <div class="row">
-                <?php $count = 1;
-                foreach ($operations as $operation): ?>
-                    <div data-toggle="collapse" data-target="#collapse<?php echo $count; ?>" aria-expanded="true"
-                         aria-controls="collapse<?php echo $count; ?>"
-                         class="col-sm-4 ">
-                        <figure class="figure" data-toggle="collapse" href="#collapseExample">
-                            <img src="<?php echo $operation['operations_image']; ?>" class="figure-img img-fluid"
-                                 alt="A generic square placeholder image with rounded corners in a figure.">
-                            <figcaption class="figure-caption">
-                                <h3><span><?php echo $operation['operations_name']; ?></span></h3>
-                                <p><?php echo $operation['operations_designation']; ?></p>
-                                <p><?php echo $operation['operations_location']; ?></p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <?php $count++; endforeach;
-                $count = 1;
-                foreach ($operations
-
-                as $operation): ?>
-                <div class="col-12">
-                    <div id="collapse<?php echo $count; ?>" class="collapse intro-desc"
-                         aria-labelledby="heading<?php echo $count; ?>" data-parent="#accordion">
-                        <div class="card-body p-0">
-                            <?php echo $consultant['consultant_description']; ?>
-                        </div>
-                    </div>
-                    <?php $count++;
-                    endforeach; ?>
+    <section class="bg-light">
+        <div class="container pt-5">
+            <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
+                <span><?php the_field('operations_heading'); ?></span></h2>
+            <div id="accordion" class="consultants">
+                <div class="row">
+                    <?php $count = 1;
+                    foreach ($operations as $operation): ?>
+                        <div data-toggle="collapse" data-target="#operation<?php echo $count; ?>" aria-expanded="true"
+                             aria-controls="operation<?php echo $count; ?>"
+                             class="col-sm-4 position-static toggle-div">
+                            <figure class="figure" data-toggle="collapse" href="#collapseExample">
+                                <img src="<?php echo $operation['operations_image']; ?>" class="figure-img img-fluid"
+                                     alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption">
+                                    <h3><span><?php echo $operation['operations_name']; ?></span></h3>
+                                    <p><?php echo $operation['operations_designation']; ?></p>
+                                    <p><?php echo $operation['operations_location']; ?></p>
+                                </figcaption>
+                            </figure>
+                            <div id="operation<?php echo $count; ?>" class="collapse intro-desc position-absolute"
+                                 aria-labelledby="heading<?php echo $count; ?>"
+                                 data-parent="#accordion">
+                                <div class="card-body p-0">
+                                    <?php echo $operation['operations_description']; ?>
+                                </div>
+                            </div>
+                        </div><!--col-sm-4-->
+                        <?php $count++; endforeach; ?>
                 </div>
             </div>
         </div>
