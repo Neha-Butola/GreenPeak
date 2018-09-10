@@ -38,7 +38,7 @@
          */
         self.createLine = function (begin, end, options) {
           options = options || {};
-
+          self.canvas.strokeStyle = "white";
           self.canvas.beginPath();
           self.canvas.moveTo(begin.x, begin.y);
           self.canvas.lineTo(end.x, end.y);
@@ -230,7 +230,7 @@
 
           self.isTriangleAnimationStarted = true;
 
-          canvas.createTriangle({
+          self.createTriangle({
             x: self.x / 2 * self.pixels.x,
             y: 0
           }, {
@@ -247,7 +247,7 @@
           }, false);
 
           height = self.y;
-          canvas.createText(percentage + '%', {
+          self.createText(percentage + '%', {
             x: 140 * self.pixels.x,
             y: 82.5 * self.pixels.y,
           }, {
@@ -257,7 +257,7 @@
 
           var id = window.setInterval(function () {
 
-            canvas.createRectangle({
+            self.createRectangle({
               x: 0,
               y: 0,
             }, {
@@ -267,7 +267,7 @@
               fillColour: rectangleFillColour
             }, false);
 
-            canvas.createTriangle({
+            self.createTriangle({
               x: self.x / 2 * self.pixels.x,
               y: 0
             }, {
@@ -283,7 +283,7 @@
 
             }, true);
 
-            canvas.createText(percentage + '%', {
+            self.createText(percentage + '%', {
               x: 140 * self.pixels.x,
               y: 82.5 * self.pixels.y,
             }, {
@@ -291,7 +291,7 @@
               font: fontFamily
             });
 
-            canvas.createRectangle({
+            self.createRectangle({
               x: 0,
               y: 0
             }, {
@@ -301,7 +301,7 @@
               fillColour: rectangleFillColour
             }, false);
 
-            canvas.createTriangle({
+            self.createTriangle({
               x: self.x / 2 * self.pixels.x,
               y: 0
             }, {
@@ -316,7 +316,7 @@
               width: triangleStrokeWidth
 
             }, false);
-            canvas.createText(percentage + '%', {
+            self.createText(percentage + '%', {
               x: 140 * self.pixels.x,
               y: 82.5 * self.pixels.y,
             }, {
@@ -331,12 +331,14 @@
               self.isTriangleAnimationComplete = true;
             }
 
-          }, 10);
+          }, 50);
         };
 
         // self.draw.redraw = function () {
         //     self.draw.create();
         // }
+
+
       }
 
       return GraphMaker;
@@ -346,22 +348,21 @@
     var $window = $(window);
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-        canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+        canvas.triangle(50, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
       }
     });
 
-    var canvas = new GraphMaker('sample1');
-    var $window = $(window);
+    // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
+    var canvas2 = new GraphMaker('sample1');
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-        canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+        canvas2.triangle(92, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
       }
     });
 
-    var canvas = new GraphMaker('sample2');
-    var $window = $(window);
+    var canvas3 = new GraphMaker('sample2');
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-        canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+        canvas3.triangle(94, 'white', 'white', 1, '#63a37a', 'blue', 'Open Sans');
       }
     });

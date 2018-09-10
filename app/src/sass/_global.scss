@@ -58,11 +58,15 @@
        position: absolute;
        content: "";
        background: #63a37a;
-       bottom: -16px;
+       bottom: -9px;
        right: 0;
        height: 1px;
-       left: -100%;
+       left: -200%;
        animation: slideInFromLeft 1s ease .7s;
      }
    }
+ }
+
+ .green-bg{
+   background-color: #63a37a;
  }

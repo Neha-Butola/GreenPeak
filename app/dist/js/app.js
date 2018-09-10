@@ -209,104 +209,11 @@ $('.intro-desc.show').each(function () {
 
 
 __webpack_require__(/*! ./vendor */ "./app/src/js/vendor.js");
-__webpack_require__(/*! ./mouse-wheel */ "./app/src/js/mouse-wheel.js");
 __webpack_require__(/*! ./home */ "./app/src/js/home.js");
 __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
 __webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
 __webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
-
-/***/ }),
-
-/***/ "./app/src/js/mouse-wheel.js":
-/*!***********************************!*\
-  !*** ./app/src/js/mouse-wheel.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Copyright (c) 2013 Brandon Aaron (http://brandon.aaron.sh)
- * Licensed under the MIT License (LICENSE.txt).
- *
- * Version: 3.1.11
- *
- * Requires: jQuery 1.2.2+
- */
-!function (a) {
-     true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "jquery")], __WEBPACK_AMD_DEFINE_FACTORY__ = (a),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
-}(function (a) {
-    function b(b) {
-        var g = b || window.event,
-            h = i.call(arguments, 1),
-            j = 0,
-            l = 0,
-            m = 0,
-            n = 0,
-            o = 0,
-            p = 0;
-        if (b = a.event.fix(g), b.type = "mousewheel", "detail" in g && (m = -1 * g.detail), "wheelDelta" in g && (m = g.wheelDelta), "wheelDeltaY" in g && (m = g.wheelDeltaY), "wheelDeltaX" in g && (l = -1 * g.wheelDeltaX), "axis" in g && g.axis === g.HORIZONTAL_AXIS && (l = -1 * m, m = 0), j = 0 === m ? l : m, "deltaY" in g && (m = -1 * g.deltaY, j = m), "deltaX" in g && (l = g.deltaX, 0 === m && (j = -1 * l)), 0 !== m || 0 !== l) {
-            if (1 === g.deltaMode) {
-                var q = a.data(this, "mousewheel-line-height");
-                j *= q, m *= q, l *= q;
-            } else if (2 === g.deltaMode) {
-                var r = a.data(this, "mousewheel-page-height");
-                j *= r, m *= r, l *= r;
-            }
-            if (n = Math.max(Math.abs(m), Math.abs(l)), (!f || f > n) && (f = n, d(g, n) && (f /= 40)), d(g, n) && (j /= 40, l /= 40, m /= 40), j = Math[j >= 1 ? "floor" : "ceil"](j / f), l = Math[l >= 1 ? "floor" : "ceil"](l / f), m = Math[m >= 1 ? "floor" : "ceil"](m / f), k.settings.normalizeOffset && this.getBoundingClientRect) {
-                var s = this.getBoundingClientRect();
-                o = b.clientX - s.left, p = b.clientY - s.top;
-            }
-            return b.deltaX = l, b.deltaY = m, b.deltaFactor = f, b.offsetX = o, b.offsetY = p, b.deltaMode = 0, h.unshift(b, j, l, m), e && clearTimeout(e), e = setTimeout(c, 200), (a.event.dispatch || a.event.handle).apply(this, h);
-        }
-    }
-
-    function c() {
-        f = null;
-    }
-
-    function d(a, b) {
-        return k.settings.adjustOldDeltas && "mousewheel" === a.type && b % 120 === 0;
-    }
-    var e,
-        f,
-        g = ["wheel", "mousewheel", "DOMMouseScroll", "MozMousePixelScroll"],
-        h = "onwheel" in document || document.documentMode >= 9 ? ["wheel"] : ["mousewheel", "DomMouseScroll", "MozMousePixelScroll"],
-        i = Array.prototype.slice;
-    if (a.event.fixHooks) for (var j = g.length; j;) a.event.fixHooks[g[--j]] = a.event.mouseHooks;
-    var k = a.event.special.mousewheel = {
-        version: "3.1.11",
-        setup: function () {
-            if (this.addEventListener) for (var c = h.length; c;) this.addEventListener(h[--c], b, !1);else this.onmousewheel = b;
-            a.data(this, "mousewheel-line-height", k.getLineHeight(this)), a.data(this, "mousewheel-page-height", k.getPageHeight(this));
-        },
-        teardown: function () {
-            if (this.removeEventListener) for (var c = h.length; c;) this.removeEventListener(h[--c], b, !1);else this.onmousewheel = null;
-            a.removeData(this, "mousewheel-line-height"), a.removeData(this, "mousewheel-page-height");
-        },
-        getLineHeight: function (b) {
-            var c = a(b)["offsetParent" in a.fn ? "offsetParent" : "parent"]();
-            return c.length || (c = a("body")), parseInt(c.css("fontSize"), 10);
-        },
-        getPageHeight: function (b) {
-            return a(b).height();
-        },
-        settings: {
-            adjustOldDeltas: !0,
-            normalizeOffset: !0
-        }
-    };
-    a.fn.extend({
-        mousewheel: function (a) {
-            return a ? this.bind("mousewheel", a) : this.trigger("mousewheel");
-        },
-        unmousewheel: function (a) {
-            return this.unbind("mousewheel", a);
-        }
-    });
-});
 
 /***/ }),
 
@@ -318,11 +225,100 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {
+// // var dargelem = $('.service-wrap');
+// dragElement(document.getElementById("mydiv"));
+
+// function dragElement(elmnt) {
+//     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+//       /* otherwise, move the DIV from anywhere inside the DIV:*/
+//       elmnt.onmousedown = dragMouseDown;
+
+
+//     function dragMouseDown(e) {
+//       e = e || window.event;
+//       e.preventDefault();
+//       // get the mouse cursor position at startup:
+//       pos3 = e.clientX;
+//       pos4 = e.clientY;
+//       document.onmouseup = closeDragElement;
+//       // call a function whenever the cursor moves:
+//       document.onmousemove = elementDrag;
+//     }
+
+//     function elementDrag(e) {
+//       e = e || window.event;
+//       e.preventDefault();
+//       // calculate the new cursor position:
+//       pos1 = pos3 - e.clientX;
+//       pos2 = pos4 - e.clientY;
+//       pos3 = e.clientX;
+//       pos4 = e.clientY;
+//       // set the element's new position:
+//       elmnt.style.left = ((elmnt.offsetLeft - pos1 )) + "px";
+//     }
+
+//     function closeDragElement() {
+//       /* stop moving when mouse button is released:*/
+//       document.onmouseup = null;
+//       document.onmousemove = null;
+//     }
+//   }
+
+// var clicked = false, clickY;
+
+// $('.service-container').on({
+//     'mousemove': function(e) {
+//         clicked && updateScrollPos(e);
+//     },
+//     'mousedown': function(e) {
+//         clicked = true;
+//         clickY = e.pageY;
+//         console.log($('.service-container').scrollTop());
+//     },
+//     'mouseup': function() {
+//         clicked = false;
+//         // $('.service-page').css('cursor', 'auto');
+//     }
+// });
+
+// var updateScrollPos = function(e) {
+//     // $('.service-page').css('cursor', 'row-resize');
+//     $('.service-container').scrollTop($('.service-container').scrollTop() + (clickY - e.pageY));
+// }
+
+
+// $(function(){
+//     var curDown = false,
+//         curYPos = 0,
+//         curXPos = 0;
+//     $(window).mousemove(function(m){
+//       if(curDown === false){
+//        $('.service-container').scrollTop($(window).scrollTop() + (curXPos - m.pageX)); 
+//     //    $('.service-container').scrollLeft($(window).scrollLeft() + (curXPos - m.pageX));
+//       }
+//     });
+
+//     $(window).mousedown(function(m){
+//       curDown = true;
+//       curYPos = m.pageY;
+//       curXPos = m.pageX;
+//     });
+
+//     $(window).mouseup(function(){
+//       curDown = false;
+//     });
+//   })
+
+$('.service-col img').each(function () {
+    $(this).parent().addClass('img-col');
+});
+
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
-    let offset = $('.service-container').scrollTop();
+    let offset = $('.service-container').scrollTop() + 600;
 
-    let indentLeft = 90;
+    let indentLeft = -90;
     elements.each((index, item) => {
         if (index === 0) {
             return;
@@ -337,24 +333,30 @@ $('.service-container').on('scroll', () => {
             indentLeft = indentLeft + 90;
 
             if (index <= elements.length - 2) {
-                ele.find('.timeline-inner').css('width', '108%');
+                ele.find('.timeline').css('width', '111%');
             } else {
-                ele.find('.timeline-inner').css('width', '5%');
+                ele.find('.timeline').css('width', '0');
             }
 
             let dotEle = ele.find('.dot>div');
             ele.find('.dot').addClass('show');
             dotEle.css('height', '80px');
+            if ($(window).width() < 992) {
+                dotEle.css('height', '40px');
+            }
             dotEle.find('.dot-in').css("display", 'block');
             if (index % 2 === 0) {
                 dotEle.css('top', '-80px');
+                if ($(window).width() < 992) {
+                    dotEle.css('top', '-40px');
+                }
             }
         } else {
             if (index === 1) {
                 $('header').removeClass('nav-style');
             }
 
-            ele.find('.timeline-inner').css('width', '0');
+            ele.find('.timeline').css('width', '0');
             ele.find('.dot').removeClass('show');
 
             let dotEle = ele.find('.dot>div');
@@ -385,10 +387,19 @@ $('.service-container').on('scroll', () => {
   } else {
     $(this).find('.intro-desc').parent().css('margin-bottom', 0);
   }
+});
 
-  //  if ($(".show").parents(".toggle-div").length == 0) {
-  //    $('.toggle-div').find('.intro-desc').parent().css('margin-bottom', 0);
-  //  }
+/**
+ * fires when social sharing icons are clicked
+ * this function opens a popup to share content to social media
+ */
+$('a.resp-sharing-button__link').on('click', function (e) {
+  e.preventDefault();
+  var width = $(window).width() / 2;
+  var height = $(window).height() / 2;
+  var left = screen.width / 2 - width / 2;
+  var top = screen.height / 2 - height / 2;
+  window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
@@ -441,7 +452,7 @@ $('.service-container').on('scroll', () => {
      */
     self.createLine = function (begin, end, options) {
       options = options || {};
-
+      self.canvas.strokeStyle = "white";
       self.canvas.beginPath();
       self.canvas.moveTo(begin.x, begin.y);
       self.canvas.lineTo(end.x, end.y);
@@ -631,7 +642,7 @@ $('.service-container').on('scroll', () => {
 
       self.isTriangleAnimationStarted = true;
 
-      canvas.createTriangle({
+      self.createTriangle({
         x: self.x / 2 * self.pixels.x,
         y: 0
       }, {
@@ -648,7 +659,7 @@ $('.service-container').on('scroll', () => {
       }, false);
 
       height = self.y;
-      canvas.createText(percentage + '%', {
+      self.createText(percentage + '%', {
         x: 140 * self.pixels.x,
         y: 82.5 * self.pixels.y
       }, {
@@ -658,7 +669,7 @@ $('.service-container').on('scroll', () => {
 
       var id = window.setInterval(function () {
 
-        canvas.createRectangle({
+        self.createRectangle({
           x: 0,
           y: 0
         }, {
@@ -668,7 +679,7 @@ $('.service-container').on('scroll', () => {
           fillColour: rectangleFillColour
         }, false);
 
-        canvas.createTriangle({
+        self.createTriangle({
           x: self.x / 2 * self.pixels.x,
           y: 0
         }, {
@@ -684,7 +695,7 @@ $('.service-container').on('scroll', () => {
 
         }, true);
 
-        canvas.createText(percentage + '%', {
+        self.createText(percentage + '%', {
           x: 140 * self.pixels.x,
           y: 82.5 * self.pixels.y
         }, {
@@ -692,7 +703,7 @@ $('.service-container').on('scroll', () => {
           font: fontFamily
         });
 
-        canvas.createRectangle({
+        self.createRectangle({
           x: 0,
           y: 0
         }, {
@@ -702,7 +713,7 @@ $('.service-container').on('scroll', () => {
           fillColour: rectangleFillColour
         }, false);
 
-        canvas.createTriangle({
+        self.createTriangle({
           x: self.x / 2 * self.pixels.x,
           y: 0
         }, {
@@ -717,7 +728,7 @@ $('.service-container').on('scroll', () => {
           width: triangleStrokeWidth
 
         }, false);
-        canvas.createText(percentage + '%', {
+        self.createText(percentage + '%', {
           x: 140 * self.pixels.x,
           y: 82.5 * self.pixels.y
         }, {
@@ -731,12 +742,13 @@ $('.service-container').on('scroll', () => {
           window.clearInterval(id);
           self.isTriangleAnimationComplete = true;
         }
-      }, 10);
+      }, 50);
     };
 
     // self.draw.redraw = function () {
     //     self.draw.create();
     // }
+
   }
 
   return GraphMaker;
@@ -746,23 +758,22 @@ var canvas = new GraphMaker('sample');
 var $window = $(window);
 window.addEventListener('scroll', function () {
   if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+    canvas.triangle(50, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
   }
 });
 
-var canvas = new GraphMaker('sample1');
-var $window = $(window);
+// percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
+var canvas2 = new GraphMaker('sample1');
 window.addEventListener('scroll', function () {
   if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+    canvas2.triangle(92, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
   }
 });
 
-var canvas = new GraphMaker('sample2');
-var $window = $(window);
+var canvas3 = new GraphMaker('sample2');
 window.addEventListener('scroll', function () {
   if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-    canvas.triangle(30, 'red', 'black', 1, '#63a37a', 'blue', '100px');
+    canvas3.triangle(94, 'white', 'white', 1, '#63a37a', 'blue', 'Open Sans');
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
@@ -780,9 +791,9 @@ window.addEventListener('scroll', function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed");
+/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js");
 /* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed");
+/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js");
 /* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/alert */ "./node_modules/bootstrap/js/dist/alert.js");
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__);
@@ -810,7 +821,6 @@ window.Popper = expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___defa
 
 // Selective bootstrap.js build
 // https://github.com/twbs/bootstrap/issues/20709
-
 
 
 
@@ -2961,10 +2971,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed ***!
-  \***********************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2973,10 +2983,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed":
-/*!*****************************************************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js-exposed ***!
-  \*****************************************************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
