@@ -27,7 +27,7 @@ get_header() ?>
     <!-- * =============== /Content Section 2=============== * -->
 
     <!-- * =============== Filling-triangle Section =============== * -->
-    <section data-background-image="images/GPHome_BlurredClientBG.jpg" class="lozad fixed-bg">
+    <section  class="green-bg">
         <div class="row">
             <div class="col-sm-4">
                 <canvas id="sample"></canvas>
