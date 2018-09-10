@@ -31,16 +31,27 @@ if (get_field('content_section_two')): ?>
 <?php endif; ?>
 
     <!-- * =============== Filling-triangle Section =============== * -->
-    <section class="green-bg">
-        <div class="row">
-            <div class="col-sm-4">
-                <canvas id="sample"></canvas>
-            </div>
-            <div class="col-sm-4">
-                <canvas id="sample1"></canvas>
-            </div>
-            <div class="col-sm-4">
-                <canvas id="sample2"></canvas>
+    <section class="green-bg traingle-sction">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 my-3">
+                    <canvas id="sample"></canvas>
+                    <h4 class="title">of top 25 US private
+                        equity firms served
+                    </h4>
+                </div>
+                <div class="col-md-4 my-3">
+                    <canvas id="sample1"></canvas>
+                    <h4 class="title">of clients are
+                        “highly satisfied”
+                    </h4>
+                </div>
+                <div class="col-md-4 my-3">
+                    <canvas id="sample2"></canvas>
+                    <h4 class="title">of clients are
+                        “highly likely to recom&shy;mend Green Peak”
+                    </h4>
+                </div>
             </div>
         </div>
     </section>
@@ -72,37 +83,47 @@ if (!empty($testimonials)):?>
 $consultants = get_field('consultants');
 if (!empty($consultants)):?>
     <!-- * =============== Consultants Section =============== * -->
-    <section class="bg-light">
+    <section class="bg-light team-section">
         <div class="container pt-5">
             <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
                 <span><?php the_field('consultants_heading'); ?></span></h2>
-            <div id="accordion" class="consultants">
-                <div class="row">
-                    <?php $count = 1;
-                    foreach ($consultants as $consultant): ?>
-                        <div data-toggle="collapse" data-target="#consultant<?php echo $count; ?>" aria-expanded="true"
-                             aria-controls="consultant<?php echo $count; ?>"
-                             class="col-sm-4 position-static toggle-div">
-                            <figure class="figure" data-toggle="collapse" href="#collapseExample">
-                                <img src="<?php echo $consultant['consultant_image']; ?>" class="figure-img img-fluid"
-                                     alt="consultant-profile">
-                                <figcaption class="figure-caption">
-                                    <h3><span><?php echo $consultant['consultant_name']; ?></span></h3>
-                                    <p><?php echo $consultant['consultant_designation']; ?></p>
-                                    <p><?php echo $consultant['consultant_location']; ?></p>
-                                </figcaption>
-                            </figure>
-                            <div id="consultant<?php echo $count; ?>" class="collapse intro-desc position-absolute"
-                                 aria-labelledby="heading<?php echo $count; ?>"
-                                 data-parent="#accordion">
-                                <div class="card-body p-0">
-                                    <?php echo $consultant['consultant_description']; ?>
+            <?php $chunked_consultant = array_chunk($consultants, 3);
+            $count = 1;
+            foreach ($chunked_consultant as $consultant_array): ?>
+                <div class="team-wrap">
+                    <ul class="nav nav-tabs responsive row" role="tablist">
+                        <?php foreach ($consultant_array as $consultant): ?>
+                            <li class="col-md-4 team-col">
+                                <a href="#consultant<?php echo $count; ?>" data-toggle="tab">
+                                    <figure class="figure">
+                                        <img src="<?php echo $consultant['consultant_image']; ?>"
+                                             class="figure-img img-fluid"
+                                             alt="A generic square placeholder image with rounded corners in a figure.">
+                                        <figcaption class="figure-caption">
+                                            <h3><span><?php echo $consultant['consultant_name']; ?></span></h3>
+                                            <h6 class="desigantion">
+                                                <div><?php echo $consultant['consultant_designation']; ?>,</div>
+                                                <div><?php echo $consultant['consultant_location']; ?></div>
+                                            </h6>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul><!-- Tab panes -->
+                    <div class="tab-content responsive">
+                        <?php foreach ($consultant_array as $consultant): ?>
+                            <div class="tab-pane" id="consultant<?php echo $count; ?>">
+                                <div class="intro-desc" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body p-0">
+                                        <?php echo $consultant['consultant_description']; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div><!--col-sm-4-->
-                        <?php $count++; endforeach; ?>
-                </div>
-            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div> <!--/team-wrap-->
+                <?php $count++; endforeach; ?>
         </div>
     </section>
     <!-- * =============== /Consultants Section =============== * -->
@@ -112,37 +133,47 @@ endif;
 $operations = get_field('operations');
 if (!empty($operations)):?>
     <!-- * =============== Opertaions Section =============== * -->
-    <section class="bg-light">
+    <section class="bg-light team-section">
         <div class="container pt-5">
             <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
                 <span><?php the_field('operations_heading'); ?></span></h2>
-            <div id="accordion" class="consultants">
-                <div class="row">
-                    <?php $count = 1;
-                    foreach ($operations as $operation): ?>
-                        <div data-toggle="collapse" data-target="#operation<?php echo $count; ?>" aria-expanded="true"
-                             aria-controls="operation<?php echo $count; ?>"
-                             class="col-sm-4 position-static toggle-div">
-                            <figure class="figure" data-toggle="collapse" href="#collapseExample">
-                                <img src="<?php echo $operation['operations_image']; ?>" class="figure-img img-fluid"
-                                     alt="operation-profile">
-                                <figcaption class="figure-caption">
-                                    <h3><span><?php echo $operation['operations_name']; ?></span></h3>
-                                    <p><?php echo $operation['operations_designation']; ?></p>
-                                    <p><?php echo $operation['operations_location']; ?></p>
-                                </figcaption>
-                            </figure>
-                            <div id="operation<?php echo $count; ?>" class="collapse intro-desc position-absolute"
-                                 aria-labelledby="heading<?php echo $count; ?>"
-                                 data-parent="#accordion">
-                                <div class="card-body p-0">
-                                    <?php echo $operation['operations_description']; ?>
+            <?php $chunked_operation = array_chunk($operations, 3);
+            $count = 1;
+            foreach ($chunked_operation as $operation_array): ?>
+                <div class="team-wrap">
+                    <ul class="nav nav-tabs responsive row" role="tablist">
+                        <?php foreach ($operation_array as $operation): ?>
+                            <li class="col-md-4 team-col">
+                                <a href="#operation<?php echo $count; ?>" data-toggle="tab">
+                                    <figure class="figure">
+                                        <img src="<?php echo $operation['operations_image']; ?>"
+                                             class="figure-img img-fluid"
+                                             alt="A generic square placeholder image with rounded corners in a figure.">
+                                        <figcaption class="figure-caption">
+                                            <h3><span><?php echo $operation['operations_name']; ?></span></h3>
+                                            <h6 class="desigantion">
+                                                <div><?php echo $operation['operations_designation']; ?>,</div>
+                                                <div><?php echo $operation['operations_location']; ?></div>
+                                            </h6>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul><!-- Tab panes -->
+                    <div class="tab-content responsive">
+                        <?php foreach ($operation_array as $operation): ?>
+                            <div class="tab-pane" id="operation<?php echo $count; ?>">
+                                <div class="intro-desc" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body p-0">
+                                        <?php echo $operation['operations_description']; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div><!--col-sm-4-->
-                        <?php $count++; endforeach; ?>
-                </div>
-            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div> <!--/team-wrap-->
+                <?php $count++; endforeach; ?>
         </div>
     </section>
     <!-- * =============== /Opertations Section =============== * -->
