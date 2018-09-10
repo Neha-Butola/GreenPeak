@@ -6,8 +6,13 @@
 }
 
 .service-page {
+    height: 100vh;
+    overflow-y: hidden;
     .main-head  {
-        padding: 20px 100px 0;
+        padding: 16px 30px 5px;
+        &.nav-style {
+            padding: 4px 30px 8px;
+        }
     }
     
     .main-footer {
@@ -17,6 +22,9 @@
         padding: 5px 4rem 0;
         h5 {
             font-size: 1rem;
+        }
+        .row>[class*=col-] {
+            padding-bottom: 0;
         }
     } 
     .social-icons {
@@ -47,14 +55,14 @@
     transform-origin: top left;
     width: calc(100vh - 75px);
     height: 100vw;  
-    position: absolute; 
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
+        display: none;
       }
     &::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
+        width: 0;
+        height: 0;
     } 
 }
 
@@ -62,13 +70,15 @@
     transform: rotate(90deg) translateY(-100vh);
     transform-origin: top left;
     width: 100%;
+    overflow: initial !important;
+    position: relative;
 }
 
 .service-section {
     font-size: 20px;
-    min-width: 5580px;
     height: 100vh;
     position: relative;
+    width: 4690px;
     &:before {
         @include position-absolute;
         top: 0;
@@ -91,14 +101,14 @@
 .service-wrap {
     color: #fff;
     font-family: $vantisa_black;
-    padding: 18vh 20px 0 15.5vw;
+    padding: 8em 20px 0 15.5vw;
     position: relative;
     display: flex;
     margin: auto;
     -webkit-font-smoothing: antialiased;
     h4 {
         font-family: $vantisa_regular;  
-        margin: 11vh 0  0.5em;
+        margin: 8vh 0  0.5em;
         max-width: 540px;
     }
     .title {
@@ -110,7 +120,7 @@
     }
     li {
         padding: 4px 0;
-        line-height: 1.4;
+        line-height: 1.35;
         position: relative;
         list-style-type: circle;
     }
@@ -125,6 +135,9 @@
     margin-right: 65px;
     &:nth-of-type(1) {
         margin-right: 10px;
+    }
+    &:last-child {
+        margin-right: 0;
     }
     .col-below {
         padding-top: 11vh;
@@ -145,7 +158,7 @@
     @include position-absolute;
     height: 3px;
     left: 120px;
-    top: 48%;
+    top: 44%;
     width: 0;
     transform: translateY(-50%);
     transition: all ease 2s;
@@ -216,12 +229,10 @@
     vertical-align: top;
     margin-top: 15%;
     margin-left: 7%;
-     display: none;
+    display: none;
     width: 100px;
     height: 100px;
     fill: #fff;
-    position: absolute;
-    right: 0;
 }
 
 @media (max-height: 768px) {
@@ -232,10 +243,10 @@
         max-height: 200px;
     }
     .service-col .col-below {
-        padding-top: 5em;
+        padding-top: 8vh;
     }
     .service-wrap h4 {    
-        margin-top: 7vh;
+        margin-top: 3vh;
     }
     .service-wrap li {
         padding: 2px 0;
@@ -244,18 +255,126 @@
         left: 90px;
         top: 44%;
     }
+    .service-page .main-head .container {
+        max-width: initial;
+    }
+}
+
+@media (max-height: 850px) {
+    .service-section {
+        font-size: 19px;
+    }
+    .service-col .col-below {
+        padding-top: 7vh;
+    }
+    .service-wrap {
+        padding-top: 7.5em;
+    }
+    .service-col img {
+        max-height: 230px;
+    }
+    .service-wrap h4 {
+        margin-top: 4.5vh;
+    }
+    .service-wrap li {
+        padding: 3px 0;
+        line-height: 1.3;
+    }
+    .timeline {
+        top: 43%;
+        left: 105px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-wrap {
+        padding: 25vh 0 0 30px;
+    }
+    .service-wrap h4 {
+        max-width: 270px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+    .arrows_svg  {
+        display: block;
+    }
+    .service-col:first-of-type {
+        flex-direction: row;
+    }
+    .service-section {
+        font-size: 16px;
+    }
+    .service-col {
+        justify-content: initial; 
+    }
+    .service-col:first-of-type {
+        margin-right: 65px;
+    }
+    .service-col img {
+        max-height: 160px;
+    }
+    .service-wrap li {
+        line-height: 1.2;
+    }
+    .service-wrap li {  
+        padding: 2px 0;
+    }
+    .service-col .col-below {
+        padding-top: 5vh;
+    }
+    .timeline {
+        top: auto;
+        bottom: 0;
+    }
+    .timeline .dot>div {
+        transform: rotate(180deg);
+        top: -40px;
+    }
+    .service-col .col-below {
+        padding-top: 0;
+        margin-bottom:0;
+    }
+    .service-col:first-of-type {
+        max-width: 410px;
+    }
+}
+
+@media (max-width:489px) {
+    .service-col {
+        width: 420px;
+    }
+    .service-wrap {
+        padding-top: 21vh;
+    }
+    .service-section {
+        width: 2940px;
+    }
+    .service-col img {
+        max-height: 120px;
+    }
+    .service-col  .img-col {
+        order: 1;
+    }
+    .timeline {
+        left: 50px;
+        bottom: -1vh;
+    }
 }
 
 @media (max-height: 600px) {
     .service-col {
         flex-direction: row;
+        justify-content: flex-start;
+    }
+    .service-col:first-of-type {
+        max-width: initial;
     }
     .service-col .col-below {
         padding-top: 0;
     }
     .service-section {
         font-size: 16px;
-        min-width: 4740px;
     }
     .service-page  .main-footer {
         display: none;
@@ -268,13 +387,13 @@
         margin-right: 20px;
     }
     .service-wrap {
-        padding-top: 22vh;
+        padding-top: 20vh;
     }
     .service-wrap li {
-        line-height: 1.3;
+        line-height: 1.2;
     }
     .service-wrap h4 {
-        margin-top: 10px;
+        margin-top: 5px;
         font-size: 18px;
         max-width: 370px;
         font-weight: 700;
@@ -292,55 +411,3 @@
     }
 }
 
-@media (max-width: 768px) {
-    .service-wrap {
-        padding-left: 30px;
-    }
-    .service-wrap h4 {
-        max-width: 270px;
-        font-size: 18px;
-        font-weight: 600;
-    }
-    .arrows_svg  {
-        display: block;
-    }
-    .service-col {
-        width: 420px;
-    }
-    .service-section {
-        min-width: 3050px; 
-        font-size: 16px;
-    }
-    .service-col:first-of-type {
-        margin-right: 65px;
-    }
-    .service-col img {
-        max-height: 160px;
-    }
-    .service-wrap h4 {
-        margin-top: 20px;
-    }
-    .service-wrap li {
-        line-height: 1.35;
-    }
-    .service-wrap li {  
-        padding: 2px 0;
-    }
-    .service-col .col-below {
-        padding-top: 5vh;
-    }
-    .service-col .img-col {
-        order: 1;
-    }
-    .timeline {
-        top: auto;
-        bottom: 0;
-    }
-    .timeline .dot>div {
-        transform: rotate(180deg);
-        top: -40px;
-    }
-    .service-col .col-below {
-        padding-top: 0;
-    }
-}

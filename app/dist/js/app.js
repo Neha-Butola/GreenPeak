@@ -214,7 +214,6 @@ __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
 __webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
 __webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
-__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './animating-triangle'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 /***/ }),
 
@@ -266,50 +265,64 @@ __webpack_require__(!(function webpackMissingModule() { var e = new Error("Canno
 //     }
 //   }
 
-var clicked = false,
-    clickY;
+// var clicked = false, clickY;
 
-$('.service-container').on({
-    'mousemove': function (e) {
-        clicked && updateScrollPos(e);
-    },
-    'mousedown': function (e) {
-        clicked = true;
-        clickY = e.pageY;
-        console.log($('.service-container').scrollTop());
-    },
-    'mouseup': function () {
-        clicked = false;
-        $('.service-page').css('cursor', 'auto');
-    }
+// $('.service-container').on({
+//     'mousemove': function(e) {
+//         clicked && updateScrollPos(e);
+//     },
+//     'mousedown': function(e) {
+//         clicked = true;
+//         clickY = e.pageY;
+//         console.log($('.service-container').scrollTop());
+//     },
+//     'mouseup': function() {
+//         clicked = false;
+//         $('.service-page').css('cursor', 'auto');
+//     }
+// });
+
+// var updateScrollPos = function(e) {
+//     $('.service-page').css('cursor', 'row-resize');
+//     $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 1.5 ));
+// }
+
+
+$(function () {
+    var curDown = false,
+        curYPos = 0,
+        curXPos = 0;
+    $(window).mousemove(function (m) {
+        if (curDown === false) {
+            $('.service-container').scrollTop($(window).scrollTop() + (curXPos - m.pageX));
+            //    $('.service-container').scrollLeft($(window).scrollLeft() + (curXPos - m.pageX));
+        }
+    });
+
+    $(window).mousedown(function (m) {
+        curDown = true;
+        curYPos = m.pageY;
+        curXPos = m.pageX;
+    });
+
+    $(window).mouseup(function () {
+        curDown = false;
+    });
 });
 
-var updateScrollPos = function (e) {
-    // $('.service-page').css('cursor', 'row-resize');
-    $('.service-container').scrollTop($('.service-container').scrollTop() + (clickY - e.pageY) * 2);
-};
+// $(window).on("resize", function () {
+//     var total_item= $(".service-wrap .service-col").length;
+//     var item_width= $('.service-col').css('width');
+//     vat total_width =Number(total_item) * Number(item_width);
+//     $('.service-section').css({
+//             'width': 'calc('total_width+'px)'
+//       });
+//     }).resize();
 
-// $(function(){
-//     var curDown = false,
-//         curYPos = 0,
-//         curXPos = 0;
-//     $(window).mousemove(function(m){
-//       if(curDown === false){
-//        $('.service-container').scrollTop($(window).scrollTop() + (curXPos - m.pageX)); 
-//     //    $('.service-container').scrollLeft($(window).scrollLeft() + (curXPos - m.pageX));
-//       }
-//     });
 
-//     $(window).mousedown(function(m){
-//       curDown = true;
-//       curYPos = m.pageY;
-//       curXPos = m.pageX;
-//     });
-
-//     $(window).mouseup(function(){
-//       curDown = false;
-//     });
-//   })
+// $('.service-container2').dragend({
+//     direction: "horizontal",
+// });
 
 $('.service-col img').each(function () {
     $(this).parent().addClass('img-col');
@@ -335,19 +348,28 @@ $('.service-container').on('scroll', () => {
 
             if (index <= elements.length - 2) {
                 ele.find('.timeline').css('width', '111%');
+                if ($(window).width() < 490) {
+                    ele.find('.timeline').css('width', '117%');
+                }
             } else {
                 ele.find('.timeline').css('width', '0');
             }
 
             let dotEle = ele.find('.dot>div');
             ele.find('.dot').addClass('show');
-            dotEle.css('height', '80px');
+            dotEle.css('height', '70px');
+            if ($(window).height() < 850) {
+                dotEle.css('height', '50px');
+            }
             if ($(window).width() < 992) {
                 dotEle.css('height', '40px');
             }
             dotEle.find('.dot-in').css("display", 'block');
             if (index % 2 === 0) {
-                dotEle.css('top', '-80px');
+                dotEle.css('top', '-70px');
+                if ($(window).height() < 850) {
+                    dotEle.css('top', '-50px');
+                }
                 if ($(window).width() < 992) {
                     dotEle.css('top', '-40px');
                 }
