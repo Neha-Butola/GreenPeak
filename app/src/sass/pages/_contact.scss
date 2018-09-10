@@ -23,6 +23,21 @@ form{
   }
 }
 
+.contact{
+  padding-top: 3rem;
+  a{
+    color: #5d5d5d;
+    font-size: 2.25rem;
+    &:hover{
+       color: $green3;
+    }
+    i{
+      margin-right: 20px;
+      color: $green3;
+    }
+  }
+}
+
 /* -- Placeholder Global Color -- */
 input::-webkit-input-placeholder {
   font-weight: 400 !important;

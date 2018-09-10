@@ -1,16 +1,13 @@
-     contentheight = $('.collapse').height();
-     $(".col-sm-4 .btn").click(function () {
-       $(".col-sm-4").parent().toggleClass("test");
-       $(".test + .row").css('margin-top', contentheight);
-       //  if (!$('.row').hasClass("test")) {
-       //    $(".row").css('margin-top', 0);
-       //  }
-       if ($(".show").parents(".row").length == 0) {
-         $(".row").removeClass('test');
-       }
-     });
-     //  if ($("#accordion:has(.test)")) {
-     //    $(".test + .row").css('margin-top', contentheight);
-     //  } else {
-     //    $(".test + .row").css('margin-top', 0);
-     //  }
+$(".toggle-div").click(function () {
+  contentheight = $('.collapse').height();
+  $(this).toggleClass('has-content');
+  if ($(this).hasClass('has-content')) {
+    $(this).find('.intro-desc').parent().css('margin-bottom', contentheight);
+  } else {
+    $(this).find('.intro-desc').parent().css('margin-bottom', 0);
+  }
+
+  //  if ($(".show").parents(".toggle-div").length == 0) {
+  //    $('.toggle-div').find('.intro-desc').parent().css('margin-bottom', 0);
+  //  }
+});

@@ -1,9 +1,10 @@
 /** =============== Responsive CSS =============== **/
 @media (max-width: 1600px) {
-.nav-style .logo {
-	left: 26px;
+	.nav-style .logo {
+		left: 26px;
+	}
 }
-}
+
 //Extra Large devices
 @media (max-width: 1420px) {
 	// Home Page css
@@ -23,97 +24,122 @@
 
 // Small devices
 @media (max-width: 768px) {
+
 	/* Global */
 	html {
 		font-size: 14px;
 	}
+
 	.main-footer,
 	.bg-parallax {
 		.row {
 			text-align: center;
 		}
 	}
+
 	/* Header */
+.nav-style.main-head {
+	padding: .5rem 0;
+}
+
 	.main-head {
-     padding: 1.5rem 0;
-	.main-head .navbar-toggler {
-		display: flex;
-		flex-wrap: wrap;
-		margin-left: auto;
-		outline: none;
-		width: 65px;
-	}
-	.navbar-toggler {
-		display: flex;
-	}
-
-	.logo {
-		transform: none;
-		left: 16px;
-		top: 3px;
-		transform: none;
-		transition: left .5s ease;
-	}
-	nav {
-		ul {
-			position: fixed;
-			width: 250px;
-			background-color: #fff;
-			height: 100vh !important;
-			transition: right .5s ease;
-			top: 79px;
-			display: block !important;
-			overflow-y: auto;
-			right: -100%;
+padding: 1.5rem 0;
+		.main-head .navbar-toggler {
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: auto;
+			outline: none;
+			width: 65px;
 		}
-	}
 
-	/* Homepage */
-	.parallax-secs section {
-		background-attachment: initial;
-		h2{
-			a{
-				font-size: 5rem;
+		.navbar-toggler {
+			display: flex;
+		}
+
+		.logo {
+			transform: none;
+			left: 16px;
+			top: 3px;
+			transform: none;
+			transition: left .5s ease;
+		}
+
+		nav {
+			ul {
+				position: fixed;
+				width: 250px;
+				background-color: #fff;
+				height: 100vh !important;
+				transition: right .5s ease;
+				top: 54px;
+				display: block !important;
+				overflow-y: auto;
+				right: -100%;
 			}
 		}
-		.row {
-			.col-md-6 {
-				&:nth-child(1) {
-					order: 2;
+	}
+		/* Homepage */
+		.parallax-secs {
+			section{
+				    padding: 2.25rem 0 7.5rem;
+				text-align: center;
+			background-attachment: initial;
+&:nth-of-type(1){
+	background-position: 87% 0;
+}
+			h2 {
+				a {
+					font-size: 5rem;
 				}
+			}
+
+			.row {
+				.col-md-6 {
+					&:nth-child(1) {
+						order: 2;
+					}
+
 					&:nth-child(2) {
 						order: 1;
 					}
+				}
 			}
 		}
 	}
-	.bg-parallax .row > .col-md-6 {
-		min-height: initial;
-	}
-
-	.the-why {
-    background-position: 90% 0;
-	}
-	}
-
-/* footer */
-
-.social-icons {
-	padding-top: 0;
+.parallax-secs section:nth-child(2) h2 a{
+	padding-left:0;
 }
 
-.main-footer{
-	h5{
-		margin: 0;
-		display: block;
+.parallax-secs section .row>.col-md-6:first-child{
+	min-height: initial;
+}
+
+		.bg-parallax .row>.col-md-6 {
+			min-height: initial;
+		}
+
+		.the-why {
+			background-position: 90% 0;
+		}
 	}
-	.row{
-> [class*="col-"] {
-	padding-bottom: 20px;
+
+	/* footer */
+	.social-icons {
+		padding-top: 0;
 	}
-}
-}
-}
+
+	.main-footer {
+		h5 {
+			margin: 0;
+			display: block;
+		}
+
+		.row {
+			>[class*="col-"] {
+				padding-bottom: 20px;
+			}
+		}
+	}
 
 
 // Extra small devices
@@ -122,5 +148,11 @@
 	/* Global */
 	html {
 		font-size: 13px;
+	}
+
+	input,
+	select,
+	textarea {
+		font-size: 16px;
 	}
 }
