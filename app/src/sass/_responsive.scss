@@ -1,4 +1,20 @@
 /** =============== Responsive CSS =============== **/
+
+
+@media (min-width: 1799px) {
+	.container {
+		max-width: 1600px;
+	}
+}
+
+
+@media (min-width: 1599px) {
+	.container {
+		max-width: 1250px;
+	}
+}
+
+
 @media (max-width: 1600px) {
 	.nav-style .logo {
 		left: 26px;
