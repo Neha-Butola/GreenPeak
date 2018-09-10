@@ -22,8 +22,11 @@
 
 form {
   input[type="submit"] {
-    background-color: transparent;
-    color: $white;
+ background-color: transparent;
+ color: $white;
+ padding: .5rem 2rem;
+ text-transform: uppercase;
+ letter-spacing: 8px;
   }
 
   textarea {
@@ -40,6 +43,7 @@ form {
     font-size: 1.5rem;
     padding: 1rem;
     color: $white;
+    line-height: 3.3125rem;
   }
 
   label {
