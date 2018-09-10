@@ -34,14 +34,14 @@ $('#about-testimonial .owl-carousel').owlCarousel({
   }
 });
 
-$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-  disableOn: 700,
-  type: 'iframe',
-  mainClass: 'mfp-fade',
-  removalDelay: 160,
-  preloader: false,
+// $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+//   disableOn: 700,
+//   type: 'iframe',
+//   mainClass: 'mfp-fade',
+//   removalDelay: 160,
+//   preloader: false,
 
-});
+// });
 
 $('.thevideo').mouseover(function () {
   $(this).get(0).play();

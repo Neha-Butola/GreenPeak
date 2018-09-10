@@ -334,6 +334,111 @@
           }, 50);
         };
 
+        var startingHeight = 10;
+        var triangleWidthCenter = 150;
+        var triangleHeightCenter = 75;
+
+        self.setupTriangleAnimation = function () {
+          self.createRectangle({
+            x: 0,
+            y: 0
+          }, {
+            x: 300,
+            y: 150
+          }, {
+            fillColour: 'rgba(255,255,255,1)'
+          }, false);
+          // canvas.canvas.clip();
+
+
+          var endingYPosition = getEndingYPosition(triangleHeightCenter, startingHeight);
+          var startingYPosition = getStartingYPosition(triangleHeightCenter, startingHeight);
+          var endingXPosition = getEndingXPosition(endingYPosition);
+          var startingXPosition = getStartingXPosition(triangleWidthCenter, endingXPosition);
+
+          self.canvas.globalCompositeOperation = 'destination-out';
+          self.createTriangle({
+            x: 150,
+            y: startingYPosition
+          }, {
+            x: startingXPosition,
+            y: endingYPosition
+          }, {
+            x: endingXPosition,
+            y: endingYPosition
+          }, {
+            fillColour: 'rgba(255,255,255,1)',
+          }, true);
+        };
+
+        self.triangleAnimation = function (toAdd) {
+
+
+          self.canvas.globalCompositeOperation = "source-over";
+          self.canvas.clearRect(0, 0, 300, 150);
+          self.createRectangle({
+            x: 0,
+            y: 0
+          }, {
+            x: 300,
+            y: 150
+          }, {
+            fillColour: 'rgba(255,255,255,1)'
+          }, false);
+          // canvas.canvas.clip();
+
+          if (toAdd) {
+            startingHeight = startingHeight * 1.5;
+            if (startingHeight >= 600) {
+              startingHeight = 600;
+            }
+          } else {
+            startingHeight = startingHeight * 0.75;
+            if (startingHeight <= 25) {
+              startingHeight = 25;
+            }
+
+          }
+
+          var endingYPosition = getEndingYPosition(triangleHeightCenter, startingHeight);
+          var startingYPosition = getStartingYPosition(triangleHeightCenter, startingHeight);
+
+          var endingXPosition = getEndingXPosition(endingYPosition);
+          var startingXPosition = getStartingXPosition(triangleWidthCenter, endingXPosition);
+
+          self.canvas.globalCompositeOperation = 'destination-out';
+          self.createTriangle({
+            x: 150,
+            y: startingYPosition
+          }, {
+            x: startingXPosition,
+            y: endingYPosition
+          }, {
+            x: endingXPosition,
+            y: endingYPosition
+          }, {
+            fillColour: 'rgba(255,255,255,1)',
+          }, true);
+
+
+        };
+
+        function getEndingYPosition(center, height) {
+          return center + height / 2;
+        }
+
+        function getStartingYPosition(center, height) {
+          return center - height / 2;
+        }
+
+        function getEndingXPosition(endingY) {
+          return endingY * 2;
+        }
+
+        function getStartingXPosition(center, endingX) {
+          return 2 * center - endingX;
+        }
+
         // self.draw.redraw = function () {
         //     self.draw.create();
         // }
@@ -344,25 +449,45 @@
       return GraphMaker;
     })(window);
 
-    var canvas = new GraphMaker('sample');
+    // var canvas = new GraphMaker('sample');
+    // var $window = $(window);
+    // window.addEventListener('scroll', function () {
+    //   if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
+    //     canvas.triangle(50, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
+    //   }
+    // });
+
+    // // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
+    // var canvas2 = new GraphMaker('sample1');
+    // window.addEventListener('scroll', function () {
+    //   if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
+    //     canvas2.triangle(92, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
+    //   }
+    // });
+
+    // var canvas3 = new GraphMaker('sample2');
+    // window.addEventListener('scroll', function () {
+    //   if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
+    //     canvas3.triangle(94, 'white', 'white', 1, '#63a37a', 'blue', 'Open Sans');
+    //   }
+    // });
+
+    var triangle = new GraphMaker('animating-triangle');
     var $window = $(window);
-    window.addEventListener('scroll', function () {
-      if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-        canvas.triangle(50, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
-      }
-    });
 
-    // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
-    var canvas2 = new GraphMaker('sample1');
+    triangle.setupTriangleAnimation();
+    var originalScrollValue = $window.scrollTop();
     window.addEventListener('scroll', function () {
-      if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-        canvas2.triangle(92, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
-      }
-    });
+      if (originalScrollValue >= $window.scrollTop()) { //decreasing
+        if ($window.scrollTop() <= ($('#animating-triangle').offset().top + $('#animating-triangle').height())) {
+          triangle.triangleAnimation(false);
+        }
 
-    var canvas3 = new GraphMaker('sample2');
-    window.addEventListener('scroll', function () {
-      if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-        canvas3.triangle(94, 'white', 'white', 1, '#63a37a', 'blue', 'Open Sans');
+      } else if (originalScrollValue < $window.scrollTop()) { //increasing
+        if ($window.scrollTop() >= $('#animating-triangle').offset().top * 0.8) {
+          triangle.triangleAnimation(true);
+        }
       }
+
+      originalScrollValue = $window.scrollTop();
     });

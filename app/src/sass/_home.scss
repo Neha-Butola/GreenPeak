@@ -52,6 +52,7 @@
 }
 
 .parallax-secs {
+      margin-top: -10px;
   section {
     background-size: cover;
     background-position: center center;
@@ -115,8 +116,14 @@
   padding-left: 45px;
 }
 
+#animating-triangle {
+height: 100%;
+width: 100vw;
+//background: url('https://lanbelle.com/wp-content/themes/lanbelle/images/sub/origin/origin-full-image-02.jpg') center center;
+background-size: cover;
+background-attachment: fixed;
 
-/* The HOW section css */
+}
 
 
 
