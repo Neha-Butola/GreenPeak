@@ -32,7 +32,8 @@ if (!empty($content)): ?>
                         <div class="col-md-6 <?php echo ($count % 2 != 0) ? 'text-md-right' : 'offset-md-6'; ?>"
                              data-aos="fade-in" data-aos-delay="100">
                             <h2>
-                                <a href="#">"<?php echo $section['main_heading']; ?>"</a>
+                                <a href="<?php echo $section['main_heading_link']; ?>">"<?php echo $section['main_heading']; ?>
+                                    "</a>
                             </h2>
                             <h3><?php echo $section['sub_heading']; ?></h3>
                         </div>
