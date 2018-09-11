@@ -175,6 +175,8 @@ $(".main-head .navbar-toggler").click(function () {
 $('.intro-desc.show').each(function () {
   $(this).parent().addClass('one');
 });
+
+document.getElementById("video").load();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -190,11 +192,11 @@ $('.intro-desc.show').each(function () {
 
 
 __webpack_require__(/*! ./vendor */ "./app/src/js/vendor.js");
+__webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
 __webpack_require__(/*! ./home */ "./app/src/js/home.js");
 __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
 __webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
-__webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
 
 /***/ }),
 
@@ -1189,7 +1191,7 @@ aos__WEBPACK_IMPORTED_MODULE_9___default.a.init();
 
 
 let observer = lozad__WEBPACK_IMPORTED_MODULE_10___default()('.lozad', {
-  rootMargin: '200px 0px'
+  rootMargin: '500px 0px'
 });
 
 observer.observe();

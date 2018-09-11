@@ -22,6 +22,7 @@
 .html5gallery-elem-img-1 {
   .html5gallery-elem-image-1+a {
     display: none;
+    opacity: 0 !important;
   }
 }
 
@@ -110,9 +111,6 @@
 
 .value-sec {
   .row {
-    .col-md-5:nth-of-type(2) {
-      text-align: right;
-    }
 
     h4 {
       -webkit-font-smoothing: antialiased;

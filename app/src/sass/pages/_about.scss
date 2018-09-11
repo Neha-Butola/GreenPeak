@@ -192,7 +192,8 @@
   } 
 
   .team-col {
-    .active .figure-caption{
+    .active .figure-caption,
+    &:hover .figure-caption{
       color: $green3;
     }
   }
