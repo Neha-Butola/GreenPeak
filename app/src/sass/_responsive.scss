@@ -157,6 +157,20 @@
 	display: none !important;
 }
 
+.value-sec .row>[class*=col-] img {
+	max-width: 100% !important;
+}
+.video-play {
+	padding-top: 3rem;
+}
+
+.value-sec .row {
+	padding-top: 0;
+}
+.value-sec .row>div {
+	padding-bottom: 3rem;
+}
+
 /* media Page */
 .logos-section {
 	padding-bottom: 1rem;
