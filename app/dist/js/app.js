@@ -247,64 +247,28 @@ __webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
 //     }
 //   }
 
-// var clicked = false, clickY;
+var clicked = false,
+    clickY;
 
-// $('.service-container').on({
-//     'mousemove': function(e) {
-//         clicked && updateScrollPos(e);
-//     },
-//     'mousedown': function(e) {
-//         clicked = true;
-//         clickY = e.pageY;
-//         console.log($('.service-container').scrollTop());
-//     },
-//     'mouseup': function() {
-//         clicked = false;
-//         $('.service-page').css('cursor', 'auto');
-//     }
-// });
-
-// var updateScrollPos = function(e) {
-//     $('.service-page').css('cursor', 'row-resize');
-//     $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 1.5 ));
-// }
-
-
-$(function () {
-    var curDown = false,
-        curYPos = 0,
-        curXPos = 0;
-    $(window).mousemove(function (m) {
-        if (curDown === false) {
-            $('.service-container').scrollTop($(window).scrollTop() + (curXPos - m.pageX));
-            //    $('.service-container').scrollLeft($(window).scrollLeft() + (curXPos - m.pageX));
-        }
-    });
-
-    $(window).mousedown(function (m) {
-        curDown = true;
-        curYPos = m.pageY;
-        curXPos = m.pageX;
-    });
-
-    $(window).mouseup(function () {
-        curDown = false;
-    });
+$('.service-container').on({
+    'mousemove': function (e) {
+        clicked && updateScrollPos(e);
+    },
+    'mousedown': function (e) {
+        clicked = true;
+        clickY = e.pageY;
+        console.log($('.service-container').scrollTop());
+    },
+    'mouseup': function () {
+        clicked = false;
+        $('.service-page').css('cursor', 'auto');
+    }
 });
 
-// $(window).on("resize", function () {
-//     var total_item= $(".service-wrap .service-col").length;
-//     var item_width= $('.service-col').css('width');
-//     vat total_width =Number(total_item) * Number(item_width);
-//     $('.service-section').css({
-//             'width': 'calc('total_width+'px)'
-//       });
-//     }).resize();
-
-
-// $('.service-container2').dragend({
-//     direction: "horizontal",
-// });
+var updateScrollPos = function (e) {
+    $('.service-page').css('cursor', 'row-resize');
+    $('.service-container').scrollTop($('.service-container').scrollTop() + (clickY - e.pageY) * 1.2);
+};
 
 $('.service-col img').each(function () {
     $(this).parent().addClass('img-col');
@@ -312,8 +276,10 @@ $('.service-col img').each(function () {
 
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
-    let offset = $('.service-container').scrollTop() + 100;
-
+    let offset = $('.service-container').scrollTop() + 600;
+    if ($(window).width() < 490 && $(window).height() < 600) {
+        let offset = $('.service-container').scrollTop() + 100;
+    }
     let indentLeft = -90;
     elements.each((index, item) => {
         if (index === 0) {
@@ -897,8 +863,8 @@ $('a.resp-sharing-button__link').on('click', function (e) {
 
       height = self.y;
       self.createText(percentage + '%', {
-        x: 140 * self.pixels.x,
-        y: 82.5 * self.pixels.y
+        x: 135 * self.pixels.x,
+        y: 120 * self.pixels.y
       }, {
         colour: fontColour,
         font: fontFamily
@@ -933,8 +899,8 @@ $('a.resp-sharing-button__link').on('click', function (e) {
         }, true);
 
         self.createText(percentage + '%', {
-          x: 140 * self.pixels.x,
-          y: 82.5 * self.pixels.y
+          x: 135 * self.pixels.x,
+          y: 120 * self.pixels.y
         }, {
           colour: fontColour,
           font: fontFamily
@@ -966,8 +932,8 @@ $('a.resp-sharing-button__link').on('click', function (e) {
 
         }, false);
         self.createText(percentage + '%', {
-          x: 140 * self.pixels.x,
-          y: 82.5 * self.pixels.y
+          x: 135 * self.pixels.x,
+          y: 120 * self.pixels.y
         }, {
           colour: fontColour,
           font: fontFamily
@@ -1091,28 +1057,28 @@ $('a.resp-sharing-button__link').on('click', function (e) {
   return GraphMaker;
 }(window);
 
-// var canvas = new GraphMaker('sample');
-// var $window = $(window);
-// window.addEventListener('scroll', function () {
-//   if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-//     canvas.triangle(50, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
-//   }
-// });
+var canvas = new GraphMaker('sample');
+var $window = $(window);
+window.addEventListener('scroll', function () {
+  if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
+    canvas.triangle(50, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+  }
+});
 
-// // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
-// var canvas2 = new GraphMaker('sample1');
-// window.addEventListener('scroll', function () {
-//   if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-//     canvas2.triangle(92, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
-//   }
-// });
+// percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
+var canvas2 = new GraphMaker('sample1');
+window.addEventListener('scroll', function () {
+  if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
+    canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+  }
+});
 
-// var canvas3 = new GraphMaker('sample2');
-// window.addEventListener('scroll', function () {
-//   if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-//     canvas3.triangle(94, 'white', 'white', 1, '#63a37a', 'blue', 'Open Sans');
-//   }
-// });
+var canvas3 = new GraphMaker('sample2');
+window.addEventListener('scroll', function () {
+  if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
+    canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+  }
+});
 
 if (document.querySelector('#animating-triangle')) {
   var triangle = new GraphMaker('animating-triangle', true);
@@ -1151,9 +1117,9 @@ if (document.querySelector('#animating-triangle')) {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js");
+/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed");
 /* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js");
+/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed");
 /* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/alert */ "./node_modules/bootstrap/js/dist/alert.js");
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__);
@@ -3335,10 +3301,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3347,10 +3313,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js-exposed ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
