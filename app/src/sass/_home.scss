@@ -72,9 +72,8 @@
     }
 
     p {
-
+      -webkit-font-smoothing: antialiased;
       font-size: 1.5rem;
-
       line-height: 2.125rem;
     }
 
@@ -114,6 +113,7 @@
 height: 100%;
 width: 100vw;
 }
+
 
 
 

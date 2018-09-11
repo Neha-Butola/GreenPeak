@@ -36,3 +36,9 @@ $(".main-head .navbar-toggler").click(function () {
 $('.intro-desc.show').each(function () {
   $(this).parent().addClass('one');
 });
+
+var video = document.getElementById("banner-video");
+
+if (video.readyState === 4) {
+  $('.banner-content').addClass('title-animate');
+}

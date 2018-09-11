@@ -217,3 +217,29 @@
     font-size: 2rem;
   }
 }
+
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.banner-title {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
