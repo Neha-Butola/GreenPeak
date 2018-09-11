@@ -15,6 +15,12 @@
   }
 }
 
+.html5gallery-elem-img-1 {
+  .html5gallery-elem-image-1 + a{
+    display: none;
+  }
+}
+
 .testimonial {
   padding-bottom: 2.5rem;
   position: relative;
