@@ -36,8 +36,8 @@ if (!empty($testimonials)): ?>
                 <?php foreach ($testimonials as $testimonial): ?>
                     <div class="item text-white">
                         <?php echo $testimonial['testimony']; ?>
-                        <div class="intro">
-                            <div>
+                        <div class="intro d-sm-flex">
+                            <div class="text-sm-left mr-sm-5">
                                 <h2><?php echo $testimonial['reviewer_name']; ?></h2>
                                 <h5><?php echo $testimonial['reviewer_designation']; ?></h5>
                             </div>
@@ -66,13 +66,14 @@ if (!empty($values)):
                     <?php if ($value['option'] == 'Image'):
                         if ($count % 2 == 0): ?>
                             <div class="col-md-5 pt-5">
-                                <h2 data-aos="fade-right"><span><?php echo $value['heading']; ?></span></h2>
+                                <h2 class="left-animating text-center text-md-left" data-aos="fade-right">
+                                    <span><?php echo $value['heading']; ?></span></h2>
                                 <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
                                     <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                          data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 </h4>
                             </div>
-                            <div class="col-md-7 text-right">
+                            <div class="col-md-7 text-right text-md-right">
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
@@ -83,9 +84,11 @@ if (!empty($values)):
                                      data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
                             </div>
-                            <div class="col-md-5 pt-5">
-                                <h2 data-aos="fade-right"><span><?php echo $value['heading']; ?></span></h2>
-                                <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
+                            <div class="col-md-5 pt-md-5 text-right">
+                                <h2 class="left-animating right-animating text-center text-md-right"
+                                    data-aos="fade-left">
+                                    <span><?php echo $value['heading']; ?></span></h2>
+                                <h4 class="pt-md-5"><?php echo $value['sub_heading']; ?>
                                 </h4>
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
@@ -123,7 +126,8 @@ if (!empty($values)):
 
 if (get_field('form_code')): ?>
     <!-- * =============== Form Section =============== * -->
-    <section class="contact-bg lozad fixed-bg" data-background-image="<?php the_field('form_background_image'); ?>">
+    <section class="contact-bg lozad fixed-bg position-relative"
+             data-background-image="<?php the_field('form_background_image'); ?>">
         <div class="container section-divider text-white">
             <?php the_field('form_content'); ?>
             <h2><?php the_field('form_heading'); ?></h2>
