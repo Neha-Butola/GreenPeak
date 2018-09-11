@@ -130,7 +130,7 @@ if (get_field('form_code')): ?>
              data-background-image="<?php the_field('form_background_image'); ?>">
         <div class="container section-divider text-white">
             <?php the_field('form_content'); ?>
-            <h2><?php the_field('form_heading'); ?></h2>
+            <h3 class="mt-5"><?php the_field('form_heading'); ?></h3>
             <?php $form_code = get_field('form_code');
             echo do_shortcode($form_code); ?>
         </div>
