@@ -4,7 +4,8 @@
  */
 get_header(); ?>
 
-    <div class="banner fixed-bg position-relative" style="background-image: url('<?php the_field('banner_image'); ?>');">
+    <div class="banner fixed-bg position-relative"
+         style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
             <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
             <div class="animating-line"></div>
@@ -32,7 +33,7 @@ get_header(); ?>
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $parameters = array(
     'post_type' => 'videos',
-    'posts_per_page' => 3,
+    'posts_per_page' => 5,
     'paged' => $paged
 );
 $videos = new WP_Query($parameters);
@@ -63,7 +64,7 @@ wp_reset_query();
 
 $parameters = array(
     'post-type' => 'posts',
-    'posts_per_page' => '3',
+    'posts_per_page' => 5,
     'paged' => $paged
 );
 $articles = new WP_Query($parameters);
