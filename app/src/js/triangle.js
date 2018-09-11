@@ -476,22 +476,24 @@
     //   }
     // });
 
-    var triangle = new GraphMaker('animating-triangle', true);
-    var $window = $(window);
+    if (document.querySelector('#animating-triangle')) {
+      var triangle = new GraphMaker('animating-triangle', true);
+      var $window = $(window);
 
-    triangle.setupTriangleAnimation();
-    var originalScrollValue = $window.scrollTop();
-    window.addEventListener('scroll', function () {
-      if (originalScrollValue >= $window.scrollTop()) { //decreasing
-        if ($window.scrollTop() <= ($('#animating-triangle').offset().top + $('#animating-triangle').height())) {
-          triangle.triangleAnimation(false);
+      triangle.setupTriangleAnimation();
+      var originalScrollValue = $window.scrollTop();
+      window.addEventListener('scroll', function () {
+        if (originalScrollValue >= $window.scrollTop()) { //decreasing
+          if ($window.scrollTop() <= ($('#animating-triangle').offset().top + $('#animating-triangle').height())) {
+            triangle.triangleAnimation(false);
+          }
+
+        } else if (originalScrollValue < $window.scrollTop()) { //increasing
+          if ($window.scrollTop() >= $('#animating-triangle').offset().top * 0.8) {
+            triangle.triangleAnimation(true);
+          }
         }
 
-      } else if (originalScrollValue < $window.scrollTop()) { //increasing
-        if ($window.scrollTop() >= $('#animating-triangle').offset().top * 0.8) {
-          triangle.triangleAnimation(true);
-        }
-      }
-
-      originalScrollValue = $window.scrollTop();
-    });
+        originalScrollValue = $window.scrollTop();
+      });
+    }

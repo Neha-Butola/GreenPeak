@@ -15,8 +15,9 @@ import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/tab';
 import 'bootstrap/js/dist/modal';
 import 'owl.carousel/dist/owl.carousel.min.js';
-// import 'owl.carousel/dist/assets/owl.carousel.css';
-// import 'owl.carousel';
+
+//require('owl.carousel');
+//import 'owl.carousel';
 //AOS Library animate on scroll
 import AOS from 'aos';
 AOS.init();
@@ -36,7 +37,6 @@ $(window).on('tp.lozad.observe', function () {
 
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
-
 
 jQuery.stellar();
 
