@@ -33,7 +33,7 @@ get_header(); ?>
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $parameters = array(
     'post_type' => 'videos',
-    'posts_per_page' => 5,
+    'posts_per_page' => 6,
     'paged' => $paged
 );
 $videos = new WP_Query($parameters);
@@ -55,7 +55,7 @@ if ($videos->have_posts()): ?>
         <div class="nav-links text-center">
             <a href="#" class="video-load-more" page="2" data-type="video"
                total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
-                More</a>
+                More<i class="fas fa-angle-down"></i></a>
         </div>
     </section>
     <!-- * =============== /Media Video Section =============== * -->
@@ -64,7 +64,7 @@ wp_reset_query();
 
 $parameters = array(
     'post-type' => 'posts',
-    'posts_per_page' => 5,
+    'posts_per_page' => 6,
     'paged' => $paged
 );
 $articles = new WP_Query($parameters);
@@ -125,7 +125,7 @@ if ($articles->have_posts()): ?>
             <div class="nav-links text-center">
                 <a href="#" class="articles-load-more" page="2" data-type="articles"
                    total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
-                    More</a>
+                    More<i class="fas fa-angle-down"></i></a>
             </div>
         </div>
     </section>
