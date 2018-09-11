@@ -13,12 +13,12 @@ get_header(); ?>
             <div class="animating-line"></div>
             <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
-        <video class="thevideo w-100 " autoplay="autoplay" loop="loop" playsinline preload="none" muted=""
-               poster="<?php the_field('banner_image'); ?>">
-            <source src="<?php the_field('banner_video'); ?>"
-                    type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+<!--        <video class="thevideo w-100 " autoplay="autoplay" loop="loop" playsinline preload="none" muted=""-->
+<!--               poster="--><?php //the_field('banner_image'); ?><!--">-->
+<!--            <source src="--><?php //the_field('banner_video'); ?><!--"-->
+<!--                    type="video/mp4">-->
+<!--            Your browser does not support the video tag.-->
+<!--        </video>-->
 
     </div>
     <!-- * =============== /Banner section =============== * -->
