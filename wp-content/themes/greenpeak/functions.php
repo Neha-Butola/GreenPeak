@@ -126,20 +126,15 @@ add_action('widgets_init', 'greenpeak_widgets_init');
  */
 function greenpeak_scripts()
 {
-
-    wp_enqueue_style('aos-css', '//cdnjs.cloudflare.com/ajax/libs/aos/2.3.3/aos.css', '', '2.3.3');
-
-    wp_enqueue_style('owl-carousel-css', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css', '', '2.3.4');
-
-    wp_enqueue_style('magnific-popup-css', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css', '', '2.3.4');
-
     wp_enqueue_style('greenpeak-css', get_template_directory_uri() . '/dist/css/app.css', '', '1.0');
 
     wp_enqueue_script('steller-js', '//cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js', array(), '0.6.2', true);
 
+    wp_enqueue_script('jquery', get_template_directory_uri() . '//code.jquery.com/jquery-2.2.4.min.js', array(), '1.0', true);
+
     wp_enqueue_script('greenpeak-js', get_template_directory_uri() . '/dist/js/app.js', ['jquery'], '1.0', true);
 
-    wp_enqueue_script('pagination', get_template_directory_uri() . '/js/pagination.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('pagination', get_template_directory_uri() . '/js/pagination.js', ['jquery'], '1.0', true);
 
     wp_localize_script('pagination', 'ajaxpagination', array(
         'ajaxurl' => admin_url('admin-ajax.php')
@@ -160,11 +155,11 @@ function ajax_pagination()
     $data_type = $_POST['data_type'];
     $page = $_POST['page'];
     if ($data_type == 'video') {
-        $offset = ($page - 1) * 2;
+        $offset = ($page - 1) * 3;
         $parameters = array(
             'post_type' => 'videos',
             'offset' => $offset,
-            'posts_per_page' => 2,
+            'posts_per_page' => 3,
 
         );
         $videos = new WP_Query($parameters);
