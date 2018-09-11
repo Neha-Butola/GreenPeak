@@ -281,7 +281,6 @@ $('a.resp-sharing-button__link').on('click', function (e) {
       // Ensure link isn't just a dropdown menu link     
       if (!$parent.hasClass("dropdown")){
           // Deactivate tab buttons
-          console.log('done');
           $("ul li a").removeClass("active");
           
           // Hides tab contents

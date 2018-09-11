@@ -618,7 +618,6 @@ if ($(window).width() > 768) {
     // Ensure link isn't just a dropdown menu link     
     if (!$parent.hasClass("dropdown")) {
       // Deactivate tab buttons
-      console.log('done');
       $("ul li a").removeClass("active");
 
       // Hides tab contents

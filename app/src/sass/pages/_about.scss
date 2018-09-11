@@ -60,12 +60,10 @@
 
      .triangle-bg {
        position: relative;
-
        .section-divider {
          z-index: 1;
          position: relative;
        }
-
        &:before {
          background: url('/wp-content/themes/greenpeak/images/testimonial_gradient_bg.png');
          background-size: 54% 100%;
@@ -77,6 +75,9 @@
          z-index: 0;
          object-position: unset;
          background-repeat: no-repeat;
+       }
+       p {
+         -webkit-font-smoothing: antialiased;
        }
      }
 
@@ -110,7 +111,6 @@
          &:hover {
            .figure-caption {
              color: #63a37a;
-
              h3 {
                span {
                  border-bottom: 1px solid #63a37a;
@@ -182,19 +182,40 @@
       text-transform: capitalize;
       font-family: $vantisa_black;
       margin-bottom: 5px;
+      span {
+        display: inline-block;
+        padding-bottom: 6px;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          transition: .2s ease;
+          background: $green3;
+          opacity: 0;
+        }
+       
+      }
     }
   }
-  .tab-content .hide{
-    display: none;
+  .tab-pane .fade{
+    transition: opacity .3s linear;
   }
-  .tab-content .active{
-    display: block;
-  } 
 
   .team-col {
     .active .figure-caption,
     &:hover .figure-caption{
       color: $green3;
+      h3 {
+        span {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 
@@ -222,5 +243,10 @@
 @media (max-width: 767px) {
   .team-section .figure-caption h3 {
     font-size: 2rem;
+  }
+  .testimonial .owl-dot{
+    height: 10px;
+    width: 10px;
+    margin: 0 8px;
   }
 }
