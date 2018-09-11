@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-    <div class="banner" style="background-image: url('<?php the_field('banner_image'); ?>');">
+    <div class="banner fixed-bg position-relative" style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
             <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
             <div class="animating-line"></div>
@@ -53,8 +53,8 @@ if ($videos->have_posts()): ?>
         </div>
         <div class="nav-links text-center">
             <a href="#" class="video-load-more" page="2" data-type="video"
-               total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>Load
-                Videos</a>
+               total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
+                More</a>
         </div>
     </section>
     <!-- * =============== /Media Video Section =============== * -->
@@ -123,8 +123,8 @@ if ($articles->have_posts()): ?>
             <?php endwhile; ?>
             <div class="nav-links text-center">
                 <a href="#" class="articles-load-more" page="2" data-type="articles"
-                   total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>Load
-                    Articles</a>
+                   total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
+                    More</a>
             </div>
         </div>
     </section>

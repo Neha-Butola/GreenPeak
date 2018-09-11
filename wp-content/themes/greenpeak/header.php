@@ -23,23 +23,23 @@
 <body <?php body_class(); ?>>
 <div class="app">
     <?php echo (is_page('services')) ? '<div class="service-page">' : ''; ?>
+    <!-- * =============== Header =============== * -->
+    <header class="main-head fixed-top">
+        <nav class="container">
+            <a href="/" class="logo"><img src="<?php the_field('header_logo', 'options'); ?>"
+                                          alt="greenpeak-logo"></a>
+
+            <?php wp_nav_menu([
+                'container' => '',
+                'menu_class' => 'list-unstyled mb-0',
+            ]); ?>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                    aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </nav>
+    </header>
     <main>
-        <!-- * =============== Header =============== * -->
-        <header class="main-head fixed-top">
-            <nav class="container">
-                <a href="/" class="logo"><img src="<?php the_field('header_logo', 'options'); ?>"
-                                              alt="greenpeak-logo"></a>
-
-                <?php wp_nav_menu([
-                    'container' => '',
-                    'menu_class' => 'list-unstyled mb-0',
-                ]); ?>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
-                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </nav>
-        </header>

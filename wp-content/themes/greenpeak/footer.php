@@ -36,7 +36,7 @@
     if (!empty($icons)):?>
         <ul class="list-unstyled social-icons text-center">
             <?php foreach ($icons as $icon): ?>
-                <li>
+                <li class="d-inline-block px-3">
                     <a href="<?php echo $icon['icons_link']; ?>" target="_blank">
                         <i class="<?php echo $icon['icons_class']; ?>"></i>
                     </a>
