@@ -481,7 +481,7 @@
     var $window = $(window);
     window.addEventListener('scroll', function () {
       if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-        canvas.triangle(50, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+        canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
       }
     });
 

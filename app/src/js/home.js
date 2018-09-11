@@ -36,5 +36,3 @@ $(".main-head .navbar-toggler").click(function () {
 $('.intro-desc.show').each(function () {
   $(this).parent().addClass('one');
 });
-
-document.getElementById("video").load();

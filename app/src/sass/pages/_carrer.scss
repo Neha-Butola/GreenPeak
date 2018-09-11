@@ -176,7 +176,6 @@
   }
 }
 
-
 .video-play {
   padding-top: 7rem;
 
@@ -198,6 +197,7 @@
     border: 6px solid #fff;
     border-radius: 50%;
     text-align: center;
+    z-index: 9;
 
     i {
       color: #fff;
