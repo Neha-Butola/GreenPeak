@@ -2,10 +2,6 @@
 
 .banner {
   height: 100vh;
-  position: relative;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
 
   >img {
     width: 100%;
@@ -54,13 +50,9 @@
 .parallax-secs {
       margin-top: -10px;
   section {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
     padding: 6.25rem 0 11.5rem;
     position: relative;
-          font-family: $vantisa_black;
-
+    font-family: $vantisa_black;
     &:before {
       position: absolute;
       content: '';
@@ -78,7 +70,7 @@
     }
 
     p {
-      color: $white;
+
       font-size: 1.5rem;
 
       line-height: 2.125rem;
@@ -100,29 +92,25 @@
 
     h3 {
       font-size: 3rem;
-      letter-spacing: 20px;
+      letter-spacing: 1.25rem;
       line-height: 3.875rem;
     }
 
     h2,
     h3 {
       text-transform: uppercase;
-      color: $white;
+
     }
   }
 }
 
 .parallax-secs section:nth-child(2) h2 a {
-  padding-left: 45px;
+  padding-left: 2.813rem;
 }
 
 #animating-triangle {
 height: 100%;
 width: 100vw;
-//background: url('https://lanbelle.com/wp-content/themes/lanbelle/images/sub/origin/origin-full-image-02.jpg') center center;
-background-size: cover;
-background-attachment: fixed;
-
 }
 
 

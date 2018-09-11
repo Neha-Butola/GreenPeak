@@ -3,12 +3,7 @@
 	transition: all .3s;
 			padding-top: 70px;
 	nav {
-		height: 100%;
-		width: 100%;
 		display: flex;
-		align-items: flex-end;
-		justify-content: center;
-
 		position: relative;
 	}
 
@@ -62,6 +57,12 @@
 	left: 50%;
 	transform: translateX(-50%);
 	top: -9px;
+width: 65px;
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 }
 
 .nav-style {
@@ -91,7 +92,7 @@ nav {
 		background-color: #fff;
 		height: 100vh !important;
 		transition: right .5s ease;
-		top: 88px;
+		top: 5.5rem;
 		display: block !important;
 		overflow-y: auto;
 		right: -100%;
@@ -126,7 +127,7 @@ nav {
 			display: block;
 			margin: 0 !important;
 			padding: 0;
-
+      width: 100%;
 			a {
 				color: #63a37a;
 				padding: 1.25rem;
