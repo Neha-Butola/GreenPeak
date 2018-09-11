@@ -175,6 +175,12 @@ $(".main-head .navbar-toggler").click(function () {
 $('.intro-desc.show').each(function () {
   $(this).parent().addClass('one');
 });
+
+// var video = document.getElementById("banner-video");
+
+// if (video.readyState === 4) {
+//   $('.banner-content').addClass('title-animate');
+// }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -616,7 +622,6 @@ if ($(window).width() > 768) {
     // Ensure link isn't just a dropdown menu link     
     if (!$parent.hasClass("dropdown")) {
       // Deactivate tab buttons
-      console.log('done');
       $("ul li a").removeClass("active");
 
       // Hides tab contents
@@ -1110,7 +1115,7 @@ if (document.querySelector('#animating-triangle')) {
 var canvas = new GraphMaker('sample');
 var $window = $(window);
 window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
+  if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
     canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
   }
 });
@@ -1118,14 +1123,14 @@ window.addEventListener('scroll', function () {
 // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
 var canvas2 = new GraphMaker('sample1');
 window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
+  if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
     canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
   }
 });
 
 var canvas3 = new GraphMaker('sample2');
 window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
+  if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
     canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
   }
 });
