@@ -9,7 +9,7 @@ get_header(); ?>
         <div class="service-container2">
             <div class="service-section">
                 <div class="service-wrap">
-                    <div class="service-col">
+                    <div class="service-col dragend-page">
                         <h4>
                             <?php the_field('content'); ?>
                         </h4>
@@ -24,7 +24,7 @@ get_header(); ?>
                         $count = 0;
                         foreach ($services as $service):
                             if ($count % 2 == 0):?>
-                                <div class="service-col">
+                                <div class="service-col dragend-page">
                                     <div class="timeline">
                                         <div class="dot">
                                             <div>
@@ -41,7 +41,7 @@ get_header(); ?>
                                     </div>
                                 </div><!--/service-col-->
                             <?php else: ?>
-                                <div class="service-col">
+                                <div class="service-col dragend-page">
                                     <div class="timeline">
                                         <div class="dot">
                                             <div>
