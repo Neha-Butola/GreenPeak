@@ -45,7 +45,6 @@
 
  .left-animating
  {
-
     span {
      position: relative;
      line-height: 4.75rem;
@@ -63,6 +62,14 @@
    }
  }
 
+ .right-animating{
+   span{
+     &:after{
+    left: 0;
+    right: -100%;
+animation: slideInFromRight 1s ease .7s;
+ }}
+ }
  .green-bg{
    background-color: #63a37a;
  }

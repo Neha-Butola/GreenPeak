@@ -110,14 +110,6 @@
 
 .value-sec {
   .row {
-    .col-md-5:nth-of-type(4) {
-      text-align: right;
-span{
-  &:after{
-      animation: slideInFromRight 1s ease .7s;
-  }
-}
-    }
 
     h4 {
       -webkit-font-smoothing: antialiased;
