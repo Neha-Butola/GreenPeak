@@ -1189,8 +1189,6 @@ window.Popper = expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___defa
 
 
 
-//require('owl.carousel');
-//import 'owl.carousel';
 //AOS Library animate on scroll
 
 aos__WEBPACK_IMPORTED_MODULE_9___default.a.init();
