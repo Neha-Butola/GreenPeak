@@ -155,11 +155,11 @@ function ajax_pagination()
     $data_type = $_POST['data_type'];
     $page = $_POST['page'];
     if ($data_type == 'video') {
-        $offset = ($page - 1) * 3;
+        $offset = ($page - 1) * 5;
         $parameters = array(
             'post_type' => 'videos',
             'offset' => $offset,
-            'posts_per_page' => 3,
+            'posts_per_page' => 5,
 
         );
         $videos = new WP_Query($parameters);
@@ -173,11 +173,11 @@ function ajax_pagination()
             <?php endwhile; ?>
         <?php }
     } elseif ($data_type == 'articles') {
-        $offset = ($page - 1) * 3;
+        $offset = ($page - 1) * 5;
         $parameters = array(
             'post_type' => 'post',
             'offset' => $offset,
-            'posts_per_page' => 3,
+            'posts_per_page' => 5,
 
         );
         $articles = new WP_Query($parameters);
@@ -221,7 +221,7 @@ function ajax_pagination()
                                 </div>
 
                                 <a href="<?php the_permalink(); ?>" class="read">read article <span
-                                        class="line"></span></a>
+                                            class="line"></span></a>
                             </div>
                         </div>
                     </div>
