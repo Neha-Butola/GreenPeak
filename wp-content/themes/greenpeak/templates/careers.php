@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php if (get_field('content')): ?>
     <!-- * =============== Content Section =============== * -->
-    <section class="container section-divider">
+    <section class="container section-divider content-sec">
         <?php the_field('content'); ?>
     </section>
     <!-- * =============== /Content Section =============== * -->
