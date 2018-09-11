@@ -61,7 +61,7 @@ if (get_field('content_section_two')): ?>
 if (!empty($testimonials)):?>
     <!-- * =============== Testimonial Section =============== * -->
     <section class="lozad section-divider text-center testimonial fixed-bg"
-             data-background-image="<?php the_field('testimonials_background_image'); ?>" id="about-testimonial">
+             data-background-image="<?php the_field('background_image'); ?>" id="about-testimonial">
         <div class="container">
             <div class="owl-carousel owl-theme">
                 <?php foreach ($testimonials as $testimonial): ?>
@@ -83,7 +83,7 @@ if (!empty($testimonials)):?>
 $consultants = get_field('consultants');
 if (!empty($consultants)):?>
     <!-- * =============== Consultants Section =============== * -->
-    <section class="bg-light team-section">
+    <section class="bg-light team-section" id="team-members">
         <div class="container pt-5">
             <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
                 <span><?php the_field('consultants_heading'); ?></span></h2>
