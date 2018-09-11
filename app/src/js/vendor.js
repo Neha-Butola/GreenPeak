@@ -36,8 +36,12 @@ $(window).on('tp.lozad.observe', function () {
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
 
-jQuery.stellar();
+//jQuery.stellar();
 
+$.stellar({
+  verticalOffset: -200,
+  hideDistantElements: false
+});
 // magnific pop up
 
 require('magnific-popup');

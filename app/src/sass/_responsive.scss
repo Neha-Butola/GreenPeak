@@ -151,9 +151,11 @@
 	}
 
 
+/* carrer page */
 
-
-
+.parallax-bg {
+	display: none !important;
+}
 
 /* media Page */
 .logos-section {
@@ -206,5 +208,11 @@
 
 	.section-divider {
 		padding: 4rem 15px;
+	}
+
+	.intro {
+		> img{
+			margin: 0 auto;
+		}
 	}
 }

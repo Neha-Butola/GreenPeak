@@ -1,6 +1,5 @@
 $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCarousel({
   loop: true,
-  margin: 10,
   dots: true,
   smartSpeed: 600,
   responsive: {

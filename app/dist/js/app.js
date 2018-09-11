@@ -95,7 +95,6 @@
 
 /* WEBPACK VAR INJECTION */(function($) {$('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCarousel({
   loop: true,
-  margin: 10,
   dots: true,
   smartSpeed: 600,
   responsive: {
@@ -1209,8 +1208,12 @@ $(window).on('tp.lozad.observe', function () {
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default.a.stellar();
+//jQuery.stellar();
 
+$.stellar({
+  verticalOffset: -200,
+  hideDistantElements: false
+});
 // magnific pop up
 
 __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");

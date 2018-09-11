@@ -1,11 +1,15 @@
 .intro {
   border-top: 1px solid #fff;
-  display: flex;
   justify-content: center;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 825px;
   padding-top: 4rem;
   margin-top: 4.2rem;
+  font-family: $vantisa_black;
+
+  h2 {
+    line-height: 3.375rem;
+  }
 
   >img {
     width: 12rem !important;
@@ -16,7 +20,7 @@
 }
 
 .html5gallery-elem-img-1 {
-  .html5gallery-elem-image-1 + a{
+  .html5gallery-elem-image-1+a {
     display: none;
   }
 }
@@ -25,10 +29,11 @@
   padding-bottom: 2.5rem;
   position: relative;
   font-size: 2.375rem;
+
   &:before {
     width: 100%;
     height: 100%;
-    background: url('/images/testimonial_gradient_bg.png');
+    background: url('/wp-content/themes/greenpeak/images/testimonial_gradient_bg.png');
     top: 0;
     right: 0;
     position: absolute;
@@ -57,6 +62,12 @@
       background-color: $white !important;
     }
   }
+
+  p {
+    font-size: 2rem;
+    line-height: 3.375rem;
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 .values-title {
@@ -79,14 +90,11 @@
 
   .row {
     padding-top: 8.5rem;
-  }
 
-
-
-  .row {
     >[class*="col-"] {
       img {
         max-width: 30rem;
+        position: relative;
       }
     }
   }
@@ -95,13 +103,22 @@
 .parallax-bg {
   background-repeat: no-repeat;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   display: block !important;
   object-fit: contain;
 }
 
 .value-sec {
   .row {
+    .col-md-5:nth-of-type(2) {
+      text-align: right;
+    }
+
+    h4 {
+      -webkit-font-smoothing: antialiased;
+
+    }
+
     >div {
       padding-bottom: 9rem;
 
@@ -121,22 +138,24 @@
           max-width: 40rem;
         }
       }
-        &:nth-of-type(6) .parallax-bg {
-          height: 180px;
-          width: 270px;
-          left: 151px !important;
-        }
+
+      &:nth-of-type(6) .parallax-bg {
+        height: 180px;
+        width: 270px;
+        left: 151px !important;
+      }
 
       &:nth-of-type(4) .parallax-bg {
         height: 180px;
         width: 270px;
         left: 151px !important;
       }
-       &:nth-of-type(7) .parallax-bg {
+
+      &:nth-of-type(7) .parallax-bg {
         width: 400px;
         height: 210px;
-         left: 151px !important;
-       }
+        left: 151px !important;
+      }
 
       &:nth-of-type(3) .parallax-bg {
         height: 300px;
@@ -147,13 +166,13 @@
       &:nth-of-type(1) .parallax-bg {
         width: 250px;
         height: 180px;
-        left: 224px !important;
+        left: 72px !important;
       }
 
       &:nth-of-type(2) .parallax-bg {
         height: 300px;
         width: 300px;
-        left: 224px !important;
+        left: 11px !important;
       }
     }
   }
@@ -164,9 +183,10 @@
   padding-top: 7rem;
 
   video {
-    height: 48rem;
     margin-top: 6rem;
     width: 100%;
+    position: relative;
+    z-index: 9;
   }
 
   .play-btn {
@@ -205,16 +225,17 @@
     height: 250px;
     left: 20px !important;
     width: 270px;
+    opacity: .4;
   }
 }
 
 .thevideo {
- cursor: pointer;
+  cursor: pointer;
 }
 
-.content-sec{
-  a{
-	font-family: $vantisa_black;
+.content-sec {
+  a {
+    font-family: $vantisa_black;
   }
 }
 
@@ -225,7 +246,7 @@
 }
 
 .mfp-container {
-  padding:0 57px;
+  padding: 0 57px;
 }
 
 .mfp-iframe-holder .mfp-close {
