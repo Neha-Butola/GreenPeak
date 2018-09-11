@@ -254,8 +254,8 @@
 
           height = self.y;
           self.createText(percentage + '%', {
-            x: 140 * self.pixels.x,
-            y: 82.5 * self.pixels.y,
+            x: 130 * self.pixels.x,
+            y: 120 * self.pixels.y,
           }, {
             colour: fontColour,
             font: fontFamily
@@ -290,8 +290,8 @@
             }, true);
 
             self.createText(percentage + '%', {
-              x: 140 * self.pixels.x,
-              y: 82.5 * self.pixels.y,
+              x: 135 * self.pixels.x,
+              y: 120 * self.pixels.y,
             }, {
               colour: fontColour,
               font: fontFamily
@@ -323,8 +323,8 @@
 
             }, false);
             self.createText(percentage + '%', {
-              x: 140 * self.pixels.x,
-              y: 82.5 * self.pixels.y,
+              x: 135 * self.pixels.x,
+              y: 120 * self.pixels.y,
             }, {
               colour: fontColour,
               font: fontFamily
@@ -453,28 +453,6 @@
       return GraphMaker;
     })(window);
 
-    // var canvas = new GraphMaker('sample');
-    // var $window = $(window);
-    // window.addEventListener('scroll', function () {
-    //   if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
-    //     canvas.triangle(50, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
-    //   }
-    // });
-
-    // // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
-    // var canvas2 = new GraphMaker('sample1');
-    // window.addEventListener('scroll', function () {
-    //   if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
-    //     canvas2.triangle(92, 'white', 'black', 1, '#63a37a', 'blue', 'Ariel');
-    //   }
-    // });
-
-    // var canvas3 = new GraphMaker('sample2');
-    // window.addEventListener('scroll', function () {
-    //   if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
-    //     canvas3.triangle(94, 'white', 'white', 1, '#63a37a', 'blue', 'Open Sans');
-    //   }
-    // });
 
     if (document.querySelector('#animating-triangle')) {
       var triangle = new GraphMaker('animating-triangle', true);
@@ -497,3 +475,27 @@
         originalScrollValue = $window.scrollTop();
       });
     }
+
+
+    var canvas = new GraphMaker('sample');
+    var $window = $(window);
+    window.addEventListener('scroll', function () {
+      if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
+        canvas.triangle(50, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+      }
+    });
+
+    // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
+    var canvas2 = new GraphMaker('sample1');
+    window.addEventListener('scroll', function () {
+      if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
+        canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+      }
+    });
+
+    var canvas3 = new GraphMaker('sample2');
+    window.addEventListener('scroll', function () {
+      if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
+        canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+      }
+    });

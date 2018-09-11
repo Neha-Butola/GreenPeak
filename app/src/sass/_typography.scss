@@ -27,6 +27,11 @@ body {
 	font-weight: 400;
 	color: #5d5d5d;
 	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	&.service_page-template {
+		overflow: scroll;
+		overflow-y: hidden;
+	}
 }
 
 h1,
