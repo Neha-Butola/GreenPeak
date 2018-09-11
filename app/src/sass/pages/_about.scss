@@ -184,6 +184,12 @@
       margin-bottom: 5px;
     }
   }
+  .tab-content .hide{
+    display: none;
+  }
+  .tab-content .active{
+    display: block;
+  } 
 
   .team-col {
     .active .figure-caption{

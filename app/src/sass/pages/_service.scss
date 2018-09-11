@@ -235,30 +235,6 @@
     fill: #fff;
 }
 
-@media (max-height: 768px) {
-    .service-section {
-        font-size: 19px;
-    }
-    .service-col img {
-        max-height: 200px;
-    }
-    .service-col .col-below {
-        padding-top: 8vh;
-    }
-    .service-wrap h4 {    
-        margin-top: 3vh;
-    }
-    .service-wrap li {
-        padding: 2px 0;
-    }
-    .timeline {
-        left: 90px;
-        top: 44%;
-    }
-    .service-page .main-head .container {
-        max-width: initial;
-    }
-}
 
 @media (max-height: 850px) {
     .service-section {
@@ -286,6 +262,32 @@
     }
 }
 
+
+@media (max-height: 768px) {
+    .service-section {
+        font-size: 19px;
+    }
+    .service-col img {
+        max-height: 200px;
+    }
+    .service-col .col-below {
+        padding-top: 8vh;
+    }
+    .service-wrap h4 {    
+        margin-top: 3vh;
+    }
+    .service-wrap li {
+        padding: 2px 0;
+    }
+    .timeline {
+        left: 90px;
+        top: 44%;
+    }
+    .service-page .main-head .container {
+        max-width: initial;
+    }
+}
+
 @media (max-width: 768px) {
     .service-wrap {
         padding: 25vh 0 0 30px;
@@ -295,6 +297,9 @@
         font-size: 18px;
         font-weight: 600;
         margin-top: 5px;
+    }
+    .service-container {
+        width: 100vh;
     }
     .arrows_svg  {
         display: block;
@@ -325,7 +330,7 @@
     }
     .timeline {
         top: auto;
-        bottom: 0;
+        bottom: -4vh;
     }
     .timeline .dot>div {
         transform: rotate(180deg);
@@ -338,6 +343,9 @@
     .service-col:first-of-type {
         max-width: 410px;
     }
+    .service-page  .main-footer {
+        display: none;
+    }  
 }
 
 @media (max-width:489px) {
@@ -358,7 +366,6 @@
     }
     .timeline {
         left: 50px;
-        bottom: -1vh;
     }
 }
 
