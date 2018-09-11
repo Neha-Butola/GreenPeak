@@ -155,11 +155,11 @@ function ajax_pagination()
     $data_type = $_POST['data_type'];
     $page = $_POST['page'];
     if ($data_type == 'video') {
-        $offset = ($page - 1) * 5;
+        $offset = ($page - 1) * 6;
         $parameters = array(
             'post_type' => 'videos',
             'offset' => $offset,
-            'posts_per_page' => 5,
+            'posts_per_page' => 6,
 
         );
         $videos = new WP_Query($parameters);
@@ -173,11 +173,11 @@ function ajax_pagination()
             <?php endwhile; ?>
         <?php }
     } elseif ($data_type == 'articles') {
-        $offset = ($page - 1) * 5;
+        $offset = ($page - 1) * 6;
         $parameters = array(
             'post_type' => 'post',
             'offset' => $offset,
-            'posts_per_page' => 5,
+            'posts_per_page' => 6,
 
         );
         $articles = new WP_Query($parameters);
