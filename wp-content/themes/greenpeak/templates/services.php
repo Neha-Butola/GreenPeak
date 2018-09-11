@@ -5,9 +5,9 @@
 get_header(); ?>
 
     <img src="<?php the_field('background_image'); ?>" alt="services-background-image" class="bg-image">
-    <div class="service-container dragscroll">
+    <div class="service-container">
         <div class="service-container2">
-            <div class="service-section" id="mydiv">
+            <div class="service-section">
                 <div class="service-wrap">
                     <div class="service-col">
                         <h4>
