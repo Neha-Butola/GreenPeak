@@ -175,6 +175,8 @@ $(".main-head .navbar-toggler").click(function () {
 $('.intro-desc.show').each(function () {
   $(this).parent().addClass('one');
 });
+
+document.getElementById("video").load();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -1165,7 +1167,7 @@ aos__WEBPACK_IMPORTED_MODULE_9___default.a.init();
 
 
 let observer = lozad__WEBPACK_IMPORTED_MODULE_10___default()('.lozad', {
-  rootMargin: '200px 0px'
+  rootMargin: '500px 0px'
 });
 
 observer.observe();
