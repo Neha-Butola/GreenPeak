@@ -39,30 +39,30 @@
 //     }
 //   }
 
-// var clicked = false, clickY;
+var clicked = false, clickY;
 
-// $('.service-container').on({
-//     'mousemove': function(e) {
-//         clicked && updateScrollPos(e);
-//     },
-//     'mousedown': function(e) {
-//         clicked = true;
-//         clickY = e.pageY;
-//         console.log($('.service-container').scrollTop());
-//     },
-//     'mouseup': function() {
-//         clicked = false;
-//         $('.service-page').css('cursor', 'auto');
-//     }
-// });
+$('.service-container').on({
+    'mousemove': function(e) {
+        clicked && updateScrollPos(e);
+    },
+    'mousedown': function(e) {
+        clicked = true;
+        clickY = e.pageY;
+        console.log($('.service-container').scrollTop());
+    },
+    'mouseup': function() {
+        clicked = false;
+        $('.service-page').css('cursor', 'auto');
+    }
+});
 
-// var updateScrollPos = function(e) {
-//     $('.service-page').css('cursor', 'row-resize');
-//     $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 1.2 ));
-// }
+var updateScrollPos = function(e) {
+    $('.service-page').css('cursor', 'row-resize');
+    $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 1.15 ));
+}
 
 $('.service-page').each(function(){
-    $(this).closest( "body" ).addClass('service_page-template');
+    $(this).closest( "body" ).addClass('service-page_template');
 });
 
 $('.service-col img').each(function(){
