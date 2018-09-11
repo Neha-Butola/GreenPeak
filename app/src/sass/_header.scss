@@ -69,7 +69,7 @@ img{
 	&.main-head {
 		background-color: hsla(0,0%,100%,.95);
 		box-shadow: 0 1px 0 1px rgba(0,0,0,.1);
-		padding: 1.5rem 0;
+		padding: 0.5rem 0 0.5rem;
 	}
 .navbar-toggler {
 	display: flex;
@@ -78,7 +78,7 @@ img{
 .logo {
 	transform: none;
 	left: 0;
-    top: 3px;
+    top: -1px;
 	transform: none;
 	transition: left .5s linear;
 }

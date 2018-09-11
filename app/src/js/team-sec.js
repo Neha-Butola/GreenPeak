@@ -272,3 +272,22 @@ $('a.resp-sharing-button__link').on('click', function (e) {
   var top = (screen.height / 2) - (height / 2);
   window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
 });
+
+
+    if ($(window).width() > 768) {
+    $(document).on("click", "li > a.active", function(){
+      var $parent = $(this).parent();
+      console.log('done');
+      // Ensure link isn't just a dropdown menu link     
+      if (!$parent.hasClass("dropdown")){
+          // Deactivate tab buttons
+          $("ul li a").removeClass("active");
+          
+          // Hides tab contents
+          tabName = $(this).attr("href");
+          $(tabName).removeClass("active").addClass("fade");
+      }
+    });
+  }
+    
+    

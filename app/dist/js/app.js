@@ -176,11 +176,11 @@ $('.intro-desc.show').each(function () {
   $(this).parent().addClass('one');
 });
 
-var video = document.getElementById("banner-video");
+// var video = document.getElementById("banner-video");
 
-if (video.readyState === 4) {
-  $('.banner-content').addClass('title-animate');
-}
+// if (video.readyState === 4) {
+//   $('.banner-content').addClass('title-animate');
+// }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -196,11 +196,11 @@ if (video.readyState === 4) {
 
 
 __webpack_require__(/*! ./vendor */ "./app/src/js/vendor.js");
+__webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
 __webpack_require__(/*! ./home */ "./app/src/js/home.js");
 __webpack_require__(/*! ./carrer */ "./app/src/js/carrer.js");
 __webpack_require__(/*! ./service */ "./app/src/js/service.js");
 __webpack_require__(/*! ./triangle */ "./app/src/js/triangle.js");
-__webpack_require__(/*! ./team-sec */ "./app/src/js/team-sec.js");
 
 /***/ }),
 
@@ -285,9 +285,9 @@ $('.service-col img').each(function () {
 
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
-    let offset = $('.service-container').scrollTop() + 600;
-    if ($(window).width() < 490 && $(window).height() < 600) {
-        let offset = $('.service-container').scrollTop() + 100;
+    let offset = $('.service-container').scrollTop() + 670;
+    if ($(window).width() < 769) {
+        offset = $('.service-container').scrollTop() + 410;
     }
     let indentLeft = -90;
     elements.each((index, item) => {
@@ -296,12 +296,19 @@ $('.service-container').on('scroll', () => {
         }
 
         let ele = $(item);
+        let item_width = 600;
+        if ($(window).width() < 769) {
+            item_width = 420;
+        }
         // debugger;
-        if (ele.offset().left + (500 + indentLeft) <= offset) {
+        if (ele.offset().left + (item_width + indentLeft) <= offset) {
             if (index === 1) {
                 $('header').addClass('nav-style');
             }
-            indentLeft = indentLeft + 90;
+            indentLeft = indentLeft + 120;
+            if ($(window).width() < 769) {
+                indentLeft = indentLeft + 50;
+            }
 
             if (index <= elements.length - 2) {
                 ele.find('.timeline').css('width', '111%');
@@ -607,6 +614,22 @@ $('a.resp-sharing-button__link').on('click', function (e) {
   var top = screen.height / 2 - height / 2;
   window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
 });
+
+if ($(window).width() > 768) {
+  $(document).on("click", "li > a.active", function () {
+    var $parent = $(this).parent();
+    console.log('done');
+    // Ensure link isn't just a dropdown menu link     
+    if (!$parent.hasClass("dropdown")) {
+      // Deactivate tab buttons
+      $("ul li a").removeClass("active");
+
+      // Hides tab contents
+      tabName = $(this).attr("href");
+      $(tabName).removeClass("active").addClass("fade");
+    }
+  });
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery"), __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -1092,7 +1115,7 @@ if (document.querySelector('#animating-triangle')) {
 var canvas = new GraphMaker('sample');
 var $window = $(window);
 window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.8 * $('#sample').offset().top) {
+  if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
     canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
   }
 });
@@ -1100,14 +1123,14 @@ window.addEventListener('scroll', function () {
 // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
 var canvas2 = new GraphMaker('sample1');
 window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.8 * $('#sample1').offset().top) {
+  if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
     canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
   }
 });
 
 var canvas3 = new GraphMaker('sample2');
 window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.8 * $('#sample2').offset().top) {
+  if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
     canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
   }
 });
@@ -1126,9 +1149,9 @@ window.addEventListener('scroll', function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js");
+/* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! expose-loader?Popper!popper.js */ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed");
 /* harmony import */ var expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Popper_popper_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js");
+/* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util */ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed");
 /* harmony import */ var expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Util_exports_loader_Util_bootstrap_js_dist_util__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/dist/alert */ "./node_modules/bootstrap/js/dist/alert.js");
 /* harmony import */ var bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_alert__WEBPACK_IMPORTED_MODULE_3__);
@@ -3312,10 +3335,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Popper!./node_modules/popper.js/dist/esm/popper.js-exposed ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3324,10 +3347,10 @@ module.exports = Util;
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Util!./node_modules/exports-loader/index.js?Util!./node_modules/bootstrap/js/dist/util.js-exposed":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Util!./node_modules/exports-loader?Util!./node_modules/bootstrap/js/dist/util.js-exposed ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

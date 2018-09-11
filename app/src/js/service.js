@@ -71,9 +71,9 @@ $('.service-col img').each(function(){
 
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
-    let offset = $('.service-container').scrollTop() + 600;
-    if (($(window).width() < 490) && ($(window).height() < 600) ) {
-        let offset = $('.service-container').scrollTop() + 100;
+    let offset = $('.service-container').scrollTop() + 670;
+    if ($(window).width() < 769) {
+        offset = $('.service-container').scrollTop() + 410;
     }
     let indentLeft= -90;
     elements.each((index, item) => {
@@ -82,12 +82,19 @@ $('.service-container').on('scroll', () => {
         }
 
         let ele = $(item);
+        let item_width = 600;
+        if ($(window).width() < 769) { 
+             item_width = 420;
+        }
         // debugger;
-        if (ele.offset().left + (500 + indentLeft) <= offset) {
+        if (ele.offset().left + ( item_width + indentLeft) <= offset) {
             if (index === 1) {
                 $('header').addClass('nav-style');
             }
-            indentLeft = indentLeft + 90;
+            indentLeft = indentLeft + 120;
+            if ($(window).width() < 769) { 
+                indentLeft = indentLeft + 50;
+            }
 
             if (index <= (elements.length - 2)) {
                 ele.find('.timeline').css('width', '111%');
