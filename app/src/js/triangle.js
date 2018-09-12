@@ -224,8 +224,8 @@
         self.isTriangleAnimationComplete = false;
         self.isTriangleAnimationStarted = false;
 
-        self.triangle = function (percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily) {
-
+        self.triangle = function (percentage, text, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily, offset) {
+          offset = offset === undefined ? 0 : offset;
           if (self.isTriangleAnimationComplete) {
             return;
           }
@@ -247,14 +247,15 @@
             y: self.y * self.pixels.y
           }, {
             fillColour: triangleFillColour,
-            color: triangleStrokeColour,
+            colour: triangleStrokeColour,
             width: triangleStrokeWidth
 
           }, false);
 
+          self.canvas.globalCompositeOperation = "destination-out";
           height = self.y;
-          self.createText(percentage + '%', {
-            x: 130 * self.pixels.x,
+          self.createText(text + '%', {
+            x: (125 - offset) * self.pixels.x,
             y: 120 * self.pixels.y,
           }, {
             colour: fontColour,
@@ -262,7 +263,7 @@
           });
 
           var id = window.setInterval(function () {
-
+            self.canvas.globalCompositeOperation = "destination-out";
             self.createRectangle({
               x: 0,
               y: 0,
@@ -273,6 +274,7 @@
               fillColour: rectangleFillColour
             }, false);
 
+            self.canvas.globalCompositeOperation = "source-over";
             self.createTriangle({
               x: self.x / 2 * self.pixels.x,
               y: 0
@@ -284,19 +286,21 @@
               y: self.y * self.pixels.y
             }, {
               fillColour: triangleFillColour,
-              color: triangleStrokeColour,
+              colour: triangleStrokeColour,
               width: triangleStrokeWidth
 
             }, true);
 
-            self.createText(percentage + '%', {
-              x: 135 * self.pixels.x,
+            self.canvas.globalCompositeOperation = "destination-out";
+            self.createText(text + '%', {
+              x: (125 - offset) * self.pixels.x,
               y: 120 * self.pixels.y,
             }, {
               colour: fontColour,
               font: fontFamily
             });
 
+            self.canvas.globalCompositeOperation = "destination-out";
             self.createRectangle({
               x: 0,
               y: 0
@@ -307,6 +311,7 @@
               fillColour: rectangleFillColour
             }, false);
 
+            self.canvas.globalCompositeOperation = "source-over";
             self.createTriangle({
               x: self.x / 2 * self.pixels.x,
               y: 0
@@ -318,12 +323,14 @@
               y: self.y * self.pixels.y
             }, {
               fillColour: triangleFillColour,
-              color: triangleStrokeColour,
+              colour: triangleStrokeColour,
               width: triangleStrokeWidth
 
             }, false);
-            self.createText(percentage + '%', {
-              x: 135 * self.pixels.x,
+
+            self.canvas.globalCompositeOperation = "destination-out";
+            self.createText(text + '%', {
+              x: (125 - offset) * self.pixels.x,
               y: 120 * self.pixels.y,
             }, {
               colour: fontColour,
@@ -482,7 +489,7 @@
       var $window = $(window);
       window.addEventListener('scroll', function () {
         if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
-          canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+          canvas.triangle(50, '>50', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack', 15);
         }
       });
     }
@@ -492,7 +499,7 @@
       var canvas2 = new GraphMaker('sample1');
       window.addEventListener('scroll', function () {
         if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
-          canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+          canvas2.triangle(92, '92', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
         }
       });
     }
@@ -501,7 +508,7 @@
       var canvas3 = new GraphMaker('sample2');
       window.addEventListener('scroll', function () {
         if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
-          canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+          canvas3.triangle(94, '94', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
         }
       });
     }

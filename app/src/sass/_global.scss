@@ -78,3 +78,7 @@ animation: slideInFromRight 1s ease .7s;
  p:empty{
    display: none;
  }
+
+ main{
+   overflow-x: hidden;
+ }

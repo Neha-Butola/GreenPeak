@@ -65,10 +65,12 @@
 
      .triangle-bg {
        position: relative;
+
        .section-divider {
          z-index: 1;
          position: relative;
        }
+
        &:before {
          background: url('/wp-content/themes/greenpeak/images/testimonial_gradient_bg.png');
          background-size: 54% 100%;
@@ -81,6 +83,7 @@
          object-position: unset;
          background-repeat: no-repeat;
        }
+
        p {
          -webkit-font-smoothing: antialiased;
        }
@@ -116,6 +119,7 @@
          &:hover {
            .figure-caption {
              color: #63a37a;
+
              h3 {
                span {
                  border-bottom: 1px solid #63a37a;
@@ -129,41 +133,46 @@
 
      canvas {
        &#sample {
-        position: relative;
-        &:before {
-          position: absolute;
-          content: '>';
-          color: #63a37a;
-          top: 120px;
-          left: 100px;
-          font-size: 40px;
-          width: 50px;
-          height: 50px;
-          z-index: 1;
-        }
+         position: relative;
+
+         &:before {
+           position: absolute;
+           content: '>';
+           color: #63a37a;
+           top: 120px;
+           left: 100px;
+           font-size: 40px;
+           width: 50px;
+           height: 50px;
+           z-index: 1;
+         }
        }
      }
 
      .traingle-sction {
-      padding: 3rem 0;
-      text-align: center;
-      .container-fluid {
-        padding: 0 10%;
-      }
-        .title {
-          color: #fff;
-          max-width: 300px;
-          margin: 0 auto;
-          font-family:$vantisa_regular;
-        }
-        canvas {
-          width: 100% !important;
-          max-width: 300px;
-        }
+       padding: 3rem 0;
+       text-align: center;
+
+       .container-fluid {
+         padding: 0 10%;
+       }
+
+       .title {
+         color: #fff;
+         max-width: 300px;
+         margin: 0 auto;
+         font-family: $vantisa_regular;
+       }
+
+       canvas {
+         width: 100% !important;
+         max-width: 300px;
+       }
      }
+
      .intro-desc {
        width: 100%;
-       left:0;
+       left: 0;
      }
 
 .team-section {
@@ -265,7 +274,6 @@
 //   -webkit-animation-name: fadeOut;
 //   animation-name: fadeOut;
 // }
-
 
 
 
