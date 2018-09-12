@@ -32,25 +32,23 @@ if (get_field('content_section_two')): ?>
 <?php endif; ?>
 
     <!-- * =============== Filling-triangle Section =============== * -->
-    <section class="traingle-sction lozad fixed-bg" data-background-image="<?php the_field('chart_background_image'); ?>">
+    <section class="traingle-sction lozad fixed-bg"
+             data-background-image="<?php the_field('chart_background_image'); ?>">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 my-3">
                     <canvas id="sample"></canvas>
-                    <h4 class="title">of top 25 US private
-                        equity firms served
+                    <h4 class="title"><?php the_field('chart_one_text'); ?>
                     </h4>
                 </div>
                 <div class="col-md-4 my-3">
                     <canvas id="sample1"></canvas>
-                    <h4 class="title">of clients are
-                        “highly satisfied”
+                    <h4 class="title"><?php the_field('chart_two_text'); ?>
                     </h4>
                 </div>
                 <div class="col-md-4 my-3">
                     <canvas id="sample2"></canvas>
-                    <h4 class="title">of clients are
-                        “highly likely to recom&shy;mend Green Peak”
+                    <h4 class="title"><?php the_field('chart_three_text'); ?>
                     </h4>
                 </div>
             </div>
