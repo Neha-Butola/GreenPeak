@@ -126,6 +126,11 @@ $('.thevideo').mouseover(function () {
   $(this).get(0).pause();
   $('video').removeClass('play-video');
 });
+
+$(".html5gallery-thumbs-1 > div").click(function () {
+  $(".html5gallery-thumbs-1 > div").removeClass("d-none");
+  $(this).addClass("d-none");
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
