@@ -69,7 +69,9 @@ if (!empty($testimonials)):?>
                     <div class="item text-white">
                         <?php echo $testimonial['testimony']; ?>
                         <div class="testimonial-img">
-                            <h2><span><?php echo $testimonial['reviewer']; ?></span></h2>
+                            <h2><span class="person-name"><?php echo $testimonial['reviewer']; ?></spa>
+                            <span class="designation">CEO</span>
+                        </h2>
                             <img src="<?php echo $testimonial['company_logo']; ?>" class="mx-auto mt-5"
                                  alt="profile-img">
                         </div>
