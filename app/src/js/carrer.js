@@ -23,7 +23,7 @@ $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
 
 });
 
-$('.thevideo').mouseover(function () {
+$('.thevideo,.popup-vimeo').mouseover(function () {
   $(this).get(0).play();
   $('video').addClass('play-video');
 }).mouseout(function () {
