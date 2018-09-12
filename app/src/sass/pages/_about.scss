@@ -30,25 +30,30 @@
 
      .testimonial-img {
        position: relative;
-       margin-top: 4rem;
-
-       &:before {
-         background-color: #fff;
-         content: "";
-         height: 1px;
-         position: absolute;
-         width: 50%;
-         left: 25%;
-       }
+       margin-top: 2.3rem;
+       
+        // &:before {
+        //  background-color: #fff;
+        //  content: "";
+        //  height: 1px;
+        //  position: absolute;
+        //  width: 50%;
+        //  left: 25%;
+        // }
 
        h2 {
          color: #6bcb9d;
-
-         span {
-           border-bottom: 1px solid $white;
+         font-family: $vantisa_regular;
+         -webkit-font-smoothing: antialiased;
+         .person_name{
            display: inline-block;
            margin-top: 1.25rem;
            padding-bottom: 0.9375rem;
+         }
+         .designation {
+            padding-left: 5px;
+            color: #fff;
+            font-size: 1.5rem;
          }
        }
 
@@ -162,8 +167,8 @@
      }
 
 .team-section {
-  .team-wrap {
-    padding: 2rem 0;
+  h2 {
+    margin-bottom: 2.5rem;
   }
   .nav-tabs {
     border: 0;
@@ -192,7 +197,7 @@
           width: 100%;
           left: 0;
           bottom: 0;
-          height: 2px;
+          height: 1px;
           transition: .2s ease;
           background: $green3;
           opacity: 0;
@@ -221,6 +226,9 @@
 
   .desigantion {
     line-height: 1.2;
+    div:first-child{
+      font-family: $vantisa_black;
+    }
   }
 
   .card,
@@ -261,24 +269,3 @@
 
 
 
-
-@media (max-width: 992px) {
-  .team-section .figure-caption h3 {
-    font-size: 1.5rem;
-  }
-
-  .team-section .desigantion {
-    font-size: 17px;
-  }
-}
-
-@media (max-width: 767px) {
-  .team-section .figure-caption h3 {
-    font-size: 2rem;
-  }
-  .testimonial .owl-dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 8px;
-  }
-}

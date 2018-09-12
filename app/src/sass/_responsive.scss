@@ -62,6 +62,13 @@
 		height: 1px;
 		width: 40%;
 	}
+	.team-section .figure-caption h3 {
+		font-size: 1.5rem;
+	  }
+	
+	.team-section .desigantion {
+	font-size: 17px;
+	}
 }
 
 // Small devices
@@ -215,6 +222,18 @@
 }}
 
 // Extra small devices
+
+@media (max-width: 767px) {
+	.team-section .figure-caption h3 {
+	  font-size: 2rem;
+	}
+	.testimonial .owl-dot {
+	  height: 10px;
+	  width: 10px;
+	  margin: 0 8px;
+	}
+}
+
 @media (max-width: 576px) {
 	/* Global */
 	html {
