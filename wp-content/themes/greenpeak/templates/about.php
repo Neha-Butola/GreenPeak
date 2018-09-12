@@ -5,7 +5,8 @@
 
 get_header() ?>
 
-    <div class="banner fixed-bg position-relative" style="background-image: url('<?php the_field('banner_image'); ?>');">
+    <div class="banner fixed-bg position-relative"
+         style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
             <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
             <div class="animating-line right-line"></div>
@@ -69,7 +70,7 @@ if (!empty($testimonials)):?>
                         <?php echo $testimonial['testimony']; ?>
                         <div class="testimonial-img">
                             <h2><span><?php echo $testimonial['reviewer']; ?></span></h2>
-                            <img src="<?php echo $testimonial['reviewer_image']; ?>" class="mx-auto mt-5"
+                            <img src="<?php echo $testimonial['company_logo']; ?>" class="mx-auto mt-5"
                                  alt="profile-img">
                         </div>
                     </div>
