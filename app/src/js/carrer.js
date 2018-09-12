@@ -16,7 +16,6 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
 });
 
 $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
-  disableOn: 700,
   type: 'iframe',
   mainClass: 'mfp-fade',
   removalDelay: 160,
