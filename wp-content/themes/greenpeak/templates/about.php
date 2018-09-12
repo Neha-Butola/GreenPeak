@@ -32,7 +32,7 @@ if (get_field('content_section_two')): ?>
 <?php endif; ?>
 
     <!-- * =============== Filling-triangle Section =============== * -->
-    <section class="green-bg traingle-sction">
+    <section class="traingle-sction lozad fixed-bg" data-background-image="<?php the_field('chart_background_image'); ?>">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 my-3">
