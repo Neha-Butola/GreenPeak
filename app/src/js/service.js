@@ -1,14 +1,13 @@
-
 // // var dargelem = $('.service-wrap');
 // dragElement(document.getElementById("mydiv"));
 
 // function dragElement(elmnt) {
 //     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-   
+
 //       /* otherwise, move the DIV from anywhere inside the DIV:*/
 //       elmnt.onmousedown = dragMouseDown;
-    
-  
+
+
 //     function dragMouseDown(e) {
 //       e = e || window.event;
 //       e.preventDefault();
@@ -19,7 +18,7 @@
 //       // call a function whenever the cursor moves:
 //       document.onmousemove = elementDrag;
 //     }
-  
+
 //     function elementDrag(e) {
 //       e = e || window.event;
 //       e.preventDefault();
@@ -31,7 +30,7 @@
 //       // set the element's new position:
 //       elmnt.style.left = ((elmnt.offsetLeft - pos1 )) + "px";
 //     }
-  
+
 //     function closeDragElement() {
 //       /* stop moving when mouse button is released:*/
 //       document.onmouseup = null;
@@ -39,33 +38,33 @@
 //     }
 //   }
 
-var clicked = false, clickY;
+// var clicked = false, clickY;
 
-$('.service-container').on({
-    'mousemove': function(e) {
-        clicked && updateScrollPos(e);
-    },
-    'mousedown': function(e) {
-        clicked = true;
-        clickY = e.pageY;
-        console.log($('.service-container').scrollTop());
-    },
-    'mouseup': function() {
-        clicked = false;
-        $('.service-page').css('cursor', 'auto');
-    }
+// $('.service-container').on({
+//     'mousemove': function(e) {
+//         clicked && updateScrollPos(e);
+//     },
+//     'mousedown': function(e) {
+//         clicked = true;
+//         clickY = e.pageY;
+//         console.log($('.service-container').scrollTop());
+//     },
+//     'mouseup': function() {
+//         clicked = false;
+//         $('.service-page').css('cursor', 'auto');
+//     }
+// });
+
+// var updateScrollPos = function (e) {
+//     $('.service-page').css('cursor', 'row-resize');
+//     $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 1.15));
+// }
+
+$('.service-page').each(function () {
+    $(this).closest("body").addClass('service-page_template');
 });
 
-var updateScrollPos = function(e) {
-    $('.service-page').css('cursor', 'row-resize');
-    $('.service-container').scrollTop($('.service-container').scrollTop() + ((clickY - e.pageY) * 1.15 ));
-}
-
-$('.service-page').each(function(){
-    $(this).closest( "body" ).addClass('service-page_template');
-});
-
-$('.service-col img').each(function(){
+$('.service-col img').each(function () {
     $(this).parent().addClass('img-col');
 });
 
@@ -75,7 +74,7 @@ $('.service-container').on('scroll', () => {
     if ($(window).width() < 769) {
         offset = $('.service-container').scrollTop() + 410;
     }
-    let indentLeft= -90;
+    let indentLeft = -90;
     elements.each((index, item) => {
         if (index === 0) {
             return;
@@ -83,22 +82,22 @@ $('.service-container').on('scroll', () => {
 
         let ele = $(item);
         let item_width = 600;
-        if ($(window).width() < 769) { 
-             item_width = 420;
+        if ($(window).width() < 769) {
+            item_width = 420;
         }
         // debugger;
-        if (ele.offset().left + ( item_width + indentLeft) <= offset) {
+        if (ele.offset().left + (item_width + indentLeft) <= offset) {
             if (index === 1) {
                 $('header').addClass('nav-style');
             }
             indentLeft = indentLeft + 120;
-            if ($(window).width() < 769) { 
+            if ($(window).width() < 769) {
                 indentLeft = indentLeft + 50;
             }
 
             if (index <= (elements.length - 2)) {
                 ele.find('.timeline').css('width', '111%');
-                if ($(window).width() < 490 ) {
+                if ($(window).width() < 490) {
                     ele.find('.timeline').css('width', '117%');
                 }
             } else {
@@ -108,19 +107,19 @@ $('.service-container').on('scroll', () => {
             let dotEle = ele.find('.dot>div');
             ele.find('.dot').addClass('show');
             dotEle.css('height', '70px');
-            if ($(window).height() < 850 ) {
+            if ($(window).height() < 850) {
                 dotEle.css('height', '50px');
             }
-            if ($(window).width() < 992 ) {
+            if ($(window).width() < 992) {
                 dotEle.css('height', '40px');
             }
-            dotEle.find('.dot-in').css("display",'block');
+            dotEle.find('.dot-in').css("display", 'block');
             if (index % 2 === 0) {
                 dotEle.css('top', '-70px');
-                if ($(window).height() < 850 ) {
+                if ($(window).height() < 850) {
                     dotEle.css('top', '-50px');
                 }
-                if ($(window).width() < 992 ) {
+                if ($(window).width() < 992) {
                     dotEle.css('top', '-40px');
                 }
             }
@@ -134,11 +133,10 @@ $('.service-container').on('scroll', () => {
 
             let dotEle = ele.find('.dot>div');
             dotEle.css('height', '0');
-            dotEle.find('.dot-in').css("display",'none');
+            dotEle.find('.dot-in').css("display", 'none');
             if (index % 2 === 0) {
                 dotEle.css('top', '0');
             }
         }
     });
 });
-
