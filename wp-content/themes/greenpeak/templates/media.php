@@ -45,10 +45,16 @@ if ($videos->have_posts()): ?>
             <h2 class="text-center text-md-left left-animating">
                 <span><?php the_field('video_section_heading'); ?></span></h2>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item lozad" src="<?php the_field('video_url'); ?>" width="640"
-                            height="360"
-                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                <div class="position-relative">
+                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9" href="<?php the_field('video_url'); ?>"
+                           loop="" preload="none" muted="" poster="https://www.wellingtoncollege.org.uk/wp-content/uploads/2016/08/Screen-Shot-2017-05-02-at-08.42.19-650x365.png">
+                        <source src="<?php the_field('video_file'); ?>"
+                                type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             <?php endwhile; ?>
         </div>
@@ -79,7 +85,7 @@ if ($articles->have_posts()): ?>
         <div class="articles-sec" id="articles">
             <?php while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div data-background-image="<?php echo get_the_post_thumbnail_url(); ?>" class="lozad fixed-bg">
+                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg">
                     <div class="container">
                         <div class="text-center article-block">
                             <div class="position-relative">
