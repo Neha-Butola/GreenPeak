@@ -126,6 +126,18 @@ $('.thevideo').mouseover(function () {
   $(this).get(0).pause();
   $('video').removeClass('play-video');
 });
+
+/* videos Section */
+
+window.onload = function () {
+  document.getElementById('html5gallery-tn-1-0').className = 'd-none';
+};
+$(document).ready(function () {
+  $(".html5gallery-thumbs-1 > div").click(function () {
+    $(".html5gallery-thumbs-1 > div").removeClass("d-none");
+    $(this).addClass("d-none");
+  });
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -1112,28 +1124,34 @@ if (document.querySelector('#animating-triangle')) {
   });
 }
 
-var canvas = new GraphMaker('sample');
-var $window = $(window);
-window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
-    canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
-  }
-});
+if (document.querySelector('#sample')) {
+  var canvas = new GraphMaker('sample');
+  var $window = $(window);
+  window.addEventListener('scroll', function () {
+    if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
+      canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+    }
+  });
+}
 
 // percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily
-var canvas2 = new GraphMaker('sample1');
-window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
-    canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
-  }
-});
+if (document.querySelector('#sample1')) {
+  var canvas2 = new GraphMaker('sample1');
+  window.addEventListener('scroll', function () {
+    if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
+      canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+    }
+  });
+}
 
-var canvas3 = new GraphMaker('sample2');
-window.addEventListener('scroll', function () {
-  if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
-    canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
-  }
-});
+if (document.querySelector('#sample2')) {
+  var canvas3 = new GraphMaker('sample2');
+  window.addEventListener('scroll', function () {
+    if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
+      canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+    }
+  });
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -1194,7 +1212,7 @@ aos__WEBPACK_IMPORTED_MODULE_9___default.a.init();
 
 
 let observer = lozad__WEBPACK_IMPORTED_MODULE_10___default()('.lozad', {
-  rootMargin: '500px 0px'
+  rootMargin: '700px 0px'
 });
 
 observer.observe();
