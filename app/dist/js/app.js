@@ -110,8 +110,7 @@
   }
 });
 
-$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-  disableOn: 700,
+$('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
   removalDelay: 160,
@@ -119,25 +118,13 @@ $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
 
 });
 
-$('.thevideo').mouseover(function () {
+$('.thevideo,.popup-vimeo').mouseover(function () {
   $(this).get(0).play();
   $('video').addClass('play-video');
 }).mouseout(function () {
   $(this).get(0).pause();
   $('video').removeClass('play-video');
 });
-
-/* videos Section */
-
-window.onload = function () {
-  document.getElementById('html5gallery-tn-1-0').className = 'd-none';
-};
-// $(document).ready(function () {
-//   $(".html5gallery-thumbs-1 > div").click(function () {
-//     $(".html5gallery-thumbs-1 > div").removeClass("d-none");
-//     $(this).addClass("d-none");
-//   });
-// });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -374,273 +361,9 @@ $('.service-container').on('scroll', () => {
   !*** ./app/src/js/team-sec.js ***!
   \********************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {// $(".toggle-div").click(function () {
-//   contentheight = $('.collapse').height();
-//   $(this).toggleClass('has-content');
-//   if ($(this).hasClass('has-content')) {
-//     $(this).find('.intro-desc').parent().css('margin-bottom', contentheight);
-//   } else {
-//     $(this).find('.intro-desc').parent().css('margin-bottom', 0);
-//   }
-
-
-//   //  if ($(".show").parents(".toggle-div").length == 0) {
-//   //    $('.toggle-div').find('.intro-desc').parent().css('margin-bottom', 0);
-//   //  }
-// });
-
-// heavily modified BS4 version of https://github.com/openam/bootstrap-responsive-tabs
-var fakewaffle = function ($, fakewaffle) {
-  'use strict';
-
-  fakewaffle.responsiveTabs = function (collapseDisplayed) {
-
-    fakewaffle.currentPosition = 'tabs';
-
-    var tabGroups = $('.nav-tabs.responsive');
-    var hidden = '';
-    var visible = '';
-    var activeTab = '';
-
-    // 		if ( collapseDisplayed === undefined ) {
-    // 			collapseDisplayed = [ 'xs', 'sm' ];
-    // 		}
-
-    // 		$.each( collapseDisplayed, function () {
-    // 			hidden  += ' banana-' + this;
-    // 			visible += ' visible-' + this;
-    // 		} );
-
-    hidden = ' d-none d-md-flex';
-    visible = ' d-md-none';
-
-    $.each(tabGroups, function (index) {
-      var collapseDiv;
-      var $tabGroup = $(this);
-      var tabs = $tabGroup.find('li a');
-
-      if ($tabGroup.attr('id') === undefined) {
-        $tabGroup.attr('id', 'tabs-' + index);
-      }
-
-      collapseDiv = $('<div></div>', {
-        'class': 'card-soup responsive' + visible,
-        'id': 'collapse-' + $tabGroup.attr('id')
-      });
-
-      $.each(tabs, function () {
-        var $this = $(this);
-        var oldLinkClass = $this.attr('class') === undefined ? '' : $this.attr('class');
-        var newLinkClass = 'accordion-toggle';
-        var oldParentClass = $this.parent().attr('class') === undefined ? '' : $this.parent().attr('class');
-        var newParentClass = 'card';
-        var newHash = $this.get(0).hash.replace('#', 'collapse-');
-
-        if (oldLinkClass.length > 0) {
-          newLinkClass += ' ' + oldLinkClass;
-        }
-
-        if (oldParentClass.length > 0) {
-          oldParentClass = oldParentClass.replace(/\bactive\b/g, '');
-          newParentClass += ' ' + oldParentClass;
-          newParentClass = newParentClass.replace(/\s{2,}/g, ' ');
-          newParentClass = newParentClass.replace(/^\s+|\s+$/g, '');
-        }
-
-        if ($this.parent().hasClass('active')) {
-          activeTab = '#' + newHash;
-        }
-
-        collapseDiv.append($('<div>').attr('class', newParentClass).html($('<div>').attr('class', 'card-header').html($('<h4>').attr('class', 'card-title').html($('<a>', {
-          'class': newLinkClass,
-          'data-toggle': 'collapse',
-          'data-parent': '#collapse-' + $tabGroup.attr('id'),
-          'href': '#' + newHash,
-          'html': $this.html()
-        })))).append($('<div>', {
-          'id': newHash,
-          'class': 'collapse'
-        })));
-      });
-
-      $tabGroup.next().after(collapseDiv);
-      $tabGroup.addClass(hidden);
-      $('.tab-content.responsive').addClass(hidden);
-
-      if (activeTab) {
-        $(activeTab).collapse('show');
-      }
-    });
-
-    fakewaffle.checkResize();
-    fakewaffle.bindTabToCollapse();
-  };
-
-  fakewaffle.checkResize = function () {
-
-    if ($('.card-soup.responsive').is(':visible') === true && fakewaffle.currentPosition === 'tabs') {
-      fakewaffle.tabToPanel();
-      fakewaffle.currentPosition = 'panel';
-    } else if ($('.card-soup.responsive').is(':visible') === false && fakewaffle.currentPosition === 'panel') {
-      fakewaffle.panelToTab();
-      fakewaffle.currentPosition = 'tabs';
-    }
-  };
-
-  fakewaffle.tabToPanel = function () {
-
-    var tabGroups = $('.nav-tabs.responsive');
-
-    $.each(tabGroups, function (index, tabGroup) {
-
-      // Find the tab
-      var tabContents = $(tabGroup).next('.tab-content').find('.tab-pane');
-
-      $.each(tabContents, function (index, tabContent) {
-        // Find the id to move the element to
-        var destinationId = $(tabContent).attr('id').replace(/^/, '#collapse-');
-
-        // Convert tab to panel and move to destination
-        $(tabContent).removeClass('tab-pane').addClass('card-body fw-previous-tab-pane').appendTo($(destinationId));
-      });
-    });
-  };
-
-  fakewaffle.panelToTab = function () {
-
-    var panelGroups = $('.card-soup.responsive');
-
-    $.each(panelGroups, function (index, panelGroup) {
-
-      var destinationId = $(panelGroup).attr('id').replace('collapse-', '#');
-      var destination = $(destinationId).next('.tab-content')[0];
-
-      // Find the panel contents
-      var panelContents = $(panelGroup).find('.card-body.fw-previous-tab-pane');
-
-      // Convert to tab and move to destination
-      panelContents.removeClass('card-body fw-previous-tab-pane').addClass('tab-pane').appendTo($(destination));
-    });
-  };
-
-  fakewaffle.bindTabToCollapse = function () {
-
-    var tabs = $('.nav-tabs.responsive').find('li a');
-    var collapse = $('.card-soup.responsive').find('.card-collapse');
-
-    // Toggle the panels when the associated tab is toggled
-    tabs.on('shown.bs.tab', function (e) {
-
-      if (fakewaffle.currentPosition === 'tabs') {
-        var $current = $(e.currentTarget.hash.replace(/#/, '#collapse-'));
-        $current.collapse('show');
-
-        if (e.relatedTarget) {
-          var $previous = $(e.relatedTarget.hash.replace(/#/, '#collapse-'));
-          $previous.collapse('hide');
-        }
-      }
-    });
-
-    // Toggle the tab when the associated panel is toggled
-    collapse.on('shown.bs.collapse', function (e) {
-
-      if (fakewaffle.currentPosition === 'panel') {
-        // Activate current tabs
-        var current = $(e.target).context.id.replace(/collapse-/g, '#');
-        $('a[href="' + current + '"]').tab('show');
-
-        // Update the content with active
-        var panelGroup = $(e.currentTarget).closest('.card-soup.responsive');
-        $(panelGroup).find('.card-body').removeClass('active');
-        $(e.currentTarget).find('.card-body').addClass('active');
-      }
-    });
-  };
-
-  $(window).resize(function () {
-    fakewaffle.checkResize();
-  });
-
-  return fakewaffle;
-}(__webpack_provided_window_dot_jQuery, fakewaffle || {});
-
-fakewaffle.responsiveTabs();
-
-document.documentElement.setAttribute("lang", "en");
-document.documentElement.removeAttribute("class");
-
-// axe.run( function(err, results) {
-//   console.log( results.violations );
-// } );
-
-// Get IE or Edge browser version
-var version = detectIE();
-
-if (version !== false) {
-  alert('Please view in Chrome/Safari/Firefox');
-}
-/**
- * detect IE
- * returns version of IE or false, if browser is not Internet Explorer
- */
-function detectIE() {
-  var ua = window.navigator.userAgent;
-
-  var msie = ua.indexOf('MSIE ');
-  if (msie > 0) {
-    // IE 10 or older => return version number
-    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-  }
-
-  var trident = ua.indexOf('Trident/');
-  if (trident > 0) {
-    // IE 11 => return version number
-    var rv = ua.indexOf('rv:');
-    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
-  }
-
-  var edge = ua.indexOf('Edge/');
-  if (edge > 0) {
-    // Edge (IE 12+) => return version number
-    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
-  }
-
-  // other browser
-  return false;
-}
-
-/**
- * fires when social sharing icons are clicked
- * this function opens a popup to share content to social media
- */
-$('a.resp-sharing-button__link').on('click', function (e) {
-  e.preventDefault();
-  var width = $(window).width() / 2;
-  var height = $(window).height() / 2;
-  var left = screen.width / 2 - width / 2;
-  var top = screen.height / 2 - height / 2;
-  window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
-});
-
-if ($(window).width() > 768) {
-  $(document).on("click", "li > a.active", function () {
-    var $parent = $(this).parent();
-    console.log('done');
-    // Ensure link isn't just a dropdown menu link     
-    if (!$parent.hasClass("dropdown")) {
-      // Deactivate tab buttons
-      $("ul li a").removeClass("active");
-
-      // Hides tab contents
-      tabName = $(this).attr("href");
-      $(tabName).removeClass("active").addClass("fade");
-    }
-  });
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery"), __webpack_require__(/*! jquery */ "jquery")))
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/nancyshalini/Documents/projects/greenpeak/app/src/js/team-sec.js'");
 
 /***/ }),
 
@@ -875,8 +598,8 @@ if ($(window).width() > 768) {
     self.isTriangleAnimationComplete = false;
     self.isTriangleAnimationStarted = false;
 
-    self.triangle = function (percentage, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily) {
-
+    self.triangle = function (percentage, text, triangleFillColour, triangleStrokeColour, triangleStrokeWidth, rectangleFillColour, fontColour, fontFamily, offset) {
+      offset = offset === undefined ? 0 : offset;
       if (self.isTriangleAnimationComplete) {
         return;
       }
@@ -898,14 +621,15 @@ if ($(window).width() > 768) {
         y: self.y * self.pixels.y
       }, {
         fillColour: triangleFillColour,
-        color: triangleStrokeColour,
+        colour: triangleStrokeColour,
         width: triangleStrokeWidth
 
       }, false);
 
+      self.canvas.globalCompositeOperation = "destination-out";
       height = self.y;
-      self.createText(percentage + '%', {
-        x: 130 * self.pixels.x,
+      self.createText(text + '%', {
+        x: (125 - offset) * self.pixels.x,
         y: 120 * self.pixels.y
       }, {
         colour: fontColour,
@@ -913,7 +637,7 @@ if ($(window).width() > 768) {
       });
 
       var id = window.setInterval(function () {
-
+        self.canvas.globalCompositeOperation = "destination-out";
         self.createRectangle({
           x: 0,
           y: 0
@@ -924,6 +648,7 @@ if ($(window).width() > 768) {
           fillColour: rectangleFillColour
         }, false);
 
+        self.canvas.globalCompositeOperation = "source-over";
         self.createTriangle({
           x: self.x / 2 * self.pixels.x,
           y: 0
@@ -935,19 +660,21 @@ if ($(window).width() > 768) {
           y: self.y * self.pixels.y
         }, {
           fillColour: triangleFillColour,
-          color: triangleStrokeColour,
+          colour: triangleStrokeColour,
           width: triangleStrokeWidth
 
         }, true);
 
-        self.createText(percentage + '%', {
-          x: 135 * self.pixels.x,
+        self.canvas.globalCompositeOperation = "destination-out";
+        self.createText(text + '%', {
+          x: (125 - offset) * self.pixels.x,
           y: 120 * self.pixels.y
         }, {
           colour: fontColour,
           font: fontFamily
         });
 
+        self.canvas.globalCompositeOperation = "destination-out";
         self.createRectangle({
           x: 0,
           y: 0
@@ -958,6 +685,7 @@ if ($(window).width() > 768) {
           fillColour: rectangleFillColour
         }, false);
 
+        self.canvas.globalCompositeOperation = "source-over";
         self.createTriangle({
           x: self.x / 2 * self.pixels.x,
           y: 0
@@ -969,12 +697,14 @@ if ($(window).width() > 768) {
           y: self.y * self.pixels.y
         }, {
           fillColour: triangleFillColour,
-          color: triangleStrokeColour,
+          colour: triangleStrokeColour,
           width: triangleStrokeWidth
 
         }, false);
-        self.createText(percentage + '%', {
-          x: 135 * self.pixels.x,
+
+        self.canvas.globalCompositeOperation = "destination-out";
+        self.createText(text + '%', {
+          x: (125 - offset) * self.pixels.x,
           y: 120 * self.pixels.y
         }, {
           colour: fontColour,
@@ -1127,7 +857,7 @@ if (document.querySelector('#sample')) {
   var $window = $(window);
   window.addEventListener('scroll', function () {
     if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
-      canvas.triangle(50, 'white', 'red', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+      canvas.triangle(50, '>50', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack', 15);
     }
   });
 }
@@ -1137,7 +867,7 @@ if (document.querySelector('#sample1')) {
   var canvas2 = new GraphMaker('sample1');
   window.addEventListener('scroll', function () {
     if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
-      canvas2.triangle(92, 'white', 'black', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+      canvas2.triangle(92, '92', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
     }
   });
 }
@@ -1146,7 +876,7 @@ if (document.querySelector('#sample2')) {
   var canvas3 = new GraphMaker('sample2');
   window.addEventListener('scroll', function () {
     if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
-      canvas3.triangle(94, 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+      canvas3.triangle(94, '94', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
     }
   });
 }
