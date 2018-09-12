@@ -56,11 +56,6 @@ if ($videos->have_posts()): ?>
                         <i class="fas fa-play"></i>
                     </div>
                 </div>
-                <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item lozad" src="<?php the_field('video_url'); ?>" width="640"
-                            height="360"
-                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                </div>
             <?php endwhile; ?>
         </div>
         <div class="nav-links text-center">
