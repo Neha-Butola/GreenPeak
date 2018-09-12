@@ -29,7 +29,24 @@
 // Large devices
 @media (max-width: 1200px) {}
 
+
 // Medium devices
+
+@media (max-width: 1024px) {
+	#animating-triangle {
+		display: none !important;
+	}
+	.partners-image {
+		display: block!important;
+		min-height: 260px;
+		width: 100% !important;
+		object-fit: cover;
+	}
+	.fixed-bg {
+		background-attachment: initial;
+	}
+
+}
 @media (max-width: 992px) {
 
 	/* Global */
@@ -69,15 +86,6 @@
 
 	.main-head {
 		padding: 1.5rem 0;
-
-		.main-head .navbar-toggler {
-			display: flex;
-			flex-wrap: wrap;
-			margin-left: auto;
-			outline: none;
-			width: 65px;
-		}
-
 		.navbar-toggler {
 			display: flex;
 		}
@@ -208,7 +216,6 @@
 
 // Extra small devices
 @media (max-width: 576px) {
-
 	/* Global */
 	html {
 		font-size: 13px;
@@ -228,5 +235,8 @@
 		> img{
 			margin: 0 auto;
 		}
+	}
+	.parallax-secs section p {
+		max-width: 350px;
 	}
 }
