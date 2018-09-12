@@ -252,6 +252,10 @@
 
 /* full width video */
 
+.mfp-wrap {
+      overflow: hidden !important;
+}
+
 .mfp-iframe-holder .mfp-content {
   max-width: 100%;
 }
@@ -297,8 +301,6 @@
 }
 
 .html5gallery-car-left-1,
-.html5gallery-car-right-1,
-.html5gallery-left-1,
-.html5gallery-right-1 {
+.html5gallery-car-right-1{
   display: none !important;
 }
