@@ -20,7 +20,7 @@ if (have_posts()):
             </div>
         </div>
         <section>
-            <div class="container">
+            <div class="container section-divider">
                 <?php the_content(); ?>
             </div>
         </section>
