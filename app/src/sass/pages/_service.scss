@@ -8,6 +8,9 @@
 .service-page {
     height: 100vh;
     overflow-y: hidden;
+    main {
+        height: 100%;
+    }
     .main-head  {
         padding: 16px 30px 5px;
         &.nav-style {
