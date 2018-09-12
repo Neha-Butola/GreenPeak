@@ -13,7 +13,7 @@ if (have_posts()):
     while (have_posts()): the_post()
         ?>
 
-        <div class="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+        <div class="banner fixed-bg" style="background-image: url('<?php the_field('articles_image'); ?>');">
             <div class="banner-content">
                 <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_title(); ?></span></h1>
                 <div class="animating-line"></div>
