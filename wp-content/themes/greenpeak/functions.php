@@ -165,10 +165,16 @@ function ajax_pagination()
         $videos = new WP_Query($parameters);
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="<?php the_field('video_url'); ?>" width="640"
-                            height="360"
-                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                <div class="position-relative">
+                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9" href="<?php the_field('video_url'); ?>"
+                           loop="" preload="none" muted="" poster="https://www.wellingtoncollege.org.uk/wp-content/uploads/2016/08/Screen-Shot-2017-05-02-at-08.42.19-650x365.png">
+                        <source src="<?php the_field('video_file'); ?>"
+                                type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             <?php endwhile; ?>
         <?php }
