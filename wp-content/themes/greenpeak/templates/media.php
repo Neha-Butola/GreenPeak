@@ -47,7 +47,7 @@ if ($videos->have_posts()): ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div class="position-relative">
                     <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9" href="<?php the_field('video_url'); ?>"
-                           loop="" preload="none" muted="" poster="">
+                           loop="" preload="none" muted="" poster="<?php the_field('video_thumbnail'); ?>">
                         <source src="<?php the_field('video_file'); ?>"
                                 type="video/mp4">
                         Your browser does not support the video tag.
@@ -55,6 +55,11 @@ if ($videos->have_posts()): ?>
                     <div class="play-btn">
                         <i class="fas fa-play"></i>
                     </div>
+                </div>
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item lozad" src="<?php the_field('video_url'); ?>" width="640"
+                            height="360"
+                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                 </div>
             <?php endwhile; ?>
         </div>

@@ -167,7 +167,7 @@ function ajax_pagination()
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div class="position-relative">
                     <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9" href="<?php the_field('video_url'); ?>"
-                           loop="" preload="none" muted="" poster="https://www.wellingtoncollege.org.uk/wp-content/uploads/2016/08/Screen-Shot-2017-05-02-at-08.42.19-650x365.png">
+                           loop="" preload="none" muted="" poster="<?php the_field('video_thumbnail'); ?>">
                         <source src="<?php the_field('video_file'); ?>"
                                 type="video/mp4">
                         Your browser does not support the video tag.
