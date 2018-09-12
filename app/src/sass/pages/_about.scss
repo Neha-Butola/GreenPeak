@@ -30,25 +30,30 @@
 
      .testimonial-img {
        position: relative;
-       margin-top: 4rem;
-
-       &:before {
-         background-color: #fff;
-         content: "";
-         height: 1px;
-         position: absolute;
-         width: 50%;
-         left: 25%;
-       }
+       margin-top: 2.3rem;
+       
+        // &:before {
+        //  background-color: #fff;
+        //  content: "";
+        //  height: 1px;
+        //  position: absolute;
+        //  width: 50%;
+        //  left: 25%;
+        // }
 
        h2 {
          color: #6bcb9d;
-
-         span {
-           border-bottom: 1px solid $white;
+         font-family: $vantisa_regular;
+         -webkit-font-smoothing: antialiased;
+         .person_name{
            display: inline-block;
            margin-top: 1.25rem;
            padding-bottom: 0.9375rem;
+         }
+         .designation {
+            padding-left: 5px;
+            color: #fff;
+            font-size: 1.5rem;
          }
        }
 
@@ -170,126 +175,105 @@
        left: 0;
      }
 
-     .team-section {
-       .team-wrap {
-         padding: 2rem 0;
-       }
+.team-section {
+  h2 {
+    margin-bottom: 2.5rem;
+  }
+  .nav-tabs {
+    border: 0;
+  }
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-link:focus,
+  .nav-tabs .nav-link:hover {
+    background-color: initial;
+    border: none;
+    color: initial;
+  }
+  .figure-caption {
+    padding: 0 8%;
+    h3 {
+      text-transform: capitalize;
+      font-family: $vantisa_black;
+      margin-bottom: 5px;
+      span {
+        display: inline-block;
+        padding-bottom: 6px;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          transition: .2s ease;
+          background: $green3;
+          opacity: 0;
+        }
 
-       .nav-tabs {
-         border: 0;
-       }
+      }
+    }
+  }
+  .tab-pane .fade{
+    transition: opacity .3s linear;
+  }
 
-       .nav-tabs .nav-item.show .nav-link,
-       .nav-tabs .nav-link.active,
-       .nav-tabs .nav-link:focus,
-       .nav-tabs .nav-link:hover {
-         background-color: initial;
-         border: none;
-         color: initial;
-       }
+  .team-col {
+    .active .figure-caption,
+    &:hover .figure-caption{
+      color: $green3;
+      h3 {
+        span {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 
-       .figure-caption {
-         padding: 0 8%;
+  .desigantion {
+    line-height: 1.2;
+    div:first-child{
+      font-family: $vantisa_black;
+    }
+  }
 
-         h3 {
-           text-transform: capitalize;
-           font-family: $vantisa_black;
-           margin-bottom: 5px;
+  .card,
+  .card-header {
+    border: 0;
+    background: transparent;
+  }
 
-           span {
-             display: inline-block;
-             padding-bottom: 6px;
-             position: relative;
-
-             &:before {
-               position: absolute;
-               content: "";
-               width: 100%;
-               left: 0;
-               bottom: 0;
-               height: 2px;
-               transition: .2s ease;
-               background: $green3;
-               opacity: 0;
-             }
-
-           }
-         }
-       }
-
-       .tab-pane .fade {
-         transition: opacity .3s linear;
-       }
-
-       .team-col {
-
-         .active .figure-caption,
-         &:hover .figure-caption {
-           color: $green3;
-
-           h3 {
-             span {
-               &:before {
-                 opacity: 1;
-               }
-             }
-           }
-         }
-       }
-
-       .desigantion {
-         line-height: 1.2;
-       }
-
-       .card,
-       .card-header {
-         border: 0;
-         background: transparent;
-       }
-
-     }
+}
 
 
 
+// @-webkit-keyframes fadeOut {
+//   from {
+//     opacity: 1;
+//   }
 
-     @keyframes fadeOut {
-       from {
-         opacity: 1;
-       }
+//   to {
+//     opacity: 0;
+//   }
+// }
 
-       to {
-         opacity: 0;
-       }
-     }
+// @keyframes fadeOut {
+//   from {
+//     opacity: 1;
+//   }
 
-     .title-animate {
-       h1 span {
-         animation: fadeOut 1s ease 5s;
-       }
-     }
+//   to {
+//     opacity: 0;
+//   }
+// }
+
+// .banner-title {
+//   -webkit-animation-name: fadeOut;
+//   animation-name: fadeOut;
+// }
 
 
 
-
-
-     @media (max-width: 992px) {
-       .team-section .figure-caption h3 {
-         font-size: 1.5rem;
-       }
-
-       .team-section .desigantion {
-         font-size: 17px;
-       }
-     }
-
-     @media (max-width: 767px) {
-       .team-section .figure-caption h3 {
-         font-size: 2rem;
-       }
-
-       .testimonial .owl-dot {
-         height: 10px;
-         width: 10px;
-         margin: 0 8px;
-       }
-     }
