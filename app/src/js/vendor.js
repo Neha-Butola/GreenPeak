@@ -23,7 +23,7 @@ AOS.init();
 import lozad from 'lozad';
 
 let observer = lozad('.lozad', {
-  rootMargin: '500px 0px',
+  rootMargin: '700px 0px',
 });
 
 observer.observe();

@@ -32,7 +32,11 @@ $('.thevideo').mouseover(function () {
   $('video').removeClass('play-video');
 })
 
+/* videos Section */
 
+window.onload = function () {
+  document.getElementById('html5gallery-tn-1-0').className = 'd-none';
+};
 $(".html5gallery-thumbs-1 > div").click(function () {
   $(".html5gallery-thumbs-1 > div").removeClass("d-none");
   $(this).addClass("d-none");
