@@ -39,8 +39,8 @@ $(window).on('tp.lozad.observe', function () {
 //jQuery.stellar();
 
 $.stellar({
-  verticalOffset: -200,
-  hideDistantElements: false
+  verticalOffset: -300,
+  hideDistantElements: true
 });
 // magnific pop up
 

@@ -30,7 +30,7 @@
   padding-bottom: 2.5rem;
   position: relative;
   font-size: 2.375rem;
-
+  z-index: 2;
   &:before {
     width: 100%;
     height: 100%;
@@ -94,6 +94,8 @@
 }
 
 .value-sec {
+  position: relative;
+  z-index: 1;
   >[class*="col-"] {
     position: relative;
   }
@@ -113,7 +115,7 @@
 .parallax-bg {
   background-repeat: no-repeat;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   display: block !important;
   object-fit: contain;
 }

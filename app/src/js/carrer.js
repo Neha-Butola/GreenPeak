@@ -22,11 +22,12 @@ $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   preloader: false,
 
 });
-
-$('.thevideo,.popup-vimeo').mouseover(function () {
-  $(this).get(0).play();
-  $('video').addClass('play-video');
-}).mouseout(function () {
-  $(this).get(0).pause();
-  $('video').removeClass('play-video');
-})
+if ($(window).width() > 1024) {
+  $('.thevideo,.popup-vimeo').mouseover(function () {
+    $(this).get(0).play();
+    $('video').addClass('play-video');
+  }).mouseout(function () {
+    $(this).get(0).pause();
+    $('video').removeClass('play-video');
+  })
+}
