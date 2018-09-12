@@ -42,12 +42,21 @@
 			 margin-left: 7.14%;
 			}
 
+			 &.current-menu-item {
+					a {
+						color: $green;
+					}
+			 }
+
 			a {
 				text-transform: uppercase;
 				color: $white;
 				font-size: 1rem;
 				font-family: $vantisa_black;
 				-webkit-font-smoothing: antialiased;
+				&:hover {
+						color: $green;
+				}
 			}
 		}
 	}
@@ -78,7 +87,7 @@ img{
 
 .logo {
 	transform: none;
-	left: 0;
+	left: 15px;
     top: -1px;
 	transform: none;
 	transition: left .5s linear;

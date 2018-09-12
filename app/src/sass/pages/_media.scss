@@ -5,6 +5,14 @@
 
   .row {
     padding: 6rem 0;
+>[class*=col-] {
+  &:nth-child(1){
+    text-align: left !important;
+  }
+   &:nth-child(3) {
+     text-align: right !important;
+   }
+}
   }
 }
 

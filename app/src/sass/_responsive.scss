@@ -84,9 +84,12 @@
 }
 
 
-@media (min-width: 1599px) {
+@media (min-width: 1598px) {
 	.container {
 		max-width: 1250px;
+	}
+	.html5gallery-thumbs-1 {
+		margin-left: 0 !important
 	}
 }
 

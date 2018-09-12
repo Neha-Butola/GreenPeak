@@ -17,7 +17,7 @@
             padding: 4px 30px 8px;
         }
     }
-    
+
     .main-footer {
         position: fixed;
         bottom: 0;
@@ -29,7 +29,7 @@
         .row>[class*=col-] {
             padding-bottom: 0;
         }
-    } 
+    }
     .social-icons {
         padding-top: 0;
         font-size: 1rem;
@@ -57,7 +57,8 @@
     transform: rotate(270deg) translateX(-100%);
     transform-origin: top left;
     width: calc(100vh - 75px);
-    height: 100vw;  
+    height: 100vw;
+    position: absolute;
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -66,7 +67,7 @@
     &::-webkit-scrollbar-button {
         width: 0;
         height: 0;
-    } 
+    }
 }
 
 .service-container .service-container2 {
@@ -110,7 +111,7 @@
     margin: auto;
     -webkit-font-smoothing: antialiased;
     h4 {
-        font-family: $vantisa_regular;  
+        font-family: $vantisa_regular;
         margin: 8vh 0  0.5em;
         max-width: 540px;
     }
@@ -149,12 +150,12 @@
         padding-top: 11vh;
         margin-bottom: auto;
         position: relative;
-      
+
     }
     img {
         max-height: 260px;
         object-fit: contain;
-        padding: 10px 0;    
+        padding: 10px 0;
         max-width: 100%;
     }
 
