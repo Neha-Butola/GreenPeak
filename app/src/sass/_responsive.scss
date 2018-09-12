@@ -5,7 +5,16 @@
 	.container {
 		max-width: 1600px;
 	}
+
+
 }
+@media (max-width: 1799px) {
+	.banner {
+		video {
+			height: 100vh;
+			width: auto !important;
+		}
+	}}
 
 
 @media (min-width: 1599px) {
@@ -36,23 +45,27 @@
 	#animating-triangle {
 		display: none !important;
 	}
+
 	.partners-image {
-		display: block!important;
+		display: block !important;
 		min-height: 260px;
 		width: 100% !important;
 		object-fit: cover;
 	}
+
 	.fixed-bg {
 		background-attachment: initial;
 	}
 
 }
+
 @media (max-width: 992px) {
 
 	/* Global */
 	html {
 		font-size: 15px;
 	}
+
 	/* Media Page */
 	.media-video .embed-responsive {
 		margin-bottom: 2rem;
@@ -86,6 +99,7 @@
 
 	.main-head {
 		padding: 1.5rem 0;
+
 		.navbar-toggler {
 			display: flex;
 		}
@@ -159,63 +173,67 @@
 	}
 
 
-/* carrer page */
+	/* carrer page */
 
-.parallax-bg {
-	display: none !important;
-}
-
-.value-sec .row>[class*=col-] img {
-	max-width: 100% !important;
-}
-.video-play {
-	padding-top: 3rem;
-}
-
-.value-sec .row {
-	padding-top: 0;
-}
-.value-sec .row>div {
-	padding-bottom: 3rem;
-}
-
-/* media Page */
-.logos-section {
-	padding-bottom: 1rem;
-
-	.row {
-		padding: 4rem 0;
+	.parallax-bg {
+		display: none !important;
 	}
 
-	.img-fluid {
-		max-width: 70%;
+	.value-sec .row>[class*=col-] img {
+		max-width: 100% !important;
 	}
 
-	.col-md-4 {
-		margin-bottom: 2.5rem;
-	}
-}
-
-/* footer */
-.social-icons {
-	padding-top: 0;
-}
-
-.main-footer {
-	h5 {
-		margin: 0;
-		display: block;
+	.video-play {
+		padding-top: 3rem;
 	}
 
-	.row {
-		>[class*="col-"] {
-			padding-bottom: 20px;
+	.value-sec .row {
+		padding-top: 0;
+	}
+
+	.value-sec .row>div {
+		padding-bottom: 3rem;
+	}
+
+	/* media Page */
+	.logos-section {
+		padding-bottom: 1rem;
+
+		.row {
+			padding: 4rem 0;
+		}
+
+		.img-fluid {
+			max-width: 70%;
+		}
+
+		.col-md-4 {
+			margin-bottom: 2.5rem;
 		}
 	}
-}}
+
+	/* footer */
+	.social-icons {
+		padding-top: 0;
+	}
+
+	.main-footer {
+		h5 {
+			margin: 0;
+			display: block;
+		}
+
+		.row {
+			>[class*="col-"] {
+				padding-bottom: 20px;
+			}
+		}
+	}
+}
 
 // Extra small devices
 @media (max-width: 576px) {
+
 	/* Global */
 	html {
 		font-size: 13px;
@@ -232,10 +250,11 @@
 	}
 
 	.intro {
-		> img{
+		>img {
 			margin: 0 auto;
 		}
 	}
+
 	.parallax-secs section p {
 		max-width: 350px;
 	}

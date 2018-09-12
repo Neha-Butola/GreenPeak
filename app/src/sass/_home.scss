@@ -2,14 +2,18 @@
 
 .banner {
   min-height: 100vh;
-    width: 100%;
-+ section{
-  clear: both;
-}
+  width: 100%;
+  float: left;
 
-    video{
-      float: left;
-    }
+  +section {
+    clear: both;
+  }
+
+  video {
+    float: left;
+    width: 100%;
+  }
+
   >img {
     width: 100%;
     height: 100%;
@@ -56,16 +60,18 @@
     color: $white;
     font-size: 2.5rem;
     margin-bottom: .8rem;
-        margin-top: 1.3rem;
+    margin-top: 1.3rem;
   }
 }
 
 .parallax-secs {
-      margin-top: -10px;
+  margin-top: -10px;
+
   section {
     padding: 6.25rem 0 11.5rem;
     position: relative;
     font-family: $vantisa_black;
+
     &:before {
       position: absolute;
       content: '';
@@ -124,10 +130,6 @@
 }
 
 #animating-triangle {
-height: 100%;
-width: 100vw;
+  height: 100%;
+  width: 100vw;
 }
-
-
-
-
