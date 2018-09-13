@@ -1,6 +1,7 @@
 $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCarousel({
   loop: true,
   dots: true,
+  autoplay: true,
   smartSpeed: 600,
   responsive: {
     0: {
@@ -20,7 +21,7 @@ $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   mainClass: 'mfp-fade',
   removalDelay: 160,
   preloader: false,
-
+  fixedContentPos: true,
 });
 if ($(window).width() > 1024) {
   $('.thevideo,.popup-vimeo').mouseover(function () {

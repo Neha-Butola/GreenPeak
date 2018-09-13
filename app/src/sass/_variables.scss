@@ -27,7 +27,7 @@ $teal: #20c997 !default;
 $cyan: #e8eff3;
 /*===Override variables ====*/
 $green: #77bd90;
-$gray-600: #5d5d5d;
+$body-color: #5d5d5d;
 /*==== custom variables ====*/
 $pale-white:#eaeaea;
 $green1: #6bcb9d;
@@ -43,7 +43,7 @@ sans-serif;
 /*** Global text color on `<body>`.*/
 $body-bg: $pale-white;
 /*-----text variables -------*/
-$text-gray: $gray-600;
+
 $text-green: $green1;
 /*===== headings ======*/
 $h1-font-size: 2.5rem;

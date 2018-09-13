@@ -32,28 +32,30 @@
        position: relative;
        margin-top: 2.3rem;
 
-        // &:before {
-        //  background-color: #fff;
-        //  content: "";
-        //  height: 1px;
-        //  position: absolute;
-        //  width: 50%;
-        //  left: 25%;
-        // }
+       // &:before {
+       //  background-color: #fff;
+       //  content: "";
+       //  height: 1px;
+       //  position: absolute;
+       //  width: 50%;
+       //  left: 25%;
+       // }
 
        h2 {
          color: #6bcb9d;
          font-family: $vantisa_regular;
          -webkit-font-smoothing: antialiased;
-         .person_name{
+
+         .person_name {
            display: inline-block;
            margin-top: 1.25rem;
            padding-bottom: 0.9375rem;
          }
+
          .designation {
-            padding-left: 5px;
-            color: #fff;
-            font-size: 1.5rem;
+           padding-left: 5px;
+           color: #fff;
+           font-size: 1.5rem;
          }
        }
 
@@ -175,105 +177,112 @@
        left: 0;
      }
 
-.team-section {
-  h2 {
-    margin-bottom: 2.5rem;
-  }
-  .nav-tabs {
-    border: 0;
-  }
-  .nav-tabs .nav-item.show .nav-link,
-  .nav-tabs .nav-link.active,
-  .nav-tabs .nav-link:focus,
-  .nav-tabs .nav-link:hover {
-    background-color: initial;
-    border: none;
-    color: initial;
-  }
-  .figure-caption {
-    padding: 0 8%;
-    h3 {
-      text-transform: capitalize;
-      font-family: $vantisa_black;
-      margin-bottom: 5px;
-      span {
-        display: inline-block;
-        padding-bottom: 6px;
-        position: relative;
-        &:before {
-          position: absolute;
-          content: "";
-          width: 100%;
-          left: 0;
-          bottom: 0;
-          height: 1px;
-          transition: .2s ease;
-          background: $green3;
-          opacity: 0;
-        }
+     .team-section {
+       h2 {
+         margin-bottom: 2.5rem;
+       }
 
-      }
-    }
-  }
-  .tab-pane .fade{
-    transition: opacity .3s linear;
-  }
+       .nav-tabs {
+         border: 0;
+       }
 
-  .team-col {
-    .active .figure-caption,
-    &:hover .figure-caption{
-      color: $green3;
-      h3 {
-        span {
-          &:before {
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
+       .nav-tabs .nav-item.show .nav-link,
+       .nav-tabs .nav-link.active,
+       .nav-tabs .nav-link:focus,
+       .nav-tabs .nav-link:hover {
+         background-color: initial;
+         border: none;
+         color: initial;
+       }
 
-  .desigantion {
-    line-height: 1.2;
-    div:first-child{
-      font-family: $vantisa_black;
-    }
-  }
+       .figure-caption {
+         padding: 0 8%;
 
-  .card,
-  .card-header {
-    border: 0;
-    background: transparent;
-  }
+         h3 {
+           text-transform: capitalize;
+           font-family: $vantisa_black;
+           margin-bottom: 5px;
 
-}
+           span {
+             display: inline-block;
+             padding-bottom: 6px;
+             position: relative;
 
+             &:before {
+               position: absolute;
+               content: "";
+               width: 100%;
+               left: 0;
+               bottom: 0;
+               height: 1px;
+               transition: .2s ease;
+               background: $green3;
+               opacity: 0;
+             }
 
+           }
+         }
+       }
 
-// @-webkit-keyframes fadeOut {
-//   from {
-//     opacity: 1;
-//   }
+       .tab-pane .fade {
+         transition: opacity .3s linear;
+       }
 
-//   to {
-//     opacity: 0;
-//   }
-// }
+       .team-col {
 
-// @keyframes fadeOut {
-//   from {
-//     opacity: 1;
-//   }
+         .active .figure-caption,
+         &:hover .figure-caption {
+           color: $green3;
 
-//   to {
-//     opacity: 0;
-//   }
-// }
+           h3 {
+             span {
+               &:before {
+                 opacity: 1;
+               }
+             }
+           }
+         }
+       }
 
-// .banner-title {
-//   -webkit-animation-name: fadeOut;
-//   animation-name: fadeOut;
-// }
+       .desigantion {
+         line-height: 1.2;
+
+         div:first-child {
+           font-family: $vantisa_black;
+         }
+       }
+
+       .card,
+       .card-header {
+         border: 0;
+         background: transparent;
+       }
+
+     }
 
 
 
+     // @-webkit-keyframes fadeOut {
+     //   from {
+     //     opacity: 1;
+     //   }
+
+     //   to {
+     //     opacity: 0;
+     //   }
+     // }
+
+     // @keyframes fadeOut {
+     //   from {
+     //     opacity: 1;
+     //   }
+
+     //   to {
+     //     opacity: 0;
+     //   }
+     // }
+
+     // .banner-title {
+     //   -webkit-animation-name: fadeOut;
+     //   animation-name: fadeOut;
+     // }

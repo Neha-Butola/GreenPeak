@@ -359,7 +359,7 @@
             x: 300 * self.pixels.x,
             y: 150 * self.pixels.y
           }, {
-            fillColour: 'rgba(255,255,255,1)'
+            fillColour: 'rgba(234,234,234,1)'
           }, false);
           // canvas.canvas.clip();
 
@@ -380,7 +380,7 @@
             x: endingXPosition,
             y: endingYPosition
           }, {
-            fillColour: 'rgba(255,255,255,1)',
+            fillColour: 'rgba(234,234,234,1)',
           }, true);
         };
 
@@ -396,12 +396,12 @@
             x: 300 * self.pixels.x,
             y: 150 * self.pixels.y
           }, {
-            fillColour: 'rgba(255,255,255,1)'
+            fillColour: 'rgba(234,234,234,1)'
           }, false);
           // canvas.canvas.clip();
 
           if (toAdd) {
-            startingHeight = startingHeight * 1.5;
+            startingHeight = startingHeight * 1.2;
             if (startingHeight >= 600 * self.pixels.y) {
               startingHeight = 600 * self.pixels.y;
             }
@@ -430,7 +430,7 @@
             x: endingXPosition,
             y: endingYPosition
           }, {
-            fillColour: 'rgba(255,255,255,1)',
+            fillColour: 'rgba(234,234,234,1)',
           }, true);
 
 
@@ -489,7 +489,7 @@
       var $window = $(window);
       window.addEventListener('scroll', function () {
         if ($window.scrollTop() >= 0.7 * $('#sample').offset().top) {
-          canvas.triangle(50, '>50', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack', 15);
+          canvas.triangle(50, '>50', 'white', 'white', 1, '#63a37a', '#5b8080', '60px vanitasblack', 50);
         }
       });
     }
@@ -499,7 +499,7 @@
       var canvas2 = new GraphMaker('sample1');
       window.addEventListener('scroll', function () {
         if ($window.scrollTop() >= 0.7 * $('#sample1').offset().top) {
-          canvas2.triangle(92, '92', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+          canvas2.triangle(92, '92', 'white', 'white', 1, '#63a37a', '#5b8080', '60px vanitasblack', 25);
         }
       });
     }
@@ -508,7 +508,7 @@
       var canvas3 = new GraphMaker('sample2');
       window.addEventListener('scroll', function () {
         if ($window.scrollTop() >= 0.7 * $('#sample2').offset().top) {
-          canvas3.triangle(94, '94', 'white', 'white', 1, '#63a37a', '#5b8080', '30px vanitasblack');
+          canvas3.triangle(94, '94', 'white', 'white', 1, '#63a37a', '#5b8080', '60px vanitasblack', 25);
         }
       });
     }

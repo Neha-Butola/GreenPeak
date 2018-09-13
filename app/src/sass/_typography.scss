@@ -18,14 +18,12 @@ html {
 }
 
 body {
-	background: $gray-100;
+//	background-color: $gray-100;
 	font-family: $vantisa_regular;
 	font-size: 1.75rem;
 	margin: 0;
 	padding: 0;
 	line-height: 2.375rem;
-	font-weight: 400;
-	color: #5d5d5d;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 	&.page-template-services {
