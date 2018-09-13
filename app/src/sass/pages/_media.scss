@@ -38,6 +38,7 @@
   padding: 3rem 0 4rem;
   position: relative;
 
+
   .position-relative {
     min-height: 330px;
     padding-bottom: 2rem;
@@ -76,7 +77,7 @@
 
     &:after {
       height: 1px;
-      width: 46%;
+      width: 45%;
     }
   }
 
@@ -165,7 +166,7 @@
 .read {
   margin-top: 3.5rem;
   position: absolute;
-  bottom: -15px;
+  bottom: -17px;
   left: 50%;
   transform: translateX(-50%);
   color: $white;
@@ -173,9 +174,9 @@
 
   .line {
     position: absolute;
-    top: 50%;
+    top: 51%;
     transform: translateY(-50%);
-    right: -70px;
+    right: -91px;
 
     &:before {
       content: "";
@@ -207,20 +208,29 @@
 
 .articles-sec {
   div {
-    &:nth-child(2){
-      .line{
-        &:after{
-             border-color: transparent transparent transparent $black;
+    &:nth-child(2) {
+      &:hover{
+        .read{
+          color: $green3;
         }
-        &:before{
-    background-color: $black;
+      }
+      .read {
+        bottom: -13px;
+      }
+      .line {
+        &:after {
+          border-color: transparent transparent transparent $black;
+        }
+
+        &:before {
+          background-color: $black;
         }
       }
     }
+
     &:hover {
       .read {
         color: $green;
-
         .line {
           &:before {
             right: -10px;
@@ -250,8 +260,9 @@
       }
 
       .read {
-        color: $green3;
-            line-height: 1.875rem;
+        color: $white;
+        line-height: 1.875rem;
+
       }
 
       .article-block:after,
