@@ -128,7 +128,7 @@ function greenpeak_scripts()
 {
     wp_enqueue_style('greenpeak-css', get_template_directory_uri() . '/dist/css/app.css', '', '1.0');
 
-    wp_enqueue_script('jquery', get_template_directory_uri() . '//code.jquery.com/jquery-2.2.4.min.js', array(), '1.0', true);
+    wp_enqueue_script('jquery', get_template_directory_uri() . 'https://code.jquery.com/jquery-2.2.4.min.js', array(), '1.0', true);
 
     wp_enqueue_script('steller-js', 'https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js?ver=0.6.2', ['jquery'],'0.6.2', true);
 
