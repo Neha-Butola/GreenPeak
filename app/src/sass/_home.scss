@@ -145,5 +145,7 @@
 }
 
 .detail-banner{
+  &:before{
       mix-blend-mode: unset;
+  }
 }
