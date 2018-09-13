@@ -38,7 +38,6 @@ $(window).on('tp.lozad.observe', function () {
 
 jQuery.stellar();
 
-
 // magnific pop up
 require('magnific-popup');
 
