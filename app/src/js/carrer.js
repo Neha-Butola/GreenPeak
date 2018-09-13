@@ -24,10 +24,10 @@ $('.thevideo').magnificPopup({
 
 });
 
-// if ($(window).width() > 1024) {
-//   $('.thevideo').mouseover(function () {
-//     $(this).get(0).play();
-//   }).mouseout(function () {
-//     $(this).get(0).pause();
-//   })
-// }
+if ($(window).width() > 1024) {
+  $('.thevideo').mouseover(function () {
+    $(this).get(0).play();
+  }).mouseout(function () {
+    $(this).get(0).pause();
+  })
+}
