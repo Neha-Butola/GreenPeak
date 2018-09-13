@@ -21,11 +21,18 @@
   }
 }
 
+.html5gallery-tn-1 {
+  background: transparent !important;
+}
+
 .html5gallery-elem-img-1 {
   .html5gallery-elem-image-1+a {
     display: none;
     opacity: 0 !important;
   }
+}
+a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
+  display: none !important;
 }
 
 .testimonial {
@@ -258,6 +265,7 @@
 .content-sec {
   a {
     font-family: $vantisa_black;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
@@ -306,6 +314,7 @@
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
 }
+
 
 .html5gallery-left-1,
 .html5gallery-right-1 {
