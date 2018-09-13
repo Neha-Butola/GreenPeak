@@ -39,7 +39,7 @@
 	}
 
 	.service-col img {
-		max-height: 200px;
+		max-height: 210px;
 	}
 
 	.service-col .col-below {
@@ -391,6 +391,7 @@
 		top: -50px;
 		bottom: auto;
 		left: 70px;
+		transform: scaleY(-1);
 	}
 
 	.timeline .dot>div {
@@ -430,6 +431,9 @@
 		height: 10px;
 		width: 10px;
 		margin: 0 8px;
+	}
+	.contact {
+		padding-top: 2rem;
 	}
 	.contact a {
 		font-size: 1.8rem;
@@ -525,8 +529,8 @@
 	}
 
 	.timeline {
-		top: auto;
-		bottom: 0;
+		top: -40px;
+		transform: scaleY(-1);
 	}
 
 	.service-col .timeline .dot>div {
