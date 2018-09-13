@@ -16,6 +16,8 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
   }
 });
 
+$(' .thevideo').attr('onclick', 'void(0);');
+
 $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
@@ -24,7 +26,7 @@ $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   fixedContentPos: true,
 });
 if ($(window).width() > 1024) {
-  $('.thevideo,.popup-vimeo').mouseover(function () {
+  $('.thevideo').mouseover(function () {
     $(this).get(0).play();
     $('video').addClass('play-video');
   }).mouseout(function () {

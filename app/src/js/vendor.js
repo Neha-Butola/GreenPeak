@@ -36,14 +36,12 @@ $(window).on('tp.lozad.observe', function () {
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
 
-//jQuery.stellar();
-
 $.stellar({
-  verticalOffset: 0,
-  // hideDistantElements: true
+  hideDistantElements: true
 });
-// magnific pop up
 
+
+// magnific pop up
 require('magnific-popup');
 
 // We will extract all css to a separate file
