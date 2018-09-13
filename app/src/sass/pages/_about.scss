@@ -41,14 +41,29 @@
         //  left: 25%;
         // }
 
-       h2 {
+       .sal {
          color: #6bcb9d;
          font-family: $vantisa_regular;
          -webkit-font-smoothing: antialiased;
+         position: relative;
+         line-height: 1.1;
+         &:before {
+          position: absolute;
+          content: '';
+          background: rgba(255,255,255,0.5);
+          top: -5px;
+          left: 50%;
+          width: 65%;
+          transform: translateX(-50%);
+          height: 1px;
+         }
+         .info {
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding: 0 5px 10px;
+         }
          .person_name{
            display: inline-block;
            margin-top: 1.25rem;
-           padding-bottom: 0.9375rem;
          }
          .designation {
             padding-left: 5px;
@@ -159,9 +174,11 @@
 
        .title {
          color: #fff;
-         max-width: 300px;
-         margin: 0 auto;
+         max-width: 250px;
+         margin: 8px auto 0;
          font-family: $vantisa_regular;
+         line-height: 1.2;
+         -webkit-font-smoothing: antialiased
        }
 
        canvas {
@@ -176,6 +193,9 @@
      }
 
 .team-section {
+  &:nth-of-type(even) {
+    background: #fff !important;
+  }
   h2 {
     margin-bottom: 2.5rem;
   }
@@ -219,6 +239,10 @@
     transition: opacity .3s linear;
   }
 
+  .figure {
+    margin-bottom: 3px;
+  }
+
   .team-col {
     .active .figure-caption,
     &:hover .figure-caption{
@@ -244,6 +268,14 @@
   .card-header {
     border: 0;
     background: transparent;
+  }
+
+  .card-body,
+  .card-header {
+    padding: 0;
+  }
+  .card-title {
+    margin: 0;
   }
 
 }

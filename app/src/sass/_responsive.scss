@@ -110,7 +110,9 @@
 }
 
 // Large devices
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+	.traingle-sction .container-fluid {padding: 0 2%;}
+}
 
 
 // Medium devices
@@ -157,6 +159,13 @@
 	.team-section .desigantion {
 		font-size: 17px;
 	}
+
+	.testimonial-img .sal:before {
+		width: 100%;
+	}
+	.testimonial .testimonial-img img {
+		margin: 10px auto !important;
+	}
 }
 
 // Small devices
@@ -199,7 +208,7 @@
 				position: fixed;
 				width: 250px;
 				background-color: #fff;
-				height: 100vh !important;
+				height: calc(100vh - 5.5rem)!important;
 				transition: right .5s ease;
 				top: 54px;
 				display: block !important;
