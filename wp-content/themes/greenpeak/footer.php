@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-3">
             <a href="/" class="footer-logo">
-                <img src="<?php the_field('footer_logo', 'options'); ?>" alt="">
+                <img data-src="<?php the_field('footer_logo', 'options'); ?>" class="lozad" alt="">
             </a>
         </div>
         <div class="col-md-6 text-center">
