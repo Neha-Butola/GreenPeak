@@ -261,7 +261,7 @@
       }
 
       .read {
-        color: $white;
+        color: $black;
         line-height: 1.875rem;
 
       }
@@ -292,4 +292,14 @@
       }
     }
   }
+}
+
+
+
+.articles-sec div:nth-of-type(2){
+&:hover {
+  .read {
+    color: $green3;
+  }
+}
 }
