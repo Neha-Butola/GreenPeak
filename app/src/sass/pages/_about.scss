@@ -41,15 +41,29 @@
        //  left: 25%;
        // }
 
-       h2 {
+       .sal {
          color: #6bcb9d;
          font-family: $vantisa_regular;
          -webkit-font-smoothing: antialiased;
-
-         .person_name {
+         position: relative;
+         line-height: 1.1;
+          &:before {
+            position: absolute;
+            content: '';
+            background: rgba(255,255,255,0.5);
+            top: -5px;
+            left: 50%;
+            width: 65%;
+            transform: translateX(-50%);
+            height: 1px;
+          }
+         .info {
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding: 0 5px 10px;
+         }
+         .person_name{
            display: inline-block;
            margin-top: 1.25rem;
-           padding-bottom: 0.9375rem;
          }
 
          .designation {
@@ -161,9 +175,11 @@
 
        .title {
          color: #fff;
-         max-width: 300px;
-         margin: 0 auto;
+         max-width: 250px;
+         margin: 8px auto 0;
          font-family: $vantisa_regular;
+         line-height: 1.2;
+         -webkit-font-smoothing: antialiased
        }
 
        canvas {
@@ -171,96 +187,6 @@
          max-width: 300px;
        }
      }
-
-     .intro-desc {
-       width: 100%;
-       left: 0;
-     }
-
-     .team-section {
-       h2 {
-         margin-bottom: 2.5rem;
-       }
-
-       .nav-tabs {
-         border: 0;
-       }
-
-       .nav-tabs .nav-item.show .nav-link,
-       .nav-tabs .nav-link.active,
-       .nav-tabs .nav-link:focus,
-       .nav-tabs .nav-link:hover {
-         background-color: initial;
-         border: none;
-         color: initial;
-       }
-
-       .figure-caption {
-         padding: 0 8%;
-
-         h3 {
-           text-transform: capitalize;
-           font-family: $vantisa_black;
-           margin-bottom: 5px;
-
-           span {
-             display: inline-block;
-             padding-bottom: 6px;
-             position: relative;
-
-             &:before {
-               position: absolute;
-               content: "";
-               width: 100%;
-               left: 0;
-               bottom: 0;
-               height: 1px;
-               transition: .2s ease;
-               background: $green3;
-               opacity: 0;
-             }
-
-           }
-         }
-       }
-
-       .tab-pane .fade {
-         transition: opacity .3s linear;
-       }
-
-       .team-col {
-
-         .active .figure-caption,
-         &:hover .figure-caption {
-           color: $green3;
-
-           h3 {
-             span {
-               &:before {
-                 opacity: 1;
-               }
-             }
-           }
-         }
-       }
-
-       .desigantion {
-         line-height: 1.2;
-
-         div:first-child {
-           font-family: $vantisa_black;
-         }
-       }
-
-       .card,
-       .card-header {
-         border: 0;
-         background: transparent;
-       }
-
-     }
-
-
 
      // @-webkit-keyframes fadeOut {
      //   from {
@@ -271,6 +197,128 @@
      //     opacity: 0;
      //   }
      // }
+
+
+.team-section {
+  &:nth-of-type(even) {
+    background: #fff !important;
+  }
+  h2 {
+    margin-bottom: 2.5rem;
+  }
+  .nav-tabs {
+    border: 0;
+  }
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-link:focus,
+  .nav-tabs .nav-link:hover {
+    background-color: initial;
+    border: none;
+    color: initial;
+  }
+  .figure-caption {
+    padding: 0 8%;
+    h3 {
+      text-transform: capitalize;
+      font-family: $vantisa_black;
+      margin-bottom: 5px;
+      line-height: 1.2;
+      span {
+        display: inline-block;
+        padding-bottom: 6px;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          transition: .2s ease;
+          background: $green3;
+          opacity: 0;
+        }
+
+      }
+    }
+  }
+  .tab-pane .fade{
+    transition: opacity .3s linear;
+  }
+
+  .figure {
+    margin-bottom: 3px;
+  }
+
+  .team-col {
+    padding-bottom: 3rem;
+    .active .figure-caption,
+    &:hover .figure-caption{
+      color: $green3;
+      h3 {
+        span {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .desigantion {
+    line-height: 1.2;
+    div:first-child{
+      font-family: $vantisa_black;
+    }
+  }
+
+  .card,
+  .card-header {
+    border: 0;
+    background: transparent;
+  }
+
+  .card-body,
+  .card-header {
+    padding: 0;
+  }
+  .card-title {
+    margin: 0;
+  }
+  .intro-desc {
+    width: 100%;
+    left: 0;
+    margin: -2rem 0 3rem;
+  }
+}
+
+
+
+// @-webkit-keyframes fadeOut {
+//   from {
+//     opacity: 1;
+//   }
+
+//   to {
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes fadeOut {
+//   from {
+//     opacity: 1;
+//   }
+
+//   to {
+//     opacity: 0;
+//   }
+// }
+
+// .banner-title {
+//   -webkit-animation-name: fadeOut;
+//   animation-name: fadeOut;
+// }
 
      // @keyframes fadeOut {
      //   from {
