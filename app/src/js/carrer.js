@@ -24,6 +24,8 @@ $('.thevideo').magnificPopup({
 
 });
 
+//hover on video
+
 if ($(window).width() > 1024) {
   $('.thevideo').mouseover(function () {
     $(this).get(0).play();
