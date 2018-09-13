@@ -22,8 +22,18 @@ $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
   removalDelay: 160,
-  preloader: false,
   fixedContentPos: true,
+  iframe: {
+    markup: '<div class="mfp-iframe-scaler"><div class="mfp-close"></div><iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe></div>',
+    patterns: {
+      youtube: {
+        index: "youtube.com/",
+        id: "v=",
+        src: "https://www.youtube.com/embed/%id%?autoplay=1&rel=0&showinfo=0&enablejsapi=1"
+      }
+    },
+    srcAction: "iframe_src"
+  }
 });
 if ($(window).width() > 1024) {
   $('.thevideo').mouseover(function () {
