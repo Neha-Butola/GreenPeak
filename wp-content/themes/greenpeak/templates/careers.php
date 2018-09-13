@@ -104,14 +104,14 @@ if (!empty($values)):
                                 <div class="lozad parallax-bg" data-stellar-vertical-offset="150"
                                      data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
-                                <video class="thevideo popup-vimeo" href="<?php echo $value['video_url']; ?>" loop=""
+                                <a href="<?php echo $value['video_url']; ?>" class="thevideo"><video class="thevideo" href="<?php echo $value['video_url']; ?>" loop=""
                                        preload="none"
                                        muted=""
                                        poster="<?php echo $value['video_thumbnail']; ?>">
                                     <source src="<?php echo $value['video_file']; ?>"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
-                                </video>
+                                </video></a>
                                 <div class="play-btn">
                                     <i class="fas fa-play"></i>
                                 </div>
