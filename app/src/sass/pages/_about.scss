@@ -187,11 +187,7 @@
        }
      }
 
-     .intro-desc {
-       width: 100%;
-       left: 0;
-     }
-
+    
 .team-section {
   &:nth-of-type(even) {
     background: #fff !important;
@@ -244,6 +240,7 @@
   }
 
   .team-col {
+    padding-bottom: 3rem;
     .active .figure-caption,
     &:hover .figure-caption{
       color: $green3;
@@ -277,7 +274,11 @@
   .card-title {
     margin: 0;
   }
-
+  .intro-desc {
+    width: 100%;
+    left: 0;
+    margin: -2rem 0 3rem;
+  }
 }
 
 
