@@ -111,32 +111,18 @@
   }
 });
 
-$(' .thevideo').attr('onclick', 'void(0);');
-
-$('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
+$('.popup-vimeo').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
   removalDelay: 160,
-  fixedContentPos: true,
-  iframe: {
-    markup: '<div class="mfp-iframe-scaler"><div class="mfp-close"></div><iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe></div>',
-    patterns: {
-      youtube: {
-        index: "youtube.com/",
-        id: "v=",
-        src: "https://www.youtube.com/embed/%id%?autoplay=1&rel=0&showinfo=0&enablejsapi=1"
-      }
-    },
-    srcAction: "iframe_src"
-  }
+  fixedContentPos: true
+
 });
 if ($(window).width() > 1024) {
-  $('.thevideo').mouseover(function () {
+  $('.the-video').mouseover(function () {
     $(this).get(0).play();
-    $('video').addClass('play-video');
   }).mouseout(function () {
     $(this).get(0).pause();
-    $('video').removeClass('play-video');
   });
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
