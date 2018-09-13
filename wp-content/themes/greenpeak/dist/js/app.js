@@ -111,6 +111,8 @@
   }
 });
 
+$(' .thevideo').attr('onclick', 'void(0);');
+
 $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
@@ -119,7 +121,7 @@ $('.popup-youtube, .thevideo, .popup-gmaps').magnificPopup({
   fixedContentPos: true
 });
 if ($(window).width() > 1024) {
-  $('.thevideo,.popup-vimeo').mouseover(function () {
+  $('.thevideo').mouseover(function () {
     $(this).get(0).play();
     $('video').addClass('play-video');
   }).mouseout(function () {
@@ -1219,14 +1221,11 @@ $(window).on('tp.lozad.observe', function () {
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
 
-//jQuery.stellar();
-
 $.stellar({
-  verticalOffset: 0
-  // hideDistantElements: true
+  hideDistantElements: true
 });
-// magnific pop up
 
+// magnific pop up
 __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
 
 // We will extract all css to a separate file
