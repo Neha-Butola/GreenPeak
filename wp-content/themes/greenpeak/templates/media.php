@@ -45,8 +45,9 @@ if ($videos->have_posts()): ?>
             <h2 class="text-center text-md-left left-animating">
                 <span><?php the_field('video_section_heading'); ?></span></h2>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div class="position-relative">
-                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9" href="<?php the_field('video_url'); ?>"
+                <a class="position-relative thevideo w-100" href="https://vimeo.com/45830194">
+                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9"
+                           href="<?php the_field('video_url'); ?>"
                            loop="" preload="none" muted="" poster="<?php the_field('video_thumbnail'); ?>">
                         <source src="<?php the_field('video_file'); ?>"
                                 type="video/mp4">
@@ -55,7 +56,7 @@ if ($videos->have_posts()): ?>
                     <div class="play-btn">
                         <i class="fas fa-play"></i>
                     </div>
-                </div>
+                </a>
             <?php endwhile; ?>
         </div>
         <div class="nav-links text-center">

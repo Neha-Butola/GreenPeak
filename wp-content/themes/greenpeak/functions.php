@@ -165,7 +165,7 @@ function ajax_pagination()
         $videos = new WP_Query($parameters);
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div class="position-relative">
+                <a class="position-relative thevideo w-100" href="https://vimeo.com/45830194">
                     <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9"
                            href="<?php the_field('video_url'); ?>"
                            loop="" preload="none" muted="" poster="<?php the_field('video_thumbnail'); ?>">
@@ -176,7 +176,7 @@ function ajax_pagination()
                     <div class="play-btn">
                         <i class="fas fa-play"></i>
                     </div>
-                </div>
+                </a>
             <?php endwhile; ?>
         <?php }
     } elseif ($data_type == 'articles') {
