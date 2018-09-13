@@ -100,11 +100,12 @@
     h2 {
       font-size: 6.25rem;
       font-style: normal;
+      line-height: 3.875rem;
+       border-bottom: 1px solid $white;
+       padding-bottom: 2rem;
 
       a {
         color: $white;
-        border-bottom: 1px solid $white;
-
         &:hover {
           color: $green;
         }

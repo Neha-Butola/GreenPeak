@@ -1,7 +1,8 @@
 /* Header css */
-.main-head{
+.main-head {
 	transition: all .3s;
-			padding-top: 70px;
+	padding-top: 70px;
+
 	nav {
 		display: flex;
 		position: relative;
@@ -13,7 +14,8 @@
 		width: 60px;
 		height: 40px;
 		margin-left: auto;
-    	outline: none;
+		outline: none;
+	animation: fadeIn 3s ease;
 		.icon-bar {
 			&:nth-child(2) {
 				margin: 5px 0;
@@ -33,20 +35,21 @@
 
 	ul {
 		text-align: center;
-    	width: 100%;
+		width: 100%;
+
 		li {
 			display: inline-block;
-			width:14.28%;
+			width: 14.28%;
 
 			&:nth-child(4) {
-			 margin-left: 7.14%;
+				margin-left: 7.14%;
 			}
 
-			 &.current-menu-item {
-					a {
-						color: $green;
-					}
-			 }
+			&.current-menu-item {
+				a {
+					color: $green;
+				}
+			}
 
 			a {
 				text-transform: uppercase;
@@ -54,8 +57,9 @@
 				font-size: 1rem;
 				font-family: $vantisa_black;
 				-webkit-font-smoothing: antialiased;
+
 				&:hover {
-						color: $green;
+					color: $green;
 				}
 			}
 		}
@@ -68,44 +72,41 @@
 	transform: translateX(-50%);
 	top: -9px;
 	width: 65px;
-img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
 }
 
 .nav-style {
 	&.main-head {
-		background-color: hsla(0,0%,100%,.95);
-		box-shadow: 0 1px 0 1px rgba(0,0,0,.1);
 		padding: 0.5rem 0 0.5rem;
 	}
-.navbar-toggler {
-	display: flex;
-}
 
-.logo {
-	transform: none;
-	left: 15px;
-    top: -1px;
-	transform: none;
-	transition: left .5s linear;
-}
-
-nav {
-	ul {
-		position: fixed;
-		width: 250px;
-		background-color: #fff;
-		height: calc(100vh - 5.5rem) !important;
-		transition: right .5s ease;
-		top: 5.5rem;
-		display: block !important;
-		overflow-y: auto;
-		right: -100%;
+	.navbar-toggler {
+		display: flex;
 	}
-}
+
+	.logo {
+		position: static;
+		animation: fadeIn 3s ease ;
+	}
+
+	nav {
+		ul {
+			position: fixed;
+			width: 250px;
+			background-color: #fff;
+			height: calc(100vh - 5.5rem) !important;
+			transition: right .5s ease;
+			top: 5.5rem;
+			display: block !important;
+			overflow-y: auto;
+			right: -100%;
+		}
+	}
 
 }
 
@@ -113,6 +114,7 @@ nav {
 	.navbar-toggler {
 		.icon-bar {
 			width: 1.7em;
+
 			&:nth-child(2) {
 				display: none;
 			}
@@ -136,13 +138,39 @@ nav {
 			display: block;
 			margin: 0 !important;
 			padding: 0;
-      width: 100%;
+			width: 100%;
+
 			a {
 				color: #63a37a;
 				padding: 1.25rem;
 				border-bottom: 1px solid rgba(0, 0, 0, .1);
-				    min-width: 175px;
+				min-width: 175px;
 			}
 		}
 	}
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
 }
