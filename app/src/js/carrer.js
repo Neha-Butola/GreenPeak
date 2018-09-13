@@ -17,15 +17,15 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
 });
 
 
-$('.popup-vimeo').magnificPopup({
+$('.thevideo').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
-  removalDelay: 160,
   fixedContentPos: true,
 
 });
+
 if ($(window).width() > 1024) {
-  $('.the-video').mouseover(function () {
+  $('.thevideo').mouseover(function () {
     $(this).get(0).play();
   }).mouseout(function () {
     $(this).get(0).pause();
