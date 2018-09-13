@@ -460,6 +460,9 @@
 		padding-bottom: 0;
 		line-height: 2rem;
 	}
+	form input[type=submit] {
+		padding: 7px 15px 7px 23px;
+	}
 }
 
 @media (max-width: 576px) {
