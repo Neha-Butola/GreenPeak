@@ -166,7 +166,8 @@ function ajax_pagination()
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div class="position-relative">
-                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9" href="<?php the_field('video_url'); ?>"
+                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9"
+                           href="<?php the_field('video_url'); ?>"
                            loop="" preload="none" muted="" poster="<?php the_field('video_thumbnail'); ?>">
                         <source src="<?php the_field('video_file'); ?>"
                                 type="video/mp4">
@@ -276,3 +277,34 @@ function create_posttype()
  */
 add_action('init', 'create_posttype');
 
+//code to validate textarea
+function custom_textarea_validation_filter($result, $tag) {
+    $type = $tag['type'];
+    $name = $tag['name'];
+    //here textarea type name is 'message'
+    if($name == 'your-message') {
+        $value = $_POST[$name];
+        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)){
+            $result->invalidate( $tag, "Invalid characters." );
+        }
+    }
+    return $result;
+}
+add_filter('wpcf7_validate_textarea','custom_textarea_validation_filter', 10, 2);
+add_filter('wpcf7_validate_textarea*', 'custom_textarea_validation_filter', 10, 2);
+
+//code to validate textbox
+function custom_text_validation_filter($result, $tag) {
+    $type = $tag['type'];
+    $name = $tag['name'];
+    //here textbox type name is 'subject'
+    if($name == 'your-name' || $name == 'your-email') {
+        $value = $_POST[$name];
+        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)){
+            $result->invalidate( $tag, "Invalid characters." );
+        }
+    }
+    return $result;
+}
+add_filter('wpcf7_validate_text','custom_text_validation_filter', 10, 2);
+add_filter('wpcf7_validate_text*', 'custom_text_validation_filter', 10, 2);
