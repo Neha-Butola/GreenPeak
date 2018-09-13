@@ -57,4 +57,5 @@ jQuery(document).ready(function ($) {
             $('.nav-links .articles-load-more').hide(0);
         }
     });
+    jQuery.stellar();
 });
