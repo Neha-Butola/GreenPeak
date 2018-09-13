@@ -128,11 +128,11 @@ function greenpeak_scripts()
 {
     wp_enqueue_style('greenpeak-css', get_template_directory_uri() . '/dist/css/app.css', '', '1.0');
 
-    wp_enqueue_script('steller-js', '//cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js', array(), '0.6.2', true);
-
     wp_enqueue_script('jquery', get_template_directory_uri() . '//code.jquery.com/jquery-2.2.4.min.js', array(), '1.0', true);
 
     wp_enqueue_script('greenpeak-js', get_template_directory_uri() . '/dist/js/app.js', ['jquery'], '1.0', true);
+
+    wp_enqueue_script('steller-js', '//cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js', array(), '0.6.2', true);
 
     wp_enqueue_script('pagination', get_template_directory_uri() . '/js/pagination.js', ['jquery'], '1.0', true);
 
@@ -278,33 +278,37 @@ function create_posttype()
 add_action('init', 'create_posttype');
 
 //code to validate textarea
-function custom_textarea_validation_filter($result, $tag) {
+function custom_textarea_validation_filter($result, $tag)
+{
     $type = $tag['type'];
     $name = $tag['name'];
     //here textarea type name is 'message'
-    if($name == 'your-message') {
+    if ($name == 'your-message') {
         $value = $_POST[$name];
-        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)){
-            $result->invalidate( $tag, "Invalid characters." );
+        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)) {
+            $result->invalidate($tag, "Invalid characters.");
         }
     }
     return $result;
 }
-add_filter('wpcf7_validate_textarea','custom_textarea_validation_filter', 10, 2);
+
+add_filter('wpcf7_validate_textarea', 'custom_textarea_validation_filter', 10, 2);
 add_filter('wpcf7_validate_textarea*', 'custom_textarea_validation_filter', 10, 2);
 
 //code to validate textbox
-function custom_text_validation_filter($result, $tag) {
+function custom_text_validation_filter($result, $tag)
+{
     $type = $tag['type'];
     $name = $tag['name'];
     //here textbox type name is 'subject'
-    if($name == 'your-name' || $name == 'your-email') {
+    if ($name == 'your-name' || $name == 'your-email') {
         $value = $_POST[$name];
-        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)){
-            $result->invalidate( $tag, "Invalid characters." );
+        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)) {
+            $result->invalidate($tag, "Invalid characters.");
         }
     }
     return $result;
 }
-add_filter('wpcf7_validate_text','custom_text_validation_filter', 10, 2);
+
+add_filter('wpcf7_validate_text', 'custom_text_validation_filter', 10, 2);
 add_filter('wpcf7_validate_text*', 'custom_text_validation_filter', 10, 2);
