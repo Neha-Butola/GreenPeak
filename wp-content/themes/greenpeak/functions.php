@@ -132,7 +132,7 @@ function greenpeak_scripts()
 
     wp_enqueue_script('greenpeak-js', get_template_directory_uri() . '/dist/js/app.js', ['jquery'], '1.0', true);
 
-    wp_enqueue_script('steller-js', '//cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js', array(), '0.6.2', true);
+    wp_enqueue_script('steller-js', '//cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js', ['jquery'],'0.6.2', true);
 
     wp_enqueue_script('pagination', get_template_directory_uri() . '/js/pagination.js', ['jquery'], '1.0', true);
 
