@@ -133,11 +133,11 @@ if ($articles->have_posts()): ?>
                     </div>
                 </div>
             <?php endwhile; ?>
-            <div class="nav-links text-center">
-                <a href="#" class="articles-load-more" page="2" data-type="articles"
-                   total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
-                    More<i class="fas fa-angle-down"></i></a>
-            </div>
+        </div>
+        <div class="nav-links text-center">
+            <a href="#" class="articles-load-more" page="2" data-type="articles"
+               total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
+                More<i class="fas fa-angle-down"></i></a>
         </div>
     </section>
     <!-- * =============== /Articles Section =============== * -->
