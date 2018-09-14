@@ -18,18 +18,14 @@ html {
 }
 
 body {
-//	background-color: $gray-100;
-	font-family: $vantisa_regular;
+	font-family: $vantisa_black;
+	-webkit-font-smoothing: antialiased;
 	font-size: 1.75rem;
 	margin: 0;
 	padding: 0;
 	line-height: 2.375rem;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-	&.page-template-services {
-		overflow: scroll;
-		overflow-y: hidden;
-	}
 }
 
 h1,
@@ -39,7 +35,7 @@ h4,
 h5 {
 	font-family: $vantisa_black;
 	margin-bottom: 1rem;
-  line-height: 3.375rem;
+   line-height: 3.375rem;
 	font-weight: 400;
 }
 

@@ -47,19 +47,10 @@
          -webkit-font-smoothing: antialiased;
          position: relative;
          line-height: 1.1;
-          &:before {
-            position: absolute;
-            content: '';
-            background: rgba(255,255,255,0.5);
-            top: -5px;
-            left: 50%;
-            width: 65%;
-            transform: translateX(-50%);
-            height: 1px;
-          }
          .info {
+            border-top: 1px solid hsla(0,0%,100%,.5);
             border-bottom: 1px solid rgba(255,255,255,0.5);
-            padding: 0 5px 10px;
+            padding: 10px 5px;
          }
          .person_name{
            display: inline-block;
@@ -220,7 +211,6 @@
   .figure-caption {
     padding: 0 8%;
     h3 {
-      text-transform: capitalize;
       font-family: $vantisa_black;
       margin-bottom: 5px;
       line-height: 1.2;

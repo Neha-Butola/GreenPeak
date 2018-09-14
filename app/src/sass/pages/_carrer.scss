@@ -177,7 +177,7 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       &:nth-of-type(7) .parallax-bg {
         width: 400px;
         height: 210px;
-        left: 151px !important;
+        left: -59px !important;
       }
 
       &:nth-of-type(3) .parallax-bg {
@@ -195,10 +195,15 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       &:nth-of-type(2) .parallax-bg {
         height: 300px;
         width: 300px;
-        left: 11px !important;
+        left: -59px !important;
       }
     }
   }
+}
+
+.col-12.video-play .value-sec h4{
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .video-play {
