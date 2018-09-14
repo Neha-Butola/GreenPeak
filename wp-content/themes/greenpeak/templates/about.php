@@ -104,7 +104,7 @@ if (!empty($consultants)):?>
                                         <figcaption class="figure-caption">
                                             <h3><span><?php echo $consultant['consultant_name']; ?></span></h3>
                                             <h6 class="desigantion">
-                                                <div><?php echo $consultant['consultant_designation']; ?>,</div>
+                                                <div><?php echo $consultant['consultant_designation']; ?></div>
                                                 <div><?php echo $consultant['consultant_location']; ?></div>
                                             </h6>
                                         </figcaption>
