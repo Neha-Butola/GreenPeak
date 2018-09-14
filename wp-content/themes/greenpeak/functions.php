@@ -177,7 +177,9 @@ function ajax_pagination()
                         <i class="fas fa-play"></i>
                     </div>
                 </a>
-            <?php endwhile; ?>
+            <?php endwhile;
+            wp_reset_query();
+            ?>
         <?php }
     } elseif ($data_type == 'articles') {
         $offset = ($page - 1) * 6;
@@ -191,7 +193,7 @@ function ajax_pagination()
         if ($articles->have_posts()):
             while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg">
+                <div background-image="<?php the_field('articles_image'); ?>" class="fixed-bg" data-loaded="true" style="background-image: url(<?php the_field('articles_image'); ?>">
                     <div class="container">
                         <div class="text-center article-block">
                             <div class="position-relative">
