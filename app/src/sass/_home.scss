@@ -48,6 +48,10 @@
   width: 100%;
   text-align: center;
   z-index: 9;
+  -webkit-font-smoothing: initial;
+  .animating-line {
+    width: 0;
+  }
 
   * {
     text-transform: uppercase;
