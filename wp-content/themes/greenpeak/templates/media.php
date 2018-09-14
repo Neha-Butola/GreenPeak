@@ -42,8 +42,10 @@ if ($videos->have_posts()): ?>
     <!-- * =============== Media Video Section =============== * -->
     <section class="media-video">
         <div class="container" id="videos">
-            <h2 class="text-center text-md-left left-animating">
+            <h2 class="text-center text-md-left">
                 <span><?php the_field('video_section_heading'); ?></span></h2>
+            <div class="animating-line green-line" data-aos="slide-right"
+                 data-aos-delay="250"></div>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <a class="position-relative thevideo w-100" href="https://vimeo.com/45830194">
                     <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9"
@@ -80,8 +82,10 @@ if ($articles->have_posts()): ?>
     <!-- * =============== Articles Section =============== * -->
     <section>
         <div class="container">
-            <h2 class="text-center text-md-left left-animating">
+            <h2 class="text-center text-md-left">
                 <span><?php the_field('articles_section_heading') ?></span></h2>
+            <div class="animating-line green-line" data-aos="slide-right"
+                 data-aos-delay="250"></div>
         </div>
         <div class="articles-sec" id="articles">
             <?php while ($articles->have_posts()):

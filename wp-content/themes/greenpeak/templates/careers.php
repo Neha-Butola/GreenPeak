@@ -66,8 +66,10 @@ if (!empty($values)):
                     <?php if ($value['option'] == 'Image'):
                         if ($count % 2 == 0): ?>
                             <div class="col-md-5 pt-5">
-                                <h2 class="left-animating text-center text-md-left" data-aos="fade-right">
+                                <h2 class="text-center text-md-left">
                                     <span><?php echo $value['heading']; ?></span></h2>
+                                <div class="animating-line green-line" data-aos="slide-right"
+                                     data-aos-delay="250"></div>
                                 <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
                                     <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                          data-background-image="<?php echo $value['background_image_one']; ?>"></div>
@@ -85,9 +87,10 @@ if (!empty($values)):
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
                             </div>
                             <div class="col-md-5 pt-md-5 text-right">
-                                <h2 class="left-animating right-animating text-center text-md-right"
-                                    data-aos="fade-left">
+                                <h2 class="right-animating text-center text-md-right">
                                     <span><?php echo $value['heading']; ?></span></h2>
+                                <div class="animating-line green-line right-line" data-aos="slide-left"
+                                     data-aos-delay="250"></div>
                                 <h4 class="pt-md-5"><?php echo $value['sub_heading']; ?>
                                 </h4>
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
@@ -104,14 +107,16 @@ if (!empty($values)):
                                 <div class="lozad parallax-bg" data-stellar-vertical-offset="150"
                                      data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
-                                <a href="<?php echo $value['video_url']; ?>" class="thevideo"><video class="thevideo" href="<?php echo $value['video_url']; ?>" loop=""
-                                       preload="none"
-                                       muted=""
-                                       poster="<?php echo $value['video_thumbnail']; ?>">
-                                    <source src="<?php echo $value['video_file']; ?>"
-                                            type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video></a>
+                                <a href="<?php echo $value['video_url']; ?>" class="thevideo">
+                                    <video class="thevideo" href="<?php echo $value['video_url']; ?>" loop=""
+                                           preload="none"
+                                           muted=""
+                                           poster="<?php echo $value['video_thumbnail']; ?>">
+                                        <source src="<?php echo $value['video_file']; ?>"
+                                                type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
                                 <div class="play-btn">
                                     <i class="fas fa-play"></i>
                                 </div>
