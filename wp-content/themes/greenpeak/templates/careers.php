@@ -65,7 +65,7 @@ if (!empty($values)):
                 <?php foreach ($values as $value): ?>
                     <?php if ($value['option'] == 'Image'):
                         if ($count % 2 == 0): ?>
-                            <div class="col-md-5 pt-5">
+                            <div class="pt-5">
                                 <h2 class="text-center text-md-left">
                                     <span><?php echo $value['heading']; ?></span></h2>
                                 <div class="animating-line green-line" data-aos="slide-right"
@@ -75,7 +75,7 @@ if (!empty($values)):
                                          data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 </h4>
                             </div>
-                            <div class="col-md-7 text-right text-md-right">
+                            <div class="col-md-7 ml-auto text-center text-md-right">
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
@@ -86,8 +86,8 @@ if (!empty($values)):
                                      data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
                             </div>
-                            <div class="col-md-5 pt-md-5 text-right">
-                                <h2 class="right-animating text-center text-md-right">
+                            <div class="pt-md-5 ml-auto text-right">
+                                <h2 class="text-center text-md-left">
                                     <span><?php echo $value['heading']; ?></span></h2>
                                 <div class="animating-line green-line right-line" data-aos="slide-left"
                                      data-aos-delay="250"></div>
