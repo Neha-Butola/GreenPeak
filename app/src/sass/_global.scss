@@ -23,8 +23,18 @@
 .right-line {
   right: 0;
   animation: slideInFromRight 1s ease .7s;
-  margin-right: -50vw;
   margin-left: auto !important;
+}
+
+.right-animation{
+  margin-right: -50vw;
+}
+
+.green-line {
+  background-color: $green3;
+  position: relative;
+  margin-left: -50vw;
+  width: calc(100% + 50vw) !important;
 }
 
 .section-divider {

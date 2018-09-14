@@ -36,7 +36,7 @@
 .site-brand {
   font-size: 2.5rem;
   color: $green;
- 	font-family: $vantisa_regular;
+  font-family: $vantisa_regular;
   line-height: 3.75rem;
 }
 
@@ -49,6 +49,7 @@
   text-align: center;
   z-index: 9;
   -webkit-font-smoothing: initial;
+
   .animating-line {
     width: 0;
   }
@@ -63,7 +64,8 @@
     margin-bottom: .8rem;
     margin-top: 1.3rem;
     font-family: $vantisa_regular;
-    span{
+
+    span {
       padding: 0 15px;
     }
   }
@@ -141,15 +143,10 @@
   width: 100vw;
 }
 
-.green-line {
- background-color: green;
-     position: relative;
-margin-left: -50vw;
-width: calc(100% + 50vw) !important;
-}
 
-.detail-banner{
-  &:before{
-      mix-blend-mode: unset;
+
+.detail-banner {
+  &:before {
+    mix-blend-mode: unset;
   }
 }
