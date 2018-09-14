@@ -23,6 +23,7 @@
 .right-line {
   right: 0;
   animation: slideInFromRight 1s ease .7s;
+  left: auto !important;
 }
 
 .section-divider {
@@ -47,25 +48,6 @@
       background-position: center center;
       background-repeat: no-repeat;
 }
-
- .left-animating
- {
-    span {
-     position: relative;
-     line-height: 4.75rem;
-
-     &:after {
-       position: absolute;
-       content: "";
-       background: #63a37a;
-       bottom: -9px;
-       right: 0;
-       height: 1px;
-       left: -1000%;
-       animation: slideInFromLeft 1s ease .7s;
-     }
-   }
- }
 
  .right-animating{
    span{
