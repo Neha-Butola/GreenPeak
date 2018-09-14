@@ -108,14 +108,19 @@ if (!empty($values)):
                                      data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
                                 <a href="<?php echo $value['video_url']; ?>" class="thevideo">
-                                    <video class="thevideo" href="<?php echo $value['video_url']; ?>" loop=""
-                                           preload="none"
-                                           muted=""
-                                           poster="<?php echo $value['video_thumbnail']; ?>">
+                                    <img src="<?php echo $value['video_thumbnail']; ?>"
+                                         alt="BuildTrustingRelationshipsVideoPlaceholder_GP"
+                                         class="d-block d-md-none img-fluid">
+                                    <video class="d-none d-md-block embed-responsive embed-responsive-21by9" loop=""
+                                           preload="none" muted=""
+                                           poster="http://gpeak.ithands.net/wp-content/uploads/2018/09/BuildTrustingRelationshipsVideoPlaceholder_GP.jpg">
                                         <source src="<?php echo $value['video_file']; ?>"
                                                 type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
+                                    <div class="play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
                                 </a>
                                 <div class="play-btn">
                                     <i class="fas fa-play"></i>
