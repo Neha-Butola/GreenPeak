@@ -157,7 +157,7 @@ if (!empty($operations)):?>
                                         <figcaption class="figure-caption">
                                             <h3><span><?php echo $operation['operations_name']; ?></span></h3>
                                             <h6 class="desigantion">
-                                                <div><?php echo $operation['operations_designation']; ?>,</div>
+                                                <div><?php echo $operation['operations_designation']; ?></div>
                                                 <div><?php echo $operation['operations_location']; ?></div>
                                             </h6>
                                         </figcaption>
