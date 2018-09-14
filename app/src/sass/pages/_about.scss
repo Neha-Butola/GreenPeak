@@ -78,6 +78,7 @@
          position: relative;
        }
 
+
        &:before {
          background: url('/wp-content/themes/greenpeak/images/testimonial_gradient_bg.png');
          background-size: 54% 100%;
@@ -324,3 +325,10 @@
      //   -webkit-animation-name: fadeOut;
      //   animation-name: fadeOut;
      // }
+// .green-line{
+// background-color: green;
+// left: 0;
+// position: relative;
+// margin-left: -50vw;
+// width: calc(100% + 50vw) !important;
+// }
