@@ -42,3 +42,4 @@ $('.intro-desc.show').each(function () {
 // if (video.readyState === 4) {
 //   $('.banner-content').addClass('title-animate');
 // }
+
