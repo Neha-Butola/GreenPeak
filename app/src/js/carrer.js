@@ -2,7 +2,7 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
   loop: true,
   dots: true,
   autoplay: true,
-  smartSpeed: 600,
+  smartSpeed: 900,
   responsive: {
     0: {
       items: 1
@@ -16,6 +16,7 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
   }
 });
 
+// open video in popup
 
 $('.thevideo').magnificPopup({
   type: 'iframe',
@@ -23,13 +24,3 @@ $('.thevideo').magnificPopup({
   fixedContentPos: true,
 
 });
-
-//hover on video
-
-if ($(window).width() > 1024) {
-  $('.thevideo').mouseover(function () {
-    $(this).get(0).play();
-  }).mouseout(function () {
-    $(this).get(0).pause();
-  })
-}
