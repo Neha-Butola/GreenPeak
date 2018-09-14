@@ -130,7 +130,7 @@ function greenpeak_scripts()
 
     wp_enqueue_script('jQuery-2', 'https://code.jquery.com/jquery-2.2.4.min.js', array(), '1.0', true);
 
-    wp_enqueue_script('steller-js', 'https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js?ver=0.6.2', ['jquery'],'0.6.2', true);
+    wp_enqueue_script('steller-js', 'https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js?ver=0.6.2', ['jquery'], '0.6.2', true);
 
     wp_enqueue_script('greenpeak-js', get_template_directory_uri() . '/dist/js/app.js', ['jquery'], '1.0', true);
 
@@ -191,7 +191,7 @@ function ajax_pagination()
         if ($articles->have_posts()):
             while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div data-background-image="<?php echo get_the_post_thumbnail_url(); ?>" class="lozad fixed-bg">
+                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg">
                     <div class="container">
                         <div class="text-center article-block">
                             <div class="position-relative">
@@ -227,7 +227,7 @@ function ajax_pagination()
                                     <small>share on</small>
                                 </div>
 
-                                <a href="<?php the_permalink(); ?>" class="read">read article <span
+                                <a href="<?php the_permalink(); ?>" target="_blank" class="read">read article <span
                                             class="line"></span></a>
                             </div>
                         </div>
