@@ -10,7 +10,7 @@ get_header(); ?>
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
             <div class="site-brand mb-2" data-aos="fade-in"><?php the_field('banner_heading'); ?></div>
-            <div class="animating-line"></div>
+            <div class="animating-line" data-aos="fade-in"  data-aos-delay="1000"></div>
             <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
         <?php if (get_field('banner_video')): ?>
