@@ -139,9 +139,9 @@
 
 .green-line {
  background-color: green;
-     width: 271% !important;
      position: relative;
-     left: -200%;
+margin-left: -50vw;
+width: calc(100% + 50vw) !important;
 }
 
 .detail-banner{

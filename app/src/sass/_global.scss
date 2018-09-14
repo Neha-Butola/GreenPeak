@@ -23,7 +23,8 @@
 .right-line {
   right: 0;
   animation: slideInFromRight 1s ease .7s;
-  left: auto !important;
+  margin-right: -50vw;
+  margin-left: auto !important;
 }
 
 .section-divider {
