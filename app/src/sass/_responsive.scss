@@ -72,6 +72,9 @@
 // Medium devices
 
 @media (max-width: 1024px) {
+.parallax-secs section h2 {
+    font-size: 4.25rem;
+}
 	#animating-triangle {
 		display: none !important;
 	}
@@ -122,9 +125,6 @@
 		margin: 10px auto !important;
 	}
 
-	.parallax-secs section h2 {
-		font-size: 4.25rem;
-		}
 }
 
 // Small devices
