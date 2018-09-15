@@ -119,6 +119,10 @@ main {
 }
 
 .show-line {
-  opacity: 1;
+  opacity: 1 !important;
   animation: slideInFromLeft .4s ease;
+}
+
+.right-line.show-line {
+  animation: slideInFromRight 2s ease;
 }
