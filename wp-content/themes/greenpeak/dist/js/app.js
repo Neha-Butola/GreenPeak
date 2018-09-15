@@ -178,8 +178,11 @@ $('.intro-desc.show').each(function () {
 window.onload = function () {
   $('.site-brand').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
     $('.banner-content h1').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
-      $('.animating-line').addClass('show-line');
+      $('.banner-content .animating-line').addClass('show-line');
     });
+  });
+  $('.banner-content h1').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
+    $('.banner-content .animating-line').addClass('show-line');
   });
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
