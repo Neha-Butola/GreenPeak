@@ -2,7 +2,7 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
   loop: true,
   dots: true,
   autoplay: true,
-  smartSpeed: 120,
+  smartSpeed: 10,
   responsive: {
     0: {
       items: 1

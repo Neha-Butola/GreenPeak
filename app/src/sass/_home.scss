@@ -150,3 +150,13 @@
     mix-blend-mode: unset;
   }
 }
+
+.error404  {
+  .app > main{
+    height: calc(100% - 390px);
+    margin-top: 150px;
+  }
+  .content-area {
+    padding: 5% 0 0;
+  }
+}
