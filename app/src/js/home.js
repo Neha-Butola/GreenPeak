@@ -44,7 +44,7 @@ $('.intro-desc.show').each(function () {
 // }
 
 window.onload = function () {
-  $('.site-brand').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
+  $('.site-brand').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
     $('.banner-content h1').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
       $('.animating-line').addClass('show-line');
     });

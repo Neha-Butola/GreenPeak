@@ -10,10 +10,8 @@ window.Popper = Popper;
 // https://github.com/twbs/bootstrap/issues/20709
 import 'expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
-import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/tab';
-import 'bootstrap/js/dist/modal';
 import 'owl.carousel/dist/owl.carousel.min.js';
 
 //AOS Library animate on scroll
@@ -35,7 +33,6 @@ $(window).on('tp.lozad.observe', function () {
 
 // https://github.com/markdalgleish/stellar.js
 // Load this library from CDN
-//jQuery.stellar();
 
 $.stellar({
   parallaxBackgrounds: true,

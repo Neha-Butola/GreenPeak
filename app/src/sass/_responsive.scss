@@ -1,15 +1,13 @@
 /** =============== Responsive CSS =============== **/
 
-
-
-
 @media (min-width: 1799px) {
 	.container {
 		max-width: 1600px;
 	}
-.html5gallery-car-mask-1 {
-	left: 24px !important;
-}
+
+	.html5gallery-car-mask-1 {
+		left: 24px !important;
+	}
 
 }
 
@@ -387,10 +385,10 @@
 	}
 
 	/* media Page */
-.article-block>div:after {
-	height: 1px;
-	width: 33%;
-}
+	.article-block>div:after {
+		height: 1px;
+		width: 33%;
+	}
 
 	.articles-sec {
 		div {
