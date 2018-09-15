@@ -64,7 +64,7 @@
     margin-bottom: .8rem;
     margin-top: 1.3rem;
     font-family: $vantisa_regular;
-
+  opacity:0;
     span {
       padding: 0 15px;
     }
@@ -159,4 +159,14 @@
   .content-area {
     padding: 5% 0 0;
   }
+}
+
+.show{
+  opacity: 1 !important;
+  animation: fadeIn 1s ease;
+}
+
+.show-line{
+  opacity: 1;
+  animation: slideInFromLeft 1s ease;
 }

@@ -1,23 +1,12 @@
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity:0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
 .animating-line {
   position: absolute;
   text-align: center;
   width: 50%;
   height: 1px;
+  opacity: 0;
   background-color: $white;
-  animation: slideInFromLeft 1s ease .7s;
 }
 
 .right-line {
@@ -26,7 +15,7 @@
   margin-left: auto !important;
 }
 
-.right-animation{
+.right-animation {
   margin-right: -50vw;
 }
 
@@ -53,29 +42,64 @@
   }
 }
 
-.fixed-bg{
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+.fixed-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
- .right-animating{
-   span{
-     &:after{
-    left: 0;
-    right: -100%;
-animation: slideInFromRight 1s ease .7s;
- }}
- }
- .green-bg{
-   background-color: #63a37a;
- }
+.right-animating {
+  span {
+    &:after {
+      left: 0;
+      right: -100%;
+      animation: slideInFromRight 1s ease .7s;
+    }
+  }
+}
 
- p:empty{
-   display: none;
- }
+.green-bg {
+  background-color: #63a37a;
+}
 
- main{
-   overflow-x: hidden;
- }
+p:empty {
+  display: none;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/* custom animation */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
