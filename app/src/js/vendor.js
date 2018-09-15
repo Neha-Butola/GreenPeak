@@ -37,10 +37,11 @@ $(window).on('tp.lozad.observe', function () {
 // Load this library from CDN
 
 
+jQuery.stellar();
 
-$.stellar({
-  verticalOffset: 150
-});
+// $.stellar({
+//   verticalOffset: 150
+// });
 
 // magnific pop up
 require('magnific-popup');

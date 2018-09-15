@@ -401,7 +401,7 @@
           // canvas.canvas.clip();
 
           if (toAdd) {
-            startingHeight = startingHeight * 1.2;
+            startingHeight = startingHeight * 1.4;
             if (startingHeight >= 600 * self.pixels.y) {
               startingHeight = 600 * self.pixels.y;
             }
@@ -468,12 +468,13 @@
       triangle.setupTriangleAnimation();
       var originalScrollValue = $window.scrollTop();
       window.addEventListener('scroll', function () {
-        if (originalScrollValue >= $window.scrollTop()) { //decreasing
-          if ($window.scrollTop() <= ($('#animating-triangle').offset().top + $('#animating-triangle').height())) {
-            triangle.triangleAnimation(false);
-          }
+        // if (originalScrollValue >= $window.scrollTop()) {
+        //   if ($window.scrollTop() <= ($('#animating-triangle').offset().top + $('#animating-triangle').height())) {
+        //     triangle.triangleAnimation(false);
+        //   }
 
-        } else if (originalScrollValue < $window.scrollTop()) { //increasing
+        // } else
+        if (originalScrollValue < $window.scrollTop()) { //increasing
           if ($window.scrollTop() >= $('#animating-triangle').offset().top * 0.8) {
             triangle.triangleAnimation(true);
           }

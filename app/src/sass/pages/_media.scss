@@ -12,11 +12,11 @@
       }
 
       &:nth-child(1) {
-        text-align: left;
+        text-align: left !important;
       }
 
       &:nth-child(3) {
-        text-align: right;
+        text-align: right !important;
       }
     }
   }
@@ -77,7 +77,7 @@
 
     &:after {
       height: 1px;
-      width: 45%;
+      width: 43%;
     }
   }
 
@@ -161,6 +161,7 @@
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     font-size: 15px;
+    letter-spacing: 3px;
   }
 }
 
@@ -172,7 +173,7 @@
   transform: translateX(-50%);
   color: $white;
   font-size: 1rem;
-
+   letter-spacing: 3px;
   .line {
     position: absolute;
     top: 51%;
@@ -197,7 +198,7 @@
       height: 0;
       border-style: solid;
       border-width: 10px 0 10px 10px;
-      border-color: transparent transparent transparent #fff;
+      border-color: transparent transparent transparent $white;
       position: absolute;
       top: 50%;
       margin-top: -10px;
@@ -302,12 +303,4 @@
     color: $green3;
   }
 }
-}
-
-.articles-load-more {
-  padding: 10px 0 20px;
-  i {
-    vertical-align: middle;
-    padding-left: 10px;
-  }
 }
