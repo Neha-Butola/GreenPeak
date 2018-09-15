@@ -112,6 +112,10 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
     position: relative;
   }
 
+  h4 {
+    line-height: 2.375rem;
+  }
+
   .row {
     padding-top: 8.5rem;
 
@@ -128,7 +132,7 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
   background-repeat: no-repeat;
   position: absolute;
   z-index: -1;
-  display: block !important;
+    margin-top: -415px;
   object-fit: contain;
 }
 

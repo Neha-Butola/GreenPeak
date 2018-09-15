@@ -38,6 +38,7 @@
   color: $green;
   font-family: $vantisa_regular;
   line-height: 3.75rem;
+  opacity: 0;
 }
 
 .banner-content {
@@ -52,6 +53,7 @@
 
   .animating-line {
     width: 0;
+    opacity: 0;
   }
 
   * {
@@ -161,12 +163,3 @@
   }
 }
 
-.show-fade{
-  opacity: 1 !important;
-  animation: fadeIn 1s ease;
-}
-
-.show-line{
-  opacity: 1;
-  animation: slideInFromLeft 1s ease;
-}
