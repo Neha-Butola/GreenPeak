@@ -18,6 +18,31 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
+    <style>
+    @media (max-width: 1428px){
+.banner video {
+   float: none;
+   height: 100vh;
+   width: 100%;
+   object-fit: cover;
+}}
+@media (max-width: 1428px){
+.banner video {
+   float: none;
+   height: 100vh;
+   width: 100%;
+   object-fit: cover;
+}
+.parallax-secs section h2 {
+   font-size: 5.25rem;
+}
+
+.mail-link {
+   font-size: 1.2rem;
+   line-height: 1;
+}
+}
+</style>
 </head>
 
 <body <?php body_class(); ?>>
