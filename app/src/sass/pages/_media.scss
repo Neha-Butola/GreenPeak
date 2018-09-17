@@ -12,11 +12,11 @@
       }
 
       &:nth-child(1) {
-        text-align: left !important;
+        text-align: left;
       }
 
       &:nth-child(3) {
-        text-align: right !important;
+        text-align: right;
       }
     }
   }
@@ -210,7 +210,7 @@
 
 .articles-sec {
   div {
-    &:nth-child(2) {
+    &:nth-child(even) {
       &:hover{
         .read{
           color: $green3;
@@ -297,10 +297,18 @@
 
 
 
-.articles-sec div:nth-of-type(2){
+.articles-sec div:nth-of-type(even){
 &:hover {
   .read {
     color: $green3;
   }
 }
+}
+
+.articles-load-more {
+  padding: 15px 0; 
+  i {
+    vertical-align: middle;
+    padding-left: 15px;
+  }
 }

@@ -139,12 +139,21 @@
 			margin: 0 !important;
 			padding: 0;
 			width: 100%;
+			&.current-menu-item {
+				a {
+					color: inherit;
+				}
+			}
+
 
 			a {
 				color: #63a37a;
 				padding: 1.25rem;
 				border-bottom: 1px solid rgba(0, 0, 0, .1);
 				min-width: 175px;
+				&:hover {
+					color: inherit;
+				}
 			}
 		}
 	}

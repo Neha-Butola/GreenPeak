@@ -78,7 +78,6 @@
 	}
 }
 
-
 // Medium devices
 
 @media (max-width: 1024px) {
@@ -136,13 +135,12 @@
 
 @media (max-height: 768px) {
 
-
 	.service-section {
 		font-size: 19px;
 	}
 
 	.service-col img {
-		max-height: 210px;
+		max-height: 190px;
 	}
 
 	.service-col .col-below {
@@ -155,6 +153,7 @@
 
 	.service-wrap li {
 		padding: 2px 0;
+		line-height: 1.12;
 	}
 
 	.timeline {
@@ -168,7 +167,7 @@
 }
 
 
-@media (max-height: 600px) {
+@media (max-height: 599px) {
 	.service-wrap {
 		padding-top: 100px;
 	}
