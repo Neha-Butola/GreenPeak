@@ -71,9 +71,9 @@ if (!empty($values)):
                                 <div class="animating-line green-line" data-aos="slide-right"
                                      data-aos-delay="250"></div>
                                 <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
-                                    <div class="lozad parallax-bg" data-stellar-ratio="0.5"
-                                         data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 </h4>
+                                <div class="lozad parallax-bg" data-stellar-ratio="0.5"
+                                     data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                             </div>
                             <div class="col-md-7 ml-auto text-center text-md-right">
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
