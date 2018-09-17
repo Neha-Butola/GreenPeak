@@ -45,7 +45,7 @@ if ($videos->have_posts()): ?>
             <span><?php the_field('video_section_heading'); ?></span></h2>
         <div class="animating-line green-line" data-aos="slide-right"
              data-aos-delay="250"></div>
-        <div class="articles-sec" id="articles">
+        <div class="articles-sec" id="videos">
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
                     <div class="container">

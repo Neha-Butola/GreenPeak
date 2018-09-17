@@ -128,8 +128,8 @@ function greenpeak_scripts()
 {
     wp_enqueue_style('greenpeak-css', get_template_directory_uri() . '/dist/css/app.css', '', '1.0');
 
-    wp_deregister_script( 'jquery' );
-  wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', '', '2.2.4', true);
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', '', '2.2.4', true);
 
     wp_enqueue_script('steller-js', 'https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js?ver=0.6.2', ['jquery'], '0.6.2', true);
 
@@ -168,18 +168,49 @@ function ajax_pagination()
         $videos = new WP_Query($parameters);
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <a class="position-relative thevideo w-100" href="https://vimeo.com/45830194">
-                    <video class="thevideo popup-vimeo embed-responsive embed-responsive-21by9"
-                           href="<?php the_field('video_url'); ?>"
-                           loop="" preload="none" muted="" poster="<?php the_field('video_thumbnail'); ?>">
-                        <source src="<?php the_field('video_file'); ?>"
-                                type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="play-btn">
-                        <i class="fas fa-play"></i>
+                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg"
+                     data-loaded="true" style="background-image: url(<?php the_field('background_image'); ?>">
+                    <div class="container">
+                        <div class="text-center article-block">
+                            <div class="position-relative">
+                                <h3><?php the_title(); ?></h3>
+                                <?php if (get_field('sub_heading')): ?>
+                                    <h4> - <?php the_field('sub_heading'); ?></h4>
+                                <?php endif; ?>
+                                <div class="share">
+                                    <!-- Sharingbutton LinkedIn -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                                       target="_blank" aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Sharingbutton Twitter -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
+                                       target="_blank"
+                                       aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-twitter"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <small>share on</small>
+                                </div>
+
+                                <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch
+                                    video<span
+                                            class="line"></span></a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
             <?php endwhile;
             wp_reset_query();
             ?>
@@ -196,7 +227,8 @@ function ajax_pagination()
         if ($articles->have_posts()):
             while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div background-image="<?php the_field('articles_image'); ?>" class="fixed-bg" data-loaded="true" style="background-image: url(<?php the_field('articles_image'); ?>">
+                <div background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg" data-loaded="true"
+                     style="background-image: url(<?php the_field('articles_image'); ?>">
                     <div class="container">
                         <div class="text-center article-block">
                             <div class="position-relative">
