@@ -39,10 +39,11 @@
 
   .position-relative {
     min-height: 295px;
-    padding: 10px 10px 2rem;
+    padding: 10px 10px 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     >p:nth-of-type(1) {
       position: relative;
 
@@ -105,11 +106,12 @@
     color: $white;
     max-width: 72rem;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 15px 1.8rem;
   }
 
   .title {
     position: static;
+
     &:after,
     &:before {
       background: $white;
@@ -133,8 +135,10 @@
 
   .video-title {
     color: #8cd1a5 !important;
-    font-size: 3.2rem
+    font-size: 3.2rem;
+    margin-bottom: 5px;
   }
+
   .video-subtitle {
     padding: 0;
     margin: 0;
@@ -183,7 +187,8 @@
   transform: translateX(-50%);
   color: $white;
   font-size: 1rem;
-   letter-spacing: 3px;
+  letter-spacing: 3px;
+
   .line {
     position: absolute;
     top: 51%;
@@ -221,16 +226,19 @@
 
 .media-list {
   padding-top: 5.5rem;
+
   div {
     &:nth-child(even) {
-      &:hover{
-        .read{
+      &:hover {
+        .read {
           color: $green3;
         }
       }
+
       .read {
         bottom: -13px;
       }
+
       .line {
         &:after {
           border-color: transparent transparent transparent $black;
@@ -245,6 +253,7 @@
     &:hover {
       .read {
         color: $green;
+
         .line {
           &:before {
             right: -10px;
@@ -258,6 +267,7 @@
       }
     }
   }
+
   >div.fixed-bg {
     &:nth-of-type(even) {
       .position-relative {
@@ -267,6 +277,12 @@
           &:before {
             background-color: $black;
           }
+        }
+      }
+
+      &:hover {
+        .read {
+          color: #525259;
         }
       }
 
@@ -297,7 +313,7 @@
         color: #525259;
       }
 
-      .h3 {
+      h3 {
         color: #312c5c;
       }
     }
@@ -306,24 +322,27 @@
 
 
 
-.articles-sec div:nth-of-type(even){
-&:hover {
-  .read {
-    color: $green3;
+.articles-sec div:nth-of-type(even) {
+  &:hover {
+    .read {
+      color: $green3;
+    }
   }
 }
-}
 
-.articles-load-more {
+
+.articles-load-more,
+.video-load-more {
   padding: 15px 0;
+
   i {
     vertical-align: middle;
     padding-left: 15px;
   }
 }
 
-.section-spacing{
-  .articles-load-more{
+.section-spacing {
+  .articles-load-more {
     padding-bottom: 5rem;
   }
 }

@@ -6,7 +6,7 @@
 }
 
 .service-page {
-    height: 100vh;
+    height: 100.1vh;
     overflow-y: hidden;
     main {
         height: 100%;
@@ -63,7 +63,6 @@
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
-        display: none;
       }
     &::-webkit-scrollbar-button {
         width: 0;
