@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="banner fixed-bg position-relative"
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
-            <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
+            <h1><span><?php the_field('banner_heading'); ?></span></h1>
             <div class="animating-line"></div>
         </div>
     </div>
@@ -54,9 +54,9 @@ if ($videos->have_posts()): ?>
                     <div class="container">
                         <div class="text-center media-block">
                             <div class="position-relative">
-                                <h2 class="video-title"><?php the_title(); ?></h2>
+                                <h2 class="video-title title"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_heading')): ?>
-                                    <h3 class="video-subtitle title"><?php the_field('sub_heading'); ?></h3>
+                                    <h3 class="video-subtitle"><?php the_field('sub_heading'); ?></h3>
                                 <?php endif; ?>
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->
