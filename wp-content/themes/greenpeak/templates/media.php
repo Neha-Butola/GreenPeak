@@ -54,9 +54,9 @@ if ($videos->have_posts()): ?>
                     <div class="container">
                         <div class="text-center media-block">
                             <div class="position-relative">
-                                <h2 class="video-titile"><?php the_title(); ?></h2>
+                                <h2 class="video-title"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_heading')): ?>
-                                    <h3 class="video-subtitile"><?php the_field('sub_heading'); ?></h3>
+                                    <h3 class="video-subtitle title"><?php the_field('sub_heading'); ?></h3>
                                 <?php endif; ?>
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->
@@ -125,7 +125,7 @@ if ($articles->have_posts()): ?>
                     <div class="container">
                         <div class="text-center media-block">
                             <div class="position-relative">
-                                <h3><?php the_title(); ?></h3>
+                                <h3 class="title"><?php the_title(); ?></h3>
                                 <?php $content = get_the_content();
                                 $content = wp_trim_words($content, '50');
                                 ?>
