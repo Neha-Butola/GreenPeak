@@ -21,11 +21,16 @@
     <style>
     @media (max-width: 1428px){
 .banner video {
-   float: none;
-   height: 100vh;
-   width: 100%;
+   float: left;
+   height: auto;
    object-fit: cover;
-}}
+}
+.banner.video-banner {
+   height: auto;
+   float: left;
+   min-height: 100vh;
+}
+}
 @media (max-width: 1428px){
 .banner video {
    float: none;
@@ -42,11 +47,11 @@
    line-height: 1;
 }
 .media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
-color: #000;
+color: #000 !important;
 }
 
 .media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
-color: #8cd1a5;
+color: #8cd1a5 !important;
 }
 }
 </style>
