@@ -30,6 +30,7 @@
    float: left;
    min-height: 100vh;
 }
+}
 .parallax-secs section h2 {
    font-size: 5.25rem;
 }
