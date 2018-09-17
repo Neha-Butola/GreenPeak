@@ -19,17 +19,12 @@
 
     <?php wp_head(); ?>
     <style>
-@media (max-width: 1428px){
+@@media (max-width: 1428px){
 .banner video {
-   float: left;
-   height: auto;
+   float: none;
+   height: 100vh;
+   width: 100%;
    object-fit: cover;
-}
-.banner.video-banner {
-   height: auto;
-   float: left;
-   min-height: 100vh;
-}
 }
 .parallax-secs section h2 {
    font-size: 5.25rem;
@@ -39,13 +34,11 @@
    font-size: 1.2rem;
    line-height: 1;
 }
+}
 .media-list>div.fixed-bg:nth-of-type(2n) .read{
 color: #000 !important;
 }
 
-.media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
-color: #8cd1a5 !important;
-}
 </style>
 </head>
 
