@@ -50,7 +50,11 @@ color: #77bd90 !important;
 .media-list div.fixed-bg.lozad:hover .read {
    color: #77bd90 !important;
 }
-
+@media (max-width: 1160px){
+.banner.video-banner {
+height: 100vh;
+} 
+}
 </style>
 </head>
 
