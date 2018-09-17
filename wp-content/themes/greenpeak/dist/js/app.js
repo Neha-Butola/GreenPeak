@@ -172,19 +172,18 @@ window.onload = function () {
     });
   });
 
-  setTimeout(function () {
-    var titlewidth;
-    titlewidth = $('.banner-content h1 span').width();
-    valuetitle = $('.values-title h2 span').width();
-    titlewidth = titlewidth / 2;
-    valuetitle = valuetitle / 2;
-    $('.banner-content .animating-line').css({
-      'width': 'calc(50% + ' + titlewidth + 'px)'
-    });
-    $('.value-sec .animating-line').css({
-      'width': 'calc(50% + ' + valuetitle + 'px)'
-    });
-  }, 300);
+  var titlewidth;
+  titlewidth = $('.banner-content h1 span').width();
+  valuetitle = $('.values-title h2 span').width();
+  titlewidth = titlewidth / 2;
+  valuetitle = valuetitle / 2;
+  $('.banner-content .animating-line').css({
+    'width': 'calc(50% + ' + titlewidth + 'px)'
+  });
+  $('.value-sec .animating-line').css({
+    'width': 'calc(50% + ' + valuetitle + 'px)'
+  });
+
   var vid = document.getElementById("banner-video");
 
   setTimeout(function () {
