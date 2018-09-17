@@ -9,9 +9,9 @@ get_header(); ?>
     <div class="banner fixed-bg position-relative"
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
-            <div class="site-brand mb-2" data-aos="fade-in"><?php the_field('banner_heading'); ?></div>
-            <div class="animating-line" data-aos="fade-in"  data-aos-delay="2000"></div>
-            <h1 data-aos="fade-in" data-aos-delay="300"><span><?php the_field('banner_sub_heading'); ?></span></h1>
+            <div class="site-brand mb-2"><?php the_field('banner_heading'); ?></div>
+            <div class="animating-line"></div>
+            <h1><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
         <?php if (get_field('banner_video')): ?>
             <video id="banner-video" autoplay="autoplay" loop="loop" playsinline preload="none" muted=""

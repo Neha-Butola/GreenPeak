@@ -15,7 +15,7 @@ get_header();
 
 			<div class="container text-center">
                 <h3>Oops! The page is not found.</h3>
-				<div class="text-center"><a href="/homepage">Back to Home</a></div>
+				<div class="text-center mb-3"><a href="/homepage">Back to Home</a></div>
             </div>
 
 		</main><!-- #main -->
