@@ -41,6 +41,13 @@
    font-size: 1.2rem;
    line-height: 1;
 }
+.media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
+color: #000;
+}
+
+.media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
+color: #8cd1a5;
+}
 }
 </style>
 </head>
