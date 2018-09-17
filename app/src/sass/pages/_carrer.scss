@@ -31,6 +31,7 @@
     opacity: 0 !important;
   }
 }
+
 a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
   display: none !important;
 }
@@ -132,12 +133,13 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
   background-repeat: no-repeat;
   position: absolute;
   z-index: -1;
-    margin-top: -415px;
+  margin-top: -415px;
   object-fit: contain;
 }
 
 .value-sec {
-      overflow: hidden;
+  overflow: hidden;
+
   .row {
 
     >div {
@@ -174,10 +176,13 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       }
 
       &:nth-of-type(4) .parallax-bg {
-        height: 180px;
-        width: 270px;
-        left: 151px !important;
-      }
+          height: 180px;
+          left: auto !important;
+          width: 270px;
+          margin-top: -504px;
+          right: 120px;
+          }
+
 
       &:nth-of-type(7) .parallax-bg {
         width: 400px;
@@ -192,28 +197,30 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       }
 
       &:nth-of-type(1) .parallax-bg {
-        width: 250px;
         height: 180px;
-        left: 72px !important;
+        left: 348px !important;
+        width: 250px;
+        margin-top: -590px;
       }
 
       &:nth-of-type(2) .parallax-bg {
-        height: 300px;
+        height: 380px;
         width: 300px;
         left: -59px !important;
       }
 
-      &:nth-of-type(8) .parallax-bg{
+      &:nth-of-type(8) .parallax-bg {
         margin-top: -13rem;
       }
 
-      &:nth-of-type(9) .parallax-bg{
+      &:nth-of-type(9) .parallax-bg {
         left: 200px !important;
         margin-top: -250px;
       }
     }
   }
-  .col-12.video-play  h4{
+
+  .col-12.video-play h4 {
     max-width: 450px;
     margin: 0 auto;
   }
@@ -277,7 +284,7 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
 .thevideo {
   cursor: pointer;
   outline: none;
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling: touch;
 }
 
 
