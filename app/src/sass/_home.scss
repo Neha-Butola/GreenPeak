@@ -12,6 +12,8 @@
   video {
     float: left;
     width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   >img {
@@ -30,6 +32,13 @@
     width: 100%;
     z-index: 9;
     mix-blend-mode: lighten;
+  }
+  &.video-banner {
+    height: initial;
+   &:before {
+    background: rgba(0, 0, 0, .4);
+    mix-blend-mode: initial;
+   }
   }
 }
 
