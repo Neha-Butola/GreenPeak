@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="banner fixed-bg position-relative"
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
-            <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
+            <h1><span><?php the_field('banner_heading'); ?></span></h1>
             <div class="animating-line"></div>
         </div>
     </div>
