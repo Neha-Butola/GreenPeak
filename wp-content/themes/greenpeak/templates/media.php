@@ -91,6 +91,7 @@ if ($videos->have_posts()): ?>
                     </div>
                 </div>
             <?php endwhile; ?>
+            <div></div>
             <div class="nav-links text-center">
                 <a href="#" class="video-load-more" page="2" data-type="video"
                    total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
