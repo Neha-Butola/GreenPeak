@@ -56,7 +56,7 @@ if ($videos->have_posts()): ?>
                             <div class="position-relative">
                                 <h2 class="video-titile"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_heading')): ?>
-                                    <h3 class="video-subtitile"> - <?php the_field('sub_heading'); ?></h3>
+                                    <h3 class="video-subtitile"><?php the_field('sub_heading'); ?></h3>
                                 <?php endif; ?>
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->
