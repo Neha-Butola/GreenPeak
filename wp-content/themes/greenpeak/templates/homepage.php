@@ -14,8 +14,7 @@ get_header(); ?>
             <h1><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
         <?php if (get_field('banner_video')): ?>
-            <video id="banner-video" autoplay="autoplay" loop="loop" playsinline preload="none" muted=""
-                   poster="<?php the_field('banner_image'); ?>">
+            <video id="banner-video" loop="loop" autoplay="autoplay" muted="muted" playsinline  poster="<?php the_field('banner_image'); ?>">
                 <source src="<?php the_field('banner_video'); ?>"
                         type="video/mp4">
                 Your browser does not support the video tag.
