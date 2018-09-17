@@ -19,18 +19,6 @@
 
     <?php wp_head(); ?>
     <style>
-    @media (max-width: 1428px){
-.banner video {
-   float: left;
-   height: auto;
-   object-fit: cover;
-}
-.banner.video-banner {
-   height: auto;
-   float: left;
-   min-height: 100vh;
-}
-}
 @media (max-width: 1428px){
 .banner video {
    float: left;
