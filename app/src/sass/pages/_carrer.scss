@@ -211,7 +211,10 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       }
 
       &:nth-of-type(8) .parallax-bg {
-        margin-top: -13rem;
+           height: 210px;
+           left: 96px !important;
+           width: 400px;
+           margin-top: -794px;
       }
 
       &:nth-of-type(9) .parallax-bg {
@@ -272,7 +275,7 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
     left: auto !important;
     right: -322px;
     width: 270px;
-    margin-top: -1046px;
+    margin-top: -690px;
   }
 
   &:nth-child(2) {
@@ -280,7 +283,7 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
     left: -158px !important;
     opacity: .4;
     width: 100px;
-    margin-top: -703px;
+    margin-top: -403px;
   }
 }
 

@@ -39,7 +39,7 @@
 
   .position-relative {
     min-height: 295px;
-    padding-bottom: 2rem;
+    padding: 10px 10px 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,7 +108,7 @@
     padding: 0 15px;
   }
 
-  h3 {
+  .title {
     color: #8cd1a5;
     position: static;
     padding: 2rem;
@@ -134,13 +134,14 @@
     }
   }
 
-  .video-titile {
+  .video-title {
     color: #8cd1a5 !important;
-    margin-bottom: 0;
+    font-size: 3.2rem
   }
-  .video-subtitile {
+  .video-subtitle {
     padding: 0;
     margin: 0;
+    font-size: 2.3rem;
     color: #8cd1a5 !important;
   }
 }
@@ -149,7 +150,7 @@
   color: $white;
   position: absolute;
   top: 50%;
-  left: -19px;
+  left: -18px;
   transform: translateY(-50%);
   padding: 15px 0 0;
 
@@ -267,7 +268,7 @@
       }
 
       .read {
-        color: $black;
+        color: #8cd1a5;
         line-height: 1.875rem;
 
       }

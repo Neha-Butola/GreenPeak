@@ -41,7 +41,6 @@ window.onload = function () {
     });
   });
 
-  setTimeout(function(){
   var titlewidth;
   titlewidth = $('.banner-content h1 span').width();
   valuetitle = $('.values-title h2 span').width();
@@ -53,7 +52,7 @@ window.onload = function () {
     $('.value-sec .animating-line').css({
       'width': 'calc(50% + ' + valuetitle + 'px)'
     });
-    }, 300);
+
   var vid = document.getElementById("banner-video");
 
   setTimeout(function(){
