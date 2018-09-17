@@ -109,10 +109,7 @@
   }
 
   .title {
-    color: #8cd1a5;
     position: static;
-    padding: 2rem;
-
     &:after,
     &:before {
       background: $white;
@@ -143,6 +140,11 @@
     margin: 0;
     font-size: 2.3rem;
     color: #8cd1a5 !important;
+  }
+
+  h3 {
+    color: #8cd1a5;
+    padding: 2rem;
   }
 }
 
@@ -275,8 +277,8 @@
 
       .media-block:after,
       .media-block:before,
-      .media-block h3:after,
-      .media-block h3:before,
+      .media-block .title:after,
+      .media-block .title:before,
       .media-block>div:after,
       .media-block>div:before {
         background-color: $black;
@@ -294,7 +296,7 @@
         color: #525259;
       }
 
-      h3 {
+      .h3 {
         color: #312c5c;
       }
     }
