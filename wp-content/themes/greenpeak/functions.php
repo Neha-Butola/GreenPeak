@@ -168,14 +168,15 @@ function ajax_pagination()
         $videos = new WP_Query($parameters);
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg" data-loaded="true"
+                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg"
+                     data-loaded="true"
                      style="background-image: url(<?php the_field('background_image'); ?>">
                     <div class="container">
                         <div class="text-center media-block">
                             <div class="position-relative">
-                                <h3><?php the_title(); ?></h3>
+                                <h2 class="video-title"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_heading')): ?>
-                                    <h4> - <?php the_field('sub_heading'); ?></h4>
+                                    <h3 class="video-subtitle title"><?php the_field('sub_heading'); ?></h3>
                                 <?php endif; ?>
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->
@@ -225,12 +226,13 @@ function ajax_pagination()
         if ($articles->have_posts()):
             while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg" data-loaded="true"
+                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg"
+                     data-loaded="true"
                      style="background-image: url(<?php the_field('articles_image'); ?>">
                     <div class="container">
                         <div class="text-center media-block">
                             <div class="position-relative">
-                                <h3><?php the_title(); ?></h3>
+                                <h3 class="title"><?php the_title(); ?></h3>
                                 <?php $content = get_the_content();
                                 $content = wp_trim_words($content, '50');
                                 ?>
