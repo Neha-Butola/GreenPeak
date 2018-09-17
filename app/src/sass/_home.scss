@@ -42,6 +42,7 @@
   }
 }
 
+
 .site-brand {
   font-size: 2.5rem;
   color: $green;
@@ -61,13 +62,13 @@
   -webkit-font-smoothing: initial;
 
   .animating-line {
-    opacity: 0;
+    width: 0;
+    transition: 0.3s ease;
   }
 
   * {
     text-transform: uppercase;
   }
-
   h1 {
     color: $white;
     font-size: 2.5rem;
@@ -78,6 +79,12 @@
     span {
       padding: 0 15px;
     }
+  }
+}
+
+.home-banner {
+  .animating-line {
+    opacity: 0;
   }
 }
 
