@@ -181,6 +181,19 @@ window.onload = function () {
       $('.banner-content .animating-line').addClass('show-line');
     });
   });
+  var vid = document.getElementById("banner-video");
+
+  setTimeout(function () {
+    vid.play(); //will play after 10 seconds when video is ended
+  }, 100);
+
+  setTimeout(function () {
+    $('.banner-content h1').addClass('show-fadeOut');
+  }, 5000);
+
+  $('#banner-video').each(function () {
+    $(this).parent().addClass('video-banner');
+  });
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
