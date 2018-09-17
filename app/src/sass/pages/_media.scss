@@ -38,7 +38,7 @@
   position: relative;
 
   .position-relative {
-    min-height: 330px;
+    min-height: 295px;
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@
 
   h3 {
     color: #8cd1a5;
-    position: relative;
+    position: static;
     padding: 2rem;
 
     &:after,
@@ -141,7 +141,7 @@
   .video-subtitile {
     padding: 0;
     margin: 0;
-    color: #8cd1a5;
+    color: #8cd1a5 !important;
   }
 }
 
@@ -152,10 +152,6 @@
   left: -19px;
   transform: translateY(-50%);
   padding: 15px 0 0;
-
-  i {
-    padding-bottom: 0.9375rem;
-  }
 
   &:before {
     top: -60%;

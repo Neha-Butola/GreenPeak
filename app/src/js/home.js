@@ -29,6 +29,11 @@ $('.intro-desc.show').each(function () {
 //   $('.banner-content').addClass('title-animate');
 // }
 
+$('#banner-video').each(function () {
+  $(this).parent().addClass('video-banner');
+});
+
+
 window.onload = function () {
   $('.site-brand').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
     $('.banner-content h1').addClass('show-fade').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function () {
@@ -55,9 +60,6 @@ window.onload = function () {
     vid.play(); //will play after 10 seconds when video is ended
   }, 100);
 
-  $('#banner-video').each(function () {
-    $(this).parent().addClass('video-banner');
-  });
 
   if ($('.banner').hasClass('video-banner')) {
     setTimeout(function(){
