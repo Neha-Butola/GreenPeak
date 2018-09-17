@@ -40,16 +40,19 @@ $videos = new WP_Query($parameters);
 $total_pages = $videos->max_num_pages;
 if ($videos->have_posts()): ?>
     <!-- * =============== Media Video Section =============== * -->
-    <section class="media-video">
-        <h2 class="text-center text-md-left">
-            <span><?php the_field('video_section_heading'); ?></span></h2>
-        <div class="animating-line green-line" data-aos="slide-right"
-             data-aos-delay="250"></div>
-        <div class="articles-sec" id="videos">
+    <section class="section-spacing pb-0">
+        <div class="container">
+            <div class="heading-container">
+                <h2 class="text-center text-md-left left-animating"><?php the_field('video_section_heading'); ?></h2>
+                <div class="animating-line green-line aos-init aos-animate" data-aos="slide-right"
+                     data-aos-delay="250"></div>
+            </div>
+        </div>
+        <div class="media-list">
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
                     <div class="container">
-                        <div class="text-center article-block">
+                        <div class="text-center media-block">
                             <div class="position-relative">
                                 <h3><?php the_title(); ?></h3>
                                 <?php if (get_field('sub_heading')): ?>
@@ -58,7 +61,7 @@ if ($videos->have_posts()): ?>
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->
                                     <a class="resp-sharing-button__link"
-                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_field('video_url'); ?>"
                                        target="_blank" aria-label="">
                                         <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
                                             <div aria-hidden="true"
@@ -69,7 +72,7 @@ if ($videos->have_posts()): ?>
                                     </a>
                                     <!-- Sharingbutton Twitter -->
                                     <a class="resp-sharing-button__link"
-                                       href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_field('video_url'); ?>"
                                        target="_blank"
                                        aria-label="">
                                         <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
@@ -81,23 +84,20 @@ if ($videos->have_posts()): ?>
                                     </a>
                                     <small>share on</small>
                                 </div>
-
-                                <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch
-                                    video<span
-                                            class="line"></span></a>
+                                <a href="<?php the_field('video_url'); ?>" class="read">watch
+                                    video<span class="line"></span></a>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endwhile; ?>
-        </div>
-        <div class="nav-links text-center">
-            <a href="#" class="video-load-more" page="2" data-type="video"
-               total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
-                More<i class="fas fa-angle-down"></i></a>
+            <div class="nav-links text-center">
+                <a href="#" class="video-load-more" page="2" data-type="video"
+                   total-pages="<?php echo $total_pages; ?>" <?php if ($total_pages <= 1) { ?> style="display: none" <?php } ?>>View
+                    More<i class="fas fa-angle-down"></i></a>
+            </div>
         </div>
     </section>
-    <!-- * =============== /Media Video Section =============== * -->
 <?php endif;
 wp_reset_query();
 
@@ -110,19 +110,20 @@ $articles = new WP_Query($parameters);
 $total_pages = $articles->max_num_pages;
 if ($articles->have_posts()): ?>
     <!-- * =============== Articles Section =============== * -->
-    <section>
+    <section class="section-spacing">
         <div class="container">
-            <h2 class="text-center text-md-left">
-                <span><?php the_field('articles_section_heading') ?></span></h2>
-            <div class="animating-line green-line" data-aos="slide-right"
-                 data-aos-delay="250"></div>
+            <div class="heading-container">
+                <h2 class="text-center text-md-left left-animating"><?php the_field('articles_section_heading') ?></h2>
+                <div class="animating-line green-line aos-init aos-animate" data-aos="slide-right"
+                     data-aos-delay="250"></div>
+            </div>
         </div>
-        <div class="articles-sec" id="articles">
+        <div class="media-list">
             <?php while ($articles->have_posts()):
                 $articles->the_post(); ?>
                 <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg">
                     <div class="container">
-                        <div class="text-center article-block">
+                        <div class="text-center media-block">
                             <div class="position-relative">
                                 <h3><?php the_title(); ?></h3>
                                 <?php $content = get_the_content();
@@ -159,6 +160,7 @@ if ($articles->have_posts()): ?>
                                 <a href="<?php the_permalink(); ?>" target="_blank" class="read">read article <span
                                             class="line"></span></a>
                             </div>
+                            <a href="<?php the_permalink(); ?>" class="read">read article <span class="line"></span></a>
                         </div>
                     </div>
                 </div>
