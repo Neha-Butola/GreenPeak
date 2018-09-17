@@ -84,7 +84,7 @@ if ($videos->have_posts()): ?>
                                     </a>
                                     <small>share on</small>
                                 </div>
-                                <a href="<?php the_field('video_url'); ?>" class="read">watch
+                                <a href="<?php the_field('video_url'); ?>" class="read" target="_blank">watch
                                     video<span class="line"></span></a>
                             </div>
                         </div>
