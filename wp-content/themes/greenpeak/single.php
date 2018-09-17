@@ -15,7 +15,7 @@ if (have_posts()):
 
         <div class="banner detail-banner fixed-bg" style="background-image: url('<?php the_field('articles_image'); ?>');">
             <div class="banner-content">
-                <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_title(); ?></span></h1>
+                <h1><span><?php the_title(); ?></span></h1>
                 <div class="animating-line"></div>
             </div>
         </div>
