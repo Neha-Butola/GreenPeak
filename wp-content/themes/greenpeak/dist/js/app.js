@@ -187,13 +187,15 @@ window.onload = function () {
     vid.play(); //will play after 10 seconds when video is ended
   }, 100);
 
-  setTimeout(function () {
-    $('.banner-content h1').addClass('show-fadeOut');
-  }, 5000);
-
   $('#banner-video').each(function () {
     $(this).parent().addClass('video-banner');
   });
+
+  if ($('banner').hasClass('video-banner')) {
+    setTimeout(function () {
+      $('.banner-content h1').addClass('show-fadeOut');
+    }, 5000);
+  }
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
