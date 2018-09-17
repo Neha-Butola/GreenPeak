@@ -21,7 +21,8 @@
   }
 }
 
-.html5gallery-tn-1 {
+.html5gallery-tn-1,
+.html5gallery-tn-selected-1 {
   background: transparent !important;
 }
 
@@ -176,12 +177,12 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       }
 
       &:nth-of-type(4) .parallax-bg {
-          height: 180px;
-          left: auto !important;
-          width: 270px;
-          margin-top: -504px;
-          right: 120px;
-          }
+        height: 180px;
+        left: auto !important;
+        width: 270px;
+        margin-top: -504px;
+        right: 120px;
+      }
 
 
       &:nth-of-type(7) .parallax-bg {
@@ -267,21 +268,22 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
 
 .video-play .parallax-bg {
   &:nth-child(1) {
-     height: 250px;
-     left: auto !important;
-     right: -322px;
-     width: 270px;
-     margin-top: -1046px;
+    height: 250px;
+    left: auto !important;
+    right: -322px;
+    width: 270px;
+    margin-top: -1046px;
   }
 
   &:nth-child(2) {
-     height: 250px;
-     left: -158px !important;
-     opacity: .4;
-     width: 100px;
-     margin-top: -703px;
+    height: 250px;
+    left: -158px !important;
+    opacity: .4;
+    width: 100px;
+    margin-top: -703px;
   }
 }
+
 
 .thevideo {
   cursor: pointer;
