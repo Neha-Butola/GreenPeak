@@ -43,8 +43,11 @@
 .media-list>div.fixed-bg:nth-of-type(2n) .read{
 color: #000 !important;
 }
-.media-list div:hover .read {
+/*.media-list div:hover .read {
 color: #77bd90 !important;
+}*/
+.media-list div.fixed-bg.lozad:hover .read {
+   color: #77bd90 !important;
 }
 
 </style>
