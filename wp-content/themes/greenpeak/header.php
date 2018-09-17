@@ -30,9 +30,7 @@
    float: left;
    min-height: 100vh;
 }
-.banner-content{
-bottom: 418px;
-}
+
 .parallax-secs section h2 {
    font-size: 5.25rem;
 }
