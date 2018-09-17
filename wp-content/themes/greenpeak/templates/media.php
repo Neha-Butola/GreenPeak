@@ -53,7 +53,7 @@ if ($videos->have_posts()): ?>
                             <div class="text-center article-block">
                                 <div class="position-relative">
                                     <h3><?php the_title(); ?></h3>
-                                    <h4><?php the_field('sub_heading'); ?></h4>
+                                    <h4> - <?php the_field('sub_heading'); ?></h4>
                                     <div class="share">
                                         <!-- Sharingbutton LinkedIn -->
                                         <a class="resp-sharing-button__link"
