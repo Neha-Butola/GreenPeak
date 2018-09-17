@@ -53,7 +53,9 @@ if ($videos->have_posts()): ?>
                             <div class="text-center article-block">
                                 <div class="position-relative">
                                     <h3><?php the_title(); ?></h3>
-                                    <h4> - <?php the_field('sub_heading'); ?></h4>
+                                    <?php if (get_field('sub_heading')): ?>
+                                        <h4> - <?php the_field('sub_heading'); ?></h4>
+                                    <?php endif; ?>
                                     <div class="share">
                                         <!-- Sharingbutton LinkedIn -->
                                         <a class="resp-sharing-button__link"
@@ -81,7 +83,8 @@ if ($videos->have_posts()): ?>
                                         <small>share on</small>
                                     </div>
 
-                                    <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch video<span
+                                    <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch
+                                        video<span
                                                 class="line"></span></a>
                                 </div>
                             </div>
