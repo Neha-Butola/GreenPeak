@@ -267,17 +267,19 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
 
 .video-play .parallax-bg {
   &:nth-child(1) {
-    height: 250px;
-    width: 270px;
-    left: auto !important;
-    right: 0;
+     height: 250px;
+     left: auto !important;
+     right: -322px;
+     width: 270px;
+     margin-top: -1046px;
   }
 
   &:nth-child(2) {
-    height: 250px;
-    left: 20px !important;
-    width: 270px;
-    opacity: .4;
+     height: 250px;
+     left: -158px !important;
+     opacity: .4;
+     width: 100px;
+     margin-top: -703px;
   }
 }
 

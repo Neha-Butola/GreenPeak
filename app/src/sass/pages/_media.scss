@@ -1,7 +1,6 @@
 /* logos section */
 .logos-section {
   padding-top: 5rem;
-  padding-bottom: 7rem;
 
   .row {
     padding: 6rem 0;
@@ -34,7 +33,7 @@
 }
 
 /* Article section */
-.article-block {
+.media-block {
   padding: 3rem 0 4rem;
   position: relative;
 
@@ -208,7 +207,8 @@
   }
 }
 
-.articles-sec {
+.media-list {
+  padding-top: 5.5rem;
   div {
     &:nth-child(even) {
       &:hover{
@@ -267,12 +267,12 @@
 
       }
 
-      .article-block:after,
-      .article-block:before,
-      .article-block h3:after,
-      .article-block h3:before,
-      .article-block>div:after,
-      .article-block>div:before {
+      .media-block:after,
+      .media-block:before,
+      .media-block h3:after,
+      .media-block h3:before,
+      .media-block>div:after,
+      .media-block>div:before {
         background-color: $black;
       }
 
@@ -306,7 +306,7 @@
 }
 
 .articles-load-more {
-  padding: 15px 0; 
+  padding: 15px 0;
   i {
     vertical-align: middle;
     padding-left: 15px;
