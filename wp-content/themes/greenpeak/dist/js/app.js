@@ -189,7 +189,7 @@ window.onload = function () {
     $(this).parent().addClass('video-banner');
   });
 
-  if ($('.banner').has('video-banner')) {
+  if ($('.banner').hasClass('video-banner')) {
     setTimeout(function () {
       $('.banner-content h1').addClass('show-fadeOut');
     }, 5000);
