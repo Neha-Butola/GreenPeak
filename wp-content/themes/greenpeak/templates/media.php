@@ -160,7 +160,6 @@ if ($articles->have_posts()): ?>
                                 <a href="<?php the_permalink(); ?>" target="_blank" class="read">read article <span
                                             class="line"></span></a>
                             </div>
-                            <a href="<?php the_permalink(); ?>" class="read">read article <span class="line"></span></a>
                         </div>
                     </div>
                 </div>
