@@ -53,10 +53,10 @@ if ($videos->have_posts()): ?>
                 <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
                     <div class="container">
                         <div class="text-center media-block">
-                            <div class="position-relative">
-                                <h3><?php the_title(); ?></h3>
+                            <div class="posi tion-relative">
+                                <h2 class="video-titile"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_heading')): ?>
-                                    <h4> - <?php the_field('sub_heading'); ?></h4>
+                                    <h3 class="video-subtitile"> - <?php the_field('sub_heading'); ?></h3>
                                 <?php endif; ?>
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->

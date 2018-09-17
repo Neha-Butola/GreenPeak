@@ -6,7 +6,7 @@
 get_header(); ?>
 
     <!-- * =============== Banner section =============== * -->
-    <div class="banner fixed-bg position-relative"
+    <div class="banner fixed-bg position-relative home-banner"
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
             <div class="site-brand mb-2"><?php the_field('banner_heading'); ?></div>
@@ -14,7 +14,7 @@ get_header(); ?>
             <h1><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
         <?php if (get_field('banner_video')): ?>
-            <video id="banner-video" loop="loop" playsinline preload="none" muted=""
+            <video id="banner-video" autoplay="autoplay" loop="loop" playsinline preload="none" muted=""
                    poster="<?php the_field('banner_image'); ?>">
                 <source src="<?php the_field('banner_video'); ?>"
                         type="video/mp4">
