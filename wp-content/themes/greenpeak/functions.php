@@ -168,10 +168,10 @@ function ajax_pagination()
         $videos = new WP_Query($parameters);
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg"
-                     data-loaded="true" style="background-image: url(<?php the_field('background_image'); ?>">
+                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg" data-loaded="true"
+                     style="background-image: url(<?php the_field('background_image'); ?>">
                     <div class="container">
-                        <div class="text-center article-block">
+                        <div class="text-center media-block">
                             <div class="position-relative">
                                 <h3><?php the_title(); ?></h3>
                                 <?php if (get_field('sub_heading')): ?>
@@ -180,7 +180,7 @@ function ajax_pagination()
                                 <div class="share">
                                     <!-- Sharingbutton LinkedIn -->
                                     <a class="resp-sharing-button__link"
-                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_field('video_url'); ?>"
                                        target="_blank" aria-label="">
                                         <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
                                             <div aria-hidden="true"
@@ -191,7 +191,7 @@ function ajax_pagination()
                                     </a>
                                     <!-- Sharingbutton Twitter -->
                                     <a class="resp-sharing-button__link"
-                                       href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_field('video_url'); ?>"
                                        target="_blank"
                                        aria-label="">
                                         <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
@@ -203,10 +203,8 @@ function ajax_pagination()
                                     </a>
                                     <small>share on</small>
                                 </div>
-
-                                <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch
-                                    video<span
-                                            class="line"></span></a>
+                                <a href="<?php the_field('video_url'); ?>" class="read">watch
+                                    video<span class="line"></span></a>
                             </div>
                         </div>
                     </div>
@@ -227,10 +225,10 @@ function ajax_pagination()
         if ($articles->have_posts()):
             while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg" data-loaded="true"
+                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg" data-loaded="true"
                      style="background-image: url(<?php the_field('articles_image'); ?>">
                     <div class="container">
-                        <div class="text-center article-block">
+                        <div class="text-center media-block">
                             <div class="position-relative">
                                 <h3><?php the_title(); ?></h3>
                                 <?php $content = get_the_content();

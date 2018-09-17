@@ -48,7 +48,7 @@ if ($videos->have_posts()): ?>
                      data-aos-delay="250"></div>
             </div>
         </div>
-        <div class="media-list">
+        <div class="media-list" id="videos">
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
                 <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
                     <div class="container">
@@ -118,7 +118,7 @@ if ($articles->have_posts()): ?>
                      data-aos-delay="250"></div>
             </div>
         </div>
-        <div class="media-list">
+        <div class="media-list" id="articles">
             <?php while ($articles->have_posts()):
                 $articles->the_post(); ?>
                 <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg">
