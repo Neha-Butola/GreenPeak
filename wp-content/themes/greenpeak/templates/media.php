@@ -41,57 +41,55 @@ $total_pages = $videos->max_num_pages;
 if ($videos->have_posts()): ?>
     <!-- * =============== Media Video Section =============== * -->
     <section class="media-video">
-        <div class="container" id="videos">
-            <h2 class="text-center text-md-left">
-                <span><?php the_field('video_section_heading'); ?></span></h2>
-            <div class="animating-line green-line" data-aos="slide-right"
-                 data-aos-delay="250"></div>
-            <div class="articles-sec" id="articles">
-                <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                    <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
-                        <div class="container">
-                            <div class="text-center article-block">
-                                <div class="position-relative">
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php if (get_field('sub_heading')): ?>
-                                        <h4> - <?php the_field('sub_heading'); ?></h4>
-                                    <?php endif; ?>
-                                    <div class="share">
-                                        <!-- Sharingbutton LinkedIn -->
-                                        <a class="resp-sharing-button__link"
-                                           href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
-                                           target="_blank" aria-label="">
-                                            <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
-                                                <div aria-hidden="true"
-                                                     class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-                                                    <i class="fab fa-linkedin-in"></i>
-                                                </div>
+        <h2 class="text-center text-md-left">
+            <span><?php the_field('video_section_heading'); ?></span></h2>
+        <div class="animating-line green-line" data-aos="slide-right"
+             data-aos-delay="250"></div>
+        <div class="articles-sec" id="articles">
+            <?php while ($videos->have_posts()): $videos->the_post(); ?>
+                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
+                    <div class="container">
+                        <div class="text-center article-block">
+                            <div class="position-relative">
+                                <h3><?php the_title(); ?></h3>
+                                <?php if (get_field('sub_heading')): ?>
+                                    <h4> - <?php the_field('sub_heading'); ?></h4>
+                                <?php endif; ?>
+                                <div class="share">
+                                    <!-- Sharingbutton LinkedIn -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>"
+                                       target="_blank" aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-linkedin-in"></i>
                                             </div>
-                                        </a>
-                                        <!-- Sharingbutton Twitter -->
-                                        <a class="resp-sharing-button__link"
-                                           href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
-                                           target="_blank"
-                                           aria-label="">
-                                            <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
-                                                <div aria-hidden="true"
-                                                     class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-                                                    <i class="fab fa-twitter"></i>
-                                                </div>
+                                        </div>
+                                    </a>
+                                    <!-- Sharingbutton Twitter -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_permalink(); ?>"
+                                       target="_blank"
+                                       aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-twitter"></i>
                                             </div>
-                                        </a>
-                                        <small>share on</small>
-                                    </div>
-
-                                    <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch
-                                        video<span
-                                                class="line"></span></a>
+                                        </div>
+                                    </a>
+                                    <small>share on</small>
                                 </div>
+
+                                <a href="<?php the_field('video_url'); ?>" target="_blank" class="read">watch
+                                    video<span
+                                            class="line"></span></a>
                             </div>
                         </div>
                     </div>
-                <?php endwhile; ?>
-            </div>
+                </div>
+            <?php endwhile; ?>
         </div>
         <div class="nav-links text-center">
             <a href="#" class="video-load-more" page="2" data-type="video"
