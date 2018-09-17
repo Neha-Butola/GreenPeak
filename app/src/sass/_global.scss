@@ -10,7 +10,6 @@
 
 .right-line {
   right: 0;
-  animation: slideInFromRight 1s ease .7s;
   margin-left: auto !important;
 }
 
@@ -139,8 +138,9 @@ main {
   animation: slideInFromLeft .4s ease;
 }
 
-.right-line.show-line {
-  animation: slideInFromRight 2s ease;
+.right-line.show-right_line {
+  animation: slideInFromRight 0.5s ease;
+  opacity: 1!important;
 }
 
 .heading-container {
