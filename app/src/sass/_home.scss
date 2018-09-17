@@ -52,7 +52,6 @@
   -webkit-font-smoothing: initial;
 
   .animating-line {
-    width: 0;
     opacity: 0;
   }
 
@@ -66,7 +65,7 @@
     margin-bottom: .8rem;
     margin-top: 1.3rem;
     font-family: $vantisa_regular;
-  opacity:0;
+    opacity:0;
     span {
       padding: 0 15px;
     }
@@ -155,8 +154,11 @@
 
 .error404  {
   .app > main{
-    height: calc(100% - 390px);
+    min-height: calc(100% - 390px);
     margin-top: 150px;
+  }
+  .main-head li a {
+    color: $body-color;
   }
   .content-area {
     padding: 5% 0 0;
