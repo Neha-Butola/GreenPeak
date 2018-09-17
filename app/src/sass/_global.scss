@@ -94,6 +94,17 @@ main {
   }
 }
 
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .slideInFromLeft,
 .fadeIn{
     -webkit-animation-duration: 2s;
@@ -116,6 +127,11 @@ main {
 .show-fade {
   opacity: 1 !important;
   animation: fadeIn .8s ease;
+}
+
+.show-fadeOut {
+  opacity: 0 !important;
+  animation:  fadeOut .8s ease;
 }
 
 .show-line {

@@ -43,14 +43,10 @@
 	}
 }
 
-
-@media (max-width: 1799px) {
-	.banner {
-		video {
-			height: 100vh;
-			width: auto !important;
-		}
-	}
+@media (max-width: 1428px) {
+	.banner video {height: 100vh;float: none;width: auto;}
+	.banner {float: none;}
+	.banner.video-banner {height: 100vh;}
 }
 
 @media (max-width: 991px) {

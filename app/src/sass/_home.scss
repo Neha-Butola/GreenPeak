@@ -12,6 +12,8 @@
   video {
     float: left;
     width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   >img {
@@ -31,7 +33,15 @@
     z-index: 9;
     mix-blend-mode: lighten;
   }
+  &.video-banner {
+    height: initial;
+   &:before {
+    background: rgba(0, 0, 0, .4);
+    mix-blend-mode: initial;
+   }
+  }
 }
+
 
 .site-brand {
   font-size: 2.5rem;
@@ -52,13 +62,13 @@
   -webkit-font-smoothing: initial;
 
   .animating-line {
-    opacity: 0;
+    width: 0;
+    transition: 0.3s ease;
   }
 
   * {
     text-transform: uppercase;
   }
-
   h1 {
     color: $white;
     font-size: 2.5rem;
@@ -69,6 +79,12 @@
     span {
       padding: 0 15px;
     }
+  }
+}
+
+.home-banner {
+  .animating-line {
+    opacity: 0;
   }
 }
 
