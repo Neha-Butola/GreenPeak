@@ -22,9 +22,9 @@
 @media (max-width: 1428px){
 .banner video {
    float: left;
-   height: 508px;
+   height: 100%;
    object-fit: cover;
-   width: 1300px;
+   width: 100%;
 }
 .banner.video-banner {
    height: auto;
