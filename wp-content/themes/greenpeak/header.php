@@ -19,12 +19,16 @@
 
     <?php wp_head(); ?>
     <style>
-@@media (max-width: 1428px){
+@media (max-width: 1428px){
 .banner video {
-   float: none;
-   height: 100vh;
-   width: 100%;
+   float: left;
+   height: auto;
    object-fit: cover;
+}
+.banner.video-banner {
+   height: auto;
+   float: left;
+   min-height: 100vh;
 }
 .parallax-secs section h2 {
    font-size: 5.25rem;
@@ -37,6 +41,9 @@
 }
 .media-list>div.fixed-bg:nth-of-type(2n) .read{
 color: #000 !important;
+}
+.media-list div:hover .read {
+color: #77bd90 !important;
 }
 
 </style>
