@@ -39,13 +39,12 @@
    font-size: 1.2rem;
    line-height: 1;
 }
-.media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
+.media-list>div.fixed-bg:nth-of-type(2n) .read{
 color: #000 !important;
 }
 
 .media-list>div.fixed-bg:nth-of-type(2n) .read:hover{
 color: #8cd1a5 !important;
-}
 }
 </style>
 </head>
