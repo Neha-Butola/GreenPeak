@@ -19,7 +19,7 @@
 
     <?php wp_head(); ?>
     <style>
-@media (max-width: 1428px){
+/* @media (max-width: 1428px){
 .banner video {
    float: left;
    height: 100%;
@@ -47,14 +47,14 @@ color: #000 !important;
 /*.media-list div:hover .read {
 color: #77bd90 !important;
 }*/
-.media-list div.fixed-bg.lozad:hover .read {
+/* .media-list div.fixed-bg.lozad:hover .read {
    color: #77bd90 !important;
 }
 @media (max-width: 1160px){
 .banner.video-banner {
 height: 100vh;
 } 
-}
+}  */
 </style>
 </head>
 
