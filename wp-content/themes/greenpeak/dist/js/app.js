@@ -97,7 +97,8 @@
   loop: true,
   dots: true,
   autoplay: true,
-  smartSpeed: 120,
+  smartSpeed: 650,
+  autoplayTimeout: 13000,
   responsive: {
     0: {
       items: 1
@@ -181,10 +182,6 @@ if ($('.banner').hasClass('home-banner')) {
 
 if (document.querySelector('#banner-video')) {
   var vid = document.getElementById("banner-video");
-
-  setTimeout(function () {
-    vid.play(); //will play after 10 seconds when video is ended
-  }, 100);
 
   if ($('.banner').hasClass('video-banner')) {
     setTimeout(function () {
