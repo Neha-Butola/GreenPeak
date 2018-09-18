@@ -307,7 +307,7 @@ $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
     let offset = $('.service-container').scrollTop() + 670;
     if ($(window).width() < 769) {
-        offset = $('.service-container').scrollTop() + 410;
+        offset = $('.service-container').scrollTop() + 200;
     }
     let indentLeft = -90;
     elements.each((index, item) => {
