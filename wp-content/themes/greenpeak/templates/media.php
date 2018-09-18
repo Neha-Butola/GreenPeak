@@ -50,7 +50,7 @@ if ($videos->have_posts()): ?>
         </div>
         <div class="media-list" id="videos">
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg">
+                <div class="">
                     <div class="container">
                         <div class="text-center media-block">
                             <div class="position-relative">
