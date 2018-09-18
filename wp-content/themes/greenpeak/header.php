@@ -18,44 +18,6 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
-    <style>
-/* @media (max-width: 1428px){
-.banner video {
-   float: left;
-   height: 100%;
-   object-fit: cover;
-   width: 100%;
-}
-.banner.video-banner {
-   height: auto;
-   float: left;
-   min-height: 100vh;
-}
-
-.parallax-secs section h2 {
-   font-size: 5.25rem;
-}
-
-.mail-link {
-   font-size: 1.2rem;
-   line-height: 1;
-}
-}
-.media-list>div.fixed-bg:nth-of-type(2n) .read{
-color: #000 !important;
-}
-/*.media-list div:hover .read {
-color: #77bd90 !important;
-}*/
-/* .media-list div.fixed-bg.lozad:hover .read {
-   color: #77bd90 !important;
-}
-@media (max-width: 1160px){
-.banner.video-banner {
-height: 100vh;
-} 
-}  */
-</style>
 </head>
 
 <body <?php body_class(); ?>>
