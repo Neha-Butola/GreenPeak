@@ -84,7 +84,7 @@ if ($videos->have_posts()): ?>
                                     </a>
                                     <small>share on</small>
                                 </div>
-                                <?php $video_type = get_field('podcast'); ?>
+                                <?php $video_type = the_field('podcast'); ?>
                                 <a href="<?php the_field('video_url'); ?>" class="read"
                                    target="_blank"><?php echo ($video_type == 'podcast') ? 'visit
                                     link' : 'watch video'; ?><span class="line"></span></a>
