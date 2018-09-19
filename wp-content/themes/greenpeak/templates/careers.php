@@ -99,7 +99,10 @@ if (!empty($values)):
                             <?php $count++; endif;
                     else: ?>
                         <div class="col-12 text-center video-play">
-                            <h2><?php echo $value['heading']; ?></h2>
+                            <div class="heading-container position-relative">
+                                <h2><?php echo $value['heading']; ?></h2>
+                                <div class="animating-line middle-line" data-aos="slide-right" data-aos-delay="300"></div>
+                            </div>
                             <h4><?php echo $value['sub_heading']; ?></h4>
                             <div class="position-relative">
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
