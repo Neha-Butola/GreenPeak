@@ -67,9 +67,10 @@ if (!empty($testimonials)):?>
                     <div class="item text-white">
                         <?php echo $testimonial['testimony']; ?>
                         <div class="testimonial-img">
-                            <h2 class="sal"><span class="info"><span class="person_name"><?php echo $testimonial['reviewer']; ?></span>
+                            <h2 class="sal"><span class="info"><span
+                                            class="person_name"><?php echo $testimonial['reviewer']; ?></span>
                             <span class="designation"><?php echo $testimonial['reviewer_designation']; ?></span></span>
-                        </h2>
+                            </h2>
                             <img src="<?php echo $testimonial['company_logo']; ?>" class="mx-auto mt-5"
                                  alt="profile-img">
                         </div>
@@ -86,8 +87,12 @@ if (!empty($consultants)):?>
     <!-- * =============== Consultants Section =============== * -->
     <section class="bg-light team-section" id="team-members">
         <div class="container pt-5">
-            <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
-                <span><?php the_field('consultants_heading'); ?></span></h2>
+            <div class="heading-container">
+                <h2 class="text-center text-md-left">
+                    <?php the_field('consultants_heading'); ?>
+                </h2>
+                <div class="animating-line green-line" data-aos="slide-right" data-aos-delay="250"></div>
+            </div>
             <?php $chunked_consultant = array_chunk($consultants, 3);
             $count = 1;
             foreach ($chunked_consultant as $consultant_array):
@@ -139,8 +144,12 @@ if (!empty($operations)):?>
     <!-- * =============== Opertaions Section =============== * -->
     <section class="bg-light team-section">
         <div class="container pt-5">
-            <h2 data-aos="fade-right" class="aos-init aos-animate left-animating">
-                <span><?php the_field('operations_heading'); ?></span></h2>
+            <div class="heading-container">
+                <h2 class="text-center text-md-left">
+                    <?php the_field('operations_heading'); ?>
+                </h2>
+                <div class="animating-line green-line" data-aos="slide-right" data-aos-delay="250"></div>
+            </div>
             <?php $chunked_operation = array_chunk($operations, 3);
             $count = 1;
             foreach ($chunked_operation as $operation_array):
