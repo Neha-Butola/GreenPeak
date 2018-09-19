@@ -98,7 +98,7 @@
   dots: true,
   autoplay: true,
   smartSpeed: 650,
-  autoplayTimeout: 13000,
+  autoplayTimeout: 16000,
   responsive: {
     0: {
       items: 1
@@ -307,7 +307,7 @@ $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
     let offset = $('.service-container').scrollTop() + 670;
     if ($(window).width() < 769) {
-        offset = $('.service-container').scrollTop() + 410;
+        offset = $('.service-container').scrollTop() + 200;
     }
     let indentLeft = -90;
     elements.each((index, item) => {
