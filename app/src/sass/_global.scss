@@ -146,8 +146,22 @@ main {
 .heading-container {
   width: auto;
   display: inline-block;
+  h2{
+    margin-bottom: 1rem;
+  }
 }
 
 .section-spacing {
 padding: 5.5rem 0 0;
+}
+
+.video-play .heading-container {
+.aos-init{
+  transform: none;
+  width: 0 !important;
+  transition: 2s;
+}
+.aos-animate{
+  width: 100% !important;
+}
 }

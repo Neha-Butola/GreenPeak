@@ -256,13 +256,13 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
   transform: translate(-50%, -50%);
   width: 11rem;
   height: 11rem;
-  border: 6px solid #fff;
+  border: 6px solid $white;
   border-radius: 50%;
   text-align: center;
   z-index: 9;
 
   i {
-    color: #fff;
+    color: $white;
     font-size: 6rem;
     line-height: 10rem;
   }
@@ -292,8 +292,6 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
   outline: none;
   -webkit-overflow-scrolling: touch;
 }
-
-
 
 .content-sec {
   a {
@@ -356,4 +354,8 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
 
 .html5gallery-box-1 {
   left: 1px;
+}
+
+.middle-line {
+  background-color: $green3;
 }
