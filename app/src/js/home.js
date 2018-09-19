@@ -51,11 +51,6 @@ $('#banner-video').each(function () {
   if (document.querySelector('#banner-video')) {
   var vid = document.getElementById("banner-video");
 
-  setTimeout(function(){
-    vid.play(); //will play after 10 seconds when video is ended
-  }, 100);
-
-
   if ($('.banner').hasClass('video-banner')) {
     setTimeout(function(){
       $('.banner-content h1').addClass('show-fadeOut');

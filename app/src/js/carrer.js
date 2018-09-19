@@ -2,7 +2,8 @@ $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCaro
   loop: true,
   dots: true,
   autoplay: true,
-  smartSpeed: 120,
+  smartSpeed: 650,
+  autoplayTimeout: 16000,
   responsive: {
     0: {
       items: 1

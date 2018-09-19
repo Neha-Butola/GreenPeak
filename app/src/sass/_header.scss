@@ -15,7 +15,7 @@
 		height: 40px;
 		margin-left: auto;
 		outline: none;
-	animation: fadeIn 3s ease;
+		animation: fadeIn 3s ease;
 		.icon-bar {
 			&:nth-child(2) {
 				margin: 5px 0;
@@ -25,7 +25,7 @@
 
 	.navbar-toggler .icon-bar {
 		background-color: #63a37a;
-		display: inline-flex;
+		display: block;
 		height: 0.2em;
 		width: 2em;
 		position: relative;
@@ -87,6 +87,9 @@
 
 	.navbar-toggler {
 		display: flex;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
 	}
 
 	.logo {
