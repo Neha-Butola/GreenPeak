@@ -1007,7 +1007,7 @@ if ($(window).width() > 767) {
       }, 50);
     };
 
-    var startingHeight = 10 * self.pixels.y;
+    var startingHeight = 30 * self.pixels.y;
     var triangleWidthCenter = 150 * self.pixels.x;
     var triangleHeightCenter = 75 * self.pixels.y;
 
