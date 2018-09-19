@@ -12,6 +12,7 @@
 }
 
 @media (min-width: 1598px) {
+
 	.container {
 		max-width: 1250px;
 	}
@@ -56,19 +57,54 @@
 }
 
 @media (max-width: 1600px) {
+
+	/* carrer page */
+
+	.value-sec .row>div:first-of-type .parallax-bg {
+		left: 230px !important;
+	}
+
+	.value-sec .row>div:nth-of-type(4) .parallax-bg {
+		right: 27px;
+	}
+
 	.nav-style .logo {
 		left: 26px;
 	}
 }
 
 @media (max-width: 1428px) {
-	.banner video {height: 100%;object-fit: cover;}
-	.banner {float: none;}
-	.banner.video-banner {float: left; height: auto;min-height: 100vh;}
-	.parallax-secs section h2 {font-size: 5.25rem; } 
-	.mail-link {	font-size: 1.2rem;	line-height: 1; }
-	.media-block .video-title {font-size: 2.9rem;}
-	.media-block .video-subtitle {font-size: 2rem;}
+	.banner video {
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.banner {
+		float: none;
+	}
+
+	.banner.video-banner {
+		float: left;
+		height: auto;
+		min-height: 100vh;
+	}
+
+	.parallax-secs section h2 {
+		font-size: 5.25rem;
+	}
+
+	.mail-link {
+		font-size: 1.2rem;
+		line-height: 1;
+	}
+
+	.media-block .video-title {
+		font-size: 2.9rem;
+	}
+
+	.media-block .video-subtitle {
+		font-size: 2rem;
+	}
 }
 
 
@@ -81,8 +117,10 @@
 
 // Medium devices
 
-@media (max-width: 1160px){
-	.banner.video-banner {	height: 100vh;	} 
+@media (max-width: 1160px) {
+	.banner.video-banner {
+		height: 100vh;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -172,15 +210,24 @@
 		left: 83px;
 		top: 45%;
 	}
+
 	.service-page .main-head .container {
 		max-width: initial;
 	}
 }
 
 @media (max-height: 645px) {
-	.service-wrap li {line-height: 1.12;}
-	.service-section {font-size: 18px;}
-	.service-col .col-below { padding-top: 5vh;}
+	.service-wrap li {
+		line-height: 1.12;
+	}
+
+	.service-section {
+		font-size: 18px;
+	}
+
+	.service-col .col-below {
+		padding-top: 5vh;
+	}
 }
 
 
@@ -509,15 +556,19 @@
 	.logos-section .col-md-4 {
 		text-align: center;
 	}
+
 	.share {
 		left: -14px;
 	}
+
 	.share a {
 		padding-left: 10px;
 	}
+
 	.read {
 		left: 59%;
 	}
+
 	.service-wrap {
 		padding: 150px 0 0 30px;
 	}
