@@ -87,7 +87,7 @@ if (!empty($consultants)):?>
     <!-- * =============== Consultants Section =============== * -->
     <section class="bg-light team-section" id="team-members">
         <div class="container pt-5">
-            <div class="heading-container">
+            <div class="heading-container mb-5">
                 <h2 class="text-center text-md-left">
                     <?php the_field('consultants_heading'); ?>
                 </h2>
@@ -144,7 +144,7 @@ if (!empty($operations)):?>
     <!-- * =============== Opertaions Section =============== * -->
     <section class="bg-light team-section">
         <div class="container pt-5">
-            <div class="heading-container">
+            <div class="heading-container mb-5">
                 <h2 class="text-center text-md-left">
                     <?php the_field('operations_heading'); ?>
                 </h2>
