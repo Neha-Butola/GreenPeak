@@ -23,7 +23,7 @@
   }
 
   &:before {
-    background: rgba(22, 22, 56, .45);
+    background: rgba(22, 22, 56, .3);
     content: "";
     height: 100%;
     left: 0;
@@ -36,7 +36,7 @@
   &.video-banner {
     height: initial;
    &:before {
-    background: rgba(0, 0, 0, .4);
+    background: rgba(22, 22, 56, .25);
     mix-blend-mode: initial;
    }
   }
@@ -181,3 +181,26 @@
   }
 }
 
+/*==== for video play button ======*/
+video {
+  &::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+  
+  /* Old shadow dom for play button */
+  
+  &::-webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+  
+  /* New shadow dom for play button */
+  
+  /* This one works! */
+  
+  &::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+}
