@@ -67,7 +67,7 @@ if (!empty($values)):
                         if ($count % 2 == 0): ?>
                             <div class="pt-5">
                                 <h2 class="text-center text-md-left">
-                                    <span><?php echo $value['heading']; ?></span></h2>
+                                    <?php echo $value['heading']; ?></h2>
                                 <div class="animating-line green-line" data-aos="slide-right"
                                      data-aos-delay="250"></div>
                                 <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
@@ -88,7 +88,7 @@ if (!empty($values)):
                             </div>
                             <div class="pt-md-5 ml-auto text-right">
                                 <h2 class="text-center text-md-left">
-                                    <span><?php echo $value['heading']; ?></span></h2>
+                                    <?php echo $value['heading']; ?></h2>
                                 <div class="animating-line green-line right-line" data-aos="slide-left"
                                      data-aos-delay="250"></div>
                                 <h4 class="pt-md-5"><?php echo $value['sub_heading']; ?>
