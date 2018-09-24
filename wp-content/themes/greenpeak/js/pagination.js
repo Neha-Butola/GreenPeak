@@ -57,4 +57,13 @@ jQuery(document).ready(function ($) {
             $('.nav-links .articles-load-more').hide(0);
         }
     });
+    $('.video-link').on('click', function (e) {
+        e.preventDefault();
+        var width = $(window).width();
+        var height = $(window).height();
+        var left = (screen.width / 2) - (width / 2);
+        var top = (screen.height / 2) - (height / 2);
+        window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
+    });
+
 });
