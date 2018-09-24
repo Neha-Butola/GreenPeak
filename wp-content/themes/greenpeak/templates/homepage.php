@@ -26,7 +26,7 @@ get_header(); ?>
     <!-- * =============== triangle section =============== * -->
     <canvas id="animating-triangle" style="background-image:url('<?php the_field('background_image'); ?>');"
             class="d-none d-md-block fixed-bg"></canvas>
-    <img src="<?php the_field('background_image'); ?>" alt="" class="img-fluid d-block d-md-none">
+    <img src="<?php the_field('background_image'); ?>" alt="" class="img-fluid d-none partners-image">
     <!-- * =============== /triangle section =============== * -->
 
 <?php $content = get_field('content');
