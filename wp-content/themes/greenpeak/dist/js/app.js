@@ -118,7 +118,16 @@ $('.thevideo').magnificPopup({
   type: 'iframe',
   mainClass: 'mfp-fade',
   fixedContentPos: true
+});
 
+// open video in new window
+$('.video-link').on('click', function (e) {
+  e.preventDefault();
+  var width = $(window).width();
+  var height = $(window).height();
+  var left = screen.width / 2 - width / 2;
+  var top = screen.height / 2 - height / 2;
+  window.open(this.href, '', ' scrollbars=yes,menubar=no,width=' + width + ',height=' + height + ',resizable=yes,toolbar=no,location=no,status=no,top=' + top + ', left=' + left);
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
@@ -303,78 +312,73 @@ $('.service-col img').each(function () {
     $(this).parent().addClass('img-col');
 });
 
-$('.service-container').on('scroll', () => {
-    let elements = $('.service-col');
-    let offset = $('.service-container').scrollTop() + 670;
-    if ($(window).width() < 769) {
-        offset = $('.service-container').scrollTop() + 200;
-    }
-    let indentLeft = -90;
-    elements.each((index, item) => {
-        if (index === 0) {
-            return;
-        }
-
-        let ele = $(item);
-        let item_width = 600;
+if ($(window).width() > 767) {
+    $('.service-container').on('scroll', () => {
+        let elements = $('.service-col');
+        let offset = $('.service-container').scrollTop() + 670;
         if ($(window).width() < 769) {
-            item_width = 420;
+            offset = $('.service-container').scrollTop() + 200;
         }
-        // debugger;
-        if (ele.offset().left + (item_width + indentLeft) <= offset) {
-            if (index === 1) {
-                $('header').addClass('nav-style');
-            }
-            indentLeft = indentLeft + 120;
-            if ($(window).width() < 769) {
-                indentLeft = indentLeft + 50;
+        let indentLeft = -90;
+        elements.each((index, item) => {
+            if (index === 0) {
+                return;
             }
 
-            if (index <= elements.length - 2) {
-                ele.find('.timeline').css('width', '111%');
-                if ($(window).width() < 490) {
-                    ele.find('.timeline').css('width', '117%');
+            let ele = $(item);
+            let item_width = 600;
+            // debugger;
+            if (ele.offset().left + (item_width + indentLeft) <= offset) {
+                if (index === 1) {
+                    $('header').addClass('nav-style');
                 }
-            } else {
-                ele.find('.timeline').css('width', '0');
-            }
+                indentLeft = indentLeft + 120;
+                if (index <= elements.length - 2) {
+                    ele.find('.timeline').css('width', '111%');
+                    if ($(window).width() < 490) {
+                        ele.find('.timeline').css('width', '117%');
+                    }
+                } else {
+                    ele.find('.timeline').css('width', '0');
+                }
 
-            let dotEle = ele.find('.dot>div');
-            ele.find('.dot').addClass('show');
-            dotEle.css('height', '70px');
-            if ($(window).height() < 850) {
-                dotEle.css('height', '50px');
-            }
-            if ($(window).width() < 992) {
-                dotEle.css('height', '40px');
-            }
-            dotEle.find('.dot-in').css("display", 'block');
-            if (index % 2 === 0) {
-                dotEle.css('top', '-70px');
+                let dotEle = ele.find('.dot>div');
+                ele.find('.dot').addClass('show');
+                dotEle.css('height', '70px');
                 if ($(window).height() < 850) {
-                    dotEle.css('top', '-50px');
+                    dotEle.css('height', '50px');
                 }
                 if ($(window).width() < 992) {
-                    dotEle.css('top', '-40px');
+                    dotEle.css('height', '40px');
+                }
+                dotEle.find('.dot-in').css("display", 'block');
+                if (index % 2 === 0) {
+                    dotEle.css('top', '-70px');
+                    if ($(window).height() < 850) {
+                        dotEle.css('top', '-50px');
+                    }
+                    if ($(window).width() < 992) {
+                        dotEle.css('top', '-40px');
+                    }
+                }
+            } else {
+                if (index === 1) {
+                    $('header').removeClass('nav-style');
+                }
+
+                ele.find('.timeline').css('width', '0');
+                ele.find('.dot').removeClass('show');
+
+                let dotEle = ele.find('.dot>div');
+                dotEle.css('height', '0');
+                dotEle.find('.dot-in').css("display", 'none');
+                if (index % 2 === 0) {
+                    dotEle.css('top', '0');
                 }
             }
-        } else {
-            if (index === 1) {
-                $('header').removeClass('nav-style');
-            }
-
-            ele.find('.timeline').css('width', '0');
-            ele.find('.dot').removeClass('show');
-
-            let dotEle = ele.find('.dot>div');
-            dotEle.css('height', '0');
-            dotEle.find('.dot-in').css("display", 'none');
-            if (index % 2 === 0) {
-                dotEle.css('top', '0');
-            }
-        }
+        });
     });
-});
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
