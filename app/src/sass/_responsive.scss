@@ -274,9 +274,9 @@
 	.html5gallery-box-1,.html5gallery-car-1,
 	.html5gallery-car-list-1,
 	.html5gallery-car-mask-1 {height: auto !important;}
-
+	.wonderplugingallery{margin-bottom: 40px;}
 	.wonderplugingallery img {object-fit: contain;}
-
+	.html5gallery-car-1 img ,.html5gallery-tn-img-1 {height: 150px !important; max-width: 230px; margin: 0 auto;}
 	.html5gallery-container-1 {padding: 0 15px;}
 	.html5gallery-container-1 iframe {margin: 0 -15px;}
 	.html5gallery-elem-1 {position: relative!important;}
@@ -288,7 +288,7 @@
 	.html5gallery-elem-1,.html5gallery-elem-image-1,.html5gallery-container-1 div {width: 100% !important;}
 
 	.html5gallery-thumbs-1,.html5gallery-car-mask-1 {width: 100% !important;margin-left: 0 !important;}
-	.html5gallery-tn-1,.html5gallery-tn-selected-1 {float: none!important;margin: 0 auto !important;display: inline-block !important;}
+	.html5gallery-tn-1,.html5gallery-tn-selected-1 {height: 150px !important;float: none!important;margin: 0 auto -20px !important;display: inline-block !important;}
 	.html5gallery-car-left-1,.html5gallery-car-right-1 {display: none !important;}
 	div.html5gallery-video-play-1 {width: 64px !important;}
 }
