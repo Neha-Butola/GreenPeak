@@ -135,7 +135,7 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
   position: absolute;
   z-index: -1;
   margin-top: -415px;
-  object-fit: contain;
+  background-size: contain;
 }
 
 .value-sec {
@@ -145,11 +145,6 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
 
     >div {
       padding-bottom: 9rem;
-
-      .parallax-bg {
-        min-width: 500px;
-        min-height: 200px;
-      }
 
       &:nth-of-type(4) {
         h2 {
@@ -177,11 +172,12 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       }
 
       &:nth-of-type(4) .parallax-bg {
-        height: 180px;
-        left: auto !important;
-        width: 270px;
-        margin-top: -504px;
-        right: 120px;
+       height: 276px;
+       left: auto !important;
+       margin-top: -504px;
+       right: 120px;
+       width: 412px;
+
       }
 
 
@@ -194,35 +190,36 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
       }
 
       &:nth-of-type(3) .parallax-bg {
-        height: 300px;
-        width: 300px;
-        left: 456px !important;
+         height: 375px;
+         left: 456px !important;
+         width: 378px;
+         margin-top: -453px;
       }
 
       &:nth-of-type(1) .parallax-bg {
-        height: 180px;
-        left: 348px !important;
-        width: 250px;
-        margin-top: -590px;
+        height: 199px;
+        left: 100px !important;
+        margin-top: -425px;
+        width: 298px;
       }
 
       &:nth-of-type(2) .parallax-bg {
-        height: 380px;
+        left: 33px !important;
         width: 300px;
-        left: -59px !important;
+        height: 470px;
       }
 
       &:nth-of-type(8) .parallax-bg {
-           height: 210px;
-           left: 96px !important;
-           width: 400px;
-           margin-top: -794px;
+        height: 210px;
+        left: 96px !important;
+        width: 400px;
+        margin-top: -794px;
       }
 
       &:nth-of-type(9) .parallax-bg {
-            left: auto !important;
-              margin-top: -836px;
-            right: 195px;
+        left: auto !important;
+        margin-top: -836px;
+        right: 195px;
       }
     }
   }
