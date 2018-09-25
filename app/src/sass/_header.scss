@@ -6,6 +6,7 @@
 	nav {
 		display: flex;
 		position: relative;
+		padding: 0 4%;
 	}
 
 	.navbar-toggler {
@@ -82,7 +83,7 @@
 
 .nav-style {
 	&.main-head {
-		padding: 0.5rem 0 0.5rem;
+		padding: 1.2rem 0;
 	}
 
 	.navbar-toggler {
@@ -94,6 +95,7 @@
 
 	.logo {
 		position: static;
+		transform: none;
 		animation: fadeIn 3s ease ;
 	}
 

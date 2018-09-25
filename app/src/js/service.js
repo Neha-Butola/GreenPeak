@@ -68,6 +68,7 @@ $('.service-col img').each(function () {
     $(this).parent().addClass('img-col');
 });
 
+if ($(window).width() > 767) {
 $('.service-container').on('scroll', () => {
     let elements = $('.service-col');
     let offset = $('.service-container').scrollTop() + 670;
@@ -82,19 +83,12 @@ $('.service-container').on('scroll', () => {
 
         let ele = $(item);
         let item_width = 600;
-        if ($(window).width() < 769) {
-            item_width = 420;
-        }
         // debugger;
         if (ele.offset().left + (item_width + indentLeft) <= offset) {
             if (index === 1) {
                 $('header').addClass('nav-style');
             }
             indentLeft = indentLeft + 120;
-            if ($(window).width() < 769) {
-                indentLeft = indentLeft + 50;
-            }
-
             if (index <= (elements.length - 2)) {
                 ele.find('.timeline').css('width', '111%');
                 if ($(window).width() < 490) {
@@ -140,3 +134,4 @@ $('.service-container').on('scroll', () => {
         }
     });
 });
+}
