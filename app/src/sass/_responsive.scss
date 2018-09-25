@@ -109,6 +109,42 @@
 
 
 // Large devices
+@media (max-width: 1280px) {
+	/* career page css */
+
+	.value-sec .row>div:first-of-type .parallax-bg {
+		left: 77px !important;
+		margin-top: -591px;
+	}
+
+	.value-sec .row>div:nth-of-type(3) .parallax-bg {
+		margin-top: -383px;
+	}
+
+	.video-play .parallax-bg:first-child {
+		margin-top: -624px;
+		right: -37px;
+	}
+
+	.video-play .parallax-bg:nth-child(2) {
+		left: -38px !important;
+	}
+
+	.value-sec .row>div:nth-of-type(6) .parallax-bg {
+		margin-top: -545px;
+	}
+
+	.value-sec .row>div:nth-of-type(7) .parallax-bg {
+		left: 37px !important;
+		margin-top: -355px;
+	}
+
+	.value-sec .row>div:nth-of-type(9) .parallax-bg {
+		margin-top: -610px;
+	}
+}
+
+
 @media (max-width: 1200px) {
 	.traingle-sction .container-fluid {
 		padding: 0 2%;
