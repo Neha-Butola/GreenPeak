@@ -46,6 +46,10 @@
 
 
 @media (max-width: 991px) {
+.triangle-bg:before {
+background-size: 39% 100%;
+}
+
 	.mfp-iframe-holder .mfp-close {
 		top: -50px;
 		right: -7px;
@@ -55,6 +59,11 @@
 		padding: 0 15px;
 	}
 }
+
+@media (max-width: 1800px) {
+	.triangle-bg:before{
+    background-size: 55% 100%;
+}}
 
 @media (max-width: 1600px) {
 
