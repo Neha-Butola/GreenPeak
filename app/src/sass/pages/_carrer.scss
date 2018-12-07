@@ -292,6 +292,10 @@ a[href='http://www.wonderplugin.com/wordpress-gallery/'] {
 
 /* full width video */
 
+.mfp-iframe-scaler {
+  padding-top: 100vh;
+}
+
 .mfp-iframe-holder .mfp-content {
   max-width: 100%;
 }

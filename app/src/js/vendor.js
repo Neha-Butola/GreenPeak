@@ -8,13 +8,16 @@ window.Popper = Popper;
 
 // Selective bootstrap.js build
 // https://github.com/twbs/bootstrap/issues/20709
-import 'expose-loader?Util!exports-loader?Util!bootstrap/js/dist/util';
+import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/tab';
 import 'owl.carousel/dist/owl.carousel.min.js';
 
+
+
 //AOS Library animate on scroll
+
 import AOS from 'aos';
 AOS.init();
 
