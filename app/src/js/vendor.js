@@ -14,8 +14,6 @@ import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/tab';
 import 'owl.carousel/dist/owl.carousel.min.js';
 
-
-
 //AOS Library animate on scroll
 
 import AOS from 'aos';
