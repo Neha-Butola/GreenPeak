@@ -28,7 +28,11 @@
 }
 
 
-
+@media (min-width: 1025px) {
+.logo-images{
+	display: none;
+}
+}
 
 @media (min-width: 991px) {
 
@@ -176,8 +180,8 @@ background-size: 39% 100%;
 		font-size: 4.25rem;
 	}
 
-	#animating-triangle {
-		display: none !important;
+	#animating-triangle{
+		display:none;
 	}
 
 	.partners-image {
@@ -506,7 +510,6 @@ background-size: 39% 100%;
 	.the-why {
 		background-position: 90% 0;
 	}
-
 
 	/* carrer page */
 
