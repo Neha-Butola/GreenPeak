@@ -128,9 +128,10 @@ function greenpeak_scripts()
 {
     wp_enqueue_style('greenpeak-css', get_template_directory_uri() . '/dist/css/app.css', '', '1.0');
 
-    wp_enqueue_script('steller-js', '//cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js', array(), '0.6.2', true);
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', '', '2.2.4', true);
 
-    wp_enqueue_script('jquery', get_template_directory_uri() . '//code.jquery.com/jquery-2.2.4.min.js', array(), '1.0', true);
+    wp_enqueue_script('steller-js', 'https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js?ver=0.6.2', ['jquery'], '0.6.2', true);
 
     wp_enqueue_script('greenpeak-js', get_template_directory_uri() . '/dist/js/app.js', ['jquery'], '1.0', true);
 
@@ -139,6 +140,7 @@ function greenpeak_scripts()
     wp_localize_script('pagination', 'ajaxpagination', array(
         'ajaxurl' => admin_url('admin-ajax.php')
     ));
+
 }
 
 add_action('wp_enqueue_scripts', 'greenpeak_scripts');
@@ -150,45 +152,87 @@ add_action('wp_enqueue_scripts', 'greenpeak_scripts');
 add_action('wp_ajax_nopriv_ajax_pagination', 'ajax_pagination');
 add_action('wp_ajax_ajax_pagination', 'ajax_pagination');
 
+
 function ajax_pagination()
 {
     $data_type = $_POST['data_type'];
     $page = $_POST['page'];
     if ($data_type == 'video') {
-        $offset = ($page - 1) * 3;
+        $offset = ($page - 1) * 6;
         $parameters = array(
             'post_type' => 'videos',
             'offset' => $offset,
-            'posts_per_page' => 3,
+            'posts_per_page' => 6,
 
         );
         $videos = new WP_Query($parameters);
         if ($videos->have_posts()) { ?>
             <?php while ($videos->have_posts()): $videos->the_post(); ?>
-                <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="<?php the_field('video_url'); ?>" width="640"
-                            height="360"
-                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                <div data-background-image="<?php the_field('background_image'); ?>" class="lozad fixed-bg"
+                     data-loaded="true"
+                     style="background-image: url(<?php the_field('background_image'); ?>">
+                    <div class="container">
+                        <div class="text-center media-block">
+                            <div class="position-relative">
+                                <h2 class="video-title"><?php the_title(); ?></h2>
+                                <?php if (get_field('sub_heading')): ?>
+                                    <h3 class="video-subtitle title"><?php the_field('sub_heading'); ?></h3>
+                                <?php endif; ?>
+                                <div class="share">
+                                    <!-- Sharingbutton LinkedIn -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_field('video_url'); ?>"
+                                       target="_blank" aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- Sharingbutton Twitter -->
+                                    <a class="resp-sharing-button__link"
+                                       href="https://twitter.com/intent/tweet/?url=<?php the_field('video_url'); ?>"
+                                       target="_blank"
+                                       aria-label="">
+                                        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                            <div aria-hidden="true"
+                                                 class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                                                <i class="fab fa-twitter"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <small>share on</small>
+                                </div>
+                                <a href="<?php the_field('video_url'); ?>" class="read" target="_blank">watch
+                                    video<span class="line"></span></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile;
+            wp_reset_query();
+            ?>
         <?php }
     } elseif ($data_type == 'articles') {
-        $offset = ($page - 1) * 3;
+        $offset = ($page - 1) * 6;
         $parameters = array(
             'post_type' => 'post',
             'offset' => $offset,
-            'posts_per_page' => 3,
+            'posts_per_page' => 6,
 
         );
         $articles = new WP_Query($parameters);
         if ($articles->have_posts()):
             while ($articles->have_posts()):
                 $articles->the_post(); ?>
-                <div data-background-image="<?php echo get_the_post_thumbnail_url(); ?>" class="lozad fixed-bg">
+                <div data-background-image="<?php the_field('articles_image'); ?>" class="lozad fixed-bg"
+                     data-loaded="true"
+                     style="background-image: url(<?php the_field('articles_image'); ?>">
                     <div class="container">
-                        <div class="text-center article-block">
+                        <div class="text-center media-block">
                             <div class="position-relative">
-                                <h3><?php the_title(); ?></h3>
+                                <h3 class="title"><?php the_title(); ?></h3>
                                 <?php $content = get_the_content();
                                 $content = wp_trim_words($content, '50');
                                 ?>
@@ -220,8 +264,8 @@ function ajax_pagination()
                                     <small>share on</small>
                                 </div>
 
-                                <a href="<?php the_permalink(); ?>" class="read">read article <span
-                                        class="line"></span></a>
+                                <a href="<?php the_permalink(); ?>" target="_blank" class="read">read article <span
+                                            class="line"></span></a>
                             </div>
                         </div>
                     </div>
@@ -270,3 +314,38 @@ function create_posttype()
  */
 add_action('init', 'create_posttype');
 
+//code to validate textarea
+function custom_textarea_validation_filter($result, $tag)
+{
+    $type = $tag['type'];
+    $name = $tag['name'];
+    //here textarea type name is 'message'
+    if ($name == 'your-message') {
+        $value = $_POST[$name];
+        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)) {
+            $result->invalidate($tag, "Invalid characters.");
+        }
+    }
+    return $result;
+}
+
+add_filter('wpcf7_validate_textarea', 'custom_textarea_validation_filter', 10, 2);
+add_filter('wpcf7_validate_textarea*', 'custom_textarea_validation_filter', 10, 2);
+
+//code to validate textbox
+function custom_text_validation_filter($result, $tag)
+{
+    $type = $tag['type'];
+    $name = $tag['name'];
+    //here textbox type name is 'subject'
+    if ($name == 'your-name' || $name == 'your-email') {
+        $value = $_POST[$name];
+        if (preg_match('/[\'^£$%&*()}{@#~><>|=_+¬]/', $value)) {
+            $result->invalidate($tag, "Invalid characters.");
+        }
+    }
+    return $result;
+}
+
+add_filter('wpcf7_validate_text', 'custom_text_validation_filter', 10, 2);
+add_filter('wpcf7_validate_text*', 'custom_text_validation_filter', 10, 2);

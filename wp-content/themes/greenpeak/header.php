@@ -25,7 +25,7 @@
     <?php echo (is_page('services')) ? '<div class="service-page">' : ''; ?>
     <!-- * =============== Header =============== * -->
     <header class="main-head fixed-top">
-        <nav class="container">
+        <nav class="container-fluid">
             <a href="/" class="logo"><img src="<?php the_field('header_logo', 'options'); ?>"
                                           alt="greenpeak-logo"></a>
 

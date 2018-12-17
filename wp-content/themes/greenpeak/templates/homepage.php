@@ -6,20 +6,27 @@
 get_header(); ?>
 
     <!-- * =============== Banner section =============== * -->
-    <div class="banner fixed-bg position-relative"
+    <div class="banner fixed-bg position-relative home-banner"
          style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
-            <div class="site-brand mb-2" data-aos="fade-in"><?php the_field('banner_heading'); ?></div>
+            <div class="site-brand mb-2"><?php the_field('banner_heading'); ?></div>
             <div class="animating-line"></div>
-            <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_sub_heading'); ?></span></h1>
+            <h1><span><?php the_field('banner_sub_heading'); ?></span></h1>
         </div>
+        <?php if (get_field('banner_video')): ?>
+            <video id="banner-video" loop="loop" autoplay="autoplay" muted="muted" playsinline  poster="<?php the_field('banner_image'); ?>">
+                <source src="<?php the_field('banner_video'); ?>"
+                        type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <?php endif; ?>
     </div>
     <!-- * =============== /Banner section =============== * -->
 
     <!-- * =============== triangle section =============== * -->
     <canvas id="animating-triangle" style="background-image:url('<?php the_field('background_image'); ?>');"
             class="d-none d-md-block fixed-bg"></canvas>
-    <img src="<?php the_field('background_image'); ?>" alt="" class="img-fluid d-block d-md-none">
+    <img src="<?php the_field('background_image'); ?>" alt="" class="img-fluid d-none partners-image">
     <!-- * =============== /triangle section =============== * -->
 
 <?php $content = get_field('content');
@@ -39,8 +46,7 @@ if (!empty($content)): ?>
                         <div class="col-md-6 <?php echo ($count % 2 != 0) ? 'text-md-right' : 'offset-md-6'; ?>"
                              data-aos="fade-in" data-aos-delay="100">
                             <h2>
-                                <a href="<?php echo $section['main_heading_link']; ?>">“<?php echo $section['main_heading']; ?>
-                                    ”</a>
+                                <a href="<?php echo $section['main_heading_link']; ?>">“<?php echo $section['main_heading']; ?>”</a>
                             </h2>
                             <h3><?php echo $section['sub_heading']; ?></h3>
                         </div>

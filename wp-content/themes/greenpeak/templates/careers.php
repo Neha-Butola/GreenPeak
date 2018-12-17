@@ -7,7 +7,7 @@ get_header(); ?>
 <div class="banner fixed-bg position-relative" style="background-image: url('<?php the_field('banner_image'); ?>');">
     <div class="banner-content">
 
-        <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
+        <h1><span><?php the_field('banner_heading'); ?></span></h1>
         <div class="animating-line right-line"></div>
     </div>
 </div>
@@ -36,8 +36,8 @@ if (!empty($testimonials)): ?>
                 <?php foreach ($testimonials as $testimonial): ?>
                     <div class="item text-white">
                         <?php echo $testimonial['testimony']; ?>
-                        <div class="intro">
-                            <div>
+                        <div class="intro d-sm-flex">
+                            <div class="text-sm-left mr-sm-5">
                                 <h2><?php echo $testimonial['reviewer_name']; ?></h2>
                                 <h5><?php echo $testimonial['reviewer_designation']; ?></h5>
                             </div>
@@ -65,14 +65,17 @@ if (!empty($values)):
                 <?php foreach ($values as $value): ?>
                     <?php if ($value['option'] == 'Image'):
                         if ($count % 2 == 0): ?>
-                            <div class="col-md-5 pt-5">
-                                <h2 data-aos="fade-right"><span><?php echo $value['heading']; ?></span></h2>
+                            <div class="col pt-5">
+                                <h2 class="text-center text-md-left">
+                                    <?php echo $value['heading']; ?></h2>
+                                <div class="animating-line green-line" data-aos="slide-right"
+                                     data-aos-delay="250"></div>
                                 <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
-                                    <div class="lozad parallax-bg" data-stellar-ratio="0.5"
-                                         data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 </h4>
+                                <div class="lozad parallax-bg" data-stellar-ratio="0.5"
+                                     data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                             </div>
-                            <div class="col-md-7 text-right">
+                            <div class="col-md-7 ml-auto text-center text-md-right">
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
@@ -83,9 +86,12 @@ if (!empty($values)):
                                      data-background-image="<?php echo $value['background_image_one']; ?>"></div>
                                 <img src="<?php echo $value['main_image']; ?>" alt="">
                             </div>
-                            <div class="col-md-5 pt-5">
-                                <h2 data-aos="fade-right"><span><?php echo $value['heading']; ?></span></h2>
-                                <h4 class="pt-5"><?php echo $value['sub_heading']; ?>
+                            <div class="pt-md-5 ml-auto text-right col">
+                                <h2 class="text-center text-md-left">
+                                    <?php echo $value['heading']; ?></h2>
+                                <div class="animating-line green-line right-line" data-aos="slide-left"
+                                     data-aos-delay="250"></div>
+                                <h4 class="pt-md-5"><?php echo $value['sub_heading']; ?>
                                 </h4>
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
@@ -93,7 +99,10 @@ if (!empty($values)):
                             <?php $count++; endif;
                     else: ?>
                         <div class="col-12 text-center video-play">
-                            <h2><?php echo $value['heading']; ?></h2>
+                            <div class="heading-container position-relative">
+                                <h2><?php echo $value['heading']; ?></h2>
+                                <div class="animating-line middle-line" data-aos="slide-right" data-aos-delay="300"></div>
+                            </div>
                             <h4><?php echo $value['sub_heading']; ?></h4>
                             <div class="position-relative">
                                 <div class="lozad parallax-bg" data-stellar-ratio="0.5"
@@ -101,14 +110,21 @@ if (!empty($values)):
                                 <div class="lozad parallax-bg" data-stellar-vertical-offset="150"
                                      data-stellar-ratio="0.5"
                                      data-background-image="<?php echo $value['background_image_two']; ?>"></div>
-                                <video class="thevideo popup-vimeo" href="<?php echo $value['video_url']; ?>" loop=""
-                                       preload="none"
-                                       muted=""
-                                       poster="<?php echo $value['video_thumbnail']; ?>">
-                                    <source src="<?php echo $value['video_file']; ?>"
-                                            type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                                <a href="<?php echo $value['video_url']; ?>" class="thevideo">
+                                    <img src="<?php echo $value['video_thumbnail']; ?>"
+                                         alt="BuildTrustingRelationshipsVideoPlaceholder_GP"
+                                         class="d-block d-md-none img-fluid">
+                                    <video class="d-none d-md-block embed-responsive embed-responsive-21by9" loop=""
+                                           preload="none" muted=""
+                                           poster="http://gpeak.ithands.net/wp-content/uploads/2018/09/BuildTrustingRelationshipsVideoPlaceholder_GP.jpg">
+                                        <source src="<?php echo $value['video_file']; ?>"
+                                                type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </a>
                                 <div class="play-btn">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -123,10 +139,11 @@ if (!empty($values)):
 
 if (get_field('form_code')): ?>
     <!-- * =============== Form Section =============== * -->
-    <section class="contact-bg lozad fixed-bg" data-background-image="<?php the_field('form_background_image'); ?>">
+    <section class="contact-bg lozad fixed-bg position-relative"
+             data-background-image="<?php the_field('form_background_image'); ?>">
         <div class="container section-divider text-white">
             <?php the_field('form_content'); ?>
-            <h2><?php the_field('form_heading'); ?></h2>
+            <h3 class="mt-5"><?php the_field('form_heading'); ?></h3>
             <?php $form_code = get_field('form_code');
             echo do_shortcode($form_code); ?>
         </div>

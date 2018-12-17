@@ -7,7 +7,7 @@ get_header(); ?>
 
     <div class="banner fixed-bg position-relative" style="background-image: url('<?php the_field('banner_image'); ?>');">
         <div class="banner-content">
-            <h1 data-aos="fade-in" data-aos-delay="400"><span><?php the_field('banner_heading'); ?></span></h1>
+            <h1><span><?php the_field('banner_heading'); ?></span></h1>
             <div class="animating-line"></div>
         </div>
     </div>
@@ -16,7 +16,7 @@ get_header(); ?>
     <!-- * =============== Content Section =============== * -->
     <section class="container section-divider">
         <?php the_field('content'); ?>
-        <div class="row contact pt-3">
+        <div class="row contact">
             <div class="col-md-6 pb-4 pb-md-0 text-center text-md-left"><a href="tel:<?php the_field('phone_number'); ?>"><i
                             class="fas fa-phone mr-5"></i><?php the_field('phone_number'); ?></a></div>
             <div class="col-md-6 pb-4 pb-md-0 text-center text-md-left">
