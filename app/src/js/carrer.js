@@ -1,5 +1,4 @@
 $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCarousel({
-  loop: true,
   dots: true,
   autoplay: true,
   smartSpeed: 650,
