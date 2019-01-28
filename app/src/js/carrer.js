@@ -1,3 +1,5 @@
+// carousel for carrer page
+
 $('#career-testimonial .owl-carousel, #about-testimonial .owl-carousel').owlCarousel({
   dots: true,
   autoplay: true,
